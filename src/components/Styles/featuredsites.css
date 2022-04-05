@@ -1,0 +1,27 @@
+.featured-page{
+    padding-top: 75px;
+}
+
+.page-title {
+    text-align: left;
+    margin-left: 16em;
+    font-family: revert;
+    font-weight: bold;
+    color: dimgrey;
+}
+
+
+.card {
+    width: 260px;
+    height: 37em;
+    margin-left: 0px;
+    margin-top: -31em;
+    margin-bottom: 32em;
+}
+
+.selection {
+    border-right: 2px solid #ddd;
+    word-break: break-word;
+    width: 200px!important;
+    /* margin-top: 0em !important; */
+}

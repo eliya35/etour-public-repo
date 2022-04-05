@@ -1,0 +1,37 @@
+.user-profile-container{
+    max-width: 80em;
+}
+
+.only-authenticated textarea{
+    margin-left: 1px;
+}
+
+.profile-page {
+    margin-top: 1em;
+}
+
+.col-xs-6 .form-label{
+    font-weight: 500;
+}
+
+.only-authenticated .form-group p{
+    color: red;
+}
+
+.message{
+    border-style: double;
+    color: green;
+    display: inline-block;
+    margin-left: 35em;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* .success-message .message {
+    font-weight: 600;
+}
+.show-nothing{
+    display: none;
+} */
+

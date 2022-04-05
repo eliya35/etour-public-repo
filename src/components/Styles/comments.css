@@ -1,0 +1,139 @@
+.comment {
+  display: flex;
+  margin-bottom: 18px;
+  margin-left: 4em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.comments{
+	margin-left: -53em;
+	padding-top: 13em;
+}
+
+.comments-title {
+	font-size: 30px;
+	margin-bottom: 20px;
+	margin-left: 2em;
+}
+
+.comments-container {
+	margin-top: 40px;
+}
+
+.comment-form-title {
+	font-size: 22px;
+	margin-left: 3em;
+	padding-bottom: 1em;
+}
+
+form.comment-form-textarea {
+	width: 100%;
+	height: 80px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	border: 1px solid rgb(107, 114, 12);
+	
+}
+
+
+.comment-form-button {
+	font-size: 16px;
+	padding: 8px 16px;
+	background: rgb(59, 130, 246);
+	border-radius: 8px;
+	color: white;
+	margin-left: 1em;
+}
+
+.comment-form-button:hover:enabled {
+	cursor: pointer;
+	background: rgb(37, 99, 235);
+}
+
+.comment-form-button:disabled {
+	opacity: 0.7;
+	cursor: default;
+}
+
+.comment-form-cancel-button {
+	margin-left: 10px;
+}
+
+.comment {
+	display: flex;
+	margin-bottom: 28px;
+}
+
+.comment-image-container {
+	margin-right: 12px;
+}
+
+.comment-image-container img {
+	border-radius: 50px;
+}
+
+.comment-right-part {
+	width: 100%;
+}
+
+.comment-content {
+  display: flex;
+  margin-left: 4em;
+  margin-top: -40px;
+}
+
+.comment-author {
+	margin-right: 8px;
+	font-size: 20px;
+	color: rgb(59, 130, 246);
+}
+
+.comment-text {
+	font-size: 18px;
+	margin-left: 4em;
+	width: 17em;
+}
+
+.comment-actions {
+    display: flex;
+    font-size: 12px;
+    /* color: #333; */
+    cursor: pointer;
+    margin-top: 6px;
+    margin-left: 6em;
+    font-weight: 700;
+    color: tomato;
+}
+
+.comment-action {
+	margin-right: 8px;
+}
+
+.comment-action:hover {
+	text-decoration: underline;
+}
+
+.replies {
+	margin-top: 20px;
+}
+
+textarea {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 7em;
+    width:32em;
+    margin-left: 73px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.post-btn{
+	margin-left: 5em;
+	padding-top: 2em;
+}
+.profiles img{
+	max-width: 48px;
+	max-height: 48px;
+}
+.comment .comment-image-container .user-profile-img{
+	width: 48px;
+	height: 48px;
+}

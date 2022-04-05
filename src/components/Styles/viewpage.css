@@ -1,0 +1,56 @@
+.viewpage{
+    padding-top: 75px;
+}
+
+.imgBx {
+    margin-top: 2em;
+    margin-left: -37px;
+}
+
+.imgBx img {
+	max-width: 40em;
+    margin-left: 11em;
+}
+
+.content {
+    margin-left: 50em;
+    margin-top: -26em;
+}
+
+.content h2 {
+	color: rgb(185, 182, 182);
+}
+
+.location-info {
+    margin-left: 50em;
+    margin-top: 0em;
+    margin-bottom: 35em;
+}
+.recommended-products {
+    margin-left: 2em;
+    margin-top: -25em;
+}
+.renderd-comments {
+    margin-left: 50em;
+    margin-top: -6em;
+    margin-bottom: 20em;
+}
+.other-img{
+    margin-top: -30em;
+    margin-left: -36px;
+}
+.other-img li {
+    list-style: none;
+}
+.other-img li img{
+    max-width: 130px;
+    padding: 10px;
+    display: flex;
+}
+.other-img ul li .side-img{
+    transform: scale(1);
+	transition: transform 0.5s ease;
+}
+.other-img ul li .side-img:hover{
+    transform: scale(1.1);
+}

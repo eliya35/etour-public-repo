@@ -1,0 +1,10 @@
+.category-page-contents{
+    padding-top: 95px;
+}
+.category-filter .filters {
+    display: flex;
+    position: relative;
+    width: 13em;
+    margin-top: 29px;
+}
+

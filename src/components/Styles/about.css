@@ -1,0 +1,12 @@
+.about {
+	width: 50em !important;
+	margin-bottom: 35em;
+	padding-left: 1em;
+	padding-top: 6em;
+	margin-left: 3em;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
+}
+.feadback {
+	padding-top: 8em;
+}

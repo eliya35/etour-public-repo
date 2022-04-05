@@ -1,0 +1,29 @@
+.user-profile-container{
+    padding-top: 100px;
+    margin-left: 20px;
+    padding-bottom: 3em;
+}
+
+.only-authenticated .col-sm-10 h1{
+    color: darkslategray;
+    font-weight: 500;
+}
+
+.list-group{
+    padding-top: 30px;
+    display: none !important;
+}
+.delete-btn{
+    margin-left: 25em;
+    margin-top: -49px;
+}
+
+.user-profile-container .message {
+    border-style: double;
+    color: green;
+    display: inline-block;
+    margin-left: 35em;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
