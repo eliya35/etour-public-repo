@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from email.policy import default
 from pyexpat import model
 from django.db import models
@@ -8,7 +9,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True) # to field id
-    avatar = models.ImageField(default='avatar_2x.png')
+    avatar = models.ImageField(default='avatar_2x.png', upload_to ='avtarts')
     location = models.CharField(max_length=100, blank=True)
     mobile = models.CharField(max_length=20)
     bio = models.TextField(blank=True)
