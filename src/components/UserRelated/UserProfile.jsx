@@ -117,19 +117,19 @@ const UserProfile = () => {
         // Update the profile if is updated else live it to its previous value
         if (upLoadImage !== null) {
             updatedData.append("avatar", upLoadImage)
-            console.log('updated profile', upLoadImage)
+            // console.log('updated profile', upLoadImage)
         }
         if (formVlaues.mobile !== "") {
             updatedData.append("mobile", formVlaues.mobile)
-            console.log("mobile", formVlaues.mobile)
+            // console.log("mobile", formVlaues.mobile)
         }
         if (formVlaues.location !== "") {
             updatedData.append("location", formVlaues.location)
-            console.log("location", formVlaues.location)
+            // console.log("location", formVlaues.location)
         }
         if (formVlaues.bio !== "") {
             updatedData.append("bio", formVlaues.bio)
-            console.log("bio", formVlaues.bio)
+            // console.log("bio", formVlaues.bio)
         }
 
         axios.defaults.xsrfCookieName = 'csrftoken'

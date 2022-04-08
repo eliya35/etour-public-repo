@@ -37,7 +37,7 @@ const Comment = ({
     return (
         <div className='comment'>
             <div className="comment-image-container">
-                {comment.comment_profile !== null ? <img src={comment.comment_profile} className='user-profile-img' alt="profile" /> : <img src="/media/user-icon.png/" alt="profile" />}
+                {comment.comment_profile !== null ? <img src={comment.comment_profile} className='user-profile-img' alt="profile" /> : <img src="avatars/user-icon.png/" alt="profile" />}
                 <div className="comment-right-part"></div>
                 <div className="comment-content">
                     <div className="comment-author">{comment.username}</div>

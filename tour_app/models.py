@@ -101,11 +101,11 @@ class Tour(models.Model):
     location = models.CharField(max_length=100, blank=False)
     tourist_traffic_annually = models.CharField(max_length=100, choices=TOURIST_TRAFFIC_RATE,
                                                 blank=True, default=False)
-    image = models.ImageField(max_length=100, blank=True, default='default.png', upload_to ='destinations')
-    image_01 = models.ImageField(max_length=100, blank=True, default='default.png', upload_to ='destinations')
-    image_02 = models.ImageField(max_length=100, blank=True, default='default.png', upload_to ='destinations')
-    image_03 = models.ImageField(max_length=100, blank=True, default='default.png',upload_to ='destinations')
-    image_04 = models.ImageField(max_length=100, blank=True, default='default.png', upload_to ='destinations')
+    image = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to ='destinations')
+    image_01 = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to ='destinations')
+    image_02 = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to ='destinations')
+    image_03 = models.ImageField(max_length=100, blank=True, default='destinations/default.png',upload_to ='destinations')
+    image_04 = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to ='destinations')
     short_description = models.CharField(max_length=200, blank=True)
     long_description = models.TextField(blank=True)
 
