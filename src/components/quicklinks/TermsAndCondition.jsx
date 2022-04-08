@@ -113,7 +113,7 @@ const TermsAndCondition = () => {
                     <br />
                     NAIROBI;
                     <br />
-                    <a href="https://www.etour.com">https://www.etour.com</a>
+                    <a href="https://www.etour.herokuapp.com">https://www.etour.herokuapp.com</a>
                 </p>
                 <br />
                 <div className="container">
