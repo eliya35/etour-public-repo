@@ -48,8 +48,8 @@ const UserProfile = () => {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-        axios.get(`http://127.0.0.1:8000/api/user/profile/${user_id}/`)
-        // axios.get(`https://etour.herokuapp.com/api/user/profile/${user_id}/`)
+        // axios.get(`http://127.0.0.1:8000/api/user/profile/${user_id}/`)
+        axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${user_id}/`)
             .then(res => {
                 setPreviousValue(res.data)
             })
@@ -98,8 +98,8 @@ const UserProfile = () => {
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        await axios.post('http://127.0.0.1:8000/api/user/profile/', formData)
-        // await axios.post('https://etour.herokuapp.com/api/user/profile/', formData)
+        // await axios.post('http://127.0.0.1:8000/api/user/profile/', formData)
+        await axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/', formData)
             .then(res => {
                 setIsPosted(true);
                 setIsDisabled(true);
@@ -134,8 +134,8 @@ const UserProfile = () => {
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        await axios.patch(`http://127.0.0.1:8000/api/user/profile/${user_id}/`, updatedData)
-        // await axios.patch(`https://etour.herokuapp.com/api/user/profile/${user_id}/`, updatedData)
+        // await axios.patch(`http://127.0.0.1:8000/api/user/profile/${user_id}/`, updatedData)
+        await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${user_id}/`, updatedData)
             .then(res => {
                 // console.log("Updated Data", res.data)
                 setIsPosted(true);
