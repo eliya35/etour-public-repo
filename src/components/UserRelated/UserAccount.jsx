@@ -69,16 +69,16 @@ const UserAccount = () => {
 
         if (formVlaues.firstName && formVlaues.firstName !== user.first_name) {
             myUserAcount.append("first_name", formVlaues.firstName)
-            console.log('first_name:', formVlaues.firstName)
+            // console.log('first_name:', formVlaues.firstName)
         }
         if (formVlaues.lastName && formVlaues.lastName !== user.last_name) {
             myUserAcount.append("last_name", formVlaues.lastName)
-            console.log('last_name:', formVlaues.lastName)
+            // console.log('last_name:', formVlaues.lastName)
         }
 
         if (formVlaues.email !== user.email && formVlaues.email !== "") {
             myUserAcount.append("email", formVlaues.email)
-            console.log("email:", formVlaues.email)
+            // console.log("email:", formVlaues.email)
         }
 
 
