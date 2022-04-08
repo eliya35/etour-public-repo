@@ -1,26 +1,13 @@
 # created by virtualenv automatically
 
 
-# 
-.vscode
-
-# Django #
-*.log
-*.pot
-*.pyc
-__pycache__
-db.sqlite3
-media
-
 # Static
 images
 static/registration_form/readme.txt
 static/registration_form/fonts/
 
-# Backup files #
-*.bak
 
-# If you are using PyCharm #
+# for PyCharm 
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
@@ -35,112 +22,13 @@ static/registration_form/fonts/
 .idea/**/libraries
 *.iws /out/
 
-# Python #
-*.py[cod]
-*$py.class
-
-# Distribution / packaging
-.Python build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-venv/Lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-.pytest_cache/
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery
-celerybeat-schedule.*
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-
-# Sublime Text #
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-*.sublime-workspace
-*.sublime-project
-
-# sftp configuration file
-sftp-config.json
-
-# Front end files with React
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # Vs  code
 quick etoure.code-workspace
 
 
-
-
 # Frontend App
+
 # dependencies
 /node_modules
 /.pnp
@@ -177,7 +65,6 @@ public/index.txt
 
 # From react git hub
 .DS_STORE
-node_modules
 scripts/flow/*/.flowconfig
 .flowconfig
 *~
@@ -194,8 +81,6 @@ fixtures/dom/public/react.js
 test/the-files-to-test.generated.js
 *.log*
 chrome-user-data
-*.sublime-project
-*.sublime-workspace
 .idea
 *.iml
 .vscode
@@ -217,7 +102,6 @@ packages/react-devtools-timeline/dist
 
 
 # DJANGO
-# Django #
 *.log
 *.pot
 *.pyc
@@ -225,16 +109,12 @@ __pycache__
 db.sqlite3
 media
 
+# env
+.env
+
 # Backup files # 
 *.bak 
 
-# If you are using PyCharm # 
-# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
 
 # AWS User-specific
 .idea/**/aws.xml

@@ -1,6 +1,5 @@
 import React, { useState} from 'react';
 import { useCart } from 'react-use-cart'
-import Rating from '../ratings/Rating'
 
 
 import '../Styles/categorycard.css'
@@ -22,9 +21,6 @@ const CategoryCard = props => {
                             <p className="card-text">
                                 {props.shortDescription}
                             </p>
-                            {/* <div className="rating">
-                                <Rating newRating = {props.rate}/>
-                            </div> */}
                             <a href={'/view/' + props.id} className='btn btn-primary'>View</a>
                             <button className='btn btn-warning m-2'
                                 onClick={() => addItem(props.item)}>

@@ -49,25 +49,21 @@ const UserProfile = () => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
         axios.get(`http://127.0.0.1:8000/api/user/profile/${user_id}/`)
+        // axios.get(`https://etour.herokuapp.com/api/user/profile/${user_id}/`)
             .then(res => {
                 setPreviousValue(res.data)
             })
-    }, [user_id])
+            .catch(err => { 
+                console.log('An error occured while fetching data')
+            })
+    }, [user_id, formErrors, isSubmit])
 
 
     const validate = (values) => {
         const erros = {}
 
-        if (!values.mobile) {
-            erros.mobile = 'Mobile Required!'
-        }
-
         if (values.mobile.length > 15) {
             erros.mobile = 'Your mobile number is too long!'
-        }
-
-        if (!values.location) {
-            erros.location = 'Location cannot be blank!'
         }
 
         if (values.location.length > 50) {
@@ -77,9 +73,6 @@ const UserProfile = () => {
             erros.location = 'Please input a valid location!'
         }
 
-        if (!values.bio) {
-            erros.bio = 'You are expected to type some staff here!'
-        }
         if (values.bio.length > 200) {
             erros.bio = 'Your bio is to long try making it less than 200 characters!'
         }
@@ -101,26 +94,18 @@ const UserProfile = () => {
         formData.append("location", formVlaues.location)
         formData.append("mobile", formVlaues.mobile)
         formData.append("bio", formVlaues.bio)
-
-        let data = {
-            user_id: user.id,
-            image: upLoadImage,
-            location: formVlaues.location,
-            mobile: formVlaues.mobile,
-            bio: formVlaues.bio,
-        }
-
-        console.log('data', data)
+        
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         await axios.post('http://127.0.0.1:8000/api/user/profile/', formData)
+        // await axios.post('https://etour.herokuapp.com/api/user/profile/', formData)
             .then(res => {
                 setIsPosted(true);
                 setIsDisabled(true);
             })
             .catch(err => {
-                console.log(err)
+                alert('An Error Occured!! Please make sure you have provided all the fields incuding a profile picture.')
             })
     }
 
@@ -150,10 +135,15 @@ const UserProfile = () => {
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         await axios.patch(`http://127.0.0.1:8000/api/user/profile/${user_id}/`, updatedData)
+        // await axios.patch(`https://etour.herokuapp.com/api/user/profile/${user_id}/`, updatedData)
             .then(res => {
                 // console.log("Updated Data", res.data)
                 setIsPosted(true);
             })
+            .catch(err => {
+                alert('An error has occured while trying to update your profile. Please try agin later.')
+            })
+        
 
         setIsDisabled(true);
     }

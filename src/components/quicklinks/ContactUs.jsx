@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -65,7 +64,7 @@ const ContactUs = () => {
     const [formErros, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const isFormSunbmited = Object.keys(formErros).length === 0 && isSubmit;
-    // console.log('region:', region)
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -80,10 +79,10 @@ const ContactUs = () => {
     }
 
     useEffect(() => {
-        // console.log(formErros);
         if (Object.keys(formErros).length === 0 && isSubmit) {
         }
-    }, [formValues])
+    }, [formErros, isSubmit])
+
 
     const validate = (values) => {
         const errors = {}
@@ -123,11 +122,9 @@ const ContactUs = () => {
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         axios.post('http://127.0.0.1:8000/api/contactUs/', data)
-            .then(res => {
-                // console.log(res.data)
-            })
+        // axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/contactUs/', data)
             .catch(err => {
-                console.log(err)
+                alert('An error occured while sending your message. Please try again later.')
             })
 
     }
@@ -139,7 +136,6 @@ const ContactUs = () => {
         } else {
             setRegion(previousValue => null);
         }
-        // console.log('Tour Canged to:', palce)
     }
 
 
@@ -159,11 +155,11 @@ const ContactUs = () => {
                 <p>
                     Etour.com;
                     <br />
-                    Whatsapp @ 0110000000
+                    Whatsapp @ 0757759443
                     <br />
                     NAIROBI;
                     <br />
-                    <a href="https://www.etour.com">https://www.etour.com</a>
+                    <a href="https://www.etour.herokuapp.com">https://www.etour.herokuapp.com</a>
                 </p>
                 <br />
                 <h3>SEND US A MESSAGE</h3>

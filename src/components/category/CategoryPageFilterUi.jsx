@@ -30,6 +30,7 @@ function CategoryFilter() {
                         <li><a href="/category/Water Falls/">Water Falls</a></li>
                         <li><a href="/category/Recreational Grounds/">Recreational Grounds</a></li>
                         <li><a href="/category/Cultural Regions/">Cultural Regions</a></li>
+                        <li><a href="/category/National Parks/">National Parks</a></li>
                     </ul>
                     <div className="selection-checkboxes">
                         <ul className="unoderd-list-verticla-chekboxes">

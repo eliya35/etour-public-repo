@@ -81,7 +81,7 @@ const Suggestion = () => {
         // console.log(formErros);
         if (Object.keys(formErros).length === 0 && isSubmit) {
         }
-    }, [formErros])
+    }, [formErros, isSubmit])
 
     const validate = (values) => {
         const errors = {}
@@ -121,11 +121,9 @@ const Suggestion = () => {
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         axios.post('http://127.0.0.1:8000/api/suggestions/', data)
-            .then(res => {
-                // console.log(res.data)
-            })
+        // axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/suggestions/', data)
             .catch(err => {
-                console.log(err)
+                alert('Somthing went wrong on our side. Please try again latter.')
             })
     }
 
@@ -136,7 +134,6 @@ const Suggestion = () => {
         } else { 
             setRegion(previousValue => null);
         }
-        // console.log('Tour Canged to:', palce)
     }
 
 

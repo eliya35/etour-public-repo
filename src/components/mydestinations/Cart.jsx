@@ -40,7 +40,7 @@ const Cart = () => {
                                     return (
                                         <tr key={index}>
                                             <td>
-                                                <img src={item.image} style={{ height: '6rem' }} />
+                                                <img src={item.image} style={{ height: '6rem' }} alt={item.name} />
                                             </td>
                                             <td>{item.name}</td>
                                             <td>{item.region}</td>
@@ -89,7 +89,7 @@ export const NotificationProvider = ({ children }) => {
     }, [totalUniqueItems])
 
     return (
-        <NotificationContext.Provider value={ notificationNumb }>
+        <NotificationContext.Provider value={notificationNumb}>
             {children}
         </NotificationContext.Provider>
     )

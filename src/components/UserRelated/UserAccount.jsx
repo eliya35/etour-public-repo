@@ -4,15 +4,13 @@ import { UserContext } from '../usercontext/UserProvider';
 import { useNavigate } from 'react-router-dom'
 
 import '../Styles/useraccount.css'
-// We need a function to update users info //DONE
-// A function to allow users to delete there account. onClick send a delete request then set user to null
-// and redirect him to the home page as annonymus user //DONE
 
 
 const UserAccount = () => {
     const { user, setUser } = useContext(UserContext);
     const userId = user.id;
 
+    
     const initialState = {
         username: user.username,
         firstName: user.first_name,
@@ -30,7 +28,7 @@ const UserAccount = () => {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-    }, [formErrors])
+    }, [formErrors, isSubmit])
 
 
     const handleChange = (e) => {
@@ -67,19 +65,19 @@ const UserAccount = () => {
 
     const updateMyAccount = async () => {
 
-        let updatedValues = new FormData();
+        let myUserAcount = new FormData();
 
         if (formVlaues.firstName && formVlaues.firstName !== user.first_name) {
-            updatedValues.append("first_name", formVlaues.firstName)
+            myUserAcount.append("first_name", formVlaues.firstName)
             console.log('first_name:', formVlaues.firstName)
         }
         if (formVlaues.lastName && formVlaues.lastName !== user.last_name) {
-            updatedValues.append("last_name", formVlaues.lastName)
+            myUserAcount.append("last_name", formVlaues.lastName)
             console.log('last_name:', formVlaues.lastName)
         }
 
         if (formVlaues.email !== user.email && formVlaues.email !== "") {
-            updatedValues.append("email", formVlaues.email)
+            myUserAcount.append("email", formVlaues.email)
             console.log("email:", formVlaues.email)
         }
 
@@ -88,12 +86,17 @@ const UserAccount = () => {
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        await axios.patch(`http://127.0.0.1:8000/api/user/${userId}/`, updatedValues)
+        await axios.patch(`http://127.0.0.1:8000/api/user/${userId}/`, myUserAcount)
+        // await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/${userId}/`, myUserAcount)
+        
             .then(res => {
                 // console.log('Updated Acc to:', res.data);
                 setIsPosted(true);
-
             })
+            .catch(err => {
+                alert("An error occured while updating your profile. Plese make sure all your fields are field correctly!")
+            })
+        
         setIsDisabled(true);
     }
 
@@ -109,6 +112,7 @@ const UserAccount = () => {
             axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
             await axios.delete(`http://127.0.0.1:8000/api/user/${userId}/`)
+            // await axios.delete(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/${userId}/`)
             navigate('/')
             setUser(null);
         }

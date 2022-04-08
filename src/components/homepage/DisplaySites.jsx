@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useCart } from 'react-use-cart'
-import Rating from '../ratings/Rating';
 
 
 import '../Styles/cardstyle.css'
@@ -24,9 +23,6 @@ const TourCard = props => {
                             <p className="card-text">
                                 {props.shortDescription}
                             </p>
-                            {/* <div className="rating">
-                                <Rating newRating = {props.rate}/>
-                            </div> */}
                             <a href={'/view/' + props.id} className='btn btn-primary' id='view-btn'>View</a>
                             <button
                                 className='btn btn-warning m-2'
