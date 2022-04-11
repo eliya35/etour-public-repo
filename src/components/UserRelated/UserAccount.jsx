@@ -126,9 +126,7 @@ const UserAccount = () => {
                 {
                     user &&
                     <div className="only-authenticated">
-                        <div><h1>Account information</h1></div>
                         {isPosted ? <div className="message">Profile Successfully Updated</div> : <div className='show-nothing'></div>}
-                        <div className="welcome-p"><p>The form bellow contains your account ownership credentials please edit with care.</p></div>
                         <div className="row">
                             <div className="col-sm-3">
 
