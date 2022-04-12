@@ -237,6 +237,10 @@ footer p {
 		margin-top: -13em;
     	margin-left: -21em;
 	}
+	.adventurer-name button {
+		margin-left: -11em !important;
+    	margin-top: -9em !important;
+	}
 
 
 
@@ -523,7 +527,7 @@ footer p {
 		width: 100%;
 	}
 	.copyrightText p {
-		width: 16em;
+		width: 10em;
 	}
 }
 
