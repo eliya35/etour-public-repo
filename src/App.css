@@ -233,20 +233,24 @@ footer p {
     	margin-left: 8em;
 
 	}
+	.adventurer-name button {
+		margin-top: -13em;
+    	margin-left: -21em;
+	}
 
 
 
 	/* Searchbar elements to... */
 	.search-inputs input {
-		width: 20em;
+		width: 15em;
 		height: 43px;
 		margin-left: 20px;
 	}
 	.search-icon {
 		height: 38px;
 		width: 50px;
-		margin-left: 17em;
-		padding-left: -6em;
+		margin-left: 12em;
+		/* padding-left: -6em; */
 	}
 	.search-results {
 		margin-left: 146px;
