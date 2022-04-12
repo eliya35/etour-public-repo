@@ -135,7 +135,7 @@ footer p {
 /* MEDIA QUERIES */
 
 /* If viewport is 510px or less set the elements to... */
-@media (min-width: 0px) and (max-width:320px) {
+@media (min-width: 0px) and (max-width:512px) {
 	.container {
 		margin-left: 1px;
 		max-width: 25em;
@@ -222,7 +222,7 @@ footer p {
 		display: none;
 	}
 	.current-user {
-    	margin-left: 5em;
+    	margin-left: -9px;
     	margin-top: -18em;
     	width: 25em;
 	}
@@ -245,7 +245,7 @@ footer p {
 	.search-icon {
 		height: 38px;
 		width: 50px;
-		margin-left: 23em;
+		margin-left: 17em;
 		padding-left: -6em;
 	}
 	.search-results {
@@ -257,11 +257,11 @@ footer p {
 
 	/* home-page-title elements to... */
 	.home-page-title {
-		margin-left: 14em;
-		width: 20em;
+    	margin-left: 1em;
+    	width: 20em;
 	}
 	.filters {
-		margin-top: -2em;
+		display: none;
 	}
 
 
@@ -275,12 +275,18 @@ footer p {
 
 
 	/* Card elements to... */
+	.container-fluid .row {
+    	padding-right: 3em;
+    	margin-left: -57px;
+    	margin-top: 27em;
+    	display: flex;
+	}
 	.card {
-    	width: 360px;
-    	height: 38em;
+    	width: 259px;
+    	height: 100%;
     	margin-top: -28em;
-    	margin-bottom: 30em;
-    	margin-left: -1em;
+    	margin-bottom: 29em;
+    	margin-left: -9em;
 	}
 	.row {
 		display: flow-root;
@@ -290,11 +296,11 @@ footer p {
 
 	/* ViewPageUi elemetns to... */
 	.imgBx img {
-		max-width: 22em;
+		max-width: 17em;
 	}
 	.content {
-		margin-left: 10em;
-    	margin-top: -8em;
+    	margin-left: 1em;
+    	margin-top: 0em;
     	width: 26em;
 	}
 	.content p {
@@ -312,7 +318,7 @@ footer p {
 		margin-top: 3em;
 	}
 	.renderd-comments {
-		margin-left: 10em;
+		margin-left: 8em;
     	margin-top: 0em;
     	margin-bottom: 20em;
 	}
@@ -328,15 +334,18 @@ footer p {
 		margin-left: 4em;
 		padding-bottom: 1em;
 	}
+	.comment-text{
+		width: 12em;
+	}
 	textarea {
-		height: 12em;
-		width: 27em;
+		height: 5em;
+    	width: 21em;
 	}
 	.post-btn {
 		padding-top: 1em;
 	}
 	.other-img{
-		margin-top: -17em;
+		margin-top: -13em;
 	}
 
 	/* commnets */
@@ -497,7 +506,7 @@ footer p {
 
 	/* Footer elements to... */
 	footer {
-		width: 654px;
+		width: 100%;
 		margin-top: 0em;
 	}
 	.aboutus {
@@ -507,10 +516,10 @@ footer p {
 		margin-left: 0em;
 	}
 	.copyrightText {
-		width: 654px;
+		width: 100%;
 	}
 	.copyrightText p {
-		width: 25em;
+		width: 16em;
 	}
 }
 
@@ -519,7 +528,7 @@ footer p {
 
 /* If viewport is 511px - 710px set the elements to... */
  
-@media (min-width: 321px) and (max-width:710px){
+@media (min-width: 513px) and (max-width:710px){
 	/* Navbar elements to... */
 
 	.NavbarItems {
@@ -606,6 +615,9 @@ footer p {
     	margin-left: 8em;
 	}
 	
+	.filters{
+		display: none;
+	}
 
 
 	/* User Profile */
@@ -644,7 +656,8 @@ footer p {
 
 	/* Filters */
 	.filters{
-		margin-top: -3em;
+		/* margin-top: -3em; */
+		display: none;
 	}
 
 
@@ -675,10 +688,15 @@ footer p {
 		margin-left: 21em;
 		margin-top: 3em;
 	}
+	.home-page-title {
+    	margin-left: 1em;
+	}
 	.card {
    		width: 100%;
     	height: 100%;
-    	margin-bottom: 32em;
+    	margin-bottom: 5em;
+    	margin-top: -4em;
+    	margin-left: -7em;
 	}
 
 
@@ -959,6 +977,10 @@ footer p {
 	}
 
 
+	/* Filters */
+	.filters{
+		display: none;
+	}
 	
 	/* Featured Page */
 	.featured-page {
@@ -988,6 +1010,13 @@ footer p {
 
 
 	/* Card */
+	.home-page-title {
+    	margin-left: 1em;
+	}
+	.container-fluid .row{
+		margin-top: 1em;
+		margin-left: -10em;
+	}
 	.row{
 		display:grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -1120,15 +1149,22 @@ footer p {
 	}
 
 }
+@media (min-width: 768px) and (max-width: 849px){
+	/* Card spesific */
+	.card{
+		width: 270px;
+	}
+	.category-card .card {
+		width: 270px;
+	}
+}
 @media (min-width: 850px) and (max-width: 960px){
 	/* Card spesific */
 	.card{
-		width: 232px;
-		height: 100%;
+		width: 310px;
 	}
 	.category-card .card {
-    	width: 232px;
-		height: 100%;
+		width: 310px;
 	}
 }
 
