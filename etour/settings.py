@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.getenv('DEBUG_VALUE') == 'True')
-# DEBUG = False
+# DEBUG = str(os.getenv('DEBUG_VALUE') == 'True')
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.etour.herokuapp.com']
 
 # Application definition
 
