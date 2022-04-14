@@ -30,7 +30,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # DEBUG = str(os.getenv('DEBUG_VALUE') == 'True')
 DEBUG = False
 
-ALLOWED_HOSTS = ['etour.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -181,6 +181,6 @@ CSRF_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 31536000 # FOR ONE HOUR THE SITE WILL NOT BE ACCESIBLE TO ANY CONNECTION WITH NO SSL
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True # SERVICE PROVIDERS ALSO MUST HAVE AN SSL
 SECURE_HSTS_PRELOAD = True
-ADMINS = [('Vincent', 'etourinternational01@gmail.com'),]
+ADMINS = [('Etour', 'etourinternational01@gmail.com'), ('Vincent', 'vincenteliya35@gmail.com')]
 
 django_heroku.settings(locals())
