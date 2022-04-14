@@ -109,11 +109,11 @@ const TermsAndCondition = () => {
 
                 <h2>OUR ADDRESS</h2>
                 <p>
-                    Etour.com;
+                    Etour;
                     <br />
                     NAIROBI;
                     <br />
-                    <a href="https://www.etour.herokuapp.com">https://www.etour.herokuapp.com</a>
+                    <a href="https://www.etour.herokuapp.com">Etour International</a>
                 </p>
                 <br />
                 <div className="container">

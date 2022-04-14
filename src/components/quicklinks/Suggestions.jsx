@@ -151,13 +151,13 @@ const Suggestion = () => {
 
                 <h3>OUR ADDRESS</h3>
                 <p>
-                    Etour.com;
+                    Etour;
                     <br />
-                    Whatsapp @ 0110000000
+                    Whatsapp @ 0757759443
                     <br />
                     NAIROBI;
                     <br />
-                    <a href="https://www.etour.com">https://www.etour.com</a>
+                    <a href="http://etour.herokuapp.com/">Etour International</a>
                 </p>
                 <br />
                 <h3>SEND US A MESSAGE</h3>

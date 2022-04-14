@@ -9,7 +9,7 @@ const CategoryPageTitle = () => {
 
     return (
         <div className="category-page-title">
-            <h2>{category}</h2>
+            <h2>Your browsing at: {category}</h2>
         </div>
     );
 }

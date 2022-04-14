@@ -3,3 +3,7 @@
     margin-top: 1px;
     color: darkgrey;
 }
+.category-page-title h2 {
+    color: brown !important;
+    font-family: emoji;
+}

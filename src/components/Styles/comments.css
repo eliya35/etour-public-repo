@@ -13,6 +13,7 @@
 	font-size: 30px;
 	margin-bottom: 20px;
 	margin-left: 2em;
+	color: lightseagreen !important;
 }
 
 .comments-container {
@@ -23,6 +24,7 @@
 	font-size: 22px;
 	margin-left: 3em;
 	padding-bottom: 1em;
+	color: slateblue !important;
 }
 
 form.comment-form-textarea {

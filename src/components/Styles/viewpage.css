@@ -4,7 +4,7 @@
 
 .imgBx {
     margin-top: 2em;
-    margin-left: -37px;
+    margin-left: -27px;
 }
 
 .imgBx img {
@@ -14,11 +14,11 @@
 
 .content {
     margin-left: 50em;
-    margin-top: -26em;
+    margin-top: -29em;
 }
 
 .content h2 {
-	color: rgb(185, 182, 182);
+    color: cadetblue !important;
 }
 
 .location-info {
@@ -26,18 +26,31 @@
     margin-top: 0em;
     margin-bottom: 35em;
 }
+.location-info h5 {
+    color: cornflowerblue !important;
+}
+.location-info h6 {
+    color: cadetblue;
+}
 .recommended-products {
     margin-left: 2em;
     margin-top: -25em;
 }
+.recommended-products h5 {
+    color: goldenrod !important;
+}
 .renderd-comments {
     margin-left: 50em;
-    margin-top: -6em;
+    margin-top: -10em;
     margin-bottom: 20em;
 }
 .other-img{
     margin-top: -30em;
     margin-left: -36px;
+    width: 12em;
+}
+.other-img .row {
+    display: grid;
 }
 .other-img li {
     list-style: none;

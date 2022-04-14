@@ -54,7 +54,7 @@ const NavBar = () => {
                             to='/mylist/'
                             className='nav-links'
                             onClick={closeMobileMenu}
-                        >My Destination: <span className='badge badge-light' id= 'notification-numb'>{notification}</span>
+                        >My Destination: <span className='badge badge-light' id='notification-numb'>{notification}</span>
                             <span className='sr-only'>destinations</span>
                         </Link>
                     </li>
@@ -82,13 +82,14 @@ const NavBar = () => {
                                 onClick={() => navigate('/profile/')}
                             > <i class="bi bi-person-circle"></i> {user.username}
                             </span>
-
-                            <button
-                                type='button'
-                                className='btn btn-outline-primary btn-sm'
-                                onClick={handleSignOut}
-                            >Sign Out
-                            </button>
+                            <div className="sign-out-btn">
+                                <button
+                                    type='button'
+                                    className='btn btn-outline-primary btn-sm'
+                                    onClick={handleSignOut}
+                                >Sign Out
+                                </button>
+                            </div>
                         </div>
                     }
 
@@ -99,11 +100,13 @@ const NavBar = () => {
                         !user &&
                         < div className='user-null'>
                             <span>Hello: Adventurer</span>
-                            <button
-                                type='button'
-                                className='btn btn-outline-success btn-sm'
-                            ><a href="/logout/">Log in</a>
-                            </button>
+                            <div className="login-nav-btn">
+                                <button
+                                    type='button'
+                                    className='btn btn-outline-success btn-sm'
+                                ><a href="/logout/">Log in</a>
+                                </button>
+                            </div>
                         </div>
                     }
                 </ul>
