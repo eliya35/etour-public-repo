@@ -14,7 +14,7 @@ const UserProfile = () => {
     const [previousValue, setPreviousValue] = useState({});
     const [formVlaues, setFormValues] = useState(initialState);
     const [formErrors, setFormErrors] = useState({});
-    const [profileImg, setProfileImg] = useState("avatarts/avatar_2x.png");
+    const [profileImg, setProfileImg] = useState("https://etour-first-backet.s3.amazonaws.com/avatars/avatar_2x.png");
     const [upLoadImage, setUploadImage] = useState(null);
     const [isSubmit, setIsSubmit] = useState(false);
     const [isDiabled, setIsDisabled] = useState(true);
