@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = str(os.getenv('DEBUG_VALUE') == 'True')
-DEBUG = False
+DEBUG = str(os.getenv('DEBUG_VALUE') == 'True')
+# DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.etour.herokuapp.com']
 
 # Application definition
 
@@ -142,8 +142,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATICFILES_STORAGE = "whitenoise.django.GzipManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.django.GzipManifestStaticFilesStorage"
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -182,6 +182,7 @@ CSRF_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 31536000 # FOR ONE HOUR THE SITE WILL NOT BE ACCESIBLE TO ANY CONNECTION WITH NO SSL
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True # SERVICE PROVIDERS ALSO MUST HAVE AN SSL
 SECURE_HSTS_PRELOAD = True
+SERVER_EMAIL = 'etourinternational01@gmail.com'
 ADMINS = [('Vincent', 'etourinternational01@gmail.com'), ('Eliya', 'vincenteliya35@gmail.com')]
 
 django_heroku.settings(locals())

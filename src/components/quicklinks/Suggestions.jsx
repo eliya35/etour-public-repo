@@ -106,6 +106,15 @@ const Suggestion = () => {
         }
         return errors;
     }
+    
+    const countyChanged = (e) => {
+    const palce = e.target.value
+        if (palce !== 'Open this select menu') {
+            setRegion(previousValue => palce);
+        } else { 
+            setRegion(previousValue => null);
+        }
+    }
 
     const sendMessage = () => {
         let data = {
@@ -118,28 +127,19 @@ const Suggestion = () => {
         };
 
         // console.log('data', data)
+        // axios.post('http://127.0.0.1:8000/api/suggestions/', data)
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        // axios.post('http://127.0.0.1:8000/api/suggestions/', data)
         axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/suggestions/', data)
+            .then(alert("Message Sent Successfully"))
             .catch(err => {
-                alert('Somthing went wrong on our side. Please try again latter.')
+                alert('Something went wrong. This is common. Please try again latter.')
             })
     }
 
-    const countyChanged = (e) => {
-        const palce = e.target.value
-        if (palce !== 'Open this select menu') {
-            setRegion(previousValue => palce);
-        } else { 
-            setRegion(previousValue => null);
-        }
-    }
-
-
     return (
         <div className="contact-us">
-            {Object.keys(formErros).length === 0 && isSubmit ? <div className="ui-message">Message sent Successfully</div> : <div className="show nothing"></div>}
+            {/* {Object.keys(formErros).length === 0 && isSubmit ? <div className="ui-message">Message sent Successfully</div> : <div className="show nothing"></div>} */}
             <form onSubmit={handleSubmit}>
                 <h1>Suggest Feature</h1>
                 <p>
