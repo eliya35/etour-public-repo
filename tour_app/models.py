@@ -65,6 +65,7 @@ COUNTRIES_CHOICES = [
     ('JORDAN', 'JORDAN'),
     ('QATAR', 'QATAR'),
     ('IRAN', 'IRAN'),
+    ('INDIA', 'INDIA'),
     ('BAHRAIN', 'BAHRAIN'),
     ('IRAQ', 'IRAQ'),
 
