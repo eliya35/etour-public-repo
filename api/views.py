@@ -145,13 +145,13 @@ class RatingDetailView(DetailView):
     serializer_class = RatingSerializer
 
 class ContactUsListApiView(generics.ListCreateAPIView):
-    permission_classes = (IsAuthenticated, IsAdminUser)
+    # permission_classes = (IsAuthenticated, IsAdminUser)
     queryset = ContactUs.objects.all()
     serializer_class = ContactUsSerializer
 
 
 class SuggestionListApiView(generics.ListCreateAPIView):
-    permission_classes = (IsAuthenticated, IsAdminUser)
+    # permission_classes = (IsAuthenticated, IsAdminUser)
     queryset = Suggestion.objects.all()
     serializer_class = SuggestionSeralizer
 
