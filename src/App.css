@@ -1752,8 +1752,8 @@ footer p {
 		display: none;
 	}
 	.current-user {
-    	margin-left: 11em;
-    	margin-top: -18em;
+    	margin-left: 2em;
+    	margin-top: 0em;
     	width: 25em;
 	}
 	.user-null {
