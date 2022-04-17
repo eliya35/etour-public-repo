@@ -51,6 +51,7 @@ COUNTRIES_CHOICES = [
     ('FRANCE', 'FRANCE'),
     ('SPAIN', 'SPAIN'),
     ('ITALY', 'ITALY'),
+    ('TANZANIA', 'TANZANIA'),
     ('TURKEY', 'TURKEY'),
     ('GERMANY', 'GERMANY'),
     ('UNITED KINGDOM', 'UNITED KINGDOM'),
