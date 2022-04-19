@@ -32,7 +32,7 @@ DEBUG = False
 
 # DEBUG_PROPAGATE_EXCEPTIONS = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['etour.herokuapp.com']
 
 # Application definition
 
