@@ -1,0 +1,28 @@
+.change-username .container{
+    margin-top: 10em;
+}
+.action-btn {
+    margin-top: 0em;
+    margin-left: 25em;
+}
+.change-username .form-content .form-row{
+    margin-left: 25em;
+}
+
+@media (min-width:0px) and (max-width:320px){
+    .change-username .form-content{
+        margin-left: -26em;
+    }
+}
+
+@media (min-width:321px) and (max-width:720px){
+    .change-username .form-content{
+        margin-left: -22em;
+    }
+}
+
+@media (min-width:721px) and (max-width:960px){
+    .change-username .form-content{
+        margin-left: -17em;
+    }
+}

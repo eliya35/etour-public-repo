@@ -32,7 +32,7 @@ urlpatterns = [
     path('help/', TemplateView.as_view(template_name='index.html')),
     path('suggestion/', TemplateView.as_view(template_name='index.html')),
     path('privacy-policy/', TemplateView.as_view(template_name='index.html')),
-    path('terms-and-condition/', TemplateView.as_view(template_name='index.html')),
+    path('terms-and-condition/', TemplateView.as_view(template_name='index.html'), name='conditions-of-use'),
     path('about/', TemplateView.as_view(template_name='index.html')),
     path('faq/', TemplateView.as_view(template_name='index.html')),
     path('view/<int:id>/', TemplateView.as_view(template_name='index.html')),
