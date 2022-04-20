@@ -10,7 +10,7 @@ const UserProfile = () => {
 
     const { user } = useContext(UserContext);
     const user_id = user.id;
-    const initialState = { avatar: "", mobile: "", location: "", bio: "" };
+    const initialState = { comment_avatar: "", mobile: "", location: "", bio: "" };
     const [previousValue, setPreviousValue] = useState({});
     const [formVlaues, setFormValues] = useState(initialState);
     const [formErrors, setFormErrors] = useState({});
@@ -28,7 +28,7 @@ const UserProfile = () => {
         const reader = new FileReader();
         reader.onload = () => {
             if (reader.readyState === 2) {
-                previousValue.avatar = reader.result;
+                previousValue.comment_avatar = reader.result;
                 setProfileImg(previousImg => reader.result);
             }
         }
@@ -53,7 +53,7 @@ const UserProfile = () => {
             .then(res => {
                 setPreviousValue(res.data)
             })
-            .catch(err => { 
+            .catch(err => {
                 console.log('An error occured while fetching data')
             })
     }, [user_id, formErrors, isSubmit])
@@ -90,11 +90,12 @@ const UserProfile = () => {
 
         let formData = new FormData();
         formData.append("user", user.id)
-        formData.append("avatar", upLoadImage)
+        formData.append("comment_avatar", upLoadImage)
+        formData.append("avatar", upLoadImage) //Remove this later
         formData.append("location", formVlaues.location)
         formData.append("mobile", formVlaues.mobile)
         formData.append("bio", formVlaues.bio)
-        
+
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
@@ -116,7 +117,7 @@ const UserProfile = () => {
 
         // Update the profile if is updated else live it to its previous value
         if (upLoadImage !== null) {
-            updatedData.append("avatar", upLoadImage)
+            updatedData.append("comment_avatar", upLoadImage)
             // console.log('updated profile', upLoadImage)
         }
         if (formVlaues.mobile !== "") {
@@ -143,7 +144,7 @@ const UserProfile = () => {
             .catch(err => {
                 alert('An error has occured while trying to update your profile. Please try agin later.')
             })
-        
+
 
         setIsDisabled(true);
     }
@@ -172,9 +173,9 @@ const UserProfile = () => {
 
                             <div class="text-center">
                                 {
-                                    previousValue.avatar !== undefined ?
+                                    previousValue.comment_avatar !== undefined ?
                                         <img
-                                            src={previousValue.avatar}
+                                            src={previousValue.comment_avatar}
                                             class="avatar img-circle img-thumbnail"
                                             alt="avatar"
                                         /> : <img
@@ -191,7 +192,7 @@ const UserProfile = () => {
                                     name='avatar'
                                     onChange={handleProfileChange}
                                 />
-                                <p>{formErrors.avatar}</p>
+                                <p>{formErrors.comment_avatar}</p>
                             </div>
 
                         </div>
