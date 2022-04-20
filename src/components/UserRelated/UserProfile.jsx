@@ -119,7 +119,7 @@ const UserProfile = () => {
 
         // Update the profile if is updated else live it to its previous value
         if (upLoadImage !== null) {
-            updatedData.append("comment_avatar", upLoadImage)
+            updatedData.append("profile_avatar", upLoadImage)
             // console.log('updated profile', upLoadImage)
         }
         if (formVlaues.mobile !== "") {
