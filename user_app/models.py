@@ -28,8 +28,8 @@ class Comment(models.Model):
                                 on_delete=models.CASCADE,
                                 related_name='%(class)s_user_id',
                                 )
-    comment_avatar_url = models.URLField(null= True)
-    comment_avatar = models.OneToOneField(Profile, on_delete=models.CASCADE, to_field='profile_avatar', null=True)
+    # comment_avatar_url = models.URLField(null= True)
+    comment_avatar = models.ForeignKey(Profile, on_delete=models.CASCADE, to_field='profile_avatar', null=True)
     tour_site_id = models.ForeignKey(Tour, on_delete=models.CASCADE)
     body = models.TextField()
     parent_id = models.PositiveBigIntegerField(blank=True, null=True)
