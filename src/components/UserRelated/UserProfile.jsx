@@ -104,7 +104,7 @@ const UserProfile = () => {
             .then(res => {
                 setIsPosted(true);
                 setIsDisabled(true);
-                alert("profile updated successfully")
+                alert("profile saved successfully")
             })
             .catch(err => {
                 console.log(err);
@@ -142,6 +142,7 @@ const UserProfile = () => {
             .then(res => {
                 // console.log("Updated Data", res.data)
                 setIsPosted(true);
+                alert("Profile updated successfully")
             })
             .catch(err => {
                 alert('An error has occured while trying to update your profile. Please try agin later.')
@@ -159,9 +160,9 @@ const UserProfile = () => {
 
                 <div className="only-authenticated">
                     <div className='profile-page'><h1>Profile Page</h1></div>
-                    <div className="success-message">
+                    {/* <div className="success-message">
                         {isPosted ? <div className="message">Profile Successfully Updated</div> : <div className='show-nothing'></div>}
-                    </div>
+                    </div> */}
                     <div
                         className="welcome-p"
                     ><p>

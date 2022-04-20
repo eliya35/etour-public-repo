@@ -62,6 +62,7 @@ const Comments = ({ tour_site_id }) => {
             )
             .catch(err => {
                 alert("An error occured while posting your comment. Please try again later")
+                console.log('The comment err', err)
             })
     }
 
