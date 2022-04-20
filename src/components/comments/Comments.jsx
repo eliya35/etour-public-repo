@@ -44,7 +44,7 @@ const Comments = ({ tour_site_id }) => {
             tour_site_id: tour_site_id
         }
 
-        // console.log('data', data)
+        console.log('comment data', data)
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         // await axios.post('http://127.0.0.1:8000/api/comments/', data)
