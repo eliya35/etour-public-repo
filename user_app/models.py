@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True) # to field id
     avatar = models.ImageField(default='avatarts/avatar_2x.png', upload_to ='avatars')
+    profile_avatar = models.ImageField(null=True, unique=True)
     location = models.CharField(max_length=100, blank=True)
     mobile = models.CharField(max_length=20)
     bio = models.TextField(blank=True)
@@ -28,6 +29,7 @@ class Comment(models.Model):
                                 related_name='%(class)s_user_id',
                                 )
     comment_profile = models.URLField(null= True)
+    # comment_avatar = models.OneToOneField(Profile, on_delete=models.CASCADE, to_field='profile_avatar' null=True)
     tour_site_id = models.ForeignKey(Tour, on_delete=models.CASCADE)
     body = models.TextField()
     parent_id = models.PositiveBigIntegerField(blank=True, null=True)

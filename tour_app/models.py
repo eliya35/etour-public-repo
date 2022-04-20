@@ -95,7 +95,7 @@ class FeaturedTourManager(models.Manager):
 
         
 class Tour(models.Model):
-    name = models.CharField(max_length=100, blank=True)
+    name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(help_text='A unique prepopulated field for object url',
                             unique=True, max_length=50)
     region = models.CharField(max_length=100, choices=REGION, blank=False)
