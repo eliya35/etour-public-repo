@@ -38,7 +38,6 @@ const Comments = ({ tour_site_id }) => {
             body: body,
             parent_id: parent_id,
             user_id: user.id,
-            comment_profile: profile.profile_avatar,
             comment_avatar: profile.profile_avatar,
             username: user.username,
             created_at: new Date().toISOString(),

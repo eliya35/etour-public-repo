@@ -10,7 +10,7 @@ const UserProfile = () => {
 
     const { user } = useContext(UserContext);
     const user_id = user.id;
-    const initialState = { comment_avatar: "", mobile: "", location: "", bio: "" };
+    const initialState = { profile_avatar: "", mobile: "", location: "", bio: "" };
     const [previousValue, setPreviousValue] = useState({});
     const [formVlaues, setFormValues] = useState(initialState);
     const [formErrors, setFormErrors] = useState({});
@@ -28,7 +28,7 @@ const UserProfile = () => {
         const reader = new FileReader();
         reader.onload = () => {
             if (reader.readyState === 2) {
-                previousValue.comment_avatar = reader.result;
+                previousValue.profile_avatar = reader.result;
                 setProfileImg(previousImg => reader.result);
             }
         }
@@ -175,9 +175,9 @@ const UserProfile = () => {
 
                             <div class="text-center">
                                 {
-                                    previousValue.comment_avatar !== undefined ?
+                                    previousValue.profile_avatar !== undefined ?
                                         <img
-                                            src={previousValue.comment_avatar}
+                                            src={previousValue.profile_avatar}
                                             class="avatar img-circle img-thumbnail"
                                             alt="avatar"
                                         /> : <img
@@ -194,7 +194,7 @@ const UserProfile = () => {
                                     name='avatar'
                                     onChange={handleProfileChange}
                                 />
-                                <p>{formErrors.comment_avatar}</p>
+                                <p>{formErrors.profile_avatar}</p>
                             </div>
 
                         </div>
