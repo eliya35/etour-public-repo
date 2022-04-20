@@ -90,7 +90,7 @@ const UserProfile = () => {
 
         let formData = new FormData();
         formData.append("user", user.id)
-        formData.append("comment_avatar", upLoadImage)
+        formData.append("profile_avatar", upLoadImage)
         formData.append("avatar", upLoadImage) //Remove this later
         formData.append("location", formVlaues.location)
         formData.append("mobile", formVlaues.mobile)
