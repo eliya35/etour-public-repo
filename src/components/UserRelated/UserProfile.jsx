@@ -107,6 +107,7 @@ const UserProfile = () => {
                 alert("profile updated successfully")
             })
             .catch(err => {
+                console.log(err);
                 alert('An Error Occured!! Please make sure you have provided all the fields incuding a profile picture.')
             })
     }
