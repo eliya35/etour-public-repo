@@ -37,7 +37,7 @@ const Comment = ({
     return (
         <div className='comment'>
             <div className="comment-image-container">
-                {comment.comment_avatar !== null ? <img src={comment.comment_profile} className='user-profile-img' alt="profile" /> : <img src="https://etour-first-backet.s3.amazonaws.com/avatars/user-icon.png" alt="profile" />}
+                {comment.comment_avatar_url !== null ? <img src={comment.comment_profile} className='user-profile-img' alt="profile" /> : <img src="https://etour-first-backet.s3.amazonaws.com/avatars/user-icon.png" alt="profile" />}
                 <div className="comment-right-part"></div>
                 <div className="comment-content">
                     <div className="comment-author">{comment.username}</div>
