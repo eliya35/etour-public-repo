@@ -104,6 +104,7 @@ const UserProfile = () => {
             .then(res => {
                 setIsPosted(true);
                 setIsDisabled(true);
+                alert("profile updated successfully")
             })
             .catch(err => {
                 alert('An Error Occured!! Please make sure you have provided all the fields incuding a profile picture.')
