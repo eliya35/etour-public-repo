@@ -14,7 +14,7 @@ const CategoryCard = props => {
             <div className="col">
                 <div className="card">
                     <div className="overflow">
-                        <img src={props.imgsrc} className='card-img-top' alt="{props.alt}" />
+                        <img src={props.imgsrc} className='card-img-top' alt={props.name} />
                         <div className="card-body">
                             <h5 className="card-title">{props.title}</h5>
                             {isFeatured ? <div className="status">< h6 className='badge badge-primary'>featured</h6></div> : <></>}

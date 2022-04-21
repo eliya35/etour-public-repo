@@ -13,16 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import os
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 from django.urls import path
+from dotenv import load_dotenv
+
+load_dotenv ()
+
+admin_site_url = str(os.getenv('ADMIN_SITE_URL'))
+api_url = str(os.getenv('API_URL'))
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html'), name='home'),
     path('', include('tour_app.urls')),
     path('', include('user_app.urls')),
-    path('RrV4Pkr3012wcRt6Mqhn5ivuLJDhNSsQGPheBW8JlmzOUnG9TZs1MtZUHupUQIbMivnS5y4gVgQCLC071MKe5Cte9AiOczCgsJWaZZXVbhv9nBYy1v2ApjbDK7rwfSX4dY7lFVPHR6EHiLoptA8yq20DbOka6I9R3NmWFwpUxuxBdcOlqfj3oYHKQjT3kJ5kscGPlGNg/', admin.site.urls),
+    path(admin_site_url, admin.site.urls),
+    path(api_url, include('api.urls')),
     path('featured/', TemplateView.as_view(template_name='index.html')),
     path('popular/', TemplateView.as_view(template_name='index.html')),
     path('category/<category>/', TemplateView.as_view(template_name='index.html')),
@@ -41,6 +49,4 @@ urlpatterns = [
     path('profile/my-account/', TemplateView.as_view(template_name='index.html'), name='my_account'),
     path('comming-soon/', TemplateView.as_view(template_name='index.html'), name='comming_soon'),
     path('api-auth/', include('rest_framework.urls')),
-    path('HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/', include('api.urls')),
-    # path('api/', include('api.urls')),
 ]

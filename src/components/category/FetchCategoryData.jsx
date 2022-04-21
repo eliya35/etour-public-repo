@@ -54,7 +54,7 @@ const FetchCategoryData = () => {
                                     id={item.id}
                                     title={item.name}
                                     imgsrc={item.image}
-                                    alt={item.name}
+                                    name={item.name}
                                     shortDescription={item.short_description}
                                     price={item.price}
                                     item={item}

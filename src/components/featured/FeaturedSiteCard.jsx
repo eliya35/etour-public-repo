@@ -13,7 +13,7 @@ const FeaturedTourCard = props => {
             <div className="col">
                 <div className="card">
                     <div className="overflow">
-                        <img src={props.imgsrc} className='card-img-top' alt={props.alt} />
+                        <img src={props.imgsrc} className='card-img-top' alt={props.name} />
                         <div className="card-body">
                             <h5 className="card-title">{props.title}</h5>
                             <h6 className='badge badge-primary'>featured</h6>

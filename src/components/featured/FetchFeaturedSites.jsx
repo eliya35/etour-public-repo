@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import FeaturedTourCard from './FeaturedCardUi';
+import FeaturedTourCard from './FeaturedSiteCard';
 import Pagination from '../homepage/Pagination'
 
 
@@ -43,7 +43,7 @@ const FeaturedSites = () => {
                                 id={item.id}
                                 title={item.name}
                                 imgsrc={item.image}
-                                alt={item.name}
+                                name={item.name}
                                 shortDescription={item.short_description}
                                 price={item.price}
                                 item={item}
