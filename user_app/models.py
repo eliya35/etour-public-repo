@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True) # to field id
-    avatar = models.ImageField(default='avatarts/avatar_2x.png', upload_to ='avatars')
+    # avatar = models.ImageField(default='avatarts/avatar_2x.png', upload_to ='avatars')
     profile_avatar = models.ImageField(null=True, unique=True)
     location = models.CharField(max_length=100, blank=True)
     mobile = models.CharField(max_length=20)
