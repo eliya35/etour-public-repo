@@ -153,7 +153,7 @@ const Suggestion = () => {
                 <p>
                     Etour;
                     <br />
-                    Whatsapp @ 0757759443
+                    Whatsapp @ 0113382969
                     <br />
                     NAIROBI;
                     <br />

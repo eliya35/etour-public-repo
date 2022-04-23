@@ -155,11 +155,11 @@ const ContactUs = () => {
                 <p>
                     Etour.com;
                     <br />
-                    Whatsapp @ 0757759443
+                    Whatsapp @ 0113382969
                     <br />
                     NAIROBI;
                     <br />
-                    <a href="https://www.etour.herokuapp.com">https://www.etour.herokuapp.com</a>
+                    <a href="https://www.etour.herokuapp.com">Etour international</a>
                 </p>
                 <br />
                 <h3>SEND US A MESSAGE</h3>

@@ -4,8 +4,6 @@ body {
 	background: radial-gradient(#e5e5e5, #ffff, #e5e5e5);
 	width: 100%;
 	height: 100%;
-	margin: 0;
-	padding: 0;
 }
 .user-profile {
 	font-size: medium;
@@ -238,15 +236,22 @@ footer p {
 		margin-top: 36px;
     	margin-left: -9em;
 	}
-
-
-	/* UserProfile */
-	.success-message {
-		margin-left: -19em;
-		width: 50em;
+	.no-user-mobile .login-nav-btn {
+		display: none;
 	}
 
+	/* UserProfile */
+	.user-profile-container {
+		width: 87%;
+	}
+	
 	/* UserAccount/ my-account */
+	.user-account-container .only-authenticated form {
+		width: 250px;
+	}
+	.user-account-container .delete-btn {
+		margin-left: 10em;
+	}
 	.list-group {
 		width: 30%;
 		margin-bottom: 1em;
@@ -340,8 +345,6 @@ footer p {
     	margin-top: -58em;
 	}
 
-
-
 	/* ViewPageUi elemetns to... */
 	.imgBx img {
 		max-width: 17em;
@@ -384,7 +387,6 @@ footer p {
     	margin-top: 0em;
     	margin-bottom: 20em;
 	}
-
 	.comments {
 		padding-top: 3em;
 		margin-left: -4em;
@@ -413,8 +415,6 @@ footer p {
     	padding-top: 3em;
 	}
 
-
-
 	/* Cart elemets to...(My Destinations) */
 	.py-4 {
 		margin-bottom: 0em;
@@ -436,16 +436,12 @@ footer p {
 		height: 20rem !important;
 	}
 
-
-
 	/* PrivacyPlicy elements to... */
 	.privacy-policy {
 		width: 32em !important;
 		margin-left: 1px;
 		margin-bottom: 0;
 	}
-
-
 
 	/* Terms & Condition elements to...  */
 	.terms {
@@ -454,8 +450,6 @@ footer p {
 		margin-left: 1px;
 	}
 
-
-
 	/* AboutUsPage elements to... */
 	.about {
 		width: 33em !important;
@@ -463,16 +457,12 @@ footer p {
 		margin-left: 1px;
 	}
 
-
-
 	/* FAQ elements to... */
 	.faq {
 		width: 32em !important;
 		margin-bottom: 0;
 		margin-left: 1px;
 	}
-
-
 
 	/* Suggestion Page elements to... */
 	.suggestion-form {
@@ -486,16 +476,12 @@ footer p {
 		margin-left: 1px;
 	}
 
-
-
 	/* Contact Us elements to...*/
 	.contact-us {
 		width: 33em !important;
 		margin-left: 1px;
 		margin-bottom: 1em;
 	}
-
-
 
 	/* Donate Page elements to... */
 	.donate {
@@ -542,7 +528,6 @@ footer p {
 }
 
 
-
 @media (min-width: 400px) and (max-width:512px) {
 	.container {
 		margin-left: 1px;
@@ -552,6 +537,7 @@ footer p {
 	/* Navbar elements to... */
 	.navbar {
 		width: 508px;
+		height: 150px;
 	}
 	.NavbarItems {
 		position: relative;
@@ -574,9 +560,9 @@ footer p {
 		transition: all 0.5s ease;
 		z-index: 1;
 		padding-top: 2em;
-		height: 20em;
+		height: auto;
 		padding-left: 0em;
-
+		margin-top: 70px;
 	}
 	.nav-links {
 		text-align: center;
@@ -590,18 +576,19 @@ footer p {
 	}
 	.navbar-logo {
 		position: absolute;
-		top: -10px;
-		left: 70px;
+		top: -29px;
+    	left: 95px;
 		transform: translate(25%, 50%);
 	}
 	.menu-icon {
 		display: block;
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: -31px;
+		left: 40px;
 		transform: translate(-100%, 60%);
 		font-size: 1.8rem;
 		cursor: pointer;
+		margin-top: 15px;
 	}
 	.fa-times {
 		color: #fff;
@@ -624,30 +611,49 @@ footer p {
 		color: #1888ff;
 		transition: 250ms;
 	}
+	.login-nav-btn{
+		display: flex !important;
+    	position: absolute;
+    	top: 18px;
+		right: 5px;
+	}
+	.login-nav-btn span {
+		color: aliceblue;
+    	padding-right: 2px;
+	}
+
 	button {
 		display: none;
 	}
 	.current-user {
-    	margin-left: 45px;
-    	margin-top: -1em;
-    	width: 25em;
-	}
-	.current-user .adventurer {
-		margin-left: -8em;
-	}
-	.current-user .sign-out-btn{
-		margin-left: -22em;
-    	margin-top: 41px;
+    	display: none !important;
 	}
 
 	.user-null {
-		margin-top: 0em;
-   	 	margin-left: 2em;
-
+		display: none !important;
 	}
 
+	.current-user-mobile{
+		display: block;
+    	position: absolute;
+    	top: 0px;
+	}
+
+	/*Mobile nav bar */
+	.current-user-mobile .adventurer{
+		display: none;
+	}
+	.current-user-mobile .adventurer-name{
+		padding-left: 162px;
+	}
+	.current-user-mobile .sign-out-btn {
+		margin-left: 10px;
+    	margin-top: -4px;
+	}
+	
 	/* UserProfile */
 	.user-profile-container {
+		margin-top: 10em;
 		width: 77%;
 	}
 	.user-profile-container .text-center{
@@ -659,12 +665,11 @@ footer p {
 	.user-profile-container .text-center img {
 		width: 100%;
 	}
-	.success-message {
-		margin-left: -4em;
-		width: 15em;
-	}
-
+	
 	/* UserAccount */
+	.user-account-container {
+		padding-top: 12em;
+	}
 	.list-group {
 		width: 30%;
 		margin-bottom: 1em;
@@ -677,33 +682,35 @@ footer p {
 	}
 
 	/* Searchbar elements to... */
-	.serch-app .search{
-		display: flex;
-		width: 2px;
-		margin-top: -18em;
-    	margin-left: 96px;
+	.mobile-search-app {
+		margin-top: 42px;
+		display: flex !important;
+	}
+	.serch-app {
+		display: none !important;
 	}
 	.search-inputs input {
-		width: 13em;
-		height: 43px;
-		margin-left: 20px;
+		width: 21em;
+    	height: 42px;
+    	margin-left: 0px;
 	}
 	.search-icon {
 		height: 38px;
 		width: 50px;
-		margin-left: 178px;
+		margin-left: 14em;
 		padding-left: -6em;
 	}
 	.search-results {
-    	width: 208px;
-    	margin-top: 60px;
-		margin-left: 20px;
+    	width: 336px;
+    	margin-top: 1px;
+    	margin-left: 0px;
+    	z-index: 2;
 	}
 
 	/* home-page-title elements to... */
 	.home-page-title {
     	margin-left: 1em;
-    	width: 14em;
+    	margin-top: 4em;
 	}
 	.filters {
 		display: none;
@@ -712,7 +719,7 @@ footer p {
 	/* Featured Sites elements to... */
 	.page-title {
 		margin-left: 1em;
-		margin-top: 1em;
+		margin-top: 5em;
 	}
 
 	/* Card elements to... */
@@ -736,6 +743,7 @@ footer p {
 	/* CATEGORY PAGE */
 	.category-page-title{
 		margin-left: 1em;
+		margin-top: 4em;
 	}
 	.category-filter{
 		display: none;
@@ -814,12 +822,7 @@ footer p {
 	.post-btn {
 		padding-top: 1em;
 	}
-	/* commnets
-	.comments {
-    	margin-left: -12em;
-    	padding-top: 3em;
-	} */
-
+	
 	/* Cart elemets to...(My Destinations) */
 	.py-4 {
 		margin-bottom: 0em;
@@ -933,14 +936,12 @@ footer p {
 }
 
 
-
-
-
-/* If viewport is 511px - 710px set the elements to... */
- 
+/* If viewport is 511px - 710px set the elements to... */ 
 @media (min-width: 513px) and (max-width:710px){
 	/* Navbar elements to... */
-
+	.navbar {
+		height: 150px;
+	}
 	.NavbarItems {
 		position: relative;
 	}
@@ -962,9 +963,9 @@ footer p {
 		transition: all 0.5s ease;
 		z-index: 1;
 		padding-top: 2em;
-		height: 20em;
+		height: auto;
 		padding-left: 0em;
-
+		margin-top: 69px;
 	}
 	.nav-links {
 		text-align: center;
@@ -978,15 +979,16 @@ footer p {
 	}
 	.navbar-logo {
 		position: absolute;
-		top: -10px;
-		left: 70px;
-		transform: translate(25%, 50%);
+    	top: -12px;
+    	left: 100px;
+    	transform: translate(25%,50%);
 	}
 	.menu-icon {
 		display: block;
 		position: absolute;
 		top: 0;
-		right: 0;
+		left: 44px;
+		/* right: 0; */
 		transform: translate(-100%, 60%);
 		font-size: 1.8rem;
 		cursor: pointer;
@@ -1016,21 +1018,48 @@ footer p {
 		display: none;
 	}
 	.current-user {
-    	margin-left: 1em;
-    	margin-top: 0em;
-    	width: 25em;
+		display: none !important;
 	}
 	.user-null {
-		margin-top: 0em;
-    	margin-left: 8em;
+		display: none !important;
 	}
 	
 	.filters{
 		display: none;
 	}
 
+	.current-user-mobile {
+    	position: absolute;
+		display: block;
+    	top: 17px;
+		right: 9px;
+	}
+	.current-user-mobile span {
+		color: ivory;
+    	font-family: cursive;
+		padding-left: 60px;
+	}
+	.current-user-mobile .adventurer-name{
+		margin-left: 0px;
+	}
+
+	.no-user-mobile .login-nav-btn {
+		display: block;
+    	position: absolute;
+    	top: 36px;
+    	right: 10px;
+	}
+	.login-nav-btn span {
+		color: honeydew;
+    	padding-right: 9px;
+		padding-left: 18px;
+	}
 
 	/* User Profile */
+	.user-profile-container {
+    	width: 94%;
+    	margin-top: 11em;
+	}
 	.user-profile-container .row{
     	margin-left: 0em;
 	}
@@ -1041,9 +1070,10 @@ footer p {
 		margin-left: -3em;
 	}
 
-
-
 	/* User Account */
+	.user-account-container{
+		margin-top: 1em;
+	}
 	.user-account-container .welcome-p {
 		display: flex;
 		width: 70%;
@@ -1079,24 +1109,29 @@ footer p {
 	.featured-page {
     	padding-top: 84px;
 	}
+	.featured-page .page-title {
+		margin-top: 5em;
+    	margin-left: 1em;
+	}
 
 	/* Search Component */
+	.mobile-search-app {
+		display: flex;
+		margin-top: 52px;
+	}
+
+	.serch-app {
+		display: none !important;
+	}
 	.serch-app .search {
 		display: flex;
 		margin-top: -18em;
     	margin-left: 6em;
     	width: 17em;
 	}
-	.search-inputs input{
-		width: 19em;
-	}
-	.search-icon{
-		margin-left: 14em;
-
-	}
 	.search-results {
-		width: 303px;
-    	margin-top: 60px;
+    	margin-top: 1px;
+		z-index: 2;
 	}
 
 	/* Card elements */
@@ -1108,6 +1143,7 @@ footer p {
 	}
 	.home-page-title {
     	margin-left: 1em;
+		padding-top: 10em;
 	}
 	.card {
    		width: 100%;
@@ -1120,6 +1156,7 @@ footer p {
 	/* CATEGORY ELEMENTS */
 	.category-page-title {
 		margin-left: 1em;
+		margin-top: 4em;
 	}
 	.category-card .card {
 		width: 100%;
@@ -1272,45 +1309,51 @@ footer p {
 		width: 100%;
 	}
 
-}
-@media (min-width: 601px) and (max-width: 710px){
-	.container-fluid .row {
-    	padding-right: 3em;
-    	margin-left: -13em;
-		display:grid;
-		grid-template-columns: repeat(2, 1fr);
-	}
+	/* CHILDREN */
+	@media (min-width: 601px) and (max-width: 710px){
+		.container-fluid .row {
+			padding-right: 3em;
+			margin-left: -13em;
+			display:grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		
+		.card{
+			min-width: min-content;
+			margin-left: 1em;
+			margin-top: -60px;
+			margin-bottom: 4em;
+		}
+		.category-card .card {
+			margin-left: 1em;
+		}
 	
-	.card{
-		min-width: min-content;
-		margin-left: 1em;
-		margin-top: 0em;
-		margin-bottom: 1em;
-	}
-	.category-card .card {
-		margin-left: 1em;
 	}
 
-}
-@media (min-width: 665px) and (max-width: 710px){
-	.imgBx img {
-    	max-width: 44em;
-	}
-	.other-img .row .col ul {
-    	width: 66px;
-	}
-	.content p {
-    	width: 100%;
-	}
-	.textarea {
-    	height: 10em;
-    	width: 100%;
+
+	@media (min-width: 665px) and (max-width: 710px){
+		.imgBx img {
+			max-width: 44em;
+		}
+		.other-img .row .col ul {
+			width: 66px;
+		}
+		.content p {
+			width: 100%;
+		}
+		.textarea {
+			height: 10em;
+			width: 100%;
+		}
 	}
 }
 
 
 /* If viewport is 711px - 900px set the elements to... */
 @media (min-width: 711px) and (max-width:960px){
+	.navbar {
+		height: 150px;
+	}
 	.NavbarItems {
 		position: relative;
 	}
@@ -1332,8 +1375,9 @@ footer p {
 		transition: all 0.5s ease;
 		z-index: 1;
 		padding-top: 2em;
-		height: 20em;
+		height: auto;
 		padding-left: 0em;
+		margin-top: 70px;
 
 	}
 	.nav-links {
@@ -1348,15 +1392,15 @@ footer p {
 	}
 	.navbar-logo {
 		position: absolute;
-		top: -10px;
-		left: 70px;
-		transform: translate(25%, 50%);
+    	top: -12px;
+    	left: 106px;
+    	transform: translate(25%,50%);
 	}
 	.menu-icon {
 		display: block;
 		position: absolute;
 		top: 0;
-		right: 0;
+		left: 50px;
 		transform: translate(-100%, 60%);
 		font-size: 1.8rem;
 		cursor: pointer;
@@ -1386,19 +1430,48 @@ footer p {
 		display: none;
 	}
 	.current-user {
-    	margin-left: 5em;
-    	margin-top: 0em;
-    	width: 25em;
+		display: none !important;
 	}	
 	.user-null {
-		margin-top: 0em;
-    	margin-left: 8em;
+		display: none !important;
 	}
-	
+	.current-user-mobile {
+		position: absolute;
+    	display: block;
+    	top: 17px;
+		right: 9px;
+		color: floralwhite;
+    	font-family: cursive;
+	}
+	.current-user .adventurer {
+		padding-left: 44px;
+	}
+	.current-user-mobile .adventurer {
+		padding-left: 50px;
+	}
+	.current-user-mobile .adventurer-name {
+		margin-left: 2px;
+	}
+	.no-user-mobile .login-nav-btn {
+		display: block;
+    	position: absolute;
+    	top: 36px;
+    	right: 10px;
+	}
+	.login-nav-btn span {
+    	color: floralwhite;
+    	padding-right: 9px;
+    	padding-left: 18px;
+    	font-family: sans-serif;
+	}
+	.login-nav-btn a {
+		text-decoration: none;
+	}
+
 	/*Profile element */
 	.user-profile-container{
-		margin-top: 38em;
-		width: 77em;
+		margin-top: 10em;
+		width: 96%;
 	}
 	.user-profile-container .only-authenticated form {
 		margin-left: -15em;
@@ -1410,22 +1483,20 @@ footer p {
 	.only-authenticated .delete-btn {
 		margin-left: 16em;
 	}
-	.profile-page{
-		margin-top:  -32em;
-	}
 	.user-profile-container .row {
+		grid-template-columns: repeat(1,1fr);
 		display: grid;
     	margin-left: 25em;
 		margin-top: 2em;
-		margin-left: 0em;
 	}
 	.user-profile-container .col-sm-3 .text-center{
 		width: 22em;
+		margin-left: -16em;
 	}
 
 	/* User Account elements */
 	.user-account-container{
-		margin-top: 29em;
+		margin-top: 32em;
 	}
 	.user-account-container .page-info {
 		display: none;
@@ -1445,7 +1516,6 @@ footer p {
 		margin-left: -18em;
 	}
 
-
 	/* Filters */
 	.filters{
 		display: none !important;
@@ -1455,9 +1525,19 @@ footer p {
 	.featured-page {
     	padding-top: 83px;
 	}
-
+	.featured-page .page-title{
+		margin-top: 5em;
+    	margin-left: 4em
+	}
 
 	/* SearchBar element */
+	.mobile-search-app {
+		display: flex;
+		margin-top: 35px;
+	}
+	.serch-app {
+		display: none !important;
+	}
 	.serch-app .search {
 		display: flex;
     	margin-top: -18em;
@@ -1473,14 +1553,14 @@ footer p {
 	}
 	.search-results {
 		width: 398px;
-		margin-top: 60px;
+    	margin-top: 1px;
+    	z-index: 2;
 	}
-
-
 
 	/* Card */
 	.home-page-title {
     	margin-left: 1em;
+		padding-top: 10em;
 	}
 	.container-fluid .row{
 		margin-top: 1em;
@@ -1539,6 +1619,7 @@ footer p {
 	}
 	.category-page-title {
 		margin-left: 6em;
+		margin-top: 4em;
 	}
 	.category-card{
 		margin-top: 30em;
@@ -1550,12 +1631,9 @@ footer p {
     	margin-left: 0em;
     	margin-bottom: 1em;
 	}
-
 	.category-card .rating{
 		margin-left: 90px;
 	}
-
-
 
 	/* My destinations */
 	.py-4 {
@@ -1583,8 +1661,6 @@ footer p {
 		height: 20rem !important;
 	}
 
-
-
 	/* Quick links */
 	.about {
 		margin-left: 0em;
@@ -1609,7 +1685,6 @@ footer p {
 		width: 35em;
 	}
 
-
 	/* Footer element */
 	footer{
 		width: 100%;
@@ -1630,49 +1705,104 @@ footer p {
 		width: 100%;
 	}
 
-}
-@media (min-width: 768px) and (max-width: 849px){
-	/* Card spesific */
-	.card{
-		width: 270px;
+	/* CHILDREN */
+		@media (min-width: 768px) and (max-width: 889px){
+		.navbar {
+			height: 80px;
+		}
+		.nav-menu.active{
+			margin-top: 0px;
+		}
+		.home-page-title {
+			margin-left: 1em;
+			padding-top: 6em;
+		}
+		.featured-page .page-title {
+			margin-top: 0em;
+		}
+		.mobile-search-app {
+			margin-top: -1px;
+			margin-left: -175px;
+		}
+		.search-inputs input {
+			width: 16em;
+		}
+		.search-icon {
+			margin-left: 11em;
+		}
+		.search-results {
+			width: 254px;
+		}
+		.card{
+			width: 270px;
+			margin-top: -1em;
+		}
+		.category-page-title {
+			margin-top: 0px;
+		}
+		.category-card .card {
+			width: 270px;
+		}
 	}
-	.category-card .card {
-		width: 270px;
-	}
-}
-@media (min-width: 850px) and (max-width: 960px){
-	/* Card spesific */
-	.filters {
-		display: flex !important;
-	}
-	.home-page-title {
-    	margin-left: 15em;
-	}
-	.container-fluid .row {
-    	padding-right: 0em;
-    	margin-left: 4em;
-		display:grid;
-		grid-template-columns: repeat(2, 1fr);
-	}
-	.card{
-		width: 228px;
-    	margin-left: -41px;
-    	margin-top: 0em;
-    	margin-bottom: 1em;
-	}
-	.container-fluid .row {
-		margin-top: -30em;
-	}
-	.category-page-title {
-		margin-left: 14em;
-	}
-	.category-card .card {
-		width: 250px;
-    	margin-left: -2em;
-	}
-}
 
 
+		@media (min-width: 850px) and (max-width: 960px){
+		.filters {
+			display: flex !important;
+		}
+		.home-page-title {
+			margin-left: 15em;
+		}
+		.featured-page .page-title {
+			margin-top: 0em;
+			margin-left: 14em;
+		}
+		.container-fluid .row {
+			padding-right: 0em;
+			margin-left: 4em;
+			display:grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.card{
+			width: 228px;
+			margin-left: -41px;
+			margin-top: 0em;
+			margin-bottom: 1em;
+		}
+		.container-fluid .row {
+			margin-top: -30em;
+		}
+		.category-page-title {
+			margin-left: 14em;
+		}
+		.category-card .card {
+			width: 250px;
+			margin-left: -2em;
+		}
+	}
+
+		@media (min-width: 890px) and (max-width: 960px){
+		.navbar{
+			height: 80px;
+		}
+		.home-page-title {
+    	padding-top: 6em;
+		}
+		.featured-page .page-title {
+			margin-top: 0em;
+		}
+		.mobile-search-app {
+			margin-top: 0px;
+			margin-left: -177px;
+		}
+		.nav-menu.active {
+			margin-top: 0px;
+		}
+		.category-page-title {
+			margin-top: 0px;
+		}
+	}
+}
 
 
 /* If viewport is 961 to 1024px do this... */
@@ -1714,15 +1844,15 @@ footer p {
 	}
 	.navbar-logo {
 		position: absolute;
-		top: -10px;
-		left: 70px;
+		top: -12px;
+    	left: 100px;
 		transform: translate(25%, 50%);
 	}
 	.menu-icon {
 		display: block;
 		position: absolute;
 		top: 0;
-		right: 0;
+		left: 45px;
 		transform: translate(-100%, 60%);
 		font-size: 1.8rem;
 		cursor: pointer;
@@ -1752,14 +1882,31 @@ footer p {
 		display: none;
 	}
 	.current-user {
-    	margin-left: 2em;
-    	margin-top: 0em;
-    	width: 25em;
+		display: none !important;
 	}
 	.user-null {
-		margin-top: 0em;
-    	margin-left: 8em;
-
+		display: none !important;
+	}
+	.current-user-mobile {
+		display: block;
+    	position: absolute;
+    	right: 1em;
+    	top: 11px;
+	}
+	.current-user-mobile .adventurer {
+		color: linen;
+    	font-family: cursive;
+		margin-left: 52px;
+	}
+	.no-user-mobile .login-nav-btn {
+		display: block;
+		position: absolute;
+		right: 1em;
+		top: 28px;
+	}
+	.login-nav-btn span {
+		color: cornsilk;
+    	font-family: monospace;
 	}
 
 	/* User Profile */
@@ -1767,9 +1914,15 @@ footer p {
 		width: 40em;
 	}
 
-
-
 	/* SerchBar elements to.. */
+	.mobile-search-app {
+    	display: flex;
+    	margin-left: -60em;
+    	margin-top: -65px;
+	}
+	.serch-app {
+		display: none !important;
+	}
 	.serch-app .search {
 		display: flex;
     	margin-top: -18em;
@@ -1785,19 +1938,17 @@ footer p {
 		width: 352px;
     	margin-left: 304px;
     	margin-top: 60px;
+		z-index: 2;
 	}
 	.search-inputs {
 		position: fixed !important;
 	}
-
-
 
 	/* Card styles */
 	.container-fluid {
 		margin-left: 0em;
 	}
 	.container-fluid .row {
-		/* row Category card */
     	display:grid;
 		grid-template-columns: repeat(3, 1fr);
 		margin-left: 14em;
@@ -1820,8 +1971,6 @@ footer p {
 		margin-bottom: 1em;
 	}
 
-
-
 	/* View Page Contents */
 	.content {
     	width: 36em;
@@ -1838,18 +1987,14 @@ footer p {
     	margin-top: -33em;
 	}
 
-
 	/* Quick links */
-
 	.about {
 		margin-left: 0em;
 		width: 100%;
 	}
 
-
 	/* Footer element */
 	footer{
-		/* width: 1337px; */
 		width: 100%;
 	}
 	footer .container{
@@ -1865,15 +2010,13 @@ footer p {
     	margin-left: 0em;
 	}
 	.copyrightText{
-		/* width: 1337px; */
 		width: 100%;
 	}
-
 }
 
 
-
 @media (min-width:1026px) and (max-width:1200px){
+
 	.nav-menu {
 		width: 0vw;
 	}
@@ -1901,6 +2044,9 @@ footer p {
 	}
 
 	/* Serach Component */
+	.mobile-search-app {
+		display: none !important;
+	}
 	.search-inputs input {
 		width: 12em;
 	}
@@ -1956,7 +2102,6 @@ footer p {
 }
 
 
-
 @media (min-width:1201px) and (max-width:1280px){
 	
 	.nav-menu {
@@ -1982,6 +2127,9 @@ footer p {
 	
 
 	/* Search Componnent */
+	.mobile-search-app {
+		display: none !important;
+	}
 	.search-inputs input{
 		width: 16em;
 	}
@@ -1997,13 +2145,6 @@ footer p {
 	.card {
 		width: 230px;
 	}
-
-	/* View Page Content */
-	/* .recommended-products {
-		margin-top: -31em;
-	} */
-
-
 }
 
 
@@ -2016,13 +2157,18 @@ footer p {
 	.user-profile-container form {
 		width: 50em;
 	}
+	.mobile-search-app {
+		display: none !important;
+	}
 	
 }
 
-@media (min-width:1367px) and (max-width:1440px){
 
+@media (min-width:1367px) and (max-width:1440px){
+	.mobile-search-app {
+		display: none !important;
+	}
 	.search-results {
 		width: 382px;
 	}
 }
-

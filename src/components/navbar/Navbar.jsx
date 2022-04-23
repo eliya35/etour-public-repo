@@ -37,6 +37,41 @@ const NavBar = () => {
         <>
             <nav className="navbar" >
                 <Link to='/' className='navbar-logo'>Etour</Link>
+                {
+                    user &&
+                    <div className="current-user-mobile">
+                        <span className='adventurer'>Hi there: </span>
+                        <span
+                            className='adventurer-name'
+                            onClick={() => navigate('/profile/')}
+                        > <i class="bi bi-person-circle"></i> {user.username}
+                        </span>
+                        <div className="sign-out-btn">
+                            <button
+                                type='button'
+                                className='btn btn-outline-primary btn-sm'
+                                onClick={handleSignOut}
+                            >Sign Out
+                            </button>
+                        </div>
+                    </div>
+                }
+                {
+                    !user &&
+                    <div className="no-user-mobile">
+                        <div className="login-nav-btn">
+                            <span>Hello: Adventurer</span>
+                            <button
+                                type='button'
+                                className='btn btn-outline-success btn-sm'
+                            ><a href="/logout/"><i class="bi bi-person-circle"></i> Sign in</a>
+                            </button>
+                        </div>
+                    </div>
+                }
+                <div className="mobile-search-app">
+                    <SearchBar placeholder="Search Destination..." />
+                </div>
                 <div className="menu-icon" onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                 </div>
