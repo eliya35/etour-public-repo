@@ -1917,8 +1917,8 @@ footer p {
 	/* SerchBar elements to.. */
 	.mobile-search-app {
     	display: flex;
-    	margin-left: -60em;
-    	margin-top: -65px;
+    	margin-left: -25em;
+    	margin-top: -9px;
 	}
 	.serch-app {
 		display: none !important;
@@ -1937,12 +1937,10 @@ footer p {
 	.search-results {
 		width: 352px;
     	margin-left: 304px;
-    	margin-top: 60px;
+    	margin-top: 1px;
 		z-index: 2;
 	}
-	.search-inputs {
-		position: fixed !important;
-	}
+	
 
 	/* Card styles */
 	.container-fluid {
