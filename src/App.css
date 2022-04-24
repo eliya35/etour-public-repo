@@ -317,7 +317,7 @@ footer p {
     	display: flex;
 	}
 	.card {
-    	width: 200px;
+    	/* width: 200px; */
     	height: 100%;
     	margin-top: -28em;
     	margin-bottom: 29em;
@@ -339,7 +339,7 @@ footer p {
 		margin-top: 30em;
 	}
 	.category-card .card{
-		width: 200px;
+		/* width: 200px; */
     	height: 40em;
    		margin-left: -10em;
     	margin-top: -58em;
@@ -452,21 +452,21 @@ footer p {
 
 	/* AboutUsPage elements to... */
 	.about {
-		width: 33em !important;
+		width: 292px !important;
 		margin-bottom: 0;
 		margin-left: 1px;
 	}
 
 	/* FAQ elements to... */
 	.faq {
-		width: 32em !important;
+		width: 292px !important;
 		margin-bottom: 0;
 		margin-left: 1px;
 	}
 
 	/* Suggestion Page elements to... */
 	.suggestion-form {
-		width: 33em !important;
+		width: 292px !important;
 		margin-left: 1px;
 	}
 	.names {
@@ -478,21 +478,21 @@ footer p {
 
 	/* Contact Us elements to...*/
 	.contact-us {
-		width: 33em !important;
+		width: 292px !important;
 		margin-left: 1px;
 		margin-bottom: 1em;
 	}
 
 	/* Donate Page elements to... */
 	.donate {
-		width: 32em!important;
+		width: 292px!important;
    	    margin-left: 1px;
     	margin-top: 2em;
 	}
 
 	/* Help Page */
 	.help {
-		width: 30em;
+		width: 292px;
 	}
 
 	/* Comming Soon */
@@ -529,11 +529,6 @@ footer p {
 
 
 @media (min-width: 400px) and (max-width:512px) {
-	.container {
-		margin-left: 1px;
-		max-width: 25em;
-	}
-
 	/* Navbar elements to... */
 	.navbar {
 		width: 508px;
@@ -759,6 +754,11 @@ footer p {
 	}
 
 	/* ViewPageUi elemetns to... */
+	.viewpage .container {
+		margin-left: 1px;
+		max-width: 25em;
+		margin-top: 6em;
+	}
 	.imgBx img {
 		max-width: 22em;
 		margin-left: 3em;
@@ -1167,6 +1167,9 @@ footer p {
 	}
 
 	/* ViewPage Content */
+	.viewpage .container {
+		margin-top: 6em;
+	}
 	.viewpage{
 		width: 30em;
 	}
@@ -1582,6 +1585,11 @@ footer p {
 	}
 
 	/* ViewPage Content */
+	.viewpage .container {
+		margin-left: 1px;
+		max-width: 25em;
+		margin-top: 6em;
+	}
 	.content {
 		width: 36em;
 		margin-top: 0em;
@@ -1743,6 +1751,9 @@ footer p {
 		.category-card .card {
 			width: 270px;
 		}
+		.viewpage .container {
+			margin-top: 0em;
+		}
 	}
 
 
@@ -1779,6 +1790,9 @@ footer p {
 			width: 250px;
 			margin-left: -2em;
 		}
+		.viewpage .container {
+			margin-top: 0em;
+		}
 	}
 
 		@media (min-width: 890px) and (max-width: 960px){
@@ -1800,6 +1814,9 @@ footer p {
 		}
 		.category-page-title {
 			margin-top: 0px;
+		}
+		.viewpage .container {
+			margin-left: 1px;
 		}
 	}
 }
@@ -2056,20 +2073,28 @@ footer p {
 		margin-left: 16px;
 	}
 
+	.home-page-title {
+		width: 30em;
+	}
+
 	/* Card Commponent */
 	.container-fluid .row {
-    	margin-left: -17px;
-		padding: 0em;
+    	margin-left: 32px;
+    	padding: 0;
+    	display: grid;
+    	grid-template-columns: repeat(3, 1fr);
 	}
 	.card{
-		width: 200px;
+		width: 236px;
 		height: 32em;
+		margin-left: -33px;
 	}
 
 	/* CATEGORY ELEMENTS */
 	.category-card .card {
-		width: 225px;
-		height: 33em;
+    	width: 244px;
+    	height: 33em;
+    	margin-left: -42px;
 	}
 
 	/* View Page Content */
@@ -2143,6 +2168,9 @@ footer p {
 	.card {
 		width: 230px;
 	}
+	.category-card .card {
+    	width: 225px;
+	}
 }
 
 
@@ -2158,7 +2186,12 @@ footer p {
 	.mobile-search-app {
 		display: none !important;
 	}
-	
+	.card {
+		width: 245px;
+	}
+	.category-card .card {
+    	width: 246px;
+	}
 }
 
 
