@@ -184,6 +184,6 @@ SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True # SERVICE PROVIDERS ALSO MUST HAVE AN SSL
 SECURE_HSTS_PRELOAD = True
 SERVER_EMAIL = 'etourinternational01@gmail.com'
-ADMINS = [('Etour', 'etourinternational01@gmail.com'), ('Vincent', 'vincenteliya35@gmail.com')]
+ADMINS = [('Vincent', 'etourinternational01@gmail.com'), ('Eliya', 'vincenteliya35@gmail.com')]
 
 django_heroku.settings(locals())
