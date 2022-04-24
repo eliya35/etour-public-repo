@@ -438,14 +438,14 @@ footer p {
 
 	/* PrivacyPlicy elements to... */
 	.privacy-policy {
-		width: 32em !important;
+		width: 292px !important;
 		margin-left: 1px;
 		margin-bottom: 0;
 	}
 
 	/* Terms & Condition elements to...  */
 	.terms {
-		width: 32em !important;
+		width: 292px !important;
 		margin-bottom: 0;
 		margin-left: 1px;
 	}
