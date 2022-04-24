@@ -31,6 +31,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 DEBUG = False
 
 ALLOWED_HOSTS = ['etour.herokuapp.com']
+# ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -183,7 +184,7 @@ CSRF_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True # SERVICE PROVIDERS ALSO MUST HAVE AN SSL
 SECURE_HSTS_PRELOAD = True
-SERVER_EMAIL = 'etourinternational01@gmail.com'
+SERVER_EMAIL = str(os.getenv('EMAIL_USER'))
 ADMINS = [('Vincent', 'etourinternational01@gmail.com'), ('Eliya', 'vincenteliya35@gmail.com')]
 
 django_heroku.settings(locals())
