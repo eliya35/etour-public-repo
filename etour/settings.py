@@ -30,7 +30,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # DEBUG = str(os.getenv('DEBUG_VALUE') == 'True')
 DEBUG = False
 
-ALLOWED_HOSTS = ['etour.herokuapp.com']
+ALLOWED_HOSTS = ['etour.herokuapp.com', '127.0.0.1:9000']
 # ALLOWED_HOSTS = ['*']
 
 # Application definition
