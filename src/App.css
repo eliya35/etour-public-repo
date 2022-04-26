@@ -266,6 +266,9 @@ footer p {
     	margin-top: 15em;
     	width: 100%;
 	}
+	.login-required .no-user h1 {
+		margin-left: 100px;
+	}
 	.login-required p {
     	width: 73%;
 	}
@@ -346,6 +349,9 @@ footer p {
 	}
 
 	/* ViewPageUi elemetns to... */
+	.viewpage {
+		width: 23em;
+	}
 	.imgBx img {
 		max-width: 17em;
 		margin-left: 3em;
@@ -365,12 +371,12 @@ footer p {
 	.content {
     	margin-left: 1em;
     	margin-top: 0em;
-    	width: 26em;
+    	width: 21em;
 	}
 	.content p {
 		width: 70%;
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-			sans-serif;
+		sans-serif;
 	}
 	.location-info {
 		margin-left: 1em;
@@ -380,40 +386,44 @@ footer p {
 	.recommended-products{
 		margin-left: 1em;
 		margin-top: 3em;
-		width: 62%;
+		width: 21em;
 	}
 	.renderd-comments {
-		margin-left: 8em;
-    	margin-top: 0em;
-    	margin-bottom: 20em;
+		margin-top: 0em;
+		margin-bottom: 0em;
+		margin-left: 0px;
+	}
+	.comments-container {
+		margin-top: 55px;
 	}
 	.comments {
+		margin-left: -3em;
 		padding-top: 3em;
-		margin-left: -4em;
 	}
 	.comments-title {
-		margin-left: 2em;
+		margin-left: 70px;
+
 	}
 	.comment-form-title {
-		margin-left: 4em;
+		margin-left: 70px;
 		padding-bottom: 1em;
 	}
 	.comment-text{
-		width: 12em;
+		width: 10em;
 	}
-	textarea {
-		height: 5em;
-    	width: 60%;
+	.comments form textarea {
+		height: 8em;
+    	width: 80%;
 	}
 	.post-btn {
-		padding-top: 1em;
+    	padding-top: 0px;
+    	margin-top: 16px;
+	}
+	.post-btn button {
+		width: 100px;
+		height: 34px;
 	}
 
-	/* commnets */
-	.comments {
-    	margin-left: -12em;
-    	padding-top: 3em;
-	}
 
 	/* Cart elemets to...(My Destinations) */
 	.py-4 {
@@ -497,8 +507,14 @@ footer p {
 
 	/* Comming Soon */
 	.comming-soon {
-    	margin-left: 13em;
-    	width: 100% !important;
+    	margin-left: 1em;
+	}
+	.comming-soon h1 {
+		margin-left: 0px;
+	}
+	.comming-soon p {
+		margin-left: 0em;
+		text-align: center;
 	}
 	
 
@@ -906,11 +922,17 @@ footer p {
 
 	/* Comming Soon */
 	.comming-soon {
-    	margin-left: 9em;
-    	width: 13em;
+    	margin-left: 1em;
+		margin-top: 12em;
+		margin-bottom: 10em;
 	}
 	.comming-soon h1 {
-		margin-left: -2em;
+		text-align: center;
+		margin-left: 0px;
+	}
+	.comming-soon p {
+		margin-left: 0em;
+		text-align: center;
 	}
 	
 	/* Footer elements to... */
@@ -1292,6 +1314,19 @@ footer p {
 		width: 27em;
 	}
 
+	/* Comming Soon */
+	.comming-soon {
+    	margin-left: 1em;
+    	margin-top: 14em;
+    	margin-bottom: 10em;
+	}
+	.comming-soon h1 {
+		margin-left: 0px;
+	}
+	.comming-soon p {
+		margin-left: 0em;
+	}
+
 	/* Footer element */
 	footer{
 		width: 100%;
@@ -1330,6 +1365,9 @@ footer p {
 		.category-card .card {
 			margin-left: 1em;
 		}
+		.comming-soon {
+    		margin-left: 6em;
+		}
 	
 	}
 
@@ -1347,6 +1385,9 @@ footer p {
 		.textarea {
 			height: 10em;
 			width: 100%;
+		}
+		.comming-soon {
+    		margin-left: 7em;
 		}
 	}
 }
@@ -1692,6 +1733,17 @@ footer p {
 	.contact-us {
 		width: 35em;
 	}
+	.comming-soon {
+    	margin-left: 10em;
+    	margin-top: 14em;
+    	margin-bottom: 10em;
+	}
+	.comming-soon h1 {
+		margin-left: 0px;
+	}
+	.comming-soon p {
+		margin-left: 0em;
+	}
 
 	/* Footer element */
 	footer{
@@ -1754,6 +1806,11 @@ footer p {
 		.viewpage .container {
 			margin-top: 0em;
 		}
+		.comming-soon {
+    		margin-left: 12em;
+    		margin-top: 9em;
+    		margin-bottom: 10em;
+		}
 	}
 
 
@@ -1793,6 +1850,10 @@ footer p {
 		.viewpage .container {
 			margin-top: 0em;
 		}
+		.comming-soon {
+    		margin-left: 14em;
+    		margin-top: 8em;
+		}
 	}
 
 		@media (min-width: 890px) and (max-width: 960px){
@@ -1817,6 +1878,10 @@ footer p {
 		}
 		.viewpage .container {
 			margin-left: 1px;
+		}
+		.comming-soon {
+    		margin-left: 18em;
+    		margin-top: 8em;
 		}
 	}
 }
@@ -2008,6 +2073,20 @@ footer p {
 		width: 100%;
 	}
 
+	/* Comming Soon */
+	.comming-soon {
+		margin-top: 9em;
+    	margin-bottom: 10em;
+    	margin-left: 18em;
+	}
+	.comming-soon h1 {
+		margin-left: 0px;
+	}
+	.comming-soon p {
+		margin-left: 0em;
+		text-align: center;
+	}
+
 	/* Footer element */
 	footer{
 		width: 100%;
@@ -2109,6 +2188,18 @@ footer p {
 	}
 	.recommended-products {
 		margin-left: 1em;
+	}
+	.comming-soon {
+		margin-top: 9em;
+    	margin-bottom: 10em;
+    	margin-left: 18em;
+	}
+	.comming-soon h1 {
+		margin-left: 0px;
+	}
+	.comming-soon p {
+		margin-left: 0em;
+		text-align: center;
 	}
 
 	/* Footer */

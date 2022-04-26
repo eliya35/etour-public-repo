@@ -3,6 +3,12 @@
     margin-bottom: 20em;
     margin-left: 36em;
 }
+.comming-soon h1 {
+    color: crimson !important;
+    text-align: center !important;
+    margin-left: -130px;
+}
 .comming-soon p {
     margin-left: -8em;
+    text-align: center !important;
 }

@@ -5,6 +5,7 @@
 .imgBx {
     margin-top: 2em;
     margin-left: -27px;
+    width: fit-content !important;
 }
 
 .imgBx img {
@@ -25,6 +26,7 @@
     margin-left: 50em;
     margin-top: 0em;
     margin-bottom: 35em;
+    width: fit-content !important;
 }
 .location-info h5 {
     color: cornflowerblue !important;
