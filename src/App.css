@@ -548,7 +548,7 @@ footer p {
 }
 
 
-@media (min-width: 400px) and (max-width:512px) {
+@media (min-width: 400px) and (max-width:512.99px) {
 	/* Navbar elements to... */
 	.navbar {
 		width: 508px;
@@ -1353,7 +1353,7 @@ footer p {
 	}
 
 	/* CHILDREN */
-	@media (min-width: 601px) and (max-width: 710px){
+	@media (min-width: 601px) and (max-width: 710.99px){
 		.container-fluid .row {
 			padding-right: 3em;
 			margin-left: -13em;
@@ -1377,7 +1377,7 @@ footer p {
 	}
 
 
-	@media (min-width: 665px) and (max-width: 710px){
+	@media (min-width: 665px) and (max-width: 710.99px){
 		.imgBx img {
 			max-width: 44em;
 		}
@@ -1399,7 +1399,7 @@ footer p {
 
 
 /* If viewport is 711px - 900px set the elements to... */
-@media (min-width: 711px) and (max-width:960px){
+@media (min-width: 711px) and (max-width:960.99px){
 	.navbar {
 		height: 150px;
 	}
@@ -1871,7 +1871,7 @@ footer p {
 		}
 	}
 
-		@media (min-width: 890px) and (max-width: 960px){
+		@media (min-width: 890px) and (max-width: 960.99px){
 		.navbar{
 			height: 80px;
 		}
@@ -1906,7 +1906,7 @@ footer p {
 
 
 /* If viewport is 961 to 1024px do this... */
-@media (min-width: 961px) and (max-width: 1025px) {
+@media (min-width: 961px) and (max-width: 1025.99px) {
 	.NavbarItems {
 		position: relative;
 	}
@@ -2234,7 +2234,7 @@ footer p {
 }
 
 
-@media (min-width:1201px) and (max-width:1280px){
+@media (min-width:1201px) and (max-width:1280.99px){
 	
 	.nav-menu {
 		width: 24vw;
