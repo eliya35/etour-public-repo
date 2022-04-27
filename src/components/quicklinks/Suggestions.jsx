@@ -143,7 +143,7 @@ const Suggestion = () => {
             <form onSubmit={handleSubmit}>
                 <h1>Suggest Feature</h1>
                 <p>
-                    Hello there, You are at Etour.com feature suggestion page. Here you can reach us under the address bellow
+                    Hello there, You are at Etour feature suggestion page. Here you can reach us under the address bellow
                     or alternatively send as a messages concerning an upgrade or a new feature in the form bellow.
                     Please remeber to leave accurate information to enable us to reach back & server you in time.
                 </p>

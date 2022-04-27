@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { UserContext } from '../usercontext/UserProvider';
 import { Navigate } from 'react-router-dom';
 
-import '../Styles/login.css'
+import '../Styles/loginrequired.css'
 
 
 function LoginRequired() {
@@ -18,7 +18,7 @@ function LoginRequired() {
             {
                 !user &&
                 <div className="no-user">
-                    <h1>Login Required</h1>
+                    <h1>Login Required!!</h1>
                     <p>
                         You are seeing this page because the feature/page you are tring to access can
                         only be accessed when you are logged in. Sorry for any inconvinience Adventurer.

@@ -21,7 +21,7 @@ import CategoryPageContents from "./components/category/CategoryPageContents";
 import UserAccount from "./components/UserRelated/UserAccount";
 import UserProfile from "./components/UserRelated/UserProfile";
 import PopularSitesUiPage from "./components/popularsites/PopularSiteUiPage";
-import LoginRequired from "./components/login/LoginReqired";
+import LoginRequired from "./components/login/LoginRequired";
 import CommingSoon from "./components/quicklinks/CommingSoon";
 
 

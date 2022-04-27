@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
             <div className="intro-info">
                 <p>We understand how you care on how information about you is used and shared,
                     and we appriciate your trust that we will do so with care.
-                    This Privacy Policy describes how Etour.com collect and process your personal
+                    This Privacy Policy describes how Etour collect and process your personal
                     information.
                     <br />
 
@@ -119,7 +119,7 @@ const PrivacyPolicy = () => {
                         generally is one of the transferred business assets but remains
                         subject to the promises made in any pre-existing Privacy
                         Notice (unless, of course, the customer consents otherwise).
-                        Also, in the unlikely event that Etour.com or substantially
+                        Also, in the unlikely event that Etour or substantially
                         all of its assets are acquired, Adventures information will of course
                         be one of the transferred assets.
                     </p>

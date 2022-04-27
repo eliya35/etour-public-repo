@@ -4,6 +4,7 @@
 }
 .login-required h1 {
     text-align: center;
+    color: rebeccapurple !important;
 }
 .login-required p {
     margin: 6em;

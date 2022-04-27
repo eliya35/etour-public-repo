@@ -8,24 +8,30 @@ import '../Styles/donate.css'
 const Donate = () => {
     return (
         <div className="donate">
-            <h1>Etour Donation</h1>
+
+            {/* INTRODUCTION */}
+            <h2>ETOUR & DONATIONS</h2>
+            <p>
+                Hello there. Welcome to Etour donations page. At this page you shall find some basic informations on Etour donations, information on why you should donate if you so desire and what this donatons are used for.
+            </p>
             <br />
             {/* WHY DONATE */}
 
             <h2>WHY DONATE?</h2>
             <p>
-                Since Etour.com is a growing company sufficient funds are a necesity to ensure
-                a smooth user experience(eg. Displaying high resolution images and a more detail & acurrate
-                information for You & other Adventurers)
+                Donated funds are used by Etour for optimal user experience eg. Displaying high resolution images, a more detail & acurrate
+                information for You & other Adventurers out there etc.
+                It also assist Etour in condacting research to discover destinatons that are sure to blow
+                your mind.
             </p>
             {/* HOW ARE MY DONATIONS USED */}
 
             <h2>HOW ARE MY DONATIONS USED?</h2>
             <p>
-                Donations recived by Etour.com are <strong>exclusively</strong> used to increase Your
-                experience and that of other adventures using Etour Services to a whole new Leval.
-                This is done by implimenting new features suggested by You and other tourist around
-                the gloab. (To suggest new features or upgrades <a href="/suggestion/">Click here </a>)
+                Donations are <strong>exclusively</strong> used to increase Your
+                experience and that of other adventures using Etour Services.
+                This is done by implimenting new features suggested by You or other adventures around
+                the gloab. To suggest a feature or upgrades or some idea <a href="/suggestion/">Click here </a>
             </p>
             {/* CAN I DONATE MORE THAN ONCE */}
 
@@ -38,7 +44,9 @@ const Donate = () => {
 
             <h2>WHAT CURRENCY DO I DONATE WITH?</h2>
             <p>
-                Currently Etour.com accepts USD($) or Pounds(₤)
+                You have the freedom of donating with all sorts of currency supported by Pay pal.
+                Just click on the button bellow with the label "Donate" and you can proceed on with the
+                donation with a paypal account or credit card as you desire
             </p>
             <div className="paypal-usd">
                 <span>
@@ -47,7 +55,6 @@ const Donate = () => {
                         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
                         <img alt="" border="0" src="https://www.paypal.com/en_KE/i/scr/pixel.gif" width="1" height="1" />
                     </form>
-                    <br />
                 </span>
                 <div className="container">
                     <div className="feadback">

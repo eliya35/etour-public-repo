@@ -13,7 +13,7 @@ const TermsAndCondition = () => {
                 {/* Introductory Text */}
 
                 <p>
-                    Welcome to Etour.com and etour international services.
+                    Welcome to Etour and etour international services.
                     By using Etour Services, you agree, on behalf of yourself and all
                     members of your household and others who use any Service under your account,
                     to the following conditions.
