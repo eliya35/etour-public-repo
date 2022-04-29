@@ -95,11 +95,14 @@
 	color: mintcream;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	padding-left: 0px;
-	padding-right: 25px;
+	padding-right: 0px;
 	cursor: pointer;
+	margin-right: 106px;
 }
 .current-user .adventurer-name:hover {
-	color: rgb(243, 239, 8);
+	background-color: #0d6efd;
+	border-radius: 4px;
+	transition: all 0.2s ease-out
 }
 
 .current-user button{
@@ -128,6 +131,7 @@
 	padding-left: 0px;
 	padding-right: 25px;
 	cursor: pointer;
+	text-decoration: underline;
 }
 .current-user-mobile .adventurer-name:hover {
 	/* display: none; */

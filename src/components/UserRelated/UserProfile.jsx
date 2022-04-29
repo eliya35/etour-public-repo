@@ -159,14 +159,14 @@ const UserProfile = () => {
                 user &&
 
                 <div className="only-authenticated">
-                    <div className='profile-page'><h1>Profile Page</h1></div>
+                        <div className='profile-page'><h1>Welcome {user.username}</h1></div>
                     {/* <div className="success-message">
                         {isPosted ? <div className="message">Profile Successfully Updated</div> : <div className='show-nothing'></div>}
                     </div> */}
                     <div
                         className="welcome-p"
                     ><p>
-                            Hello & welcome {user.username}. You can edit more account infomation by
+                            You can edit more account infomation by
                             <a href='/profile/my-account/'> Cliking Here</a>. Put all your required info at
                             the form below:
                         </p>

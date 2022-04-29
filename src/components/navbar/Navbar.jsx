@@ -40,18 +40,18 @@ const NavBar = () => {
                 {
                     user &&
                     <div className="current-user-mobile">
-                        <span className='adventurer'>Hi there: </span>
+                        {/* <span className='adventurer'>Hi there: </span> */}
                         <span
                             className='adventurer-name'
                             onClick={() => navigate('/profile/')}
-                        > <i class="bi bi-person-circle"></i> {user.username}
+                        > My Profile
                         </span>
                         <div className="sign-out-btn">
                             <button
                                 type='button'
                                 className='btn btn-outline-primary btn-sm'
                                 onClick={handleSignOut}
-                            >Sign Out
+                            ><i class="bi bi-person-circle"></i> Sign Out
                             </button>
                         </div>
                     </div>
@@ -76,6 +76,7 @@ const NavBar = () => {
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+
                     <li className="nav-item">
                         <Link
                             to='/featured/'
@@ -110,19 +111,18 @@ const NavBar = () => {
                     {
                         user &&
                         <div className='current-user'>
-                            <span className='adventurer'>Whats Sup!: </span>
-
+                            {/* <span className='adventurer'>Hi there: </span> */}
                             <span
                                 className='adventurer-name'
                                 onClick={() => navigate('/profile/')}
-                            > <i class="bi bi-person-circle"></i> {user.username}
+                            > My Profile/ Account
                             </span>
                             <div className="sign-out-btn">
                                 <button
                                     type='button'
                                     className='btn btn-outline-primary btn-sm'
                                     onClick={handleSignOut}
-                                >Sign Out
+                                ><i class="bi bi-person-circle"></i> Sign Out
                                 </button>
                             </div>
                         </div>
