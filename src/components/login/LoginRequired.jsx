@@ -22,8 +22,8 @@ function LoginRequired() {
                     <p>
                         You are seeing this page because the feature/page you are tring to access can
                         only be accessed when you are logged in. Sorry for any inconvinience Adventurer.
-                        To accecss all features you are recomended to <a href="/login/">Login </a>
-                        or <a href="/register">Register an adventure account</a>.
+                        To accecss all features you are recommended to <a href="/login/">Login </a>
+                        or <a href="/register">Register a free adventure account</a>.
                     </p>
 
                 </div>
