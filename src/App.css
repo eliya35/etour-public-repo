@@ -24,7 +24,8 @@ footer {
 	position: relative;
 	padding: 50px;
 	background: #111;
-	margin-top: 0em;
+	margin-top: auto !important;
+	margin-bottom: 0px;
 	width: 100%;
 }
 .aboutus {
@@ -37,7 +38,7 @@ footer h2 {
 	width: 10em;
 	margin-left: 7px;
 }
-/* Handels the red line in the footer */
+/* Handles the red line in the footer */
 footer .container h2:before {
 	content: "";
 	position: absolute;
@@ -125,6 +126,7 @@ footer p {
 	text-align: center;
 	color: #999;
 	width: 100%;
+	margin-bottom: 0px !important;
 }
 
 
@@ -182,6 +184,10 @@ footer p {
 		top: -10px;
 		left: 70px;
 		transform: translate(25%, 50%);
+	}
+	.navbar-logo img {
+    	margin-top: -29px;
+    	margin-left: -80px;
 	}
 	.menu-icon {
 		display: block;
@@ -274,7 +280,7 @@ footer p {
 	}
 
 	/* Searchbar elements to... */
-	.serch-app .search {
+	.search-app .search {
 		display: flex !important;
     	margin-left: 2em;
     	margin-top: -287px;
@@ -347,7 +353,7 @@ footer p {
     	margin-top: -58em;
 	}
 
-	/* ViewPageUi elemetns to... */
+	/* ViewPageUi elements to... */
 	.viewpage {
 		width: 23em;
 	}
@@ -390,7 +396,7 @@ footer p {
 		margin-top: 3em;
 		width: 21em;
 	}
-	.renderd-comments {
+	.rendered-comments {
 		margin-top: 0em;
 		margin-bottom: 0em;
 		margin-left: 0px;
@@ -427,7 +433,7 @@ footer p {
 	}
 
 
-	/* Cart elemets to...(My Destinations) */
+	/* Cart elements to...(My Destinations) */
 	.py-4 {
 		margin-bottom: 0em;
 		padding-left: 1em;
@@ -448,7 +454,7 @@ footer p {
 		height: 20rem !important;
 	}
 
-	/* PrivacyPlicy elements to... */
+	/* PrivacyPolicy elements to... */
 	.privacy-policy {
 		width: 292px !important;
 		margin-left: 1px;
@@ -507,14 +513,14 @@ footer p {
 		width: 292px;
 	}
 
-	/* Comming Soon */
-	.comming-soon {
+	/* Coming Soon */
+	.coming-soon {
     	margin-left: 1em;
 	}
-	.comming-soon h1 {
+	.coming-soon h1 {
 		margin-left: 0px;
 	}
-	.comming-soon p {
+	.coming-soon p {
 		margin-left: 0em;
 		text-align: center;
 	}
@@ -551,6 +557,10 @@ footer p {
 			left: 100px;
 			top: -19px;
 			height: 40px;
+		}
+		.navbar-logo img {
+    		margin-top: -14px;
+    		margin-left: -77px;
 		}
 		.nav-menu.active {
 			top: 100px;
@@ -596,7 +606,7 @@ footer p {
 		}
 
 
-		.serch-app {
+		.search-app {
 			display: none;
 		}
 		.mobile-search-app {
@@ -694,6 +704,11 @@ footer p {
 		top: -30px;
     	left: 91px;
 		transform: translate(25%, 50%);
+	}
+	.navbar-logo img {
+    	max-width: 116px;
+    	margin-top: -16px;
+    	margin-left: -64px;
 	}
 	.menu-icon {
 		display: block;
@@ -802,7 +817,7 @@ footer p {
 		margin-top: 42px;
 		display: flex !important;
 	}
-	.serch-app {
+	.search-app {
 		display: none !important;
 	}
 	.search-inputs input {
@@ -874,7 +889,7 @@ footer p {
     	margin-top: -58em;
 	}
 
-	/* ViewPageUi elemetns to... */
+	/* ViewPageUi elements to... */
 
 	.viewpage .container {
 		margin-left: 1px;
@@ -918,7 +933,7 @@ footer p {
 		margin-top: 3em;
 		width: 100%;
 	}
-	.renderd-comments {
+	.rendered-comments {
 		margin-left: 8em;
     	margin-top: 0em;
     	margin-bottom: 20em;
@@ -945,7 +960,7 @@ footer p {
 		padding-top: 1em;
 	}
 	
-	/* Cart elemets to...(My Destinations) */
+	/* Cart elements to...(My Destinations) */
 	.py-4 {
 		margin-bottom: 0em;
 		padding-left: 1em;
@@ -966,7 +981,7 @@ footer p {
 		height: 20rem !important;
 	}
 
-	/* PrivacyPlicy elements to... */
+	/* PrivacyPolicy elements to... */
 	.privacy-policy {
 		width: 23em;
 		margin-left: 1px;
@@ -1030,17 +1045,17 @@ footer p {
 	.text-centre {
 		margin-top: 3em;
 	}
-	/* Comming Soon */
-	.comming-soon {
+	/* Coming Soon */
+	.coming-soon {
     	margin-left: 1em;
 		margin-top: 12em;
 		margin-bottom: 10em;
 	}
-	.comming-soon h1 {
+	.coming-soon h1 {
 		text-align: center;
 		margin-left: 0px;
 	}
-	.comming-soon p {
+	.coming-soon p {
 		margin-left: 0em;
 		text-align: center;
 	}
@@ -1133,6 +1148,11 @@ footer p {
     	top: -12px;
     	left: 100px;
     	transform: translate(25%,50%);
+	}
+	.navbar-logo img {
+    	max-width: 120px;
+    	margin-top: -16px;
+    	margin-left: -64px;
 	}
 	.menu-icon {
 		display: block;
@@ -1271,10 +1291,10 @@ footer p {
 		margin-top: 52px;
 	}
 
-	.serch-app {
+	.search-app {
 		display: none !important;
 	}
-	.serch-app .search {
+	.search-app .search {
 		display: flex;
 		margin-top: -18em;
     	margin-left: 6em;
@@ -1361,7 +1381,7 @@ footer p {
 		margin-top: 3em;
 		width: 100%;
 	}
-	.renderd-comments {
+	.rendered-comments {
 		margin-left: 8em;
     	margin-top: 0em;
     	margin-bottom: 20em;
@@ -1388,7 +1408,7 @@ footer p {
 		padding-top: 1em;
 	}
 
-	/* commnets */
+	/* comments */
 	.comments {
     	margin-left: -12em;
     	padding-top: 3em;
@@ -1425,6 +1445,7 @@ footer p {
 
 	/* Quick links */
 	.about {
+		margin-top: 4em;
 		margin-left: 0em;
 		width: 100%;
 	}
@@ -1436,28 +1457,32 @@ footer p {
 		width: 27em;
 	}
 	.privacy-policy{
+		margin-top: 4em;
 		width: 27em;
 	}
 	.help {
+		margin-top: 4em;
 		width: 27em;
 	}
 	.terms {
+		margin-top: 4em;
 		width: 27em;
 	}
 	.contact-us {
+		margin-top: 4em;
 		width: 27em;
 	}
 
-	/* Comming Soon */
-	.comming-soon {
+	/* Coming Soon */
+	.coming-soon {
     	margin-left: 1em;
     	margin-top: 14em;
     	margin-bottom: 10em;
 	}
-	.comming-soon h1 {
+	.coming-soon h1 {
 		margin-left: 0px;
 	}
-	.comming-soon p {
+	.coming-soon p {
 		margin-left: 0em;
 	}
 
@@ -1498,7 +1523,7 @@ footer p {
 		.category-card .card {
 			margin-left: 1em;
 		}
-		.comming-soon {
+		.coming-soon {
     		margin-left: 6em;
 		}
 	
@@ -1519,7 +1544,7 @@ footer p {
 			height: 10em;
 			width: 100%;
 		}
-		.comming-soon {
+		.coming-soon {
     		margin-left: 7em;
 		}
 	}
@@ -1572,6 +1597,11 @@ footer p {
     	top: -12px;
     	left: 106px;
     	transform: translate(25%,50%);
+	}
+	.navbar-logo img {
+    	max-width: 120px;
+    	margin-top: -16px;
+    	margin-left: -64px;
 	}
 	.menu-icon {
 		display: block;
@@ -1709,10 +1739,10 @@ footer p {
 		display: flex;
 		margin-top: 35px;
 	}
-	.serch-app {
+	.search-app {
 		display: none !important;
 	}
-	.serch-app .search {
+	.search-app .search {
 		display: flex;
     	margin-top: -18em;
     	margin-left: 7em;
@@ -1789,7 +1819,7 @@ footer p {
     	margin-left: 1em;
     	margin-top: -32em;
 	}
-	.renderd-comments {
+	.rendered-comments {
 		margin-left: 0px;
 	}
 	.comments {
@@ -1854,6 +1884,7 @@ footer p {
 	.about {
 		margin-left: 0em;
 		width: 100%;
+		padding-top: 10em;
 	}
 	.donate {
 		width: 35em;
@@ -1861,28 +1892,35 @@ footer p {
 	}
 	.faq {
 		width: 35em;
+		padding-top: 10em;
 	}
 	.privacy-policy{
 		width: 35em;
+		padding-top: 10em;
 	}
 	.help {
 		width: 35em;
+		padding-top: 10em;
 	}
 	.terms {
 		width: 35em;
+		padding-top: 10em;
 	}
 	.contact-us {
 		width: 35em;
+		padding-top: 10em;
 	}
-	.comming-soon {
+
+	/* Coming Soon */
+	.coming-soon {
     	margin-left: 10em;
     	margin-top: 14em;
     	margin-bottom: 10em;
 	}
-	.comming-soon h1 {
+	.coming-soon h1 {
 		margin-left: 0px;
 	}
-	.comming-soon p {
+	.coming-soon p {
 		margin-left: 0em;
 	}
 
@@ -1910,6 +1948,11 @@ footer p {
 		@media (min-width: 768px) and (max-width: 889px){
 		.navbar {
 			height: 80px;
+		}
+		.navbar-logo img {
+    		max-width: 103px;
+    		margin-top: -16px;
+    		margin-left: -64px;
 		}
 		.nav-menu.active{
 			margin-top: 0px;
@@ -1967,13 +2010,36 @@ footer p {
 		.viewpage .container {
 			margin-top: 0em;
 		}
-		.comming-soon {
+		.coming-soon {
     		margin-left: 12em;
     		margin-top: 9em;
     		margin-bottom: 10em;
 		}
-		.donate {
+		/* .donate {
 			margin-top: 0px;
+		} */
+
+		/* Quick links */
+		.about {
+			padding-top: 6em;
+		}
+		.donate {
+			margin-top: 4em;
+		}
+		.faq {
+			padding-top: 6em;
+		}
+		.privacy-policy{
+			padding-top: 6em;
+		}
+		.help {
+			padding-top: 6em;
+		}
+		.terms {
+			padding-top: 6em;
+		}
+		.contact-us {
+			padding-top: 6em;
 		}
 	}
 
@@ -2017,7 +2083,7 @@ footer p {
 		.viewpage .container {
 			margin-top: 0em;
 		}
-		.comming-soon {
+		.coming-soon {
     		margin-left: 14em;
     		margin-top: 8em;
 		}
@@ -2051,12 +2117,35 @@ footer p {
 		.viewpage .container {
 			margin-left: 1px;
 		}
-		.comming-soon {
+		.coming-soon {
     		margin-left: 18em;
     		margin-top: 8em;
 		}
+
+		/* Quick links */
 		.donate {
 			margin-top: 0px;
+		}
+		.about {
+			padding-top: 6em;
+		}
+		.donate {
+			margin-top: 4em;
+		}
+		.faq {
+			padding-top: 6em;
+		}
+		.privacy-policy{
+			padding-top: 6em;
+		}
+		.help {
+			padding-top: 6em;
+		}
+		.terms {
+			padding-top: 6em;
+		}
+		.contact-us {
+			padding-top: 6em;
 		}
 	}
 }
@@ -2104,6 +2193,10 @@ footer p {
 		top: -12px;
     	left: 100px;
 		transform: translate(25%, 50%);
+	}
+	.navbar-logo img {
+    	margin-top: -20px;
+    	margin-left: -68px;
 	}
 	.menu-icon {
 		display: block;
@@ -2172,16 +2265,16 @@ footer p {
 		width: 36em;
 	}
 
-	/* SerchBar elements to.. */
+	/* SearchBar elements to.. */
 	.mobile-search-app {
     	display: flex;
     	margin-left: -25em;
     	margin-top: -9px;
 	}
-	.serch-app {
+	.search-app {
 		display: none !important;
 	}
-	.serch-app .search {
+	.search-app .search {
 		display: flex;
     	margin-top: -18em;
 	}
@@ -2253,16 +2346,16 @@ footer p {
 		width: 100%;
 	}
 
-	/* Comming Soon */
-	.comming-soon {
+	/* Coming Soon */
+	.coming-soon {
 		margin-top: 9em;
     	margin-bottom: 10em;
     	margin-left: 18em;
 	}
-	.comming-soon h1 {
+	.coming-soon h1 {
 		margin-left: 0px;
 	}
-	.comming-soon p {
+	.coming-soon p {
 		margin-left: 0em;
 		text-align: center;
 	}
@@ -2298,7 +2391,12 @@ footer p {
 		width: 0vw;
 	}
 	.navbar-logo { 
-		margin-left: -5em;
+		margin-left: -2em;
+	}
+	.navbar-logo img {
+    	max-width: 88px;
+    	margin-top: -16px;
+    	margin-left: -85px;
 	}
 	.user-null {
     	padding-left: 0px;
@@ -2320,7 +2418,7 @@ footer p {
 		width: 40em;
 	}
 
-	/* Serach Component */
+	/* Search Component */
 	.mobile-search-app {
 		display: none !important;
 	}
@@ -2339,7 +2437,7 @@ footer p {
 		width: 30em;
 	}
 
-	/* Card Commponent */
+	/* Card Component */
 	.container-fluid .row {
     	margin-left: 32px;
     	padding: 0;
@@ -2378,16 +2476,16 @@ footer p {
     	margin-left: 6em;
 	}
 
-	/* Comming Sonn */
-	.comming-soon {
+	/* Coming Soon */
+	.coming-soon {
 		margin-top: 9em;
     	margin-bottom: 10em;
     	margin-left: 18em;
 	}
-	.comming-soon h1 {
+	.coming-soon h1 {
 		margin-left: 0px;
 	}
-	.comming-soon p {
+	.coming-soon p {
 		margin-left: 0em;
 		text-align: center;
 	}
@@ -2433,7 +2531,7 @@ footer p {
 	}
 	
 
-	/* Search Componnent */
+	/* Search Component */
 	.mobile-search-app {
 		display: none !important;
 	}

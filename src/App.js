@@ -97,8 +97,8 @@ const App = () => {
 									</RequireAuth>
 								}
 							/>
-							<Route exact path='/login-reqireid/' element={<LoginRequired />} />
-							<Route exact path='/comming-soon/' element={<CommingSoon />} />
+							<Route exact path='/login-required/' element={<LoginRequired />} />
+							<Route exact path='/coming-soon/' element={<CommingSoon />} />
 						</Routes>
 					</UserProvider>
 				</AuthProvider>

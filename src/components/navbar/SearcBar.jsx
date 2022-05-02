@@ -5,10 +5,10 @@ import axios from 'axios';
 import '../Styles/searchbar.css'
 
 
-// Handles Serching
+// Handles Searching
 const SearchBar = ({ placeholder }) => {
     const [data, setData] = useState([])
-    const [filterdData, setFilterdData] = useState([])
+    const [filteredData, setFilteredData] = useState([])
     const [destination, setDestination] = useState("")
     const navigate = useNavigate();
 
@@ -19,15 +19,15 @@ const SearchBar = ({ placeholder }) => {
             return value.name.toLowerCase().includes(searchTerm.toLowerCase())
         })
         if (searchTerm === "") {
-            setFilterdData([])
+            setFilteredData([])
         } else {
-            setFilterdData(newFilter)
+            setFilteredData(newFilter)
         }
 
     }
 
-    const removeEverthing = () => {
-        setFilterdData([]);
+    const removeEverything = () => {
+        setFilteredData([]);
         setDestination("");
     }
 
@@ -55,30 +55,30 @@ const SearchBar = ({ placeholder }) => {
                 />
 
                 <div className="search-icon">
-                    {filterdData.length === 0 ?
+                    {filteredData.length === 0 ?
                         <i
                             className="bi bi-search"
                         />
                         :
                         <i
                             className="bi bi-x"
-                            onClick={removeEverthing}
+                            onClick={removeEverything}
                         />}
                 </div>
 
             </div>
-            {filterdData.length !== 0 && (<div className="search-results">
-                {filterdData.slice(0, 15).map(filterdSite => {
+            {filteredData.length !== 0 && (<div className="search-results">
+                {filteredData.slice(0, 15).map(filteredSite => {
                     return (
                         <div
                             className='results'
-                            key={filterdSite.id}
+                            key={filteredSite.id}
                             onClick={() => {
-                                (navigate(`/view/${filterdSite.id}/`))
-                                setFilterdData([]);
+                                (navigate(`/view/${filteredSite.id}/`))
+                                setFilteredData([]);
                                 setDestination("");
                             }}
-                        >{filterdSite.name}
+                        >{filteredSite.name}
                         </div>
                     );
                 })}

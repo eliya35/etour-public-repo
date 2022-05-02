@@ -20,7 +20,7 @@ const Comments = ({ tour_site_id }) => {
 
     // filter and place each comment to its relevant tour site i.e comments of grand canyon are
     // only on the grand canyon view page.
-    const filterdRootComments = rootComments.filter(rootComment => rootComment.tour_site_id === tour_site_id)
+    const filteredRootComments = rootComments.filter(rootComment => rootComment.tour_site_id === tour_site_id)
 
     const getReplies = commentId => {
         return backendComments
@@ -53,7 +53,7 @@ const Comments = ({ tour_site_id }) => {
             'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/comments/', data
         )
             
-            // Adding the posted data in our state allowing it to apper on top by spreding ...backendComments
+            // Adding the posted data in our state allowing it to apper on top by spreading ...backendComments
             .then(res => {
                 setBackendComments([res.data, ...backendComments]);
                 // console.log('posted comment', res.data)
@@ -62,7 +62,7 @@ const Comments = ({ tour_site_id }) => {
                 setActiveComment(null)
             )
             .catch(err => {
-                alert("An error occured while posting your comment. Please try again later")
+                alert("An error occurred while posting your comment. Please try again later")
             })
     }
 
@@ -77,7 +77,7 @@ const Comments = ({ tour_site_id }) => {
                 `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/comments/${commentId}`
             )
                 
-                // After the request is succesfull we set our state to comments without the deleted object
+                // After the request is successful we set our state to comments without the deleted object
                 .then(() => {
                     const updatedBackendComments = backendComments.filter
                         (backendComment => backendComment.id !== commentId);
@@ -85,7 +85,7 @@ const Comments = ({ tour_site_id }) => {
                     setBackendComments(previousComments => updatedBackendComments)
                 })
                 .catch(err => {
-                    alert("An error occured while deleting your comment. Please try agin later.")
+                    alert("An error occurred while deleting your comment. Please try aging later.")
                 })
         }
 
@@ -97,7 +97,7 @@ const Comments = ({ tour_site_id }) => {
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-        // Using patch insted of put as we are only editing a section of the object
+        // Using patch instead of put as we are only editing a section of the object
         // await axios.patch(`http://127.0.0.1:8000/api/comments/${commentId}/`, body)
         await axios.patch(
             `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/comments/${commentId}/`, body
@@ -126,7 +126,7 @@ const Comments = ({ tour_site_id }) => {
                 setBackendComments(res.data)
             })
             .catch(err => {
-                console.log("An error occured while feaching comments")
+                console.log("An error occurred while fetching comments")
             })
         // axios.get(`http://127.0.0.1:8000/api/user/profile/${id}`)
         axios.get(
@@ -136,7 +136,7 @@ const Comments = ({ tour_site_id }) => {
                 setProfile(res.data);
             })
             .catch(err => { 
-                console.log("An error occured while fetching a user profile")
+                console.log("An error occurred while fetching a user profile")
             })
 
     }, [id]);
@@ -149,17 +149,17 @@ const Comments = ({ tour_site_id }) => {
 
             {/* display a comment form */}
             <CommentForm
-                submitLable="Post"
+                submitLabel="Post"
                 handleSubmit={addComment}
             />
 
             {/* Comment component with the required props */}
             <div className="comments-container">
-                {filterdRootComments.map(filterdComment => (
+                {filteredRootComments.map(filteredComment => (
                     <Comment
-                        key={filterdComment.id}
-                        comment={filterdComment}
-                        replies={getReplies(filterdComment.id)}
+                        key={filteredComment.id}
+                        comment={filteredComment}
+                        replies={getReplies(filteredComment.id)}
                         currentUserId={user.id}
                         deleteComment={deleteComment}
                         updateComment={updateComment}

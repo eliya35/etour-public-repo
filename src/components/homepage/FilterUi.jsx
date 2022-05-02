@@ -13,9 +13,9 @@ function Filter() {
                     <span className="selection-name-weight">Category</span>
                 </div>
                 <ul className="unoderd-list-categories">
-                    <li><a href="/category/Ancient Buildings/">Ancient Buldings</a></li>
+                    <li><a href="/category/Ancient Buildings/">Ancient Buildings</a></li>
                     <li><a href="/category/Popular Cities/">Popular Cities</a></li>
-                    <li><a href="/category/Cassinos/"> Cassinos</a></li>
+                    <li><a href="/category/Cassinos/"> Casinos</a></li>
                     <li><a href="/category/Vacation Spots/">Vacation Spots</a></li>
                     <li><a href="/category/Hotel Casino/">Hotel and Casino</a></li>
                     <li><a href="/category/Honeymoon spots/">Honeymoon spots</a></li>
@@ -34,7 +34,7 @@ function Filter() {
                 </ul>
                 <div className="selection-checkboxes">
                     <ul className="unoderd-list-verticla-chekboxes">
-                        <li className="filter-box-title">Fillters</li>
+                        <li className="filter-box-title">Filters</li>
 
                         {/* Most Visited */}
                         <li className="most-visited">
@@ -45,7 +45,7 @@ function Filter() {
                             /> Most Popular
                         </li>
 
-                        {/* Featuerd */}
+                        {/* Featured */}
                         <li className="featured">
                             <input
                                 type="checkbox"

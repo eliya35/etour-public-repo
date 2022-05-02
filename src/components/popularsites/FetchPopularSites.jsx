@@ -5,7 +5,7 @@ import Pagination from '../homepage/Pagination'
 
 import '../Styles/cardstyle.css'
 
-// Retrive Tour Sites from the Api and dispaly them on a Ui Card
+// Retrieve Tour Sites from the Api and display them on a Ui Card
 const PopularSites = () => {
     const [tourSites, setTourSite] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -19,11 +19,11 @@ const PopularSites = () => {
 
             })
             .catch(err => {
-                console.log("An error ocured while fetching destinations")
+                console.log("An error occurred while fetching destinations")
             })
     }, []);
 
-    // Getiing popular sites from all sites
+    // Getting popular sites from all sites
     const popularDestination = tourSites.filter(tourSite => tourSite.tourist_traffic_annually === 'VERY HIGH')
 
     // Current tour per page

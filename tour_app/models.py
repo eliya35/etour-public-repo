@@ -1,7 +1,4 @@
-from distutils.command.upload import upload
-from django.core.exceptions import ValidationError
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 
 REGION = [
@@ -28,7 +25,7 @@ COUNTRIES_CHOICES = [
     ('MOZAMBIQUE', 'MOZAMBIQUE'),
     ('IVORY COST', 'IVORY COST'),
     ('KENYA', 'KENYA'),
-    ('BOSTSWANA', 'BOTSWANA'),
+    ('BOTSWANA', 'BOTSWANA'),
     ('USA', 'USA'),
     ('MEXICO', 'MEXICO'),
     ('CANADA', 'CANADA'),
@@ -93,7 +90,7 @@ class FeaturedTourManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(is_featured=True)
 
-        
+
 class Tour(models.Model):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(help_text='A unique prepopulated field for object url',
@@ -103,11 +100,15 @@ class Tour(models.Model):
     location = models.CharField(max_length=100, blank=False)
     tourist_traffic_annually = models.CharField(max_length=100, choices=TOURIST_TRAFFIC_RATE,
                                                 blank=True, default=False)
-    image = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to ='destinations')
-    image_01 = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to ='destinations')
-    image_02 = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to ='destinations')
-    image_03 = models.ImageField(max_length=100, blank=True, default='destinations/default.png',upload_to ='destinations')
-    image_04 = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to ='destinations')
+    image = models.ImageField(max_length=100, blank=True, default='destinations/default.png', upload_to='destinations')
+    image_01 = models.ImageField(max_length=100, blank=True, default='destinations/default.png',
+                                 upload_to='destinations')
+    image_02 = models.ImageField(max_length=100, blank=True, default='destinations/default.png',
+                                 upload_to='destinations')
+    image_03 = models.ImageField(max_length=100, blank=True, default='destinations/default.png',
+                                 upload_to='destinations')
+    image_04 = models.ImageField(max_length=100, blank=True, default='destinations/default.png',
+                                 upload_to='destinations')
     short_description = models.CharField(max_length=200, blank=True)
     long_description = models.TextField(blank=True)
 
@@ -129,7 +130,7 @@ class Tour(models.Model):
     product_06 = models.CharField(max_length=100, null=True, blank=True)
     product_06_affiliate_link = models.URLField(max_length=2000, null=True, blank=True)
 
-    product_07 = models.CharField(max_length=100, null=True, blank=True )
+    product_07 = models.CharField(max_length=100, null=True, blank=True)
     product_07_affiliate_link = models.URLField(max_length=2000, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -138,8 +139,8 @@ class Tour(models.Model):
     is_popular = models.BooleanField(default=False)
     objects = models.Manager()
     featured = FeaturedTourManager()
-    price = models.IntegerField(blank=False,default=0) # This field is important for the cart feature 
-    numb_stars = models.PositiveSmallIntegerField(default=0,help_text='Value must not be grater than 5')
+    price = models.IntegerField(blank=False, default=0)  # This field is important for the cart feature
+    numb_stars = models.PositiveSmallIntegerField(default=0, help_text='Value must not be grater than 5')
     category = models.ManyToManyField(Category)
 
     class Meta:
@@ -154,4 +155,3 @@ class Tour(models.Model):
 
     def get_absolute_url(self):
         return reverse('site_detail', kwargs={'pk': self.pk})
-

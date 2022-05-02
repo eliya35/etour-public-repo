@@ -10,18 +10,18 @@ const Donate = () => {
         <div className="donate">
 
             {/* INTRODUCTION */}
-            <h2>ETOUR & DONATIONS</h2>
+            <h2>ETOUR AND DONATIONS</h2>
             <p>
-                Hello there. Welcome to Etour donations page. At this page you shall find some basic informations on Etour donations, information on why you should donate if you so desire and what this donatons are used for.
+                Hello there. Welcome to Etour donations page. At this page you shall find some basic information's on Etour donations, information on why you should donate if you so desire and what this donations are used for.
             </p>
             <br />
             {/* WHY DONATE */}
 
             <h2>WHY DONATE?</h2>
             <p>
-                Donated funds are used by Etour for optimal user experience eg. Displaying high resolution images, a more detail & acurrate
-                information for You & other Adventurers out there etc.
-                It also assist Etour in condacting research to discover destinatons that are sure to blow
+                Donated funds are used by Etour for optimal user experience eg. Displaying high resolution images, a more detail and accurate
+                information for You and other Adventurers out there etc.
+                It also assist Etour in conducting research to discover destinations that are sure to blow
                 your mind.
             </p>
             {/* HOW ARE MY DONATIONS USED */}
@@ -30,14 +30,14 @@ const Donate = () => {
             <p>
                 Donations are <strong>exclusively</strong> used to increase Your
                 experience and that of other adventures using Etour Services.
-                This is done by implimenting new features suggested by You or other adventures around
-                the gloab. To suggest a feature or upgrades or some idea <a href="/suggestion/">Click here </a>
+                This is done by implementing new features suggested by You or other adventures around
+                the glob. To suggest a feature or upgrades or some idea <a href="/suggestion/">Click here </a>
             </p>
             {/* CAN I DONATE MORE THAN ONCE */}
 
             <h2>CAN I DONATE MORE THAN ONCE?</h2>
             <p>
-                Hell Yhea!!! You can. You could doante more than once and any amount for that matter.
+                Hell Yeah!!! You can. You could donate more than once and any amount for that matter.
                 Every donations towards the betterment of Etour and its services are graciously accepted.
             </p>
             {/* WHAT CURRENCY DO I DONATE WITH*/}
@@ -57,8 +57,8 @@ const Donate = () => {
                     </form>
                 </span>
                 <div className="container">
-                    <div className="feadback">
-                        <h6>Was this inforamtion usefull?</h6>
+                    <div className="feedback">
+                        <h6>Was this information usefully?</h6>
                         <button className='btn btn-success m-2'>Yes</button>
                         <button className='btn btn-danger m-2'>No</button>
                     </div>

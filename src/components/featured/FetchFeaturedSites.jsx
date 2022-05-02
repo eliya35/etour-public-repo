@@ -4,7 +4,7 @@ import FeaturedTourCard from './FeaturedSiteCard';
 import Pagination from '../homepage/Pagination'
 
 
-// Retrive Featured Tour Sites from the Api and dispaly them on a Ui Card
+// Retrieve Featured Tour Sites from the Api and display them on a Ui Card
 const FeaturedSites = () => {
     const [featuredSites, setFeaturedSites] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -20,7 +20,7 @@ const FeaturedSites = () => {
                 setFeaturedSites(res.data);
             })
             .catch(err => {
-                console.log("An error ocuured while feaching featured sites");
+                console.log("An error occurred while fetching featured sites");
             })
 
     }, []);

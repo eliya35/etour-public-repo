@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const CommentForm = ({
     handleSubmit,
-    submitLable,
+    submitLabel,
     hasCancelButton = false,
     initialText = "",
     handleCancel
@@ -20,8 +20,8 @@ const CommentForm = ({
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <textarea className='commet-form-textarea'
-                    vlaue={body}
+                <textarea className='comment-form-textarea'
+                    value={body}
                     defaultValue={initialText}
                     onChange={(e) => setBody(e.target.value)}
                 />
@@ -29,7 +29,7 @@ const CommentForm = ({
                 <div className='post-btn'>
                     <button className='btn btn-primary btn-sm'
                         disabled={isTextareaDisabled}>
-                        {submitLable}
+                        {submitLabel}
                     </button>
                     {hasCancelButton && (
                         <button type='button' className='btn btn-danger m-2 btn-sm'

@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
             <h1>Etour International Privacy Policy</h1>
             <div className="intro-info">
                 <p>We understand how you care on how information about you is used and shared,
-                    and we appriciate your trust that we will do so with care.
+                    and we appreciate your trust that we will do so with care.
                     This Privacy Policy describes how Etour collect and process your personal
                     information.
                     <br />
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
                 <ul>
                     <li>What Personal information about Adventures Dose Etour Collect?</li>
                     <li>For What Purpose Dose Etour Use Your Personal Information?</li>
-                    <li>Dose Etour Share Your Personal Infornation?</li>
+                    <li>Dose Etour Share Your Personal Information?</li>
                     <li>How Secure Is information About Me?</li>
                     <li>What Information Can I access?</li>
                     <li>Are Children Allowed to Use Etour?</li>
@@ -45,8 +45,8 @@ const PrivacyPolicy = () => {
                 </p>
                 <li><strong>Information You Give Us: </strong>
                     <p>
-                        We recive and store inforamtion of all kind provided by you. This are the
-                        inforamtion you provide for your account. You can choose not to provide
+                        We receive and store information of all kind provided by you. This are the
+                        information you provide for your account. You can choose not to provide
                         certain information, but this might limit your experience in our Service.
                     </p>
                 </li>
@@ -56,25 +56,25 @@ const PrivacyPolicy = () => {
                         about your use of Etour Services, including information about your
                         interaction with content and services available through Etour Services.
                         We use "cookies" and other unique identifiers, and we obtain certain
-                        inforamtion when your web browser or device.
+                        information when your web browser or device.
                     </p>
                 </li>
                 <li><strong>Information From Other Source: </strong>
                     <p>
-                        We might recive inforamtion about you from other sources
+                        We might receive information about you from other sources
                         available in the internet, such us popular site.
                     </p>
                 </li>
-                {/* Pourpose for the information */}
+                {/* Purpose for the information */}
 
-                <h2>For What Purpose Dose Etour Use Your Personal inforamtion?</h2>
+                <h2>For What Purpose Dose Etour Use Your Personal information?</h2>
                 <p>
                     We use personal information to operate,provide, develop, and improve
                     the services we offer to our Adventures. These purpose include:
                 </p>
                 <li><strong>Recommendations and personalization: </strong>
                     <p>
-                        We use your personal inforamtion to recommend features,
+                        We use your personal information to recommend features,
                         and services that might be of interest to you, identify your preferences,
                         and personalize your experience with Etour Services
                     </p>
@@ -85,7 +85,7 @@ const PrivacyPolicy = () => {
                         via different channels (e.g., by phone, email, chat).
                     </p>
                 </li>
-                <li><strong>Advertisment: </strong>
+                <li><strong>Advertisement: </strong>
                     <p>
                         We use your personal information to display interest-based ads for features and services
                         that might be of interest to you.
@@ -97,16 +97,16 @@ const PrivacyPolicy = () => {
                         the security of our Adventures, Etour, and others.
                     </p>
                 </li>
-                {/* Cookies and other identifires information */}
+                {/* Cookies and other identifies information */}
 
                 <h2>What About Cookies and Other Identifiers?</h2>
                 <p>
-                    To enable our systems to recognize your browser or device and to provide and
-                    first class Etour Services, we use cookies and other identifiers.
+                    To enable our systems to recognize your browser or device and to provide first class Etour
+                    Services, we use cookies and other identifiers.
                 </p>
                 {/* Dose Etour Share Your Information */}
 
-                <h2>Dose Etour Share Your Personal Inforation?</h2>
+                <h2>Dose Etour Share Your Personal Information?</h2>
                 <p>
                     Information about our Adventures is an important part of our business,
                     and we are not in the business of selling our customers' personal information
@@ -124,7 +124,7 @@ const PrivacyPolicy = () => {
                         be one of the transferred assets.
                     </p>
                 </li>
-                {/* How Secure is my infomation */}
+                {/* How Secure is my information */}
 
                 <h2>How Secure Is Information About Me?</h2>
                 <p>We design our systems with your security and privacy in mind.</p>
@@ -148,7 +148,7 @@ const PrivacyPolicy = () => {
                     procedures mean that we may ask to verify your identity before we disclose personal
                     information to you.
                 </li>
-                {/* What Inforamtion Can I access */}
+                {/* What Information Can I access */}
 
                 <h2>What Information Can I Access?</h2>
                 <p>
@@ -185,8 +185,8 @@ const PrivacyPolicy = () => {
             </span>
             <br />
             <div className="container">
-                <div className="feadback">
-                    <h6>Was this inforamtion usefull?</h6>
+                <div className="feedback">
+                    <h6>Was this information usefully?</h6>
                     <button className='btn btn-success m-2'>Yes</button>
                     <button className='btn btn-danger m-2'>No</button>
                 </div>

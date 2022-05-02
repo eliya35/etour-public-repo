@@ -5,9 +5,9 @@ import "../Styles/commingsoon.css"
 
 const CommingSoon = () => {
     return (
-        <div className="comming-soon">
+        <div className="coming-soon">
             <h1>
-                Comming Soon!!
+                Coming Soon!!
             </h1>
             <p>
                 We apologise for any inconvenience we are working on it.

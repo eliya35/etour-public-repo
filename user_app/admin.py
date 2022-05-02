@@ -1,10 +1,8 @@
-from csv import list_dialects
-from pyexpat import model
-from tabnanny import verbose
 from django.contrib import admin
 from .models import Comment, Rating, Profile
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
+
 
 class ProfileInline(admin.StackedInline):
     model = Profile
@@ -17,7 +15,7 @@ class UserAdmin(BaseUserAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('username', 'tour_site_id', 'body', 'parent_id','created_at')
+    list_display = ('username', 'tour_site_id', 'body', 'parent_id', 'created_at')
 
 
 class RatingAdmin(admin.ModelAdmin):

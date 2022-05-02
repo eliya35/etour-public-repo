@@ -46,7 +46,7 @@ const Comment = ({
                 {!isEditing && <div className="comment-text">{comment.body}</div>}
                 {isEditing && (
                     <CommentForm
-                        submitLable="Update"
+                        submitLabel="Update"
                         hasCancelButton
                         initialText={comment.body}
                         handleSubmit={(body) => updateComment(body, comment.id)}
@@ -78,7 +78,7 @@ const Comment = ({
                 </div>
                 {isReplying && (
                     <CommentForm
-                        submitLable="Replay"
+                        submitLabel="Replay"
                         hasCancelButton
                         handleCancel={() => setActiveComment(null)}
                         handleSubmit={(body) => addComment(body, replyId)}

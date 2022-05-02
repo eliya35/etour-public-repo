@@ -9,27 +9,27 @@ import '../Styles/contactus.css'
 const ContactUs = () => {
     const countries = {
         egypt: 'EGYPT',
-        moroco: 'MOROCCO',
+        morocco: 'MOROCCO',
         southAfrica: 'SOUTH AFRICA',
         tunisia: 'TUNISIA',
         algeria: 'ALGERIA',
-        zimabwe: 'ZIMBABWE',
+        zimbabwe: 'ZIMBABWE',
         mozambique: 'MOZAMBIQUE',
         ivoryCost: 'IVORY COST',
         kenya: 'KENYA',
-        bostwana: 'BOSTSWANA',
+        botswana: 'BOTSWANA',
         usa: 'USA',
         mexico: 'MEXICO',
         canada: 'CANADA',
         argentina: 'ARGENTINA',
         dominicanRepublic: 'DOMINICAN REPUBLIC',
-        brazlle: 'BRAZLLE',
+        brazil: 'BRAZIL',
         chile: 'CHILE',
         peru: 'PERU',
         cuba: 'CUBA',
         colombia: 'COLOMBIA',
         china: 'CHINA',
-        thiland: 'THAILAND',
+        thailand: 'THAILAND',
         japan: 'JAPAN',
         malaysia: 'MALAYSIA',
         hongKong: 'HONG KONG',
@@ -48,7 +48,7 @@ const ContactUs = () => {
         portugol: 'PORTUGOL',
         russia: 'RUSSIA',
         unitedArabEmirates: 'UNITED ARAB EMIRATES',
-        saudiArebia: 'SAUDI ARABIA',
+        saudiArabia: 'SAUDI ARABIA',
         lebanon: 'LEBANON',
         israel: 'ISRAEL',
         jordan: 'JORDAN',
@@ -57,13 +57,13 @@ const ContactUs = () => {
         bahrain: 'BAHRAIN',
         iraq: 'IRAQ',
     }
-    const initialStatae = { firstName: null, lastName: null, email: null, content: null };
-    const [formValues, setFormValues] = useState(initialStatae);
+    const initialState = { firstName: null, lastName: null, email: null, content: null };
+    const [formValues, setFormValues] = useState(initialState);
     const [country] = useState(countries)
     const [region, setRegion] = useState(null)
-    const [formErros, setFormErrors] = useState({});
+    const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const isFormSunbmited = Object.keys(formErros).length === 0 && isSubmit;
+    const isFormSubmitted = Object.keys(formErrors).length === 0 && isSubmit;
 
 
     const handleChange = (e) => {
@@ -79,9 +79,9 @@ const ContactUs = () => {
     }
 
     useEffect(() => {
-        if (Object.keys(formErros).length === 0 && isSubmit) {
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-    }, [formErros, isSubmit])
+    }, [formErrors, isSubmit])
 
 
     const validate = (values) => {
@@ -109,9 +109,9 @@ const ContactUs = () => {
     }
     
     const countyChanged = (e) => {
-        const palce = e.target.value
-        if (palce !== 'Open this select menu') {
-            setRegion(previousValue => palce);
+        const place = e.target.value
+        if (place !== 'Open this select menu') {
+            setRegion(previousValue => place);
         } else {
             setRegion(previousValue => null);
         }
@@ -134,20 +134,20 @@ const ContactUs = () => {
         axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/contactUs/', data)
             .then(alert("Your message has been sent successfully"))
             .catch(err => {
-                alert('Oopss! something went wrong while sending your message. Make sure the form is field correctly or try again after a few minutes.')
+                alert('Oops! something went wrong while sending your message. Make sure the form is field correctly or try again after a few minutes.')
             })
     }
 
 
     return (
         <div className="contact-us">
-            {/* {Object.keys(formErros).length === 0 && isSubmit ? <div className="ui-message">Message sent Successfully</div> : <div className="show nothing"></div>} */}
+            {/* {Object.keys(formErrors).length === 0 && isSubmit ? <div className="ui-message">Message sent Successfully</div> : <div className="show nothing"></div>} */}
             <form onSubmit={handleSubmit}>
                 <h1>Contact Us</h1>
                 <p>
                     Hello there, You are at Etour contact page. Here you can reach us under the address bellow
-                    or alternatively send as a messages on the form bellow. Please remeber to leave accurate information
-                    to enable  us to reach back & server you in time.
+                    or alternatively send as a messages on the form bellow. Please remember to leave accurate information
+                    to enable  us to reach back and server you in time.
                 </p>
                 {/* Our Address */}
 
@@ -176,26 +176,26 @@ const ContactUs = () => {
                             >
                                 <option>Open this select menu</option>
                                 <option value={country.egypt}>EGYPT</option>
-                                <option value={country.moroco}>MOROCCO</option>
+                                <option value={country.morocco}>MOROCCO</option>
                                 <option value={country.southAfrica}>SOUTH AFRICA</option>
                                 <option value={country.tunisia}>TUNISIA</option>
                                 <option value={country.algeria}>ALGERIA</option>
-                                <option value={country.zimabwe}>ZIMBABWE</option>
+                                <option value={country.zimbabwe}>ZIMBABWE</option>
                                 <option value={country.mozambique}>MOZAMBIQUE</option>
                                 <option value={country.ivoryCost}>IVORY COST</option>
                                 <option value={country.kenya}>KENYA</option>
-                                <option value={country.bostwana}>BOSTSWANA</option>
+                                <option value={country.botswana}>BOTSWANA</option>
                                 <option value={country.usa}>USA</option>
                                 <option value={country.mexico}>MEXICO</option>
                                 <option value={country.canada}>CANADA</option>
                                 <option value={country.argentina}>ARGENTINA</option>
                                 <option value={country.dominicanRepublic}>DOMINICAN REPUBLIC</option>
-                                <option value={country.brazlle}>BRAZLLE</option>
+                                <option value={country.brazil}>BRAZIL</option>
                                 <option value={country.chile}>CHILE</option>
                                 <option value={country.peru}>PERU</option>
                                 <option value={country.cuba}>CUBA</option>
                                 <option value={country.colombia}>COLOMBIA</option>
-                                <option value={country.thiland}>THAILAND</option>
+                                <option value={country.thailand}>THAILAND</option>
                                 <option value={country.malaysia}>MALAYSIA</option>
                                 <option value={country.hongKong}>HONG KONG</option>
                                 <option value={country.macau}>MACAU</option>
@@ -213,7 +213,7 @@ const ContactUs = () => {
                                 <option value={country.portugol}>PORTUGOL</option>
                                 <option value={country.russia}>RUSSIA</option>
                                 <option value={country.unitedArabEmirates}>UNITED ARAB EMIRATES</option>
-                                <option value={country.saudiArebia}>SAUDI ARABIA</option>
+                                <option value={country.saudiArabia}>SAUDI ARABIA</option>
                                 <option value={country.lebanon}>LEBANON</option>
                                 <option value={country.israel}>ISRAEL</option>
                                 <option value={country.jordan}>JORDAN</option>
@@ -236,7 +236,7 @@ const ContactUs = () => {
                                     onChange={handleChange}
                                 />
                             </div>
-                            <p>{formErros.firstName}</p>
+                            <p>{formErrors.firstName}</p>
                             <div className="col-md-4">
                                 <label
                                     for="validationDefault02"
@@ -251,7 +251,7 @@ const ContactUs = () => {
                                     onChange={handleChange}
                                 />
                             </div>
-                            <p>{formErros.lastName}</p>
+                            <p>{formErrors.lastName}</p>
                         </div>
                         {/* EMAIL ADDRESS */}
 
@@ -266,7 +266,7 @@ const ContactUs = () => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <p>{formErros.email}</p>
+                        <p>{formErrors.email}</p>
 
                         {/* MESSAGE US */}
 
@@ -282,7 +282,7 @@ const ContactUs = () => {
                             >
                             </textarea>
                         </div>
-                        <p>{formErros.content}</p>
+                        <p>{formErrors.content}</p>
                         {/* SUBMIT BUTTON */}
 
                         <div class="col-12">
@@ -290,7 +290,7 @@ const ContactUs = () => {
                                 class="btn btn-primary"
                                 type="submit"
                                 onClick={sendMessage}
-                                disabled={isFormSunbmited}
+                                disabled={isFormSubmitted}
                             >Submit form
                             </button>
                         </div>

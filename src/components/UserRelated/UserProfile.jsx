@@ -12,12 +12,12 @@ const UserProfile = () => {
     const user_id = user.id;
     const initialState = { profile_avatar: "", mobile: "", location: "", bio: "" };
     const [previousValue, setPreviousValue] = useState({});
-    const [formVlaues, setFormValues] = useState(initialState);
+    const [formValues, setFormValues] = useState(initialState);
     const [formErrors, setFormErrors] = useState({});
     const [profileImg, setProfileImg] = useState("https://etour-first-backet.s3.amazonaws.com/avatars/avatar_2x.png");
     const [upLoadImage, setUploadImage] = useState(null);
     const [isSubmit, setIsSubmit] = useState(false);
-    const [isDiabled, setIsDisabled] = useState(true);
+    const [isDisabled, setIsDisabled] = useState(true);
     const [isPosted, setIsPosted] = useState(false);
 
 
@@ -39,7 +39,7 @@ const UserProfile = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormValues({ ...formVlaues, [name]: value });
+        setFormValues({ ...formValues, [name]: value });
         setIsSubmit(true);
         setIsDisabled(false)
     }
@@ -54,35 +54,35 @@ const UserProfile = () => {
                 setPreviousValue(res.data)
             })
             .catch(err => {
-                console.log('An error occured while fetching data')
+                console.log('An error occurred while fetching data')
             })
     }, [user_id, formErrors, isSubmit])
 
 
     const validate = (values) => {
-        const erros = {}
+        const errors = {}
 
         if (values.mobile.length > 15) {
-            erros.mobile = 'Your mobile number is too long!'
+            errors.mobile = 'Your mobile number is too long!'
         }
 
         if (values.location.length > 50) {
-            erros.location = 'Please input a valid location!'
+            errors.location = 'Please input a valid location!'
         }
         if (values.location && values.length < 3) {
-            erros.location = 'Please input a valid location!'
+            errors.location = 'Please input a valid location!'
         }
 
         if (values.bio.length > 200) {
-            erros.bio = 'Your bio is to long try making it less than 200 characters!'
+            errors.bio = 'Your bio is to long try making it less than 200 characters!'
         }
 
-        return erros;
+        return errors;
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormErrors(validate(formVlaues));
+        setFormErrors(validate(formValues));
     }
 
 
@@ -92,9 +92,9 @@ const UserProfile = () => {
         formData.append("user", user.id)
         formData.append("profile_avatar", upLoadImage)
         // formData.append("avatar", upLoadImage)
-        formData.append("location", formVlaues.location)
-        formData.append("mobile", formVlaues.mobile)
-        formData.append("bio", formVlaues.bio)
+        formData.append("location", formValues.location)
+        formData.append("mobile", formValues.mobile)
+        formData.append("bio", formValues.bio)
 
 
         axios.defaults.xsrfCookieName = 'csrftoken'
@@ -108,12 +108,12 @@ const UserProfile = () => {
             })
             .catch(err => {
                 console.log(err);
-                alert('An Error Occured!! Please make sure you have provided all the fields incuding a profile picture.')
+                alert('An Error Occurred!! Please make sure you have provided all the fields including a profile picture.')
             })
     }
 
 
-    const updateExsitingProfile = async () => {
+    const updateExistingProfile = async () => {
 
         let updatedData = new FormData();
 
@@ -122,17 +122,17 @@ const UserProfile = () => {
             updatedData.append("profile_avatar", upLoadImage)
             // console.log('updated profile', upLoadImage)
         }
-        if (formVlaues.mobile !== "") {
-            updatedData.append("mobile", formVlaues.mobile)
-            // console.log("mobile", formVlaues.mobile)
+        if (formValues.mobile !== "") {
+            updatedData.append("mobile", formValues.mobile)
+            // console.log("mobile", formValues.mobile)
         }
-        if (formVlaues.location !== "") {
-            updatedData.append("location", formVlaues.location)
-            // console.log("location", formVlaues.location)
+        if (formValues.location !== "") {
+            updatedData.append("location", formValues.location)
+            // console.log("location", formValues.location)
         }
-        if (formVlaues.bio !== "") {
-            updatedData.append("bio", formVlaues.bio)
-            // console.log("bio", formVlaues.bio)
+        if (formValues.bio !== "") {
+            updatedData.append("bio", formValues.bio)
+            // console.log("bio", formValues.bio)
         }
 
         axios.defaults.xsrfCookieName = 'csrftoken'
@@ -145,7 +145,7 @@ const UserProfile = () => {
                 alert("Profile updated successfully")
             })
             .catch(err => {
-                alert('An error has occured while trying to update your profile. Please try agin later.')
+                alert('An error has occurred while trying to update your profile. Please try aging later.')
             })
 
 
@@ -166,8 +166,8 @@ const UserProfile = () => {
                     <div
                         className="welcome-p"
                     ><p>
-                            You can edit more account infomation by
-                            <a href='/profile/my-account/'> Cliking Here</a>. Put all your required info at
+                            You can edit more account information by
+                            <a href='/profile/my-account/'> Clicking Here</a>. Put all your required info at
                             the form below:
                         </p>
                     </div>
@@ -215,7 +215,7 @@ const UserProfile = () => {
                                                     id="mobile"
                                                     placeholder={previousValue.mobile}
                                                     title="enter your mobile number if any."
-                                                    value={formVlaues.mobile}
+                                                    value={formValues.mobile}
                                                     onChange={handleChange}
                                                 />
                                             </div>
@@ -233,7 +233,7 @@ const UserProfile = () => {
                                                     id="location"
                                                     placeholder={previousValue.location}
                                                     title="enter a location"
-                                                    value={formVlaues.location}
+                                                    value={formValues.location}
                                                     onChange={handleChange}
                                                 />
                                             </div>
@@ -251,7 +251,7 @@ const UserProfile = () => {
                                                     rows="3"
                                                     title='Enter a bio if any, should be less than 200 words'
                                                     placeholder={previousValue.bio}
-                                                    value={formVlaues.bio}
+                                                    value={formValues.bio}
                                                     onChange={handleChange}
                                                 >
                                                 </textarea>
@@ -265,7 +265,7 @@ const UserProfile = () => {
                                                     <button
                                                         class="btn btn-lg btn-success"
                                                         type="submit"
-                                                        disabled={isDiabled}
+                                                        disabled={isDisabled}
                                                         onClick={handleNewProfileSave}
                                                     ><i
                                                         class="glyphicon glyphicon-ok-sign"
@@ -276,8 +276,8 @@ const UserProfile = () => {
                                                     : <div className='update button'>
                                                         <button
                                                             className='btn btn-primary btn-lg'
-                                                            onClick={updateExsitingProfile}
-                                                            disabled={isDiabled}
+                                                            onClick={updateExistingProfile}
+                                                            disabled={isDisabled}
                                                         >Update Profile
                                                         </button>
                                                     </div>

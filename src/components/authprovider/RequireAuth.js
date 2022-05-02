@@ -12,7 +12,7 @@ export function RequireAuth({ children }) {
     let location = useLocation()
 
     if (!auth.user) { 
-        return <Navigate  to='/login-reqireid/'  state={{ from: location }} replace/>
+        return <Navigate  to='/login-required/'  state={{ from: location }} replace/>
     }
 
     return children

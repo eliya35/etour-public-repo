@@ -8,13 +8,13 @@ import '../Styles/viewpage.css'
 // Handles the /view/id contents
 const ViewPageUI = (props) => {
 
-    const [dispalyImage, setDisplayImage] = useState(props.img)
+    const [displayImage, setDisplayImage] = useState(props.img)
 
     return (
         <div className="viewpage">
             <div className="container">
                 <div className="imgBx">
-                    <img src={dispalyImage} id='initial-img' alt={props.name} />
+                    <img src={displayImage} id='initial-img' alt={props.name} />
                 </div>
                 <div className="other-img">
                     <div className="row">
@@ -73,7 +73,7 @@ const ViewPageUI = (props) => {
                     <h6>Region: {props.region} </h6>
                     <h6>Country: {props.country}</h6>
                     <h6>Location: {props.location}</h6>
-                    <h6>Tourist traffic annualy: {props.touristRate}</h6>
+                    <h6>Tourist traffic annually: {props.touristRate}</h6>
                 </div>
 
                 <div className="recommended-products">
@@ -102,7 +102,7 @@ const ViewPageUI = (props) => {
                         </li>
                     </ul>
                 </div>
-                <div className="renderd-comments">
+                <div className="rendered-comments">
                     <CommentApp tour_site_id={props.tour_site_id} />
                 </div>
             </div>

@@ -45,8 +45,8 @@ urlpatterns = [
     path('faq/', TemplateView.as_view(template_name='index.html')),
     path('view/<int:id>/', TemplateView.as_view(template_name='index.html')),
     path('profile/', TemplateView.as_view(template_name='index.html')),
-    path('login-reqireid/', TemplateView.as_view(template_name='index.html')),
+    path('login-required/', TemplateView.as_view(template_name='index.html')),
     path('profile/my-account/', TemplateView.as_view(template_name='index.html'), name='my_account'),
-    path('comming-soon/', TemplateView.as_view(template_name='index.html'), name='comming_soon'),
+    path('coming-soon/', TemplateView.as_view(template_name='index.html'), name='coming_soon'),
     path('api-auth/', include('rest_framework.urls')),
 ]

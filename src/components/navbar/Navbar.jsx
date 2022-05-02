@@ -36,7 +36,9 @@ const NavBar = () => {
     return (
         <>
             <nav className="navbar" >
-                <Link to='/' className='navbar-logo'>Etour</Link>
+                {/* <Link to='/' className='navbar-logo'>Etour</Link> */}
+                {/* <Link to='/' className='navbar-logo'><img src="/media/etour-logo-no-bg.png" alt="logo" /></Link> */}
+                <Link to='/' className='navbar-logo'><img src="https://etour-first-backet.s3.amazonaws.com/etour-logo/etour-logo-no-bg.png" alt="logo" /></Link>
                 {
                     user &&
                     <div className="current-user-mobile">
@@ -82,7 +84,7 @@ const NavBar = () => {
                             to='/featured/'
                             className='nav-links'
                             onClick={closeMobileMenu}
-                        >Featuerd
+                        >Featured
                         </Link>
                     </li>
                     <li className="nav-item">
@@ -102,7 +104,7 @@ const NavBar = () => {
                         >Donate
                         </Link>
                     </li>
-                    <div className="serch-app">
+                    <div className="search-app">
                         <SearchBar placeholder="Search Destination..." />
                     </div>
 

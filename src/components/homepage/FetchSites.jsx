@@ -6,7 +6,7 @@ import Pagination from './Pagination';
 
 import '../Styles/cardstyle.css'
 
-// Retrive Tour Sites from the Api and dispaly them on a Ui Card
+// Retrieve Tour Sites from the Api and display them on a Ui Card
 const AllSites = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -24,7 +24,7 @@ const AllSites = () => {
 
             })
             .catch(err => {
-                console.log("An error occured while fetching destinations");
+                console.log("An error occurred while fetching destinations");
             })
     }, []);
 

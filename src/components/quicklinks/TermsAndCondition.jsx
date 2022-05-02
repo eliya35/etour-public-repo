@@ -91,7 +91,7 @@ const TermsAndCondition = () => {
                     <br />
                     <br />
                     If you do post content or submit material, and unless we indicate otherwise,
-                    You grant Etour and sublicensees the right to use the name that you submit in
+                    You grant Etour and sublicense the right to use the name that you submit in
                     connection with such content, if they choose. Etour has the right
                     but not the obligation to monitor and edit or remove any activity or content.
                     We takes no responsibility and assumes no liability for any content posted
@@ -117,8 +117,8 @@ const TermsAndCondition = () => {
                 </p>
                 <br />
                 <div className="container">
-                    <div className="feadback">
-                        <h6>Was this inforamtion usefull?</h6>
+                    <div className="feedback">
+                        <h6>Was this information usefully?</h6>
                         <button className='btn btn-success m-2'>Yes</button>
                         <button className='btn btn-danger m-2'>No</button>
                     </div>

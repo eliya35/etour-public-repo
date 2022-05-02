@@ -20,9 +20,9 @@ function LoginRequired() {
                 <div className="no-user">
                     <h1>Login Required!!</h1>
                     <p>
-                        You are seeing this page because the feature/page you are tring to access can
-                        only be accessed when you are logged in. Sorry for any inconvinience Adventurer.
-                        To accecss all features you are recommended to <a href="/login/">Login </a>
+                        You are seeing this page because the feature/page you are trying to access can
+                        only be accessed when you are logged in. Sorry for any inconvenience Adventurer.
+                        To access all features you are recommended to <a href="/login/">Login </a>
                         or <a href="/register">Register a free adventure account</a>.
                     </p>
 

@@ -18,12 +18,16 @@
 .navbar-logo {
     color: #fff;
     justify-self: start;
-    margin-left: -2em;
+    margin-left: 0em;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
     padding-bottom: 21px;
     font-weight: 600;
+}
+
+.navbar-logo img {
+	max-width: 130px;
 }
 
 .fa-firstdraft {

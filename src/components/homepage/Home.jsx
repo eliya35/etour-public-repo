@@ -5,7 +5,7 @@ import Filter from './FilterUi'
 import AllSites from './FetchSites';
 
 
-// Recive Components to be used at / 
+// Receive Components to be used at /
 const Home = () =>{
     return(
         <div>

@@ -10,32 +10,32 @@ const About = () => {
             {/* About etour introductory info */}
             <h1>About Etour International</h1>
             <p>
-                Etour is an international tourism application for everyone around the gloab.
+                Etour is an international tourism application for everyone around the glob.
                 Think about Etour as the All in one location; Etour allows
-                adventures all over the world to meet in one palce, interact, review places they
-                have visited or traveld and even plan there next adventure Right Here Right Now!
+                adventures all over the world to meet in one place, interact, review places they
+                have visited or traveled and even plan there next adventure Right Here Right Now!
             </p>
             {/* How dose it work */}
             <h2>HOW DOSE IT WORKS</h2>
             <p>
                 Etour is build with various features and services that are easy to use and interact
-                with. Some of this features allow you to sort throug various tourist attraction sites
+                with. Some of this features allow you to sort through various tourist attraction sites
                 all over the word at a mouse click or a touch of a screen. Some of this common features
                 include;
                 <br />
                 <li>
                     <strong>Category Sorting: </strong>
                     <p>
-                        Category Sorting allows you to navigate to diffrent
+                        Category Sorting allows you to navigate to different
                         tourist sites categories and find a tour or an adventure that meets your fancy,
-                        wether its Popular Cites, Caves, Mountains, Ancient Ruins, Cassinos, Forests you name it.
+                        whether its Popular Cites, Caves, Mountains, Ancient Ruins, Casinos, Forests you name it.
                     </p>
                 </li>
                 <li>
                     <strong>Search Functionality: </strong>
                     <p>
                         Search Functionality allows you as an adventure
-                        to serach for tourist sites all over the world and quickly gain all the information
+                        to search for tourist sites all over the world and quickly gain all the information
                         you will need about the site of you choosing on the spot!
                     </p>
                 </li>
@@ -53,16 +53,16 @@ const About = () => {
                     <strong>Add to List Feature </strong>
                     <p>
                         Add to list feature allows Adventures to add as many sites as they
-                        want to his/her <a href="/mylist/">My Destiantions</a> page. At this page they can, remove or view each
-                        destination & and use it plan his/her destination.
+                        want to his/her <a href="/mylist/">My Destinations</a> page. At this page they can, remove or view each
+                        destination and use it plan his/her adventure.
                     </p>
                 </li>
                 <li>
                     <strong>Detail Page </strong>
                     <p>
                         When you "view" a tour site you are directed to a detail page where you get
-                        more detail concerning the site of intrest. Inforamtion such as Description, Location
-                        and reviews and other inforamtion can be found there.
+                        more detail concerning the site of interest. Information such as Description, Location
+                        and reviews and other information can be found there.
                     </p>
                 </li>
             </p>
@@ -78,7 +78,7 @@ const About = () => {
 
             <h2>HOW CAN I HELP IMPROVE ETOUR AND ITS SERVICES?</h2>
             <p>
-                By suggesting new featrues or upgrades
+                By suggesting new features or upgrades
                 (suggestion box <a href='/suggestion/'>Click here</a>).
                 Etour also accepts donations graciously
                 More on donation <a href='/donate/'>Click here</a> giving Etour the ability to grow
@@ -86,8 +86,8 @@ const About = () => {
             </p>
             <br />
             <div className="container">
-                <div className="feadback">
-                    <h6>Was this inforamtion usefull?</h6>
+                <div className="feedback">
+                    <h6>Was this information usefully?</h6>
                     <button className='btn btn-success m-2'>Yes</button>
                     <button className='btn btn-danger m-2'>No</button>
                 </div>

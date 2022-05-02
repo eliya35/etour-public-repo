@@ -1,16 +1,12 @@
-from distutils.command.upload import upload
-from email.policy import default
-from pyexpat import model
 from django.db import models
-from sqlalchemy import null
 from tour_app.models import Tour
 from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True) # to field id
-    # avatar = models.ImageField(default='avatarts/avatar_2x.png', upload_to ='avatars')
-    profile_avatar = models.ImageField(null=True, unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)  # to field id
+    # avatar = models.ImageField(default='avatars/avatar_2x.png', upload_to ='avatars')
+    profile_avatar = models.ImageField(null=True, unique=True, upload_to ='avatars')
     location = models.CharField(max_length=100, blank=True)
     mobile = models.CharField(max_length=20)
     bio = models.TextField(blank=True)
@@ -28,7 +24,7 @@ class Comment(models.Model):
                                 on_delete=models.CASCADE,
                                 related_name='%(class)s_user_id',
                                 )
-    comment_avatar_url = models.ImageField(null= True)
+    comment_avatar_url = models.ImageField(null=True)
     # comment_avatar = models.ForeignKey(Profile, on_delete=models.CASCADE, to_field='profile_avatar', null=True)
     tour_site_id = models.ForeignKey(Tour, on_delete=models.CASCADE)
     body = models.TextField()

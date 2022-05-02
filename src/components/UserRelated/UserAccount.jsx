@@ -18,7 +18,7 @@ const UserAccount = () => {
         email: user.email,
     };
     const navigate = useNavigate();
-    const [formVlaues, setFormValues] = useState(initialState);
+    const [formValues, setFormValues] = useState(initialState);
     const [formErrors, setFormErrors] = useState({});
     const [isDisabled, setIsDisabled] = useState(true);
     const [isSubmit, setIsSubmit] = useState(true);
@@ -33,7 +33,7 @@ const UserAccount = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormValues({ ...formVlaues, [name]: value })
+        setFormValues({ ...formValues, [name]: value })
         setIsDisabled(false);
     }
 
@@ -65,20 +65,20 @@ const UserAccount = () => {
 
     const updateMyAccount = async () => {
 
-        let myUserAcount = new FormData();
+        let myUserAccount = new FormData();
 
-        if (formVlaues.firstName && formVlaues.firstName !== user.first_name) {
-            myUserAcount.append("first_name", formVlaues.firstName)
-            // console.log('first_name:', formVlaues.firstName)
+        if (formValues.firstName && formValues.firstName !== user.first_name) {
+            myUserAccount.append("first_name", formValues.firstName)
+            // console.log('first_name:', formValues.firstName)
         }
-        if (formVlaues.lastName && formVlaues.lastName !== user.last_name) {
-            myUserAcount.append("last_name", formVlaues.lastName)
-            // console.log('last_name:', formVlaues.lastName)
+        if (formValues.lastName && formValues.lastName !== user.last_name) {
+            myUserAccount.append("last_name", formValues.lastName)
+            // console.log('last_name:', formValues.lastName)
         }
 
-        if (formVlaues.email !== user.email && formVlaues.email !== "") {
-            myUserAcount.append("email", formVlaues.email)
-            // console.log("email:", formVlaues.email)
+        if (formValues.email !== user.email && formValues.email !== "") {
+            myUserAccount.append("email", formValues.email)
+            // console.log("email:", formValues.email)
         }
 
 
@@ -86,15 +86,15 @@ const UserAccount = () => {
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        // await axios.patch(`http://127.0.0.1:8000/api/user/${userId}/`, myUserAcount)
-        await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/${userId}/`, myUserAcount)
+        // await axios.patch(`http://127.0.0.1:8000/api/user/${userId}/`, myUserAccount)
+        await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/${userId}/`, myUserAccount)
         
             .then(res => {
                 // console.log('Updated Acc to:', res.data);
                 setIsPosted(true);
             })
             .catch(err => {
-                alert("An error occured while updating your profile. Plese make sure all your fields are field correctly!")
+                alert("An error occurred while updating your profile. Please make sure all your fields are field correctly!")
             })
         
         setIsDisabled(true);
@@ -102,12 +102,12 @@ const UserAccount = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormErrors(validate(formVlaues));
+        setFormErrors(validate(formValues));
         setIsSubmit(true);
     }
 
     const handleAccountDelete = async () => {
-        if (window.confirm(`Hi there! ${user.username} This account will be deleted Permanently!! and losse all your information Permanently. To continue just clik "Ok" eles the "Cancel" button.`)) {
+        if (window.confirm(`Hi there! ${user.username} This account will be deleted Permanently!! and loss all your information Permanently. To continue just clik "Ok" else the "Cancel" button.`)) {
             axios.defaults.xsrfCookieName = 'csrftoken'
             axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
@@ -155,7 +155,7 @@ const UserAccount = () => {
                                                         id="first_name"
                                                         placeholder="first name"
                                                         title="enter your first name if any."
-                                                        value={formVlaues.firstName}
+                                                        value={formValues.firstName}
                                                         onChange={handleChange}
                                                     />
                                                 </div>
@@ -172,7 +172,7 @@ const UserAccount = () => {
                                                         id="last_name"
                                                         placeholder="Last name"
                                                         title="enter your last name if any."
-                                                        value={formVlaues.lastName}
+                                                        value={formValues.lastName}
                                                         onChange={handleChange}
                                                     />
                                                 </div>
@@ -188,7 +188,7 @@ const UserAccount = () => {
                                                         name="email" id="email"
                                                         placeholder="Email"
                                                         title="enter your email."
-                                                        value={formVlaues.email}
+                                                        value={formValues.email}
                                                         onChange={handleChange}
                                                     />
                                                 </div>

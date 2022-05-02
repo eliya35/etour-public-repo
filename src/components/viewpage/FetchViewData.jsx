@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ViewPageUI from './ViewPageUi';
 
-// Handles the viewing of spesific tour sites
+// Handles the viewing of specific tour sites
 function ViewPageData() {
 
     const [tour, setTour] = useState({});
@@ -18,7 +18,7 @@ function ViewPageData() {
                 setTour(res.data);
             })
             .catch(err => {
-                console.log("An error occured while getting destination");
+                console.log("An error occurred while getting destination");
             })
     }, [id]);
 

@@ -1,7 +1,6 @@
 .login-required {
     margin-top: 10em;
-    /* margin-bottom: 20em; */
-    margin-bottom: 0px;
+    margin-bottom: 20em;
 }
 .login-required h1 {
     text-align: center;
