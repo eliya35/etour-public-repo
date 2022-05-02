@@ -24,8 +24,6 @@ footer {
 	position: relative;
 	padding: 50px;
 	background: #111;
-	/* margin-top: auto !important; */
-	/* margin-bottom: 0px; */
 	width: 100%;
 }
 .aboutus {
@@ -121,13 +119,12 @@ footer p {
 	color: #fff;
 }
 .copyrightText {
+	position: absolute;
 	background: #181818;
 	padding: 8px 100px;
 	text-align: center;
 	color: #999;
 	width: 100%;
-	position: absolute;
-	/* margin-bottom: 0px !important; */
 }
 
 
