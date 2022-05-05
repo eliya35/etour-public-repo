@@ -38,7 +38,7 @@ const NavBar = () => {
             <nav className="navbar" >
                 {/* <Link to='/' className='navbar-logo'>Etour</Link> */}
                 {/* <Link to='/' className='navbar-logo'><img src="/media/etour-logo-no-bg.png" alt="logo" /></Link> */}
-                <Link to='/' className='navbar-logo'><img src="https://etour-first-backet.s3.amazonaws.com/etour-logo/etour-logo-no-bg.png" alt="logo" /></Link>
+                <Link to='/' className='navbar-logo'><img src="https://etour-first-backet.s3.amazonaws.com/etour-logo/etour-logo-no-bg.png" alt="Etour" /></Link>
                 {
                     user &&
                     <div className="current-user-mobile">
