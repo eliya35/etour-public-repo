@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
 from django.contrib.auth.views import PasswordChangeView, PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
+from django.db import IntegrityError
+from django.http import HttpResponse
 
 
 def register_user(request):
@@ -65,18 +67,23 @@ def logout_user(request):
 
 # @login_required
 def update_username(request):
-    user_form = UpdateUserForm(request.POST, instance=request.user)
+    try:
+        user_form = UpdateUserForm(request.POST, instance=request.user)
 
-    if user_form.is_valid():
-        user_form.save()
-        messages.success(request, 'Your profile is updated successfully')
-        return redirect('my_account')
+        if user_form.is_valid():
+            user_form.save()
+            messages.success(request, 'Your profile is updated successfully')
+            return redirect('my_account')
 
-    else:
-        user_form = UpdateUserForm(instance=request.user)
-        # messages.warning(request, 'A user with this username already exists')
+        else:
+            user_form = UpdateUserForm(instance=request.user)
+            # messages.warning(request, 'A user with this username already exists')
 
-    return render(request, 'templates/change_username.html', {'user_form': user_form})
+        return render(request, 'templates/change_username.html', {'user_form': user_form})
+        
+    except IntegrityError:
+        return HttpResponse("Cannot change the username")
+
 
 
 class ChangePasswordView(SuccessMessageMixin, PasswordChangeView):

@@ -11,7 +11,7 @@ const HelpPage = () => {
                 <li>Category usage</li>
                 <li>Filter usage</li>
                 <li>Tour Cards Content and usage</li>
-                <li>User Profile management</li>
+                <li>User Profile and account management</li>
                 <li>Quicklinks navigation</li>
             </div>
             <br />
@@ -159,7 +159,7 @@ const HelpPage = () => {
             </ul>
 
 
-            <h2>User profile management</h2>
+            <h2>User profile and account management</h2>
             <p>
                 When you are logged in using your credentials at the right conner or when using your mobile,
                 at the dropdown menu you see my profile/account. When clicked on it navigates you to your profile account.
