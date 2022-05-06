@@ -73,11 +73,10 @@ def update_username(request):
         if user_form.is_valid():
             user_form.save()
             messages.success(request, 'Your profile is updated successfully')
-            return redirect('my_account')
+            return redirect('profile')
 
         else:
             user_form = UpdateUserForm(instance=request.user)
-            # messages.warning(request, 'A user with this username already exists')
 
         return render(request, 'templates/change_username.html', {'user_form': user_form})
         

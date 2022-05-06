@@ -44,7 +44,7 @@ urlpatterns = [
     path('about/', TemplateView.as_view(template_name='index.html')),
     path('faq/', TemplateView.as_view(template_name='index.html')),
     path('view/<int:id>/', TemplateView.as_view(template_name='index.html')),
-    path('profile/', TemplateView.as_view(template_name='index.html')),
+    path('profile/', TemplateView.as_view(template_name='index.html'), name='profile'),
     path('login-required/', TemplateView.as_view(template_name='index.html')),
     path('profile/my-account/', TemplateView.as_view(template_name='index.html'), name='my_account'),
     path('coming-soon/', TemplateView.as_view(template_name='index.html'), name='coming_soon'),
