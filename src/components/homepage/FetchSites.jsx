@@ -10,7 +10,7 @@ import '../Styles/cardstyle.css'
 const AllSites = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postPerPage] = useState(20);
+    const [postPerPage] = useState(24);
 
 
     useEffect(() => {
