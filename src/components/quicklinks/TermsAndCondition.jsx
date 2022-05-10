@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import '../Styles/termsandcondition.css'
 
 
@@ -109,7 +108,7 @@ const TermsAndCondition = () => {
 
                 <h2>OUR ADDRESS</h2>
                 <p>
-                    Etour;
+                    Etour.Herokuapp.com;
                     <br />
                     NAIROBI;
                     <br />

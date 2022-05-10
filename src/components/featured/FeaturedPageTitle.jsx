@@ -1,12 +1,9 @@
 import React from 'react';
-
-
 import '../Styles/featuredsites.css'
 
 
-// Handle the Page head at /featured
 function FeaturedPageTitle() {
-    return (  
+    return (
         <div className="page-title">
             <h1>Featured Tourist Sites</h1>
             <h5>Top featured sites around the glob</h5>

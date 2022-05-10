@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../usercontext/UserProvider';
 import axios from 'axios';
-
-
 import '../Styles/userprofile.css'
 
 
@@ -19,7 +17,6 @@ const UserProfile = () => {
     const [isSubmit, setIsSubmit] = useState(false);
     const [isDisabled, setIsDisabled] = useState(true);
     const [isPosted, setIsPosted] = useState(false);
-
 
     const handleProfileChange = (e) => {
         const image = e.target.files[0];
@@ -48,7 +45,6 @@ const UserProfile = () => {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-        // axios.get(`http://127.0.0.1:8000/api/user/profile/${user_id}/`)
         axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${user_id}/`)
             .then(res => {
                 setPreviousValue(res.data)
@@ -99,7 +95,6 @@ const UserProfile = () => {
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        // await axios.post('http://127.0.0.1:8000/api/user/profile/', formData)
         await axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/', formData)
             .then(res => {
                 setIsPosted(true);
@@ -120,27 +115,21 @@ const UserProfile = () => {
         // Update the profile if is updated else live it to its previous value
         if (upLoadImage !== null) {
             updatedData.append("profile_avatar", upLoadImage)
-            // console.log('updated profile', upLoadImage)
         }
         if (formValues.mobile !== "") {
             updatedData.append("mobile", formValues.mobile)
-            // console.log("mobile", formValues.mobile)
         }
         if (formValues.location !== "") {
             updatedData.append("location", formValues.location)
-            // console.log("location", formValues.location)
         }
         if (formValues.bio !== "") {
             updatedData.append("bio", formValues.bio)
-            // console.log("bio", formValues.bio)
         }
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        // await axios.patch(`http://127.0.0.1:8000/api/user/profile/${user_id}/`, updatedData)
         await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${user_id}/`, updatedData)
             .then(res => {
-                // console.log("Updated Data", res.data)
                 setIsPosted(true);
                 alert("Profile updated successfully")
             })
@@ -159,10 +148,7 @@ const UserProfile = () => {
                 user &&
 
                 <div className="only-authenticated">
-                        <div className='profile-page'><h1>Welcome {user.username}</h1></div>
-                    {/* <div className="success-message">
-                        {isPosted ? <div className="message">Profile Successfully Updated</div> : <div className='show-nothing'></div>}
-                    </div> */}
+                    <div className='profile-page'><h1>Welcome {user.username}</h1></div>
                     <div
                         className="welcome-p"
                     ><p>

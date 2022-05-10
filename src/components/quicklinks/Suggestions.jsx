@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-
 import '../Styles/suggestion.css'
 
-// Suggestion Page
+
 const Suggestion = () => {
 
     const countries = {
@@ -63,12 +62,10 @@ const Suggestion = () => {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const isFormSubmitted = Object.keys(formErrors).length === 0 && isSubmit;
-    // console.log('region:', region)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-
     }
 
     const handleSubmit = (e) => {
@@ -78,7 +75,6 @@ const Suggestion = () => {
     }
 
     useEffect(() => {
-        // console.log(formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
     }, [formErrors, isSubmit])
@@ -106,12 +102,12 @@ const Suggestion = () => {
         }
         return errors;
     }
-    
+
     const countyChanged = (e) => {
-    const place = e.target.value
+        const place = e.target.value
         if (place !== 'Open this select menu') {
             setRegion(previousValue => place);
-        } else { 
+        } else {
             setRegion(previousValue => null);
         }
     }
@@ -126,8 +122,6 @@ const Suggestion = () => {
             created_at: new Date().toISOString()
         };
 
-        // console.log('data', data)
-        // axios.post('http://127.0.0.1:8000/api/suggestions/', data)
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/suggestions/', data)
@@ -139,7 +133,6 @@ const Suggestion = () => {
 
     return (
         <div className="contact-us">
-            {/* {Object.keys(formErrors).length === 0 && isSubmit ? <div className="ui-message">Message sent Successfully</div> : <div className="show nothing"></div>} */}
             <form onSubmit={handleSubmit}>
                 <h1>Suggest Feature</h1>
                 <p>
@@ -151,7 +144,7 @@ const Suggestion = () => {
 
                 <h3>OUR ADDRESS</h3>
                 <p>
-                    Etour;
+                    Etour.Herokuapp.com;
                     <br />
                     Whatsapp @ 0113382969
                     <br />

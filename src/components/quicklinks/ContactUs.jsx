@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
-
 import '../Styles/contactus.css'
 
 
-// Contact us page
 const ContactUs = () => {
+
     const countries = {
         egypt: 'EGYPT',
         morocco: 'MOROCCO',
@@ -69,7 +67,6 @@ const ContactUs = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-
     }
 
     const handleSubmit = (e) => {
@@ -107,7 +104,7 @@ const ContactUs = () => {
         }
         return errors;
     }
-    
+
     const countyChanged = (e) => {
         const place = e.target.value
         if (place !== 'Open this select menu') {
@@ -127,8 +124,6 @@ const ContactUs = () => {
             created_at: new Date().toISOString()
         };
 
-        // console.log('data', data)
-        // axios.post('http://127.0.0.1:8000/api/contactUs/', data)
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/contactUs/', data)
@@ -138,10 +133,8 @@ const ContactUs = () => {
             })
     }
 
-
     return (
         <div className="contact-us">
-            {/* {Object.keys(formErrors).length === 0 && isSubmit ? <div className="ui-message">Message sent Successfully</div> : <div className="show nothing"></div>} */}
             <form onSubmit={handleSubmit}>
                 <h1>Contact Us</h1>
                 <p>
@@ -153,7 +146,7 @@ const ContactUs = () => {
 
                 <h3>OUR ADDRESS</h3>
                 <p>
-                    Etour.com;
+                    Etour.Herokuapp.com;
                     <br />
                     Whatsapp @ 0113382969
                     <br />

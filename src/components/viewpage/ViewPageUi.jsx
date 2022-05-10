@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import CommentApp from '../comments/ReturnComments'
-
-
 import '../Styles/viewpage.css'
 
 
-// Handles the /view/id contents
 const ViewPageUI = (props) => {
 
     const [displayImage, setDisplayImage] = useState(props.img)

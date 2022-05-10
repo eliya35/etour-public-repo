@@ -35,6 +35,7 @@ class Comment(models.Model):
         verbose_name = 'comment'
         verbose_name_plural = 'comments'
         db_table = 'user_comments'
+        ordering = ['-created_at']
 
     def __str__(self):
         return self.body

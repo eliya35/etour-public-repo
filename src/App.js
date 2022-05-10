@@ -81,7 +81,6 @@ const App = () => {
 							<Route exact path="/faq/" element={<FAQ />} />
 							<Route exact path="/suggestion/" element={<Suggestion />} />
 							<Route exact path="/category/:category/" element={<CategoryPageContents />} />
-
 							<Route exact path="/profile/" element=
 								{
 									<RequireAuth>
@@ -89,7 +88,6 @@ const App = () => {
 									</RequireAuth>
 								}
 							/>
-
 							<Route exact path="/profile/my-account/" element=
 								{
 									<RequireAuth>

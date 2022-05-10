@@ -45,3 +45,10 @@
 .filter-box-title {
 	font-weight: 700;
 }
+
+/* Mobile filter */
+.mobile-category-filters {
+    display: none;
+    margin: 1em;
+    width: fit-content;
+}

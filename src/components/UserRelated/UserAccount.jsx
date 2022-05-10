@@ -2,15 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios'
 import { UserContext } from '../usercontext/UserProvider';
 import { useNavigate } from 'react-router-dom'
-
 import '../Styles/useraccount.css'
 
 
 const UserAccount = () => {
+
     const { user, setUser } = useContext(UserContext);
     const userId = user.id;
 
-    
     const initialState = {
         username: user.username,
         firstName: user.first_name,
@@ -69,16 +68,13 @@ const UserAccount = () => {
 
         if (formValues.firstName && formValues.firstName !== user.first_name) {
             myUserAccount.append("first_name", formValues.firstName)
-            // console.log('first_name:', formValues.firstName)
         }
         if (formValues.lastName && formValues.lastName !== user.last_name) {
             myUserAccount.append("last_name", formValues.lastName)
-            // console.log('last_name:', formValues.lastName)
         }
 
         if (formValues.email !== user.email && formValues.email !== "") {
             myUserAccount.append("email", formValues.email)
-            // console.log("email:", formValues.email)
         }
 
 
@@ -86,11 +82,9 @@ const UserAccount = () => {
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        // await axios.patch(`http://127.0.0.1:8000/api/user/${userId}/`, myUserAccount)
         await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/${userId}/`, myUserAccount)
         
             .then(res => {
-                // console.log('Updated Acc to:', res.data);
                 setIsPosted(true);
             })
             .catch(err => {
@@ -111,7 +105,6 @@ const UserAccount = () => {
             axios.defaults.xsrfCookieName = 'csrftoken'
             axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-            // await axios.delete(`http://127.0.0.1:8000/api/user/${userId}/`)
             await axios.delete(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/${userId}/`)
             navigate('/')
             setUser(null);

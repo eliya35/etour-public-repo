@@ -2,14 +2,10 @@ import React, { useContext, useEffect, useState, createContext } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { useCart } from 'react-use-cart'
 import { UserContext } from '../usercontext/UserProvider';
-
-
-
 import '../Styles/cart.css'
 
 
 export const NotificationContext = createContext(0);
-
 
 // Add tours to a cart like feature responsible for handling My Destinations
 const Cart = () => {
@@ -79,6 +75,7 @@ const Cart = () => {
 }
 
 export default Cart;
+
 
 export const NotificationProvider = ({ children }) => {
     const [notificationNumb, setNotificationNumb] = useState(0);

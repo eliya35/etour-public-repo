@@ -1,11 +1,8 @@
 import React from 'react';
 import { useCart } from 'react-use-cart'
-
-
 import '../Styles/featuredsites.css'
 
 
-// Responsible for displaying the cardUI at /featured
 const FeaturedTourCard = props => {
     const { addItem } = useCart();
     return (

@@ -9,7 +9,6 @@ const Pagination = ({ postPerPage, totalTours, paginate }) => {
         pageNumbers.push(i);
     }
 
-
     return (
         <nav>
             <ul className="pagination">

@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useCart } from 'react-use-cart'
-
-
 import '../Styles/featuredsites.css'
 
 
-// Responsible for displaying the cardUI at /featured
 const PopularSitesCardUi = props => {
+    
     const { addItem } = useCart();
     const [isFeatured] = useState(props.status);
 

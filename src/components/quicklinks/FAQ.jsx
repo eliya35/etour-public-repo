@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
 import '../Styles/faq.css'
 
 
-// Handle Frequently asked questions
 const FAQ = () => {
     return (
         <div className="faq">
@@ -54,12 +51,12 @@ const FAQ = () => {
                 </ul>
             </section>
             <div className="container">
-                    <div className="feedback">
-                        <h6>Was this information usefully?</h6>
-                        <button className='btn btn-success m-2'>Yes</button>
-                        <button className='btn btn-danger m-2'>No</button>
-                    </div>
+                <div className="feedback">
+                    <h6>Was this information usefully?</h6>
+                    <button className='btn btn-success m-2'>Yes</button>
+                    <button className='btn btn-danger m-2'>No</button>
                 </div>
+            </div>
         </div>
     );
 }

@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { useCart } from 'react-use-cart'
-
-
 import '../Styles/cardstyle.css'
 
 
-// Handles tour site cards
 const TourCard = props => {
     const { addItem } = useCart();
     const [isFeatured] = useState(props.status);
 
-    
     return (
         <div>
             <div className="col">
@@ -19,7 +15,7 @@ const TourCard = props => {
                         <img src={props.imgsrc} className='card-img-top' alt={props.name} />
                         <div className="card-body">
                             <h5 className="card-title">{props.title}</h5>
-                            {isFeatured ? <div className="status">< h6 className='badge badge-primary'>featured</h6></div> : <></> }
+                            {isFeatured ? <div className="status">< h6 className='badge badge-primary'>featured</h6></div> : <></>}
                             <p className="card-text">
                                 {props.shortDescription}
                             </p>

@@ -2,25 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ViewPageUI from './ViewPageUi';
-
-// Handles the viewing of specific tour sites
 function ViewPageData() {
 
     const [tour, setTour] = useState({});
     const params = useParams()
     const id = parseInt(params.id)
 
-
-    useEffect(() => {
-        // axios.get(`http://127.0.0.1:8000/api/${id}`)
-        axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/${id}`)
-            .then(res => {
-                setTour(res.data);
-            })
-            .catch(err => {
-                console.log("An error occurred while getting destination");
-            })
-    }, [id]);
+    useEffect(
+        () => {
+            axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/${id}`)
+                .then(res => {
+                    setTour(res.data);
+                })
+                .catch(err => {
+                    console.log("An error occurred while getting destination");
+                })
+        }, [id]
+    );
 
     return (
         <div>
@@ -41,7 +39,7 @@ function ViewPageData() {
                 touristRate={tour.tourist_traffic_annually}
 
                 product_01={tour.product_01}
-                product_01_affiliate_link={ tour.product_01_affiliate_link}
+                product_01_affiliate_link={tour.product_01_affiliate_link}
 
                 product_02={tour.product_02}
                 product_02_affiliate_link={tour.product_02_affiliate_link}
@@ -60,7 +58,6 @@ function ViewPageData() {
 
                 product_07={tour.product_07}
                 product_07_affiliate_link={tour.product_07_affiliate_link}
-
             />
         </div>
     );

@@ -3,8 +3,6 @@ import { UserContext } from '../usercontext/UserProvider';
 import axios from 'axios';
 import CommentForm from './CommentForm';
 import Comment from './Comment'
-
-
 import '../Styles/comments.css'
 
 
@@ -15,12 +13,13 @@ const Comments = ({ tour_site_id }) => {
     const [profile, setProfile] = useState({});
     const id = user.id
 
-    // rootComments are comments with parent_id null i.e they have no relation with other comments
-    const rootComments = backendComments.filter((backendComment) => backendComment.parent_id === null);
+    // rootComments are comments with parent_id null.
+    const rootComments =
+        backendComments.filter((backendComment) => backendComment.parent_id === null);
 
-    // filter and place each comment to its relevant tour site i.e comments of grand canyon are
-    // only on the grand canyon view page.
-    const filteredRootComments = rootComments.filter(rootComment => rootComment.tour_site_id === tour_site_id)
+    // filter root comments and place each comment to its tour destination
+    const filteredRootComments =
+        rootComments.filter(rootComment => rootComment.tour_site_id === tour_site_id)
 
     const getReplies = commentId => {
         return backendComments
@@ -32,8 +31,6 @@ const Comments = ({ tour_site_id }) => {
     }
 
     const addComment = async (body, parent_id = null) => {
-        // console.log('addComment', body, parent_id,)
-
         let data = {
             body: body,
             parent_id: parent_id,
@@ -45,18 +42,15 @@ const Comments = ({ tour_site_id }) => {
             tour_site_id: tour_site_id
         }
 
-        // console.log('comment data', data)
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        // await axios.post('http://127.0.0.1:8000/api/comments/', data)
         await axios.post(
             'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/comments/', data
         )
-            
-            // Adding the posted data in our state allowing it to apper on top by spreading ...backendComments
+
+            // Put the new comment on top of other comments
             .then(res => {
                 setBackendComments([res.data, ...backendComments]);
-                // console.log('posted comment', res.data)
             })
             .then(
                 setActiveComment(null)
@@ -66,18 +60,17 @@ const Comments = ({ tour_site_id }) => {
             })
     }
 
-    // handling deletion of comments (Replies are also comments)
+    // Deletes Replies also
     const deleteComment = async (commentId) => {
         if (window.confirm('Your Comment will be deleted!')) {
             axios.defaults.xsrfCookieName = 'csrftoken'
             axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-            // await axios.delete(`http://127.0.0.1:8000/api/comments/${commentId}`)
             await axios.delete(
                 `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/comments/${commentId}`
             )
-                
-                // After the request is successful we set our state to comments without the deleted object
+
+                // Set our state to comments without the deleted comment
                 .then(() => {
                     const updatedBackendComments = backendComments.filter
                         (backendComment => backendComment.id !== commentId);
@@ -88,17 +81,14 @@ const Comments = ({ tour_site_id }) => {
                     alert("An error occurred while deleting your comment. Please try aging later.")
                 })
         }
-
     }
 
-    // handling updating of comment when edited
+    // Handling updating of comment when edited
     const updateComment = async (body, commentId) => {
-
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-        // Using patch instead of put as we are only editing a section of the object
-        // await axios.patch(`http://127.0.0.1:8000/api/comments/${commentId}/`, body)
+        // Using patch as we are only editing a section of the object
         await axios.patch(
             `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/comments/${commentId}/`, body
         )
@@ -113,47 +103,42 @@ const Comments = ({ tour_site_id }) => {
                 setBackendComments(updatedBackendComments);
                 setActiveComment(null)
             })
-
-
     }
 
-    useEffect(() => {
-        // axios.get('http://127.0.0.1:8000/api/comments/')
-        axios.get(
-            'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/comments/'
-        )
-            .then(res => {
-                setBackendComments(res.data)
-            })
-            .catch(err => {
-                console.log("An error occurred while fetching comments")
-            })
-        // axios.get(`http://127.0.0.1:8000/api/user/profile/${id}`)
-        axios.get(
-            `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${id}`
-        )
-            .then(res => {
-                setProfile(res.data);
-            })
-            .catch(err => { 
-                console.log("An error occurred while fetching a user profile")
-            })
+    useEffect(
+        () => {
+            axios.get(
+                'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/comments/'
+            )
+                .then(res => {
+                    setBackendComments(res.data)
+                })
+                .catch(err => {
+                    console.log("An error occurred while fetching comments")
+                })
+            axios.get(
+                `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${id}`
+            )
+                .then(res => {
+                    setProfile(res.data);
+                })
+                .catch(err => {
+                    console.log("An error occurred while fetching a user profile")
+                })
+        }, [id]
+    );
 
-    }, [id]);
-
-    // Comment Ui
+    // COMMENT USER INTERFACE
     return (
         <div className='comments'>
             <h3 className="comments-title">Comments</h3>
-            <div className="comment-form-title">Write Comment</div>
+            <div className="comment-form-title">Leave Comment</div>
 
             {/* display a comment form */}
             <CommentForm
                 submitLabel="Post"
                 handleSubmit={addComment}
             />
-
-            {/* Comment component with the required props */}
             <div className="comments-container">
                 {filteredRootComments.map(filteredComment => (
                     <Comment
@@ -164,7 +149,7 @@ const Comments = ({ tour_site_id }) => {
                         deleteComment={deleteComment}
                         updateComment={updateComment}
                         activeComment={activeComment}
-                        setActiveComment={setActiveComment} // Allow us to change our state from outside
+                        setActiveComment={setActiveComment}
                         addComment={addComment}
                     />
                 ))}

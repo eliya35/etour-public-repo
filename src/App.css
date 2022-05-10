@@ -311,6 +311,9 @@ footer p {
 	.filters {
 		display: none;
 	}
+	.mobile-category-filters{
+		display: flex !important;
+	}
 
 	/* Featured Sites elements to... */
 	.page-title {
@@ -846,6 +849,9 @@ footer p {
 	.filters {
 		display: none;
 	}
+	.mobile-category-filters{
+		display: flex !important;
+	}
 
 	/* Featured Sites elements to... */
 	.page-title {
@@ -1274,6 +1280,9 @@ footer p {
 	/* Filters */
 	.filters{
 		display: none !important;
+	}
+	.mobile-category-filters{
+		display: flex !important;
 	}
 
 	/* Featured Page */
@@ -1724,6 +1733,9 @@ footer p {
 	.filters{
 		display: none !important;
 	}
+	.mobile-category-filters{
+		display: flex !important;
+	}
 	
 	/* Featured Page */
 	.featured-page {
@@ -2045,6 +2057,9 @@ footer p {
 
 
 		@media (min-width: 850px) and (max-width: 960px){
+		.mobile-category-filters{
+			display: none !important;
+		}
 		.filters {
 			display: flex !important;
 		}

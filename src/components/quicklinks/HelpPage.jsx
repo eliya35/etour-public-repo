@@ -1,6 +1,6 @@
 import React from 'react';
-
 import '../Styles/helppage.css'
+
 
 const HelpPage = () => {
     return (
@@ -204,35 +204,35 @@ const HelpPage = () => {
                         <p>
                             Navigates you to about page. This page is where you get to know
                             what etour is all about.
-                        </p> 
+                        </p>
                     </li>
 
                     <li>
                         <a href="/faq">FAQ</a>
                         <p>
                             Navigates you to frequently asked questions.
-                        </p> 
+                        </p>
                     </li>
 
                     <li>
                         <a href="/suggestion">Suggest New Feature</a>
                         <p>
                             Navigates to suggestion page where you can live a suggestion or recommendation.
-                        </p> 
+                        </p>
                     </li>
 
                     <li>
                         <a href="/privacy-policy">Privacy Policy</a>
                         <p>
                             Navigates to privacy policy you should probably check that out.
-                        </p> 
+                        </p>
                     </li>
 
                     <li>
                         <a href="/terms-and-condition">Terms and Conditions</a>
                         <p>
                             Navigates to our terms and condition of use you also should check that out.
-                        </p> 
+                        </p>
                     </li>
 
                     <li>
@@ -240,7 +240,7 @@ const HelpPage = () => {
                         <p>
                             Navigates to contact us page. Where you can find us in case of any thing
                             i.e like you know reporting some hooligans, or some stuff.
-                        </p> 
+                        </p>
                     </li>
                 </ul>
             </p>

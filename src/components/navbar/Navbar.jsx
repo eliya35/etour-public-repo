@@ -4,12 +4,9 @@ import { NotificationContext } from '../mydestinations/Cart';
 import { UserContext } from '../usercontext/UserProvider';
 import SearchBar from './SearcBar'
 import axios from 'axios';
-
-
 import '../Styles/navbar.css'
 
 
-// Handle Navbar
 const NavBar = () => {
     const [click, setClick] = useState(false);
 
@@ -24,7 +21,6 @@ const NavBar = () => {
 
 
     const handleSignOut = () => {
-        // axios.get('http://127.0.0.1:8000/api/logout/');
         axios.get(
             'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/logout/'
         );
@@ -36,8 +32,6 @@ const NavBar = () => {
     return (
         <>
             <nav className="navbar" >
-                {/* <Link to='/' className='navbar-logo'>Etour</Link> */}
-                {/* <Link to='/' className='navbar-logo'><img src="/media/etour-logo-no-bg.png" alt="logo" /></Link> */}
                 <Link to='/' className='navbar-logo'><img src="https://etour-first-backet.s3.amazonaws.com/etour-logo/etour-logo-no-bg.png" alt="Etour" /></Link>
                 {
                     user &&

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import '../Styles/filters.css'
 
+
 function Filter() {
+
     const navigate = useNavigate();
 
     return (
@@ -57,7 +58,6 @@ function Filter() {
 
             </div>
         </div>
-
     )
 }
 

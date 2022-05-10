@@ -1,8 +1,7 @@
 import React from 'react';
-
 import '../Styles/homepagetitle.css'
 
-// Handle titles on the home page
+
 function HomePageTitle() {
     return (
         <div className='home-page-title'>

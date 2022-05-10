@@ -7,7 +7,7 @@
 	height: 80px;
 	position: fixed !important;
 	width: 100% !important;
-	z-index: 1 !important;
+	z-index: 2000 !important;
 	top: 0% !important;
 	display: flex;
 	justify-content: center;

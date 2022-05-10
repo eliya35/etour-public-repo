@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
 import '../Styles/searchbar.css'
 
 
-// Handles Searching
 const SearchBar = ({ placeholder }) => {
     const [data, setData] = useState([])
     const [filteredData, setFilteredData] = useState([])
@@ -23,7 +21,6 @@ const SearchBar = ({ placeholder }) => {
         } else {
             setFilteredData(newFilter)
         }
-
     }
 
     const removeEverything = () => {
@@ -32,7 +29,6 @@ const SearchBar = ({ placeholder }) => {
     }
 
     useEffect(() => {
-        // axios.get('http://127.0.0.1:8000/api/')
         axios.get(
             'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/'
         )
@@ -67,23 +63,28 @@ const SearchBar = ({ placeholder }) => {
                 </div>
 
             </div>
-            {filteredData.length !== 0 && (<div className="search-results">
-                {filteredData.slice(0, 11).map(filteredSite => {
-                    return (
-                        <div
-                            className='results'
-                            key={filteredSite.id}
-                            onClick={() => {
-                                (navigate(`/view/${filteredSite.id}/`))
-                                setFilteredData([]);
-                                setDestination("");
-                            }}
-                        >{filteredSite.name}
-                        </div>
-                    );
-                })}
-            </div>
-            )}
+            {
+                filteredData.length !== 0 && (
+                    <div className="search-results">
+                        {
+                            filteredData.slice(0, 11).map(filteredSite => {
+                                return (
+                                    <div
+                                        className='results'
+                                        key={filteredSite.id}
+                                        onClick={() => {
+                                            (navigate(`/view/${filteredSite.id}/`))
+                                            setFilteredData([]);
+                                            setDestination("");
+                                        }}
+                                    >{filteredSite.name}
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
+                )
+            }
         </div >
     );
 };

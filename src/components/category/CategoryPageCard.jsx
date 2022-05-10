@@ -1,7 +1,5 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { useCart } from 'react-use-cart'
-
-
 import '../Styles/categorycard.css'
 
 
