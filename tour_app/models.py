@@ -71,7 +71,7 @@ COUNTRIES_CHOICES = [
     ('BAHRAIN', 'BAHRAIN'),
     ('IRAQ', 'IRAQ'),
     ('NORWAY', 'NORWAY'),
-
+    ('ICELAND', 'ICELAND'),
 ]
 
 
