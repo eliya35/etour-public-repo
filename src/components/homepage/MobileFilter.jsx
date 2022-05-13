@@ -25,6 +25,7 @@ const MobileFilter = () => {
                 <Dropdown.Item href="/category/Caves/">Caves</Dropdown.Item>
                 <Dropdown.Item href="/category/Cultural Regions/">Cultural Regions</Dropdown.Item>
                 <Dropdown.Item href="/category/Foot Hikes/">Foot Hikes</Dropdown.Item>
+                <Dropdown.Item href="/category/Bike Hikes/">Bike Hikes</Dropdown.Item>
                 <Dropdown.Item href="/category/island/">Islands</Dropdown.Item>
                 <Dropdown.Item href="/category/Hotel Casino/">Hotel and Casino</Dropdown.Item>
                 <Dropdown.Item href="/category/Beach Restaurant/">Beach Restaurant</Dropdown.Item>

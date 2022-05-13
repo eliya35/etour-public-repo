@@ -132,7 +132,7 @@ const Comments = ({ tour_site_id }) => {
     return (
         <div className='comments'>
             <h3 className="comments-title">Comments</h3>
-            <div className="comment-form-title">Leave Comment</div>
+            <div className="comment-form-title">Leave a Comment</div>
 
             {/* display a comment form */}
             <CommentForm

@@ -27,6 +27,7 @@ function Filter() {
                     <li><a href="/category/Desert/">Deserts</a></li>
                     <li><a href="/category/Forest Region/">Forest Regions</a></li>
                     <li><a href="/category/Foot Hikes/">Foot Hikes</a></li>
+                    <li><a href="/category/Bike Hikes/">Bike Hikes</a></li>
                     <li><a href="/category/Wildlife Region/">Wildlife Regions</a></li>
                     <li><a href="/category/Water Falls/">Water Falls</a></li>
                     <li><a href="/category/Recreational Grounds/">Recreational</a></li>
