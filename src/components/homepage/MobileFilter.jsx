@@ -8,8 +8,17 @@ const MobileFilter = () => {
     return (
         <div className='mobile-category-filters'>
             <DropdownButton id="dropdown-basic-button" title="Category Dropdown">
+                {/* <br /> */}
+                <div className="mobile-filter-options">
+                    <samp><strong>FILTERS</strong></samp>
+                </div>
                 <Dropdown.Item href="/featured/">Featured</Dropdown.Item>
                 <Dropdown.Item href="/popular/">Most Popular</Dropdown.Item>
+
+                <br />
+                <div className="mobile-categories">
+                    <samp><strong>CATEGORIES</strong></samp>
+                </div>
                 <Dropdown.Item href="/category/Ancient Buildings/">Ancient Buldings</Dropdown.Item>
                 <Dropdown.Item href="/category/National Parks/">National Parks</Dropdown.Item>
                 <Dropdown.Item href="/category/Mountains/">Mountains</Dropdown.Item>
@@ -29,6 +38,19 @@ const MobileFilter = () => {
                 <Dropdown.Item href="/category/island/">Islands</Dropdown.Item>
                 <Dropdown.Item href="/category/Hotel Casino/">Hotel and Casino</Dropdown.Item>
                 <Dropdown.Item href="/category/Beach Restaurant/">Beach Restaurant</Dropdown.Item>
+
+                <br />
+                <div className="mobile-region">
+                    <samp><strong>REGIONS</strong></samp>
+                </div>
+                <Dropdown.Item href="/region/Africa/">Africa</Dropdown.Item>
+                <Dropdown.Item href="/region/Europe//">Europe</Dropdown.Item>
+                <Dropdown.Item href="/region/USA/">USA</Dropdown.Item>
+                <Dropdown.Item href="/region/North America/">North America</Dropdown.Item>
+                <Dropdown.Item href="/region/South America/">South America</Dropdown.Item>
+                <Dropdown.Item href="/region/Asian Pacific/">Asian Pacific</Dropdown.Item>
+                <Dropdown.Item href="/region/Antarticar/">Antarticar</Dropdown.Item>
+                <Dropdown.Item href="/region/Middle-East/">Middle-East</Dropdown.Item>
             </DropdownButton>
         </div>
     );

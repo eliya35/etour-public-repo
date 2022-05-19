@@ -56,7 +56,23 @@ function Filter() {
                         </li>
                     </ul>
                 </div>
-
+                <div className="region-filters">
+                    <div className="region-section">
+                        <h6><strong>Regions</strong></h6>
+                    </div>
+                    <div className="region-options">
+                        <ul>
+                            <li><a href="/region/Africa/">Africa</a></li>
+                            <li><a href="/region/Europe/">Europe</a></li>
+                            <li><a href="/region/USA/">USA</a></li>
+                            <li><a href="/region/North-america/">North America</a></li>
+                            <li><a href="/region/South-america/">South America</a></li>
+                            <li><a href="/region/Asian-pacific/">Asian Pacific</a></li>
+                            <li><a href="/region/Antarticar/">Antarctica</a></li>
+                            <li><a href="/region/Middle-East/">Middle East</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     )

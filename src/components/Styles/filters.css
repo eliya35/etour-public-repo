@@ -18,6 +18,15 @@
     width: 200px!important;
     margin-top: -5em;
 }
+.selection-name-weight {
+	color: firebrick;
+}
+.filter-box-title {
+	color: firebrick;
+}
+.region-section {
+	color: firebrick;
+}
 .unoderd-list-categories li a:hover{
 	color: rgb(194, 36, 36);
 }
@@ -45,10 +54,32 @@
 .filter-box-title {
 	font-weight: 700;
 }
+.region-options ul {
+	list-style: circle;
+}
+.region-options ul li a {
+	text-decoration: none;
+	color: #212529;
+}
+.region-options ul li a:hover {
+	color: rgb(194, 36, 36);
+}
 
 /* Mobile filter */
 .mobile-category-filters {
     display: none;
     margin: 1em;
     width: fit-content;
+}
+.mobile-filter-options {
+	padding-left: 30px;
+    color: brown;
+}
+.mobile-categories {
+	padding-left: 30px;
+    color: brown;
+}
+.mobile-region {
+	padding-left: 30px;
+    color: brown;
 }
