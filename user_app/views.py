@@ -67,6 +67,7 @@ def logout_user(request):
 
 # @login_required
 def update_username(request):
+    try:
         user_form = UpdateUserForm(request.POST, instance=request.user)
 
         if user_form.is_valid():
@@ -79,7 +80,8 @@ def update_username(request):
 
         return render(request, 'templates/change_username.html', {'user_form': user_form})
         
-
+    except IntegrityError:
+        return HttpResponse("Cannot change the username")
 
 
 
