@@ -187,6 +187,6 @@ SECURE_HSTS_PRELOAD = True
 
 # IN CASE OF ERROR CODE 500
 SERVER_EMAIL = str(os.getenv('EMAIL_USER'))
-ADMINS = [('Vincent', 'etourinternational01@gmail.com'), ('Eliya', 'vincenteliya35@gmail.com')]
+ADMINS = [('Vincent', str(os.getenv('EMAIL_USER'))), ('Eliya', str(os.getenv('SECOND_EMAIL_USER')))]
 
 django_heroku.settings(locals())

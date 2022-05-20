@@ -55,7 +55,7 @@
 	font-weight: 700;
 }
 .region-options ul {
-	list-style: circle;
+	list-style: none;
 }
 .region-options ul li a {
 	text-decoration: none;
