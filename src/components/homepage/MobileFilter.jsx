@@ -46,9 +46,9 @@ const MobileFilter = () => {
                 <Dropdown.Item href="/region/Africa/">Africa</Dropdown.Item>
                 <Dropdown.Item href="/region/Europe//">Europe</Dropdown.Item>
                 <Dropdown.Item href="/region/USA/">USA</Dropdown.Item>
-                <Dropdown.Item href="/region/North America/">North America</Dropdown.Item>
-                <Dropdown.Item href="/region/South America/">South America</Dropdown.Item>
-                <Dropdown.Item href="/region/Asian Pacific/">Asian Pacific</Dropdown.Item>
+                <Dropdown.Item href="/region/North-america/">North America</Dropdown.Item>
+                <Dropdown.Item href="/region/South-america/">South America</Dropdown.Item>
+                <Dropdown.Item href="/region/Asian-pacific/">Asian Pacific</Dropdown.Item>
                 <Dropdown.Item href="/region/Antarticar/">Antarticar</Dropdown.Item>
                 <Dropdown.Item href="/region/Middle-East/">Middle-East</Dropdown.Item>
             </DropdownButton>
