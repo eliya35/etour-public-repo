@@ -125,6 +125,7 @@ class UserProfileListView(generics.ListAPIView):
 
 # class for both comment POST and GET request
 class CommentListCreateView(generics.ListCreateAPIView):
+    authentication_classes = (TokenAuthentication, SessionAuthentication)
     permission_classes = (IsAuthenticated,)
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
