@@ -19,7 +19,7 @@ const NorthAmericaRegionDestinations = () => {
 
                 })
                 .catch(err => {
-                    console.log("An error occurred");
+                    // console.log("An error occurred");
                 })
         }, []
     );

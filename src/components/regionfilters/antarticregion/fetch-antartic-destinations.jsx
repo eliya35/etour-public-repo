@@ -19,7 +19,7 @@ const AntarticRegionDestinations = () => {
 
                 })
                 .catch(err => {
-                    console.log("An error occurred while fetching destinations");
+                    // console.log("An unkown error occurred");
                 })
         }, []
     );

@@ -18,7 +18,7 @@ const FeaturedSites = () => {
                     setFeaturedSites(res.data);
                 })
                 .catch(err => {
-                    console.log("An error occurred while fetching featured sites");
+                    // console.log("An unkown error occurred");
                 })
 
         }, []

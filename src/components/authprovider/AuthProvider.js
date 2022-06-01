@@ -18,7 +18,7 @@ export function AuthProvider({ children }) {
             })
             .catch(err => {
                 setLoading(false);
-                console.log("An error occurred while fetching users information")
+                // console.log("An unkown error occurred")
             })
     }, []);
 

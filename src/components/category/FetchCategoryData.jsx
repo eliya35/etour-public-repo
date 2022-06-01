@@ -22,7 +22,7 @@ const FetchCategoryData = () => {
                     setLoading(false);
                 })
                 .catch(err => {
-                    console.log("An error occurred while fetching category sites");
+                    // console.log("An unkown error occurred");
                     setLoading(false);
                 })
         }

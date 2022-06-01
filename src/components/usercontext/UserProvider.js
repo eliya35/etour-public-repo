@@ -17,7 +17,7 @@ export function UserProvider({ children }) {
             })
             .catch(err => {
                 setLoading(false);
-                console.log("An error occurred while retrieving user credentials");
+                // console.log("An unkown error occurred");
             })
     }, []);
 

@@ -50,7 +50,7 @@ const UserProfile = () => {
                 setPreviousValue(res.data)
             })
             .catch(err => {
-                console.log('An error occurred while fetching data')
+                // console.log('An unkown error occurred')
             })
     }, [user_id, formErrors, isSubmit])
 
