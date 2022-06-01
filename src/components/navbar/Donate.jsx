@@ -44,9 +44,10 @@ const Donate = () => {
             <p>
                 You have the freedom of donating with all sorts of currency supported by Pay pal.
                 Just click on the button bellow with the label "Donate" and you can proceed on with the
-                donation with a paypal account or credit card as you desire
+                donation with a paypal account or credit card as you desire.
+                
                 <br />
-                Donation link will be set up soon.
+                <strong> Donation link will be set up soon.</strong>
             </p>
             {/* <div className="paypal-usd">
                 <span>
