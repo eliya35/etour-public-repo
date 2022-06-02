@@ -130,9 +130,30 @@ footer p {
 }
 
 
-
-
 /* MEDIA QUERIES */
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading-clockwise {
+    animation: loading-clockwise-spin infinite 1s linear;
+  }
+}
+.loading-clockwise {
+	height: 10vmin;
+    pointer-events: none;
+    margin-left: 39em;
+    margin-bottom: 6em;
+    margin-top: 4em;
+}
+
+@keyframes loading-clockwise-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 @media (min-width: 300px) and (max-width:399.99px) {
 	.container {
@@ -221,6 +242,9 @@ footer p {
 	}
 	button {
 		display: none;
+	}
+	.loading-clockwise {
+		margin-left: 8em;
 	}
 	.current-user {
     	margin-left: -9px;
@@ -590,6 +614,10 @@ footer p {
 		width: 100%;
 	}
 	@media (min-width: 386px) and (max-width:399.99px){
+		.loading-clockwise{
+			margin-left: 10em;
+		}
+
 		.navbar {
 			height: 100px;
 		}
@@ -726,6 +754,9 @@ footer p {
 
 
 @media (min-width: 400px) and (max-width:512px) {
+	.loading-clockwise{
+		margin-left: 10em;
+	}
 	/* Navbar elements to... */
 	.navbar {
 		width: 508px;
@@ -1210,6 +1241,9 @@ footer p {
 
 /* If viewport is 511px - 710px set the elements to... */ 
 @media (min-width: 513px) and (max-width:710px){
+	.loading-clockwise{
+		margin-left: 13em;
+	}
 	/* Navbar elements to... */
 	.navbar {
 		height: 150px;
@@ -1653,6 +1687,9 @@ footer p {
 
 	/* CHILDREN */
 	@media (min-width: 601px) and (max-width: 710px){
+		.loading-clockwise{
+			margin-left: 16em;
+		}
 		.container-fluid .row {
 			padding-right: 3em;
 			margin-left: -13em;
@@ -1676,6 +1713,9 @@ footer p {
 
 
 	@media (min-width: 665px) and (max-width: 710px){
+		.loading-clockwise{
+			margin-left: 19em;
+		}
 		.imgBx img {
 			max-width: 44em;
 		}
@@ -1698,6 +1738,9 @@ footer p {
 
 /* If viewport is 711px - 900px set the elements to... */
 @media (min-width: 711px) and (max-width:960px){
+	.loading-clockwise{
+		margin-left: 19em;
+	}
 	.navbar {
 		height: 150px;
 	}
@@ -2130,6 +2173,9 @@ footer p {
 
 	/* CHILDREN */
 		@media (min-width: 768px) and (max-width: 889px){
+		.loading-clockwise{
+			margin-left: 21em;
+		}
 		.navbar {
 			height: 80px;
 		}
@@ -2265,6 +2311,9 @@ footer p {
 
 
 		@media (min-width: 850px) and (max-width: 960px){
+		.loading-clockwise{
+			margin-left: 24em;
+		}
 		.mobile-category-filters{
 			display: none !important;
 		}
@@ -2352,6 +2401,9 @@ footer p {
 	}
 
 		@media (min-width: 890px) and (max-width: 960px){
+		.loading-clockwise{
+			margin-left: 25em;
+		}
 		.navbar{
 			height: 80px;
 		}
@@ -2415,6 +2467,9 @@ footer p {
 
 /* If viewport is 961 to 1024px do this... */
 @media (min-width: 961px) and (max-width: 1025px) {
+	.loading-clockwise{
+		margin-left: 27em;
+	}
 	.NavbarItems {
 		position: relative;
 	}
@@ -2648,6 +2703,9 @@ footer p {
 
 
 @media (min-width:1026px) and (max-width:1200px){
+	.loading-clockwise{
+		margin-left: 30em;
+	}
 
 	.nav-menu {
 		width: 0vw;
@@ -2770,6 +2828,9 @@ footer p {
 
 
 @media (min-width:1201px) and (max-width:1280px){
+	.loading-clockwise{
+		margin-left: 35em;
+	}
 	
 	.nav-menu {
 		width: 24vw;
@@ -2819,6 +2880,9 @@ footer p {
 
 
 @media (min-width:1281px) and (max-width:1350px){
+	.loading-clockwise{
+		margin-left: 37em;
+	}
 
 	.navbar-logo{
 		margin-left: -1em;

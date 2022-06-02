@@ -1,5 +1,6 @@
 import React, { useEffect, useState, createContext } from 'react';
 import axios from 'axios';
+import loader from './clockwise.svg'
 
 
 export const UserContext = createContext(null);
@@ -15,14 +16,11 @@ export function UserProvider({ children }) {
                 setUser(res.data);
                 setLoading(false);
             })
-            .catch(err => {
-                setLoading(false);
-                // console.log("An unkown error occurred");
-            })
+            .catch(setLoading(false))
     }, []);
 
     if (isLoading) {
-        return <div><span>Loading...</span></div>
+        return <img src={loader} className="loading-clockwise" alt="loading..." />
     }
 
     return (
@@ -31,4 +29,3 @@ export function UserProvider({ children }) {
         </UserContext.Provider>
     );
 };
-
