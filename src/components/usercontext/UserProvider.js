@@ -16,7 +16,10 @@ export function UserProvider({ children }) {
                 setUser(res.data);
                 setLoading(false);
             })
-            .catch(setLoading(false))
+            .catch(err => {
+                setLoading(false);
+                // console.log("An unkown error occurred");
+            })
     }, []);
 
     if (isLoading) {
@@ -29,3 +32,4 @@ export function UserProvider({ children }) {
         </UserContext.Provider>
     );
 };
+
