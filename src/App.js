@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { CartProvider } from "react-use-cart";
-import { AuthProvider } from "./components/authprovider/AuthProvider";
 import { UserProvider } from "./components/usercontext/UserProvider";
 import { RequireAuth } from "./components/usercontext/RequireAuth";
 import Cart, { NotificationProvider } from "./components/mydestinations/Cart";
