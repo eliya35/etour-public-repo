@@ -3,11 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import { CartProvider } from "react-use-cart";
 import { AuthProvider } from "./components/authprovider/AuthProvider";
 import { UserProvider } from "./components/usercontext/UserProvider";
-import { RequireAuth } from "./components/authprovider/RequireAuth";
+import { RequireAuth } from "./components/usercontext/RequireAuth";
+import Cart, { NotificationProvider } from "./components/mydestinations/Cart";
 import NavBar from './components/navbar/Navbar'
 import Donate from "./components/navbar/Donate";
 import Home from "./components/homepage/Home";
-import Cart, { NotificationProvider } from "./components/mydestinations/Cart";
 import ViewPageData from "./components/viewpage/FetchViewData";
 import FeaturedPage from "./components/featured/FeaturedPage"
 import About from "./components/quicklinks/AboutEour";
@@ -40,122 +40,120 @@ const App = () => {
 	return (
 		<div>
 			<CartProvider>
-				<AuthProvider>
-					<UserProvider>
-						<NotificationProvider>
-							<NavBar />
-						</NotificationProvider>
-						<Routes>
-							<Route exact path="/" element={<Home />} />
-							<Route exact path="/mylist/" element=
-								{
-									<RequireAuth>
-										<Cart />
-									</RequireAuth>
-								}
-							/>
-							<Route exact path="/view/:id/" element=
-								{
-									<RequireAuth>
-										<ViewPageData />
-									</RequireAuth>
-								}
-							/>
-							<Route
-								exact
-								path="/featured/"
-								element={<FeaturedPage />}
-							/>
-							<Route
-								exact
-								path="/popular/"
-								element={<PopularSitesUiPage />}
-							/>
-							
-							<Route
-								exact
-								path="/region/Africa/"
-								element={<AfricaRegionPageContents />}
-							/>
-							
-							<Route
-								exact
-								path="/region/Europe/"
-								element={<EuropeRegionPageContents />}
-							/>
-							
-							<Route
-								exact
-								path="/region/USA/"
-								element={<UsaRegionPageContents />}
-							/>
-							
-							<Route
-								exact
-								path="/region/North-america/"
-								element={<NorthAmericaRegionPageContents />}
-							/>
-							
-							<Route
-								exact
-								path="/region/South-america/"
-								element={<SouthAmericaRegionPageContents />}
-							/>
-							
-							<Route
-								exact
-								path="/region/Asian-pacific/"
-								element={<AsianPacifcRegionPageContents />}
-							/>
-							
-							<Route
-								exact
-								path="/region/Antarticar/"
-								element={<AntarticRegionPageContents />}
-							/>
-							
-							<Route
-								exact
-								path="/region/Middle-East/"
-								element={<MiddleEastRegionPageContents />}
-							/>
-							
-							<Route exact path="/donate/" element={<Donate />} />
-							<Route exact path="/contact/" element={<ContactUs />} />
-							<Route exact path="/help/" element={<HelpPage />} />
-							<Route
-								exact
-								path="/privacy-policy/"
-								element={<PrivacyPolicy />}
-							/>
-							<Route
-								exact
-								path="/terms-and-condition/"
-								element={<TermsAndCondition />}
-							/>
-							<Route exact path="/about/" element={<About />} />
-							<Route exact path="/faq/" element={<FAQ />} />
-							<Route exact path="/suggestion/" element={<Suggestion />} />
-							<Route exact path="/category/:category/" element={<CategoryPageContents />} />
-							<Route exact path="/profile/" element=
-								{
-									<RequireAuth>
-										<UserProfile />
-									</RequireAuth>
-								}
-							/>
-							<Route exact path="/profile/my-account/" element=
-								{
-									<RequireAuth>
-										<UserAccount />
-									</RequireAuth>
-								}
-							/>
-							<Route exact path='/login-required/' element={<LoginRequired />} />
-							<Route exact path='/coming-soon/' element={<CommingSoon />} />
-						</Routes>
-					</UserProvider>
-				</AuthProvider>
+				<UserProvider>
+					<NotificationProvider>
+						<NavBar />
+					</NotificationProvider>
+					<Routes>
+						<Route exact path="/" element={<Home />} />
+						<Route exact path="/mylist/" element=
+							{
+								<RequireAuth>
+									<Cart />
+								</RequireAuth>
+							}
+						/>
+						<Route exact path="/view/:id/" element=
+							{
+								<RequireAuth>
+									<ViewPageData />
+								</RequireAuth>
+							}
+						/>
+						<Route
+							exact
+							path="/featured/"
+							element={<FeaturedPage />}
+						/>
+						<Route
+							exact
+							path="/popular/"
+							element={<PopularSitesUiPage />}
+						/>
+
+						<Route
+							exact
+							path="/region/Africa/"
+							element={<AfricaRegionPageContents />}
+						/>
+
+						<Route
+							exact
+							path="/region/Europe/"
+							element={<EuropeRegionPageContents />}
+						/>
+
+						<Route
+							exact
+							path="/region/USA/"
+							element={<UsaRegionPageContents />}
+						/>
+
+						<Route
+							exact
+							path="/region/North-america/"
+							element={<NorthAmericaRegionPageContents />}
+						/>
+
+						<Route
+							exact
+							path="/region/South-america/"
+							element={<SouthAmericaRegionPageContents />}
+						/>
+
+						<Route
+							exact
+							path="/region/Asian-pacific/"
+							element={<AsianPacifcRegionPageContents />}
+						/>
+
+						<Route
+							exact
+							path="/region/Antarticar/"
+							element={<AntarticRegionPageContents />}
+						/>
+
+						<Route
+							exact
+							path="/region/Middle-East/"
+							element={<MiddleEastRegionPageContents />}
+						/>
+
+						<Route exact path="/donate/" element={<Donate />} />
+						<Route exact path="/contact/" element={<ContactUs />} />
+						<Route exact path="/help/" element={<HelpPage />} />
+						<Route
+							exact
+							path="/privacy-policy/"
+							element={<PrivacyPolicy />}
+						/>
+						<Route
+							exact
+							path="/terms-and-condition/"
+							element={<TermsAndCondition />}
+						/>
+						<Route exact path="/about/" element={<About />} />
+						<Route exact path="/faq/" element={<FAQ />} />
+						<Route exact path="/suggestion/" element={<Suggestion />} />
+						<Route exact path="/category/:category/" element={<CategoryPageContents />} />
+						<Route exact path="/profile/" element=
+							{
+								<RequireAuth>
+									<UserProfile />
+								</RequireAuth>
+							}
+						/>
+						<Route exact path="/profile/my-account/" element=
+							{
+								<RequireAuth>
+									<UserAccount />
+								</RequireAuth>
+							}
+						/>
+						<Route exact path='/login-required/' element={<LoginRequired />} />
+						<Route exact path='/coming-soon/' element={<CommingSoon />} />
+					</Routes>
+				</UserProvider>
 			</CartProvider>
 		</div>
 	);
