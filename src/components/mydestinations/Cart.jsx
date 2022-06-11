@@ -32,9 +32,9 @@ const Cart = () => {
                         <h5>Added Sites: ({totalUniqueItems})</h5>
                         <table className='table table-light table-hover m-0'>
                             <tbody>
-                                {items.map((item, index) => {
+                                {items.map(item => {
                                     return (
-                                        <tr key={index}>
+                                        <tr key={item.id}>
                                             <td>
                                                 <img src={item.image} style={{ height: '6rem' }} alt={item.name} />
                                             </td>

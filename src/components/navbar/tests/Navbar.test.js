@@ -2,7 +2,6 @@ import React from 'react';
 import NavBar from '../Navbar';
 import { mount, shallow } from 'enzyme'
 import { CartProvider } from "react-use-cart";
-import { AuthProvider } from '../../authprovider/AuthProvider';
 import { UserProvider } from '../../usercontext/UserProvider';
 import { BrowserRouter } from "react-router-dom";
 

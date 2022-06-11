@@ -35,10 +35,11 @@ const FeaturedSites = () => {
     return (
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">
-                {currentFeaturedSites.map((item, index) => {
+                {currentFeaturedSites.map(item => {
                     return (
                         <div className="col-md-3">
                             <FeaturedTourCard
+                                key={item.id}
                                 id={item.id}
                                 title={item.name}
                                 imgsrc={item.image}
@@ -46,7 +47,6 @@ const FeaturedSites = () => {
                                 shortDescription={item.short_description}
                                 price={item.price}
                                 item={item}
-                                index={index}
                             />
                         </div>
                     );

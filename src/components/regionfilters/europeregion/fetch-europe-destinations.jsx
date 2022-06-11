@@ -40,10 +40,11 @@ const EuropeRegionDestinations = () => {
     return (
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">
-                {currentTours.map((item, index) => {
+                {currentTours.map(item => {
                     return (
                         <div className="col-md-3">
                             <TourCard
+                                key={item.id}
                                 id={item.id}
                                 title={item.name}
                                 imgsrc={item.image}
@@ -51,7 +52,6 @@ const EuropeRegionDestinations = () => {
                                 shortDescription={item.short_description}
                                 price={item.price}
                                 item={item}
-                                index={index}
                                 status={item.is_featured}
                             />
                         </div>

@@ -6,7 +6,7 @@ import '../Styles/cardstyle.css'
 
 
 const PopularSites = () => {
-    
+
     const [tourSites, setTourSite] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(24);
@@ -38,10 +38,11 @@ const PopularSites = () => {
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">
                 {
-                    currentPopularSites.map((item, index) => {
+                    currentPopularSites.map(item => {
                         return (
                             <div className="col-md-3">
                                 <PopularSitesCardUi
+                                    key={item.id}
                                     id={item.id}
                                     title={item.name}
                                     imgsrc={item.image}
@@ -49,7 +50,6 @@ const PopularSites = () => {
                                     shortDescription={item.short_description}
                                     price={item.price}
                                     item={item}
-                                    index={index}
                                     rate={item.numb_stars}
                                     status={item.is_featured}
                                 />
