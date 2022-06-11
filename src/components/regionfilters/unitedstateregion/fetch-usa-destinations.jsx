@@ -52,7 +52,6 @@ const UsaRegionDestinations = () => {
                                 shortDescription={item.short_description}
                                 price={item.price}
                                 item={item}
-                                index={index}
                                 status={item.is_featured}
                             />
                         </div>
