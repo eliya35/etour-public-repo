@@ -51,7 +51,6 @@ const Comments = ({ tour_site_id }) => {
             // Put the new comment on top of other comments
             .then(res => {
                 setBackendComments([res.data, ...backendComments]);
-                console.log(res.data);
             })
             .then(
                 setActiveComment(null)
