@@ -39,7 +39,7 @@ const Comment = ({
         <div className='comment'>
             <div className="comment-image-container">
                 {
-                    comment.comment_avatar_url !== null ?
+                    comment.comment_avatar_url !== null || undefined ?
                         <img src={comment.comment_avatar_url} className='user-profile-img' alt="avatar" /> :
                         <img src="https://etour-first-backet.s3.amazonaws.com/avatars/user-icon.png" alt="avatar" />
                 }
