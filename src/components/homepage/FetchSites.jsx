@@ -3,12 +3,15 @@ import TourCard from './DisplaySites';
 import axios from 'axios';
 import Pagination from './Pagination';
 import '../Styles/cardstyle.css';
+import loader from './clockwise.svg'
 
 
 const AllSites = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(24);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     useEffect(
         () => {
@@ -17,13 +20,26 @@ const AllSites = () => {
             )
                 .then(res => {
                     setTours(res.data);
-
+                    setIsLoading(false);
                 })
-                .catch(err => {
-                    // console.log("An unkown error occurred");
+                .catch(() => {
+                    setIsLoading(false);
+                    setError(true);
                 })
         }, []
     );
+
+    if (isLoading) {
+        return (
+            <div className="allsites-loading">
+                <img src={loader} className="loading-clockwise" alt="Loading..." />
+            </div>
+        ); 
+    }
+
+    if (error) {
+        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+    }
 
     // Current destinations per page
     const indexOfLastTour = currentPage * postPerPage;

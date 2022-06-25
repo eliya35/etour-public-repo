@@ -3,15 +3,19 @@ import HomePageTitle from './HomePageTitle';
 import Filter from './FilterUi'
 import AllSites from './FetchSites';
 import MobileFilter from './MobileFilter';
+import ErrorBoundary from '../../ErrorBoundary';
 
 
-const Home = () =>{
-    return(
+const Home = () => {
+    return (
         <div>
-            <HomePageTitle/>
+            <HomePageTitle />
             <Filter />
             <MobileFilter />
-            <AllSites />
+
+            <ErrorBoundary>
+                <AllSites />
+            </ErrorBoundary>
         </div>
     )
 }
