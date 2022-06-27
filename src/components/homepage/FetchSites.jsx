@@ -12,6 +12,12 @@ const AllSites = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 
+    // Pagination Logic
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentTours = tours.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
     useEffect(
         () => {
             axios.get(
@@ -40,14 +46,7 @@ const AllSites = () => {
         throw new Error('NetworkError: Please check your connnection or try again later😶.')
     }
 
-    // Current destinations per page
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentTours = tours.slice(indexOfFirstTour, indexOfLastTour);
-
-    // Change Page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
+    
     return (
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">
