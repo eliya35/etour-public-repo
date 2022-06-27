@@ -35,7 +35,7 @@ const FeaturedSites = () => {
 
     if (isLoading) {
         return (
-            <div className="featuredsites-loading">
+            <div className="allsites-loading">
                 <img src={loader} className="loading-clockwise" alt="Loading..." />
             </div>
         );
