@@ -3,8 +3,7 @@ import TourCard from './DisplaySites';
 import axios from 'axios';
 import Pagination from './Pagination';
 import '../Styles/cardstyle.css';
-import loader from './clockwise.svg'
-
+import loader from '../../clockwise.svg'
 
 const AllSites = () => {
     const [tours, setTours] = useState([]);

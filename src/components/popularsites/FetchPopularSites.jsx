@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PopularSitesCardUi from './PopularSiteCardUi';
-import axios from 'axios'
-import Pagination from '../homepage/Pagination'
-import '../Styles/cardstyle.css'
+import axios from 'axios';
+import Pagination from '../homepage/Pagination';
+import '../Styles/cardstyle.css';
+import loader from '../../clockwise.svg'
 
 
 const PopularSites = () => {
@@ -10,29 +11,44 @@ const PopularSites = () => {
     const [tourSites, setTourSite] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(24);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    // Filtering popular sites from all sites
+    const popularDestination =
+        tourSites.filter(tourSite => tourSite.tourist_traffic_annually === 'VERY HIGH');
+
+
+    // Pagination Logic
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentPopularSites = popularDestination.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
     useEffect(() => {
         axios.get('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/')
             .then(res => {
                 setTourSite(res.data);
-
+                setIsLoading(false);
             })
-            .catch(err => {
-                // console.log("An unkown error occurred")
+            .catch(() => {
+                setIsLoading(false);
+                setError(true);
             })
     }, []);
 
-    // Getting popular sites from all sites
-    const popularDestination =
-        tourSites.filter(tourSite => tourSite.tourist_traffic_annually === 'VERY HIGH')
+    if (isLoading) {
+        return (
+            <div className="allsites-loading">
+                <img src={loader} className="loading-clockwise" alt="Loading..." />
+            </div>
+        );
+    }
 
-    // Current tour destinations per page
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentPopularSites = popularDestination.slice(indexOfFirstTour, indexOfLastTour);
-
-    // Change Page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    if (error) {
+        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+    }
 
     return (
         <div className="container-fluid d-flex justify-content-center">
