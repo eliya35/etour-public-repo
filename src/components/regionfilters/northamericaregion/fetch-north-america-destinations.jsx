@@ -2,12 +2,25 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TourCard from '../../homepage/DisplaySites';
 import Pagination from '../../homepage/Pagination';
+import loader from '../../../clockwise.svg'
 
 
 const NorthAmericaRegionDestinations = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
     const [postPerPage] = useState(24);
+
+    // Filter North America Sites
+    const northAmericaRegionTours = tours.filter(tour => tour.region === 'NORTH AMERICA')
+
+    // Pagiantion Logic
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentTours = northAmericaRegionTours.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
     useEffect(
         () => {
@@ -16,27 +29,26 @@ const NorthAmericaRegionDestinations = () => {
             )
                 .then(res => {
                     setTours(res.data);
-
+                    setIsLoading(false)
                 })
-                .catch(err => {
-                    // console.log("An error occurred");
+                .catch(() => {
+                    setIsLoading(false);
+                    setError(true);
                 })
         }, []
     );
 
-    // Filter Tours
-    const northAmericaRegionTours = tours.filter(tour => tour.region === 'NORTH AMERICA')
-    
+    if (isLoading) {
+        return (
+            <div className="allsites-loading">
+                <img src={loader} className="loading-clockwise" alt="Loading..." />
+            </div>
+        );
+    }
 
-    // Current destinations per page
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentTours = northAmericaRegionTours.slice(indexOfFirstTour, indexOfLastTour);
-
-
-
-    // Change Page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    if (error) {
+        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+    }
 
     return (
         <div className="container-fluid d-flex justify-content-center">
