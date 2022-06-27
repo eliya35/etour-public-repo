@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import FeaturedTourCard from './FeaturedSiteCard';
-import Pagination from '../homepage/Pagination'
-
+import Pagination from '../homepage/Pagination';
+import loader from '../../clockwise.svg'
 
 const FeaturedSites = () => {
     const [featuredSites, setFeaturedSites] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(24);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    // Pagination Logic
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentFeaturedSites = featuredSites.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     useEffect(
         () => {
@@ -16,22 +24,28 @@ const FeaturedSites = () => {
             )
                 .then(res => {
                     setFeaturedSites(res.data);
+                    setIsLoading(false);
                 })
-                .catch(err => {
-                    // console.log("An unkown error occurred");
+                .catch(() => {
+                    setIsLoading(false);
+                    setError(true);
                 })
-
         }, []
     );
 
-    // Current destinations per page
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentFeaturedSites = featuredSites.slice(indexOfFirstTour, indexOfLastTour);
+    if (isLoading) {
+        return (
+            <div className="allsites-loading">
+                <img src={loader} className="loading-clockwise" alt="Loading..." />
+            </div>
+        );
+    }
 
-    // Change Page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    if (error) {
+        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+    }
 
+    
     return (
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">

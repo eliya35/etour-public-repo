@@ -3,6 +3,8 @@ import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
 import AntarticRegionPageTitle from './PageTitle';
 import AntarticRegionDestinations from './fetch-antartic-destinations';
+import ErrorBoundary from '../../../ErrorBoundary';
+
 
 const AntarticRegionPageContents = () => {
     return (
@@ -10,7 +12,10 @@ const AntarticRegionPageContents = () => {
             <AntarticRegionPageTitle />
             <Filter />
             <MobileFilter />
-            <AntarticRegionDestinations />
+            
+            <ErrorBoundary>
+                <AntarticRegionDestinations />
+            </ErrorBoundary>
         </div>
     );
 }

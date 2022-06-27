@@ -2,12 +2,25 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TourCard from '../../homepage/DisplaySites';
 import Pagination from '../../homepage/Pagination';
+import loader from '../../../clockwise.svg'
 
 
 const EuropeRegionDestinations = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(false);
     const [postPerPage] = useState(24);
+
+    // Filter Europe sites
+    const EuropeRegionTours = tours.filter(tour => tour.region === 'EUROPE')
+
+    // Pagination Logic
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentTours = EuropeRegionTours.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
     useEffect(
         () => {
@@ -16,26 +29,27 @@ const EuropeRegionDestinations = () => {
             )
                 .then(res => {
                     setTours(res.data);
-
+                    setIsLoading(false);
                 })
-                .catch(err => {
-                    // console.log("An unkown error occurred");
+                .catch(() => {
+                    setIsLoading(false);
+                    setError(true);
                 })
         }, []
     );
 
-    // Filter Tours
-    const EuropeRegionTours = tours.filter(tour => tour.region === 'EUROPE')
+    if (isLoading) {
+        return (
+            <div className="allsites-loading">
+                <img src={loader} className="loading-clockwise" alt="Loading..." />
+            </div>
+        );
+    }
 
-    // Current destinations per page
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentTours = EuropeRegionTours.slice(indexOfFirstTour, indexOfLastTour);
+    if (error) {
+        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+    }
 
-
-
-    // Change Page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <div className="container-fluid d-flex justify-content-center">

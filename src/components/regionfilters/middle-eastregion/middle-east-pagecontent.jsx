@@ -3,6 +3,8 @@ import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
 import MiddleEastRegionPageTitle from './PageTitle';
 import MiddleEastRegionDestinations from './fetch-middle-east-destinations';
+import ErrorBoundary from '../../../ErrorBoundary';
+
 
 const MiddleEastRegionPageContents = () => {
     return (
@@ -10,7 +12,10 @@ const MiddleEastRegionPageContents = () => {
             <MiddleEastRegionPageTitle />
             <Filter />
             <MobileFilter />
-            <MiddleEastRegionDestinations />
+            
+            <ErrorBoundary>
+                <MiddleEastRegionDestinations />
+            </ErrorBoundary>
         </div>
     );
 }

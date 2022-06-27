@@ -3,6 +3,8 @@ import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
 import AsianPacificRegionPageTitle from './PageTitle';
 import AsianPacificRegionDestinations from './fetch-asia-pacific-destinations';
+import ErrorBoundary from '../../../ErrorBoundary';
+
 
 const AsianPacifcRegionPageContents = () => {
     return (
@@ -10,7 +12,10 @@ const AsianPacifcRegionPageContents = () => {
             <AsianPacificRegionPageTitle />
             <Filter />
             <MobileFilter />
-            <AsianPacificRegionDestinations />
+
+            <ErrorBoundary>
+                <AsianPacificRegionDestinations />
+            </ErrorBoundary>
         </div>
     );
 }

@@ -3,6 +3,8 @@ import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
 import SouthAmericaRegionDestinations from './fetch-south-americadestinations';
 import SouthAmericaRegionPageTitle from './PageTitle';
+import ErrorBoundary from '../../../ErrorBoundary';
+
 
 const SouthAmericaRegionPageContents = () => {
     return (
@@ -10,7 +12,10 @@ const SouthAmericaRegionPageContents = () => {
             <SouthAmericaRegionPageTitle />
             <Filter />
             <MobileFilter />
-            <SouthAmericaRegionDestinations/>
+
+            <ErrorBoundary>
+                <SouthAmericaRegionDestinations />
+            </ErrorBoundary>
         </div>
     );
 }

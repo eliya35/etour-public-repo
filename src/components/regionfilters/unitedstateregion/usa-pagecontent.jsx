@@ -3,6 +3,8 @@ import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
 import UsaRegionPageTitle from './PageTitle';
 import UsaRegionDestinations from './fetch-usa-destinations';
+import ErrorBoundary from '../../../ErrorBoundary';
+
 
 const UsaRegionPageContents = () => {
     return (
@@ -10,7 +12,10 @@ const UsaRegionPageContents = () => {
             <UsaRegionPageTitle />
             <Filter />
             <MobileFilter />
-            <UsaRegionDestinations />
+
+            <ErrorBoundary>
+                <UsaRegionDestinations />
+            </ErrorBoundary>
         </div>
     );
 }

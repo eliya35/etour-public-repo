@@ -161,6 +161,17 @@ footer p {
 		max-width: 25em;
 	}
 
+	/* When sites are loading */
+	.allsites-loading {
+    	margin-top: 3em;
+	}
+	
+	/* When network error */
+	.network-error-boundary {
+    	margin-top: 10em;
+    	margin-left: 1em;
+	}
+
 	/* Navbar elements to... */
 	.navbar {
 		width: 508px;
@@ -757,6 +768,18 @@ footer p {
 	.loading-clockwise{
 		margin-left: 10em;
 	}
+
+	/* When sites are loading */
+	.allsites-loading {
+    	margin-top: 3em;
+	}
+	
+	/* When network error */
+	.network-error-boundary {
+    	margin-top: 10em;
+    	margin-left: 2em;
+	}
+	
 	/* Navbar elements to... */
 	.navbar {
 		width: 508px;
@@ -1245,6 +1268,18 @@ footer p {
 	.loading-clockwise{
 		margin-left: 13em;
 	}
+
+	/* When sites are loading */
+	.allsites-loading {
+    	margin-top: 3em;
+	}
+	
+	/* When network error */
+	.network-error-boundary {
+    	margin-top: 10em;
+    	margin-left: 5em;
+	}
+
 	/* Navbar elements to... */
 	.navbar {
 		height: 150px;
@@ -1742,6 +1777,18 @@ footer p {
 	.loading-clockwise{
 		margin-left: 19em;
 	}
+
+	/* When sites are loading */
+	.allsites-loading {
+    	margin-top: 3em;
+	}
+	
+	/* When network error */
+	.network-error-boundary {
+    	margin-top: 10em;
+    	margin-left: 10em;
+	}
+
 	.navbar {
 		height: 150px;
 	}
@@ -2315,6 +2362,17 @@ footer p {
 		.loading-clockwise{
 			margin-left: 24em;
 		}
+
+		/* When sites are loading */
+		.allsites-loading {
+			margin-top: -42em;
+		}
+		
+		/* When network error */
+		.network-error-boundary {
+    		margin-top: -40em;
+    		margin-left: 17em;
+		}
 		.mobile-category-filters{
 			display: none !important;
 		}
@@ -2471,6 +2529,12 @@ footer p {
 	.loading-clockwise{
 		margin-left: 27em;
 	}
+
+	/* When network error */
+	.network-error-boundary {
+    	margin-left: 18em;
+	}
+
 	.NavbarItems {
 		position: relative;
 	}
@@ -2706,6 +2770,11 @@ footer p {
 @media (min-width:1026px) and (max-width:1200px){
 	.loading-clockwise{
 		margin-left: 30em;
+	}
+
+	/* When network error */
+	.network-error-boundary {
+    	margin-left: 22em;
 	}
 
 	.nav-menu {

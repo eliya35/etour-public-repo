@@ -4,6 +4,8 @@ import FetchCategoryData from './FetchCategoryData';
 import Filter from '../homepage/FilterUi';
 import MobileFilter from '../homepage/MobileFilter';
 import '../Styles/categorypagefilters.css'
+import ErrorBoundary from '../../ErrorBoundary';
+
 
 
 const CategoryPageContents = () => {
@@ -12,7 +14,10 @@ const CategoryPageContents = () => {
             <CategoryPageTitle />
             <Filter />
             <MobileFilter />
-            <FetchCategoryData />
+
+            <ErrorBoundary>
+                <FetchCategoryData />
+            </ErrorBoundary>
         </div>
     );
 }

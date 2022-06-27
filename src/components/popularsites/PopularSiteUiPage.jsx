@@ -4,6 +4,8 @@ import PopularSites from './FetchPopularSites';
 import Filter from '../homepage/FilterUi';
 import MobileFilter from '../homepage/MobileFilter';
 import '../Styles/featuredsites.css'
+import ErrorBoundary from '../../ErrorBoundary';
+
 
 
 const PopularSitesUiPage = () => {
@@ -12,7 +14,10 @@ const PopularSitesUiPage = () => {
             <PopularSitesPageTitle />
             <Filter />
             <MobileFilter />
-            <PopularSites />
+
+            <ErrorBoundary>
+                <PopularSites />
+            </ErrorBoundary>
         </div>
     );
 }

@@ -3,6 +3,8 @@ import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
 import EuropeRegionPageTitle from './PageTitle';
 import EuropeRegionDestinations from './fetch-europe-destinations';
+import ErrorBoundary from '../../../ErrorBoundary';
+
 
 const EuropeRegionPageContents = () => {
     return (
@@ -10,7 +12,10 @@ const EuropeRegionPageContents = () => {
             <EuropeRegionPageTitle />
             <Filter />
             <MobileFilter />
-            <EuropeRegionDestinations />
+
+            <ErrorBoundary>
+                <EuropeRegionDestinations />
+            </ErrorBoundary>
         </div>
     );
 }

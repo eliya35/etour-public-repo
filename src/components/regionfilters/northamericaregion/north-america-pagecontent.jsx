@@ -3,6 +3,8 @@ import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
 import NorthAmericaRegionPageTitle from './PageTitle';
 import NorthAmericaRegionDestinations from './fetch-north-america-destinations';
+import ErrorBoundary from '../../../ErrorBoundary';
+
 
 const NorthAmericaRegionPageContents = () => {
     return (
@@ -10,7 +12,10 @@ const NorthAmericaRegionPageContents = () => {
             <NorthAmericaRegionPageTitle />
             <Filter />
             <MobileFilter />
-            <NorthAmericaRegionDestinations />
+
+            <ErrorBoundary>
+                <NorthAmericaRegionDestinations />
+            </ErrorBoundary>
         </div>
     );
 }
