@@ -161,9 +161,39 @@ footer p {
 		max-width: 25em;
 	}
 
-	/* When all sites are loading */
+	/* When sites are loading */
 	.allsites-loading {
     	margin-top: 3em;
+	}
+	.featuredsites-loading {
+		margin-top: 3em;
+	}
+	.popularsites-loading {
+		margin-left: 3em;
+	}
+	.africasites-loading {
+		margin-left: 3em;
+	}
+	.antarticsites-loading {
+		margin-left: 3em;
+	}
+	.asianpacific-loading {
+		margin-left: 3em;
+	}
+	.europesites-loading {
+		margin-left: 3em;
+	}
+	.middle-east-sites-loading {
+		margin-left: 3em;
+	}
+	.northamericasites-loading {
+		margin-left: 3em;
+	}
+	.southamericasites-loading {
+		margin-left: 3em;
+	}
+	.usasites-loading {
+		margin-left: 3em;
 	}
 
 	/* When network error */
@@ -769,9 +799,39 @@ footer p {
 		margin-left: 10em;
 	}
 
-	/* When all are loading */
+	/* When sites are loading */
 	.allsites-loading {
     	margin-top: 3em;
+	}
+	.featuredsites-loading {
+		margin-top: 3em;
+	}
+	.popularsites-loading {
+		margin-left: 3em;
+	}
+	.africasites-loading {
+		margin-left: 3em;
+	}
+	.antarticsites-loading {
+		margin-left: 3em;
+	}
+	.asianpacific-loading {
+		margin-left: 3em;
+	}
+	.europesites-loading {
+		margin-left: 3em;
+	}
+	.middle-east-sites-loading {
+		margin-left: 3em;
+	}
+	.northamericasites-loading {
+		margin-left: 3em;
+	}
+	.southamericasites-loading {
+		margin-left: 3em;
+	}
+	.usasites-loading {
+		margin-left: 3em;
 	}
 
 	/* When network error */
@@ -1269,9 +1329,39 @@ footer p {
 		margin-left: 13em;
 	}
 
-	/* When all are loading */
+	/* When sites are loading */
 	.allsites-loading {
     	margin-top: 3em;
+	}
+	.featuredsites-loading {
+		margin-top: 3em;
+	}
+	.popularsites-loading {
+		margin-left: 3em;
+	}
+	.africasites-loading {
+		margin-left: 3em;
+	}
+	.antarticsites-loading {
+		margin-left: 3em;
+	}
+	.asianpacific-loading {
+		margin-left: 3em;
+	}
+	.europesites-loading {
+		margin-left: 3em;
+	}
+	.middle-east-sites-loading {
+		margin-left: 3em;
+	}
+	.northamericasites-loading {
+		margin-left: 3em;
+	}
+	.southamericasites-loading {
+		margin-left: 3em;
+	}
+	.usasites-loading {
+		margin-left: 3em;
 	}
 
 	/* When network error */
@@ -1778,9 +1868,39 @@ footer p {
 		margin-left: 19em;
 	}
 
-	/* When all are loading */
+	/* When sites are loading */
 	.allsites-loading {
     	margin-top: 3em;
+	}
+	.featuredsites-loading {
+		margin-top: 3em;
+	}
+	.popularsites-loading {
+		margin-left: 3em;
+	}
+	.africasites-loading {
+		margin-left: 3em;
+	}
+	.antarticsites-loading {
+		margin-left: 3em;
+	}
+	.asianpacific-loading {
+		margin-left: 3em;
+	}
+	.europesites-loading {
+		margin-left: 3em;
+	}
+	.middle-east-sites-loading {
+		margin-left: 3em;
+	}
+	.northamericasites-loading {
+		margin-left: 3em;
+	}
+	.southamericasites-loading {
+		margin-left: 3em;
+	}
+	.usasites-loading {
+		margin-left: 3em;
 	}
 
 	/* When network error */
@@ -2363,9 +2483,39 @@ footer p {
 			margin-left: 24em;
 		}
 
-		/* When all are loading */
+		/* When sites are loading */
 		.allsites-loading {
-    		margin-top: -42em;
+			margin-top: -42em;
+		}
+		.featuredsites-loading {
+			margin-top: -42em;
+		}
+		.popularsites-loading {
+			margin-left: -42em;
+		}
+		.africasites-loading {
+			margin-left: -42em;
+		}
+		.antarticsites-loading {
+			margin-left: -42em;
+		}
+		.asianpacific-loading {
+			margin-left: -42em;
+		}
+		.europesites-loading {
+			margin-left: -42em;
+		}
+		.middle-east-sites-loading {
+			margin-left: -42em;
+		}
+		.northamericasites-loading {
+			margin-left: -42em;
+		}
+		.southamericasites-loading {
+			margin-left: -42em;
+		}
+		.usasites-loading {
+			margin-left: -42em;
 		}
 		/* When network error */
 		.network-error-boundary {

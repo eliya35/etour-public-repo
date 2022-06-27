@@ -3,6 +3,7 @@ import Filter from '../homepage/FilterUi'
 import FeaturedSites from './FetchFeaturedSites';
 import FeaturedPageTitle from './FeaturedPageTitle';
 import MobileFilter from '../homepage/MobileFilter';
+import ErrorBoundary from '../../ErrorBoundary';
 import '../Styles/featuredsites.css'
 
 
@@ -12,7 +13,10 @@ const FeaturedPage = () => {
             <FeaturedPageTitle />
             <Filter />
             <MobileFilter />
-            <FeaturedSites />
+
+            <ErrorBoundary>
+                <FeaturedSites />
+            </ErrorBoundary>
         </div>
     );
 }
