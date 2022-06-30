@@ -475,7 +475,7 @@ footer p {
 
 	/* CATEGORY PAGE */
 	.category-page-title {
-		margin-left: 1em;
+		margin-left: 1em !important;
 		width: 75%;
 	}
 
@@ -483,7 +483,7 @@ footer p {
 		display: none;
 	}
 
-	.category-card {
+	/* .category-card {
 		margin-top: 30em;
 	}
 
@@ -491,7 +491,7 @@ footer p {
 		height: 40em;
 		margin-left: -10em;
 		margin-top: -58em;
-	}
+	} */
 
 	/* ViewPageUi elements to... */
 	.viewpage {
@@ -1200,24 +1200,12 @@ footer p {
 
 	/* CATEGORY PAGE */
 	.category-page-title {
-		margin-left: 1em;
-		margin-top: 4em;
+		margin-left: 1em !important;
+		margin-top: 4em !important;
 	}
 
 	.category-filter {
 		display: none;
-	}
-
-	.category-card {
-		margin-top: 30em;
-	}
-
-	.category-card .card {
-		width: 260px;
-		height: 40em;
-		margin-left: -9em;
-		margin-top: -58em;
-		margin-bottom: 29em;
 	}
 
 	/* ViewPageUi elements to... */
@@ -1780,16 +1768,8 @@ footer p {
 
 	/* CATEGORY ELEMENTS */
 	.category-page-title {
-		margin-left: 1em;
-		margin-top: 4em;
-	}
-
-	.category-card .card {
-		width: 100%;
-		height: 100%;
-		margin-top: -2em;
-		margin-left: -10em;
-		margin-bottom: 5em;
+		margin-left: 1em !important;
+		margin-top: 4em !important;
 	}
 
 	/* ViewPage Content */
@@ -2017,9 +1997,9 @@ footer p {
 			margin-left: 0px !important;
 		}
 
-		.category-card .card {
+		/* .category-card .card {
 			margin-left: 1em;
-		}
+		} */
 
 		.coming-soon {
 			margin-left: 6em;
@@ -2449,24 +2429,8 @@ footer p {
 	}
 
 	.category-page-title {
-		margin-left: 6em;
-		margin-top: 4em;
-	}
-
-	.category-card {
-		margin-top: 30em;
-	}
-
-	.category-card .card {
-		width: 100%;
-		height: 100%;
-		margin-top: -30em;
-		margin-left: 0em;
-		margin-bottom: 1em;
-	}
-
-	.category-card .rating {
-		margin-left: 90px;
+		margin-left: 1em !important;
+		margin-top: 4em !important;
 	}
 
 	/* My destinations */
@@ -2699,7 +2663,7 @@ footer p {
 		}
 
 		.category-page-title {
-			margin-top: 0px;
+			margin-top: 0px !important;
 		}
 
 		.category-card .card {
@@ -2715,10 +2679,6 @@ footer p {
 			margin-top: 9em;
 			margin-bottom: 10em;
 		}
-
-		/* .donate {
-			margin-top: 0px;
-		} */
 
 		/* Quick links */
 		.about {
@@ -2846,7 +2806,7 @@ footer p {
 		}
 
 		.category-page-title {
-			margin-left: 14em;
+			margin-left: 14em !important;
 		}
 
 		.category-card .card {
@@ -2898,7 +2858,7 @@ footer p {
 		}
 
 		.category-page-title {
-			margin-top: 0px;
+			margin-top: 0px !important;
 		}
 
 		.viewpage .container {

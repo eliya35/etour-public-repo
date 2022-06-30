@@ -15,13 +15,13 @@ import HelpPage from "./components/quicklinks/HelpPage";
 import PrivacyPolicy from "./components/quicklinks/PrivacyPolicy";
 import Suggestion from "./components/quicklinks/Suggestions";
 import TermsAndCondition from "./components/quicklinks/TermsAndCondition";
-import CategoryPageContents from "./components/category/CategoryPageContents";
+// import CategoryPageContents from "./components/category/CategoryPageContents";
 import UserAccount from "./components/UserRelated/UserAccount";
 import UserProfile from "./components/UserRelated/UserProfile";
 import LoginRequired from "./components/login/LoginRequired";
 import CommingSoon from "./components/quicklinks/CommingSoon";
 
-import AfricaRegionPageContents from "./components/regionfilters/africaregion/africa-pagecontent";
+// import AfricaRegionPageContents from "./components/regionfilters/africaregion/africa-pagecontent";
 import AntarticRegionPageContents from "./components/regionfilters/antarticregion/antartic-pagecontent";
 import MiddleEastRegionPageContents from "./components/regionfilters/middle-eastregion/middle-east-pagecontent";
 import AsianPacifcRegionPageContents from "./components/regionfilters/asian-pacificregion/asia-pacific-pagecontent";
@@ -34,6 +34,8 @@ import "./App.css";
 
 const Home = React.lazy(() => import("./components/homepage/Home"));
 const PopularSitesUiPage = React.lazy(() => import("./components/popularsites/PopularSiteUiPage"));
+const CategoryPageContents = React.lazy(() => import("./components/category/CategoryPageContents"));
+const AfricaRegionPageContents = React.lazy(() => import("./components/regionfilters/africaregion/africa-pagecontent"));
 
 // Render out all components in there respective paths
 const App = () => {
