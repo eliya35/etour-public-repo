@@ -106,9 +106,9 @@ const ViewPageUI = (props) => {
                         </li>
                     </ul>
                 </div>
-                <div className="rendered-comments">
+                {/* <div className="rendered-comments">
                     <CommentApp tour_site_id={props.tour_site_id} />
-                </div>
+                </div> */}
             </div>
         </div>
     );

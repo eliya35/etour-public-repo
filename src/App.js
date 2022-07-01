@@ -15,7 +15,6 @@ import HelpPage from "./components/quicklinks/HelpPage";
 import PrivacyPolicy from "./components/quicklinks/PrivacyPolicy";
 import Suggestion from "./components/quicklinks/Suggestions";
 import TermsAndCondition from "./components/quicklinks/TermsAndCondition";
-// import CategoryPageContents from "./components/category/CategoryPageContents";
 import UserAccount from "./components/UserRelated/UserAccount";
 import UserProfile from "./components/UserRelated/UserProfile";
 import LoginRequired from "./components/login/LoginRequired";
@@ -35,6 +34,8 @@ import "./App.css";
 const Home = React.lazy(() => import("./components/homepage/Home"));
 const PopularSitesUiPage = React.lazy(() => import("./components/popularsites/PopularSiteUiPage"));
 const CategoryPageContents = React.lazy(() => import("./components/category/CategoryPageContents"));
+
+// REGIONS
 const AfricaRegionPageContents = React.lazy(() => import("./components/regionfilters/africaregion/africa-pagecontent"));
 
 // Render out all components in there respective paths
@@ -50,20 +51,9 @@ const App = () => {
 
 						<Routes>
 							<Route exact path="/" element={<Home />} />
-							<Route exact path="/mylist/" element=
-								{
-									<RequireAuth>
-										<Cart />
-									</RequireAuth>
-								}
+							<Route exact path="/mylist/" element={<Cart />}
 							/>
-							<Route exact path="/view/:id/" element=
-								{
-									<RequireAuth>
-										<ViewPageData />
-									</RequireAuth>
-								}
-							/>
+							<Route exact path="/view/:id/" element={<ViewPageData />} />
 							<Route
 								exact
 								path="/featured/"
