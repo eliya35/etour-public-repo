@@ -428,8 +428,8 @@ footer p {
 	}
 
 	.antartic-page-title {
-		margin-top: 5em;
-		margin-left: 1em;
+		margin-top: 5em !important;
+		margin-left: 1em !important;
 	}
 
 	.middle-east-page-title {
@@ -840,7 +840,7 @@ footer p {
 		}
 
 		.antartic-page-title {
-			margin-top: 7em;
+			margin-top: 7em !important;
 		}
 
 		.middle-east-page-title {
@@ -1146,8 +1146,8 @@ footer p {
 	}
 
 	.antartic-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.middle-east-page-title {
@@ -1740,8 +1740,8 @@ footer p {
 	}
 
 	.antartic-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.middle-east-page-title {
@@ -2331,8 +2331,8 @@ footer p {
 	}
 
 	.antartic-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.middle-east-page-title {
@@ -2616,8 +2616,8 @@ footer p {
 		}
 
 		.antartic-page-title {
-			margin-top: 5em;
-			margin-left: 1em;
+			margin-top: 5em !important;
+			margin-left: 1em !important;
 		}
 
 		.middle-east-page-title {
@@ -2762,8 +2762,8 @@ footer p {
 		}
 
 		.antartic-page-title {
-			margin-top: 7em;
-			margin-left: 13em;
+			margin-top: 7em !important;
+			margin-left: 13em !important;
 		}
 
 		.middle-east-page-title {
