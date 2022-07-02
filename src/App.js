@@ -29,14 +29,15 @@ import NorthAmericaRegionPageContents from "./components/regionfilters/northamer
 import SouthAmericaRegionPageContents from "./components/regionfilters/southamericaregion/south-americapagecontent";
 import UsaRegionPageContents from "./components/regionfilters/unitedstateregion/usa-pagecontent";
 import "./App.css";
+import loader from './clockwise.svg'
 
-
+// CODE SPLITING
 const Home = React.lazy(() => import("./components/homepage/Home"));
 const PopularSitesUiPage = React.lazy(() => import("./components/popularsites/PopularSiteUiPage"));
 const CategoryPageContents = React.lazy(() => import("./components/category/CategoryPageContents"));
 
-// REGIONS
 const AfricaRegionPageContents = React.lazy(() => import("./components/regionfilters/africaregion/africa-pagecontent"));
+
 
 // Render out all components in there respective paths
 const App = () => {
@@ -47,7 +48,13 @@ const App = () => {
 					<NotificationProvider>
 						<NavBar />
 					</NotificationProvider>
-					<Suspense fallback={<div>Loading</div>}>
+					
+					<Suspense fallback=
+						{
+							<div className="allsites-loading">
+								<img src={loader} className="loading-clockwise" alt="Loading..." />
+							</div>
+						}>
 
 						<Routes>
 							<Route exact path="/" element={<Home />} />

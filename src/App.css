@@ -398,8 +398,8 @@ footer p {
 
 	/* Region filters */
 	.africa-page-title {
-		margin-top: 5em;
-		margin-left: 1em;
+		margin-top: 5em !important;
+		margin-left: 1em !important;
 	}
 
 	.europe-page-title {
@@ -482,16 +482,6 @@ footer p {
 	.category-filter {
 		display: none;
 	}
-
-	/* .category-card {
-		margin-top: 30em;
-	}
-
-	.category-card .card {
-		height: 40em;
-		margin-left: -10em;
-		margin-top: -58em;
-	} */
 
 	/* ViewPageUi elements to... */
 	.viewpage {
@@ -826,7 +816,7 @@ footer p {
 
 		/* Region filters */
 		.africa-page-title {
-			margin-top: 7em;
+			margin-top: 7em !important;
 		}
 
 		.europe-page-title {
@@ -1126,8 +1116,8 @@ footer p {
 
 	/* Region filters */
 	.africa-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.europe-page-title {
@@ -1720,8 +1710,8 @@ footer p {
 
 	/* Region filters */
 	.africa-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.europe-page-title {
@@ -2311,8 +2301,8 @@ footer p {
 
 	/* Region filters */
 	.africa-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.europe-page-title {
@@ -2596,8 +2586,8 @@ footer p {
 
 		/* Region filters */
 		.africa-page-title {
-			margin-top: 5em;
-			margin-left: 1em;
+			margin-top: 6em !important;
+			margin-left: 1em !important;
 		}
 
 		.europe-page-title {
@@ -2742,8 +2732,8 @@ footer p {
 
 		/* Region filters */
 		.africa-page-title {
-			margin-top: 7em;
-			margin-left: 13em;
+			margin-top: 7em !important;
+			margin-left: 14em !important;
 		}
 
 		.europe-page-title {

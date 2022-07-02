@@ -44,7 +44,7 @@ const MobileFilter = () => {
                     <samp><strong>REGIONS</strong></samp>
                 </div>
                 <Dropdown.Item href="/region/Africa/">Africa</Dropdown.Item>
-                <Dropdown.Item href="/region/Europe//">Europe</Dropdown.Item>
+                <Dropdown.Item href="/region/Europe/">Europe</Dropdown.Item>
                 <Dropdown.Item href="/region/USA/">USA</Dropdown.Item>
                 <Dropdown.Item href="/region/North-america/">North America</Dropdown.Item>
                 <Dropdown.Item href="/region/South-america/">South America</Dropdown.Item>
