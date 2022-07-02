@@ -20,8 +20,6 @@ import UserProfile from "./components/UserRelated/UserProfile";
 import LoginRequired from "./components/login/LoginRequired";
 import CommingSoon from "./components/quicklinks/CommingSoon";
 
-// import AntarticRegionPageContents from "./components/regionfilters/antarticregion/antartic-pagecontent";
-import MiddleEastRegionPageContents from "./components/regionfilters/middle-eastregion/middle-east-pagecontent";
 import AsianPacifcRegionPageContents from "./components/regionfilters/asian-pacificregion/asia-pacific-pagecontent";
 import EuropeRegionPageContents from "./components/regionfilters/europeregion/europe-pagecontent";
 import NorthAmericaRegionPageContents from "./components/regionfilters/northamericaregion/north-america-pagecontent";
@@ -37,6 +35,7 @@ const CategoryPageContents = React.lazy(() => import("./components/category/Cate
 
 const AfricaRegionPageContents = React.lazy(() => import("./components/regionfilters/africaregion/africa-pagecontent"));
 const AntarticRegionPageContents = React.lazy(() => import("./components/regionfilters/antarticregion/antartic-pagecontent"));
+const MiddleEastRegionPageContents = React.lazy(() => import("./components/regionfilters/middle-eastregion/middle-east-pagecontent"));
 
 
 // Render out all components in there respective paths

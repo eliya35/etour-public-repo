@@ -433,8 +433,8 @@ footer p {
 	}
 
 	.middle-east-page-title {
-		margin-top: 5em;
-		margin-left: 1em;
+		margin-top: 5em !important;
+		margin-left: 1em !important;
 	}
 
 	/* Filters */
@@ -844,7 +844,7 @@ footer p {
 		}
 
 		.middle-east-page-title {
-			margin-top: 7em;
+			margin-top: 7em !important;
 		}
 
 		/* featured */
@@ -1151,8 +1151,8 @@ footer p {
 	}
 
 	.middle-east-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.filters {
@@ -1745,8 +1745,8 @@ footer p {
 	}
 
 	.middle-east-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.card {
@@ -2336,8 +2336,8 @@ footer p {
 	}
 
 	.middle-east-page-title {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	.container-fluid .row {
@@ -2621,8 +2621,8 @@ footer p {
 		}
 
 		.middle-east-page-title {
-			margin-top: 5em;
-			margin-left: 1em;
+			margin-top: 5em !important;
+			margin-left: 1em !important;
 		}
 
 		.featured-page .page-title {
@@ -2767,8 +2767,8 @@ footer p {
 		}
 
 		.middle-east-page-title {
-			margin-top: 7em;
-			margin-left: 13em;
+			margin-top: 7em !important;
+			margin-left: 13em !important;
 		}
 
 		.no-user-mobile .login-nav-btn {
