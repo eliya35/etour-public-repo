@@ -20,7 +20,6 @@ import UserProfile from "./components/UserRelated/UserProfile";
 import LoginRequired from "./components/login/LoginRequired";
 import CommingSoon from "./components/quicklinks/CommingSoon";
 
-import NorthAmericaRegionPageContents from "./components/regionfilters/northamericaregion/north-america-pagecontent";
 import SouthAmericaRegionPageContents from "./components/regionfilters/southamericaregion/south-americapagecontent";
 import UsaRegionPageContents from "./components/regionfilters/unitedstateregion/usa-pagecontent";
 import "./App.css";
@@ -36,6 +35,7 @@ const AntarticRegionPageContents = React.lazy(() => import("./components/regionf
 const MiddleEastRegionPageContents = React.lazy(() => import("./components/regionfilters/middle-eastregion/middle-east-pagecontent"));
 const AsianPacifcRegionPageContents = React.lazy(() => import("./components/regionfilters/asian-pacificregion/asia-pacific-pagecontent"));
 const EuropeRegionPageContents = React.lazy(() => import("./components/regionfilters/europeregion/europe-pagecontent"));
+const NorthAmericaRegionPageContents = React.lazy(() => import("./components/regionfilters/northamericaregion/north-america-pagecontent"));
 
 
 // Render out all components in there respective paths
