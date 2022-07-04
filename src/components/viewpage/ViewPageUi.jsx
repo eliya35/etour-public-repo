@@ -106,6 +106,7 @@ const ViewPageUI = (props) => {
                         </li>
                     </ul>
                 </div>
+                {/* Didabled commenting indefinitely */}
                 {/* <div className="rendered-comments">
                     <CommentApp tour_site_id={props.tour_site_id} />
                 </div> */}

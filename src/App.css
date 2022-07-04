@@ -448,8 +448,10 @@ footer p {
 
 	/* Featured Sites elements to... */
 	.page-title {
-		margin-left: 1em;
+		width: 17em;
 		margin-top: 1em;
+		margin-left: 1em !important;
+
 	}
 
 	/* Card elements to... */
@@ -1165,7 +1167,7 @@ footer p {
 
 	/* Featured Sites elements to... */
 	.page-title {
-		margin-left: 1em;
+		margin-left: 1em !important;
 		margin-top: 5em;
 	}
 
@@ -3094,7 +3096,7 @@ footer p {
 		min-width: min-content;
 		margin-top: 0em;
 		margin-bottom: 2em;
-		margin-left: -35px;
+		margin-left: 1em !important;
 	}
 
 

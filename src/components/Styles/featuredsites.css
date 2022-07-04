@@ -14,9 +14,9 @@
 .card {
     width: 260px;
     height: 37em;
-    margin-left: 0px;
-    margin-top: -46em;
-    margin-bottom: 49em;
+    margin-left: 0 !important;
+    margin-top: 0em !important;
+    margin-bottom: 2em !important;
 }
 
 .selection {

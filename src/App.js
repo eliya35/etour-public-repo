@@ -7,7 +7,7 @@ import Cart, { NotificationProvider } from "./components/mydestinations/Cart";
 import NavBar from './components/navbar/Navbar'
 import Donate from "./components/navbar/Donate";
 import ViewPageData from "./components/viewpage/FetchViewData";
-import FeaturedPage from "./components/featured/FeaturedPage"
+// import FeaturedPage from "./components/featured/FeaturedPage"
 import About from "./components/quicklinks/AboutEour";
 import ContactUs from "./components/quicklinks/ContactUs"
 import FAQ from "./components/quicklinks/FAQ";
@@ -19,15 +19,18 @@ import UserAccount from "./components/UserRelated/UserAccount";
 import UserProfile from "./components/UserRelated/UserProfile";
 import LoginRequired from "./components/login/LoginRequired";
 import CommingSoon from "./components/quicklinks/CommingSoon";
-
 import UsaRegionPageContents from "./components/regionfilters/unitedstateregion/usa-pagecontent";
+
 import "./App.css";
 import loader from './clockwise.svg'
+import ErrorBoundary from "./ErrorBoundary";
+import ApiUrlProvider from "./ApiUrl";
 
 // CODE SPLITING
 const Home = React.lazy(() => import("./components/homepage/Home"));
 const PopularSitesUiPage = React.lazy(() => import("./components/popularsites/PopularSiteUiPage"));
 const CategoryPageContents = React.lazy(() => import("./components/category/CategoryPageContents"));
+const FeaturedPage = React.lazy(() => import("./components/featured/FeaturedPage"));
 
 const AfricaRegionPageContents = React.lazy(() => import("./components/regionfilters/africaregion/africa-pagecontent"));
 const AntarticRegionPageContents = React.lazy(() => import("./components/regionfilters/antarticregion/antartic-pagecontent"));
@@ -36,6 +39,7 @@ const AsianPacifcRegionPageContents = React.lazy(() => import("./components/regi
 const EuropeRegionPageContents = React.lazy(() => import("./components/regionfilters/europeregion/europe-pagecontent"));
 const NorthAmericaRegionPageContents = React.lazy(() => import("./components/regionfilters/northamericaregion/north-america-pagecontent"));
 const SouthAmericaRegionPageContents = React.lazy(() => import("./components/regionfilters/southamericaregion/south-americapagecontent"));
+// const UsaRegionPageContents = React.lazy(() => import("./components/regionfilters/unitedstateregion/usa-pagecontent"));
 
 
 // Render out all components in there respective paths
@@ -44,10 +48,11 @@ const App = () => {
 		<div>
 			<CartProvider>
 				<UserProvider>
+
 					<NotificationProvider>
 						<NavBar />
 					</NotificationProvider>
-					
+
 					<Suspense fallback=
 						{
 							<div className="allsites-loading">
@@ -56,10 +61,22 @@ const App = () => {
 						}>
 
 						<Routes>
-							<Route exact path="/" element={<Home />} />
+							<Route exact path="/" element=
+								{
+									<ApiUrlProvider>
+										<Home />
+									</ApiUrlProvider>
+								}
+							/>
 							<Route exact path="/mylist/" element={<Cart />}
 							/>
-							<Route exact path="/view/:id/" element={<ViewPageData />} />
+							<Route exact path="/view/:id/" element=
+								{
+									<ErrorBoundary>
+										<ViewPageData />
+									</ErrorBoundary>
+								}
+							/>
 							<Route
 								exact
 								path="/featured/"
