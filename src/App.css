@@ -3091,12 +3091,10 @@ footer p {
 	}
 
 	.card {
-		width: 202px;
-		height: 33em;
-		min-width: min-content;
-		margin-top: 0em;
+		width: 199px;
+		margin-top: 0;
 		margin-bottom: 2em;
-		margin-left: 1em !important;
+		margin-left: -2em !important;
 	}
 
 
