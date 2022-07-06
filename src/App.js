@@ -46,7 +46,6 @@ const App = () => {
 		<div>
 			<CartProvider>
 				<UserProvider>
-
 					<NotificationProvider>
 						<NavBar />
 					</NotificationProvider>
