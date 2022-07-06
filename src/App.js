@@ -6,7 +6,7 @@ import { RequireAuth } from "./components/usercontext/RequireAuth";
 import Cart, { NotificationProvider } from "./components/mydestinations/Cart";
 import NavBar from './components/navbar/Navbar'
 import Donate from "./components/navbar/Donate";
-import ViewPageData from "./components/viewpage/FetchViewData";
+// import ViewPageData from "./components/viewpage/FetchViewData";
 import About from "./components/quicklinks/AboutEour";
 import ContactUs from "./components/quicklinks/ContactUs"
 import FAQ from "./components/quicklinks/FAQ";
@@ -30,6 +30,7 @@ const Home = React.lazy(() => import("./components/homepage/Home"));
 const PopularSitesUiPage = React.lazy(() => import("./components/popularsites/PopularSiteUiPage"));
 const CategoryPageContents = React.lazy(() => import("./components/category/CategoryPageContents"));
 const FeaturedPage = React.lazy(() => import("./components/featured/FeaturedPage"));
+const ViewPageData = React.lazy(() => import("./components/viewpage/FetchViewData"));
 const AfricaRegionPageContents = React.lazy(() => import("./components/regionfilters/africaregion/africa-pagecontent"));
 const AntarticRegionPageContents = React.lazy(() => import("./components/regionfilters/antarticregion/antartic-pagecontent"));
 const MiddleEastRegionPageContents = React.lazy(() => import("./components/regionfilters/middle-eastregion/middle-east-pagecontent"));
@@ -37,7 +38,6 @@ const AsianPacifcRegionPageContents = React.lazy(() => import("./components/regi
 const EuropeRegionPageContents = React.lazy(() => import("./components/regionfilters/europeregion/europe-pagecontent"));
 const NorthAmericaRegionPageContents = React.lazy(() => import("./components/regionfilters/northamericaregion/north-america-pagecontent"));
 const SouthAmericaRegionPageContents = React.lazy(() => import("./components/regionfilters/southamericaregion/south-americapagecontent"));
-// const UsaRegionPageContents = React.lazy(() => import("./components/regionfilters/unitedstateregion/usa-pagecontent"));
 
 
 // Render out all components in there respective paths

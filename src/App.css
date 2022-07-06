@@ -316,9 +316,13 @@ footer p {
 		margin-left: 0em;
 	}
 
+	.user-null span {
+		display: none !important;
+	}
+
 	.login-nav-btn {
-		margin-top: 36px;
-		margin-left: -9em;
+		margin-top: 34px;
+		margin-left: -4em;
 	}
 
 	.no-user-mobile .login-nav-btn {
@@ -366,7 +370,7 @@ footer p {
 	/* Searchbar elements to... */
 	.search-app .search {
 		display: flex !important;
-		margin-left: 2em;
+		margin-left: 3em;
 		margin-top: -287px;
 		width: 2px;
 	}
@@ -487,12 +491,12 @@ footer p {
 
 	/* ViewPageUi elements to... */
 	.viewpage {
-		width: 23em;
+		width: 23em !important;
 	}
 
 	.imgBx img {
-		max-width: 17em;
-		margin-left: 3em;
+		max-width: 17em !important;
+		margin-left: 3em !important;
 	}
 
 	.other-img .row {
@@ -503,8 +507,8 @@ footer p {
 	}
 
 	.other-img {
-		margin-top: -9em;
-		margin-left: -52px;
+		margin-top: -9em !important;
+		margin-left: -52px !important;
 	}
 
 	.other-img .row .col ul {
@@ -516,9 +520,9 @@ footer p {
 	}
 
 	.content {
-		margin-left: 1em;
-		margin-top: 0em;
-		width: 21em;
+		margin-left: 1em !important;
+		margin-top: 0em !important;
+		width: 21em !important;
 	}
 
 	.content p {
@@ -528,15 +532,15 @@ footer p {
 	}
 
 	.location-info {
-		margin-left: 1em;
-		margin-top: 4px;
-		margin-bottom: 1em;
+		margin-left: 1em !important;
+		margin-top: 4px !important;
+		margin-bottom: 1em !important;
 	}
 
 	.recommended-products {
-		margin-left: 1em;
-		margin-top: 3em;
-		width: 21em;
+		margin-left: 1em !important;
+		margin-top: 3em !important;
+		width: 21em !important;
 	}
 
 	.rendered-comments {
@@ -1209,8 +1213,8 @@ footer p {
 	}
 
 	.imgBx img {
-		max-width: 22em;
-		margin-left: 2em;
+		max-width: 22em !important;
+		margin-left: 2em !important;
 	}
 
 	.other-img .row {
@@ -1221,8 +1225,8 @@ footer p {
 	}
 
 	.other-img {
-		margin-top: -13em;
-		margin-left: -14px;
+		margin-top: -13em !important;
+		margin-left: -14px !important;
 	}
 
 	.other-img .row .col ul {
@@ -1230,9 +1234,9 @@ footer p {
 	}
 
 	.content {
-		margin-left: 1em;
-		margin-top: 0em;
-		width: 100%;
+		margin-left: 1em !important;
+		margin-top: 0em !important;
+		width: 100% !important;
 	}
 
 	.content p {
@@ -1242,15 +1246,15 @@ footer p {
 	}
 
 	.location-info {
-		margin-left: 1em;
-		margin-top: 4px;
-		margin-bottom: 1em;
+		margin-left: 1em !important;
+		margin-top: 4px !important;
+		margin-bottom: 1em !important;
 	}
 
 	.recommended-products {
-		margin-left: 1em;
-		margin-top: 3em;
-		width: 100%;
+		margin-left: 1em !important;
+		margin-top: 3em !important;
+		width: 100% !important;
 	}
 
 	.rendered-comments {
@@ -1774,8 +1778,8 @@ footer p {
 	}
 
 	.imgBx img {
-		max-width: 29em;
-		margin-left: 41px;
+		max-width: 29em !important;
+		margin-left: 41px !important;
 	}
 
 	.other-img .row {
@@ -1786,8 +1790,8 @@ footer p {
 	}
 
 	.other-img {
-		margin-top: -13em;
-		margin-left: -25em;
+		margin-top: 1em !important;
+		margin-left: 4em !important;
 	}
 
 	.other-img .row .col ul {
@@ -1795,9 +1799,9 @@ footer p {
 	}
 
 	.content {
-		margin-left: 1em;
-		margin-top: 0em;
-		width: 29em;
+		margin-left: 1em !important;
+		margin-top: 0em !important;
+		width: 29em !important;
 	}
 
 	.content p {
@@ -1807,15 +1811,15 @@ footer p {
 	}
 
 	.location-info {
-		margin-left: 1em;
-		margin-top: 4px;
-		margin-bottom: 1em;
+		margin-left: 1em !important;
+		margin-top: 4px !important;
+		margin-bottom: 1em !important;
 	}
 
 	.recommended-products {
-		margin-left: 1em;
-		margin-top: 3em;
-		width: 100%;
+		margin-left: 1em !important;
+		margin-top: 3em !important;
+		width: 100% !important;
 	}
 
 	.rendered-comments {
@@ -1988,11 +1992,7 @@ footer p {
 			margin-bottom: 2em;
 			margin-left: 0px !important;
 		}
-
-		/* .category-card .card {
-			margin-left: 1em;
-		} */
-
+		
 		.coming-soon {
 			margin-left: 6em;
 		}
@@ -2006,7 +2006,7 @@ footer p {
 		}
 
 		.imgBx img {
-			max-width: 44em;
+			max-width: 44em !important;
 		}
 
 		.other-img .row .col ul {
@@ -2370,23 +2370,23 @@ footer p {
 		margin-top: 6em;
 	}
 
-	.content {
-		width: 36em;
-		margin-top: 0em;
-		margin-left: 1em;
-	}
-
-	.location-info {
-		width: 20em;
-		margin-left: 1em;
-	}
-
 	.imgBx img {
-		margin-left: 3em;
+		margin-left: 3em !important;
 	}
 
 	.other-img {
-		margin-top: -25em;
+		margin-top: -25em !important;
+	}
+
+	.content {
+		width: 36em !important;
+		margin-top: 0em !important;
+		margin-left: 1em !important;
+	}
+
+	.location-info {
+		width: 20em !important;
+		margin-left: 1em !important;
 	}
 
 	.other-img .row {
@@ -2401,8 +2401,8 @@ footer p {
 	}
 
 	.recommended-products {
-		margin-left: 1em;
-		margin-top: -32em;
+		margin-left: 1em !important;
+		margin-top: -32em !important;
 	}
 
 	.rendered-comments {
@@ -2785,7 +2785,7 @@ footer p {
 		.container-fluid .row {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			margin-top: -46em;
+			margin-top: -45em;
 			margin-left: 0px;
 			padding-right: 0px;
 		}
@@ -3078,7 +3078,7 @@ footer p {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		margin-left: 13em;
-		margin-top: -47em;
+		margin-top: -45em;
 	}
 
 	.category-card .card {
@@ -3100,20 +3100,20 @@ footer p {
 
 	/* View Page Contents */
 	.content {
-		width: 36em;
-		margin-left: 1em;
-		margin-top: 3em;
+		width: 36em !important;
+		margin-left: 1em !important;
+		margin-top: 3em !important;
 	}
 
 	.location-info {
 		width: 20em;
-		padding-top: 2em;
-		margin-left: 1em;
+		padding-top: 2em !important;
+		margin-left: 1em !important;
 	}
 
 	.recommended-products {
-		margin-left: 1em;
-		margin-top: -33em;
+		margin-left: 1em !important;
+		margin-top: -33em !important;
 	}
 
 	/* My destinations */
@@ -3266,18 +3266,18 @@ footer p {
 
 	/* View Page Content */
 	.content {
-		margin-left: 1em;
-		margin-top: 2em;
-		width: 49em;
+		margin-left: 1em !important;
+		margin-top: 2em !important;
+		width: 49em !important;
 	}
 
 	.location-info {
-		margin-left: 1em;
-		margin-bottom: 26em;
+		margin-left: 1em !important;
+		margin-bottom: 26em !important;
 	}
 
 	.recommended-products {
-		margin-left: 1em;
+		margin-left: 1em !important;
 	}
 
 	/* My destinations */

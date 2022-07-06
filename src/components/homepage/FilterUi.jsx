@@ -63,14 +63,15 @@ function Filter() {
                     </div>
                     <div className="region-options">
                         <ul>
+                            <li><a href="/region/Asian-pacific/">Asian</a></li>
                             <li><a href="/region/Africa/">Africa</a></li>
                             <li><a href="/region/Europe/">Europe</a></li>
-                            <li><a href="/region/USA/">USA</a></li>
                             <li><a href="/region/North-america/">North America</a></li>
                             <li><a href="/region/South-america/">South America</a></li>
-                            <li><a href="/region/Asian-pacific/">Asian Pacific</a></li>
-                            <li><a href="/region/Antarticar/">Antarctica</a></li>
-                            <li><a href="/region/Middle-East/">Middle East</a></li>
+                            <li><a href="/region/Australia/">Australia</a></li>
+                            
+                            {/* NO DESTINATIONS HERE
+                            <li><a href="/region/Antarticar/">Antarctica</a></li> */}
                         </ul>
                     </div>
                 </div>
