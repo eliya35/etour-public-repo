@@ -188,13 +188,13 @@ footer p {
 
 	/* When sites are loading */
 	.allsites-loading {
-		margin-top: 3em;
+		margin-top: 3em !important;
 	}
 
 	/* When network error */
 	.network-error-boundary {
-		margin-top: 10em;
-		margin-left: 1em;
+		margin-top: 10em !important;
+		margin-left: 1em !important;
 	}
 
 	/* Navbar elements to... */
@@ -889,13 +889,13 @@ footer p {
 
 	/* When sites are loading */
 	.allsites-loading {
-		margin-top: 3em;
+		margin-top: 3em !important;
 	}
 
 	/* When network error */
 	.network-error-boundary {
-		margin-top: 10em;
-		margin-left: 2em;
+		margin-top: 10em !important;
+		margin-left: 2em !important;
 	}
 
 	/* Navbar elements to... */
@@ -1445,13 +1445,13 @@ footer p {
 
 	/* When sites are loading */
 	.allsites-loading {
-		margin-top: 3em;
+		margin-top: 3em !important;
 	}
 
 	/* When network error */
 	.network-error-boundary {
-		margin-top: 10em;
-		margin-left: 5em;
+		margin-top: 10em !important;
+		margin-left: 5em !important;
 	}
 
 	/* Navbar elements to... */
@@ -2018,13 +2018,13 @@ footer p {
 
 	/* When sites are loading */
 	.allsites-loading {
-		margin-top: 3em;
+		margin-top: 3em !important;
 	}
 
 	/* When network error */
 	.network-error-boundary {
-		margin-top: 10em;
-		margin-left: 10em;
+		margin-top: 10em !important;
+		margin-left: 10em !important;
 	}
 
 	.navbar {
@@ -2677,13 +2677,13 @@ footer p {
 
 		/* When sites are loading */
 		.allsites-loading {
-			margin-top: -42em;
+			margin-top: -42em !important;
 		}
 
 		/* When network error */
 		.network-error-boundary {
-			margin-top: -40em;
-			margin-left: 17em;
+			margin-top: -40em !important;
+			margin-left: 17em !important;
 		}
 
 		.mobile-category-filters {
@@ -3317,7 +3317,7 @@ footer p {
 }
 
 
-@media (min-width:1281px) and (max-width:1350px) {
+@media (min-width:1281px) and (max-width:1365px) {
 	.loading-clockwise {
 		margin-left: 37em;
 	}
