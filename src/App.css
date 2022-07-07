@@ -370,7 +370,7 @@ footer p {
 	/* Searchbar elements to... */
 	.search-app .search {
 		display: flex !important;
-		margin-left: 3em;
+		margin-left: 2em;
 		margin-top: -287px;
 		width: 2px;
 	}
@@ -411,11 +411,6 @@ footer p {
 		margin-left: 1em !important;
 	}
 
-	.usa-page-title {
-		margin-top: 5em !important;
-		margin-left: 1em !important;
-	}
-
 	.north-america-page-title {
 		margin-top: 5em !important;
 		margin-left: 1em !important;
@@ -436,14 +431,14 @@ footer p {
 		margin-left: 1em !important;
 	}
 
-	.middle-east-page-title {
+	.australia-page-title {
 		margin-top: 5em !important;
 		margin-left: 1em !important;
 	}
 
 	/* Filters */
 	.filters {
-		display: none;
+		display: none !important;
 	}
 
 	.mobile-category-filters {
@@ -462,17 +457,17 @@ footer p {
 	.container-fluid .row {
 		width: fit-content;
 		display: flex;
-		margin-top: 0em;
-		margin-left: -12em;
-		padding-right: 1em;
+		margin-top: 0em !important;
+		margin-left: -12em !important;
+		padding-right: 1em !important;
 	}
 
 	.card {
-		width: 210px;
-		height: 100%;
-		margin-top: 0px;
-		margin-bottom: 1em;
-		margin-left: 0px;
+		width: 210px !important;
+		height: 100% !important;
+		margin-top: 0px !important;
+		margin-bottom: 1em !important;
+		margin-left: 0px !important;
 	}
 
 	.row {
@@ -491,12 +486,12 @@ footer p {
 
 	/* ViewPageUi elements to... */
 	.viewpage {
-		width: 23em !important;
+		width: 19em !important;
 	}
 
 	.imgBx img {
 		max-width: 17em !important;
-		margin-left: 3em !important;
+		margin-left: 2em !important;
 	}
 
 	.other-img .row {
@@ -507,7 +502,7 @@ footer p {
 	}
 
 	.other-img {
-		margin-top: -9em !important;
+		margin-top: -13em !important;
 		margin-left: -52px !important;
 	}
 
@@ -522,7 +517,7 @@ footer p {
 	.content {
 		margin-left: 1em !important;
 		margin-top: 0em !important;
-		width: 21em !important;
+		width: 17em !important;
 	}
 
 	.content p {
@@ -540,7 +535,7 @@ footer p {
 	.recommended-products {
 		margin-left: 1em !important;
 		margin-top: 3em !important;
-		width: 21em !important;
+		width: 15em !important;
 	}
 
 	.rendered-comments {
@@ -829,10 +824,6 @@ footer p {
 			margin-top: 7em !important;
 		}
 
-		.usa-page-title {
-			margin-top: 7em !important;
-		}
-
 		.north-america-page-title {
 			margin-top: 7em !important;
 		}
@@ -849,7 +840,7 @@ footer p {
 			margin-top: 7em !important;
 		}
 
-		.middle-east-page-title {
+		.australia-page-title {
 			margin-top: 7em !important;
 		}
 
@@ -1131,11 +1122,6 @@ footer p {
 		margin-left: 1em !important;
 	}
 
-	.usa-page-title {
-		margin-top: 10em !important;
-		margin-left: 1em !important;
-	}
-
 	.north-america-page-title {
 		margin-top: 10em !important;
 		margin-left: 1em !important;
@@ -1156,13 +1142,13 @@ footer p {
 		margin-left: 1em !important;
 	}
 
-	.middle-east-page-title {
+	.australia-page-title {
 		margin-top: 10em !important;
 		margin-left: 1em !important;
 	}
 
 	.filters {
-		display: none;
+		display: none !important;
 	}
 
 	.mobile-category-filters {
@@ -1178,16 +1164,16 @@ footer p {
 	/* Card elements to... */
 	.container-fluid .row {
 		display: flex;
-		margin-top: 0em;
-		margin-left: -12em;
-		padding-right: 3em;
+		margin-top: 0em !important;
+		margin-left: -12em !important;
+		padding-right: 3em !important;
 	}
 
 	.card {
-		width: 260px;
-		height: 100%;
-		margin-top: 0px;
-		margin-bottom: 2em;
+		width: 260px !important;
+		height: 100% !important;
+		margin-top: 0px !important;
+		margin-bottom: 2em !important;
 	}
 
 	.row {
@@ -1574,7 +1560,7 @@ footer p {
 	}
 
 	.filters {
-		display: none;
+		display: none !important;
 	}
 
 	.current-user-mobile {
@@ -1725,11 +1711,6 @@ footer p {
 		margin-left: 1em !important;
 	}
 
-	.usa-page-title {
-		margin-top: 10em !important;
-		margin-left: 1em !important;
-	}
-
 	.north-america-page-title {
 		margin-top: 10em !important;
 		margin-left: 1em !important;
@@ -1750,16 +1731,16 @@ footer p {
 		margin-left: 1em !important;
 	}
 
-	.middle-east-page-title {
+	.australia-page-title {
 		margin-top: 10em !important;
 		margin-left: 1em !important;
 	}
 
 	.card {
-		width: 100%;
-		height: 100%;
-		margin-top: 0px;
-		margin-bottom: 2em;
+		width: 100% !important;
+		height: 100% !important;
+		margin-top: 0px !important;
+		margin-bottom: 2em !important;
 	}
 
 	/* CATEGORY ELEMENTS */
@@ -1986,13 +1967,13 @@ footer p {
 
 		.card {
 			min-width: min-content;
-			height: 35em;
-			width: 116%;
-			margin-top: 0px;
-			margin-bottom: 2em;
+			height: 35em !important;
+			width: 116% !important;
+			margin-top: 0px !important;
+			margin-bottom: 2em !important;
 			margin-left: 0px !important;
 		}
-		
+
 		.coming-soon {
 			margin-left: 6em;
 		}
@@ -2312,11 +2293,6 @@ footer p {
 		margin-left: 1em !important;
 	}
 
-	.usa-page-title {
-		margin-top: 10em !important;
-		margin-left: 1em !important;
-	}
-
 	.north-america-page-title {
 		margin-top: 10em !important;
 		margin-left: 1em !important;
@@ -2337,30 +2313,30 @@ footer p {
 		margin-left: 1em !important;
 	}
 
-	.middle-east-page-title {
+	.australia-page-title {
 		margin-top: 10em !important;
 		margin-left: 1em !important;
 	}
 
 	.container-fluid .row {
-		margin-top: 1em;
-		margin-left: -10em;
-	}
-
-	.row {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		margin-left: 25em;
-		margin-top: -28em;
+		margin-top: 1em !important;
+		margin-left: -10em !important;
 	}
 
+	/* .row {
+		margin-left: 25em !important;
+		margin-top: -28em !important;
+	} */
+
 	.card {
-		width: 112%;
-		height: 35em;
+		width: 112% !important;
+		height: 35em !important;
 		min-width: min-content;
-		margin-left: 0em;
-		margin-top: 0em;
-		margin-bottom: 1em;
+		margin-left: 0em !important;
+		margin-top: 0em !important;
+		margin-bottom: 1em !important;
 	}
 
 	/* ViewPage Content */
@@ -2597,11 +2573,6 @@ footer p {
 			margin-left: 1em !important;
 		}
 
-		.usa-page-title {
-			margin-top: 5em !important;
-			margin-left: 1em !important;
-		}
-
 		.north-america-page-title {
 			margin-top: 5em !important;
 			margin-left: 1em !important;
@@ -2622,7 +2593,7 @@ footer p {
 			margin-left: 1em !important;
 		}
 
-		.middle-east-page-title {
+		.australia-page-title {
 			margin-top: 5em !important;
 			margin-left: 1em !important;
 		}
@@ -2649,17 +2620,13 @@ footer p {
 		}
 
 		.card {
-			width: 270px;
-			margin-top: 0em;
-			margin-bottom: 1em;
+			width: 270px !important;
+			margin-top: 0em !important;
+			margin-bottom: 1em !important;
 		}
 
 		.category-page-title {
 			margin-top: 0px !important;
-		}
-
-		.category-card .card {
-			width: 270px;
 		}
 
 		.viewpage .container {
@@ -2743,11 +2710,6 @@ footer p {
 			margin-left: 14em !important;
 		}
 
-		.usa-page-title {
-			margin-top: 7em !important;
-			margin-left: 14em !important;
-		}
-
 		.north-america-page-title {
 			margin-top: 7em !important;
 			margin-left: 14em !important;
@@ -2768,7 +2730,7 @@ footer p {
 			margin-left: 13em !important;
 		}
 
-		.middle-east-page-title {
+		.australia-page-title {
 			margin-top: 7em !important;
 			margin-left: 13em !important;
 		}
@@ -2785,27 +2747,20 @@ footer p {
 		.container-fluid .row {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			margin-top: -45em;
-			margin-left: 0px;
-			padding-right: 0px;
+			margin-top: -45em !important;
+			margin-left: 0px !important;
+			padding-right: 0px !important;
 		}
 
 		.card {
-			width: 255px;
+			width: 255px !important;
 			height: 33em !important;
-			margin-top: 0px;
-			margin-left: 0px;
+			margin-top: 0px !important;
+			margin-left: 0px !important;
 		}
 
 		.category-page-title {
 			margin-left: 14em !important;
-		}
-
-		.category-card .card {
-			width: 250px;
-			margin-left: -2em;
-			margin-top: -47em;
-			margin-bottom: 20em;
 		}
 
 		.viewpage .container {
@@ -3077,23 +3032,14 @@ footer p {
 	.container-fluid .row {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		margin-left: 13em;
-		margin-top: -45em;
-	}
-
-	.category-card .card {
-		width: 210px;
-		height: 33em;
-		min-width: min-content;
-		margin-left: -3em;
-		margin-top: -17em;
-		margin-bottom: 18em;
+		margin-left: 1em !important;
+		margin-top: -45em !important;
 	}
 
 	.card {
-		width: 199px;
-		margin-top: 0;
-		margin-bottom: 2em;
+		width: 199px !important;
+		margin-top: 0 !important;
+		margin-bottom: 2em !important;
 		margin-left: -2em !important;
 	}
 
@@ -3245,23 +3191,16 @@ footer p {
 
 	/* Card Component */
 	.container-fluid .row {
-		margin-left: 32px;
+		margin-left: 32px !important;
 		padding: 0;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.card {
-		width: 232px;
-		height: 33em;
-		margin-left: -33px;
-	}
-
-	/* CATEGORY ELEMENTS */
-	.category-card .card {
-		width: 244px;
-		height: 33em;
-		margin-left: -42px;
+		width: 232px !important;
+		height: 33em !important;
+		margin-left: -33px !important;
 	}
 
 	/* View Page Content */
@@ -3372,12 +3311,9 @@ footer p {
 
 	/* Card Styles */
 	.card {
-		width: 230px;
+		width: 230px !important;
 	}
 
-	.category-card .card {
-		width: 225px;
-	}
 }
 
 
@@ -3387,7 +3323,7 @@ footer p {
 	}
 
 	.navbar-logo {
-		margin-left: -1em;
+		margin-left: -2em;
 	}
 
 	.user-profile-container form {
@@ -3399,12 +3335,9 @@ footer p {
 	}
 
 	.card {
-		width: 245px;
+		width: 245px !important;
 	}
 
-	.category-card .card {
-		width: 246px;
-	}
 }
 
 

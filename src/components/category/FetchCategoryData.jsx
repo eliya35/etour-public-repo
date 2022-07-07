@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import CategoryCard from './CategoryPageCard';
-import Pagination from '../homepage/Pagination'
-import loader from '../../clockwise.svg'
+import Pagination from '../homepage/Pagination';
+import loader from '../../clockwise.svg';
+import TourCard from '../homepage/DisplaySites';
 
 
 const FetchCategoryData = () => {
@@ -58,7 +58,7 @@ const FetchCategoryData = () => {
                     {currentCategorySite.map(item => {
                         return (
                             <div className="col-md-3">
-                                <CategoryCard
+                                <TourCard
                                     key={item.id}
                                     id={item.id}
                                     title={item.name}

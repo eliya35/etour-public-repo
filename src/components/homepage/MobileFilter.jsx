@@ -44,12 +44,12 @@ const MobileFilter = () => {
                 <div className="mobile-region">
                     <samp><strong>REGIONS</strong></samp>
                 </div>
-                <Dropdown.Item href="/region/Asian-pacific/">Asian</Dropdown.Item>
-                <Dropdown.Item href="/region/Africa/">Africa</Dropdown.Item>
-                <Dropdown.Item href="/region/Europe/">Europe</Dropdown.Item>
-                <Dropdown.Item href="/region/North-america/">North America</Dropdown.Item>
-                <Dropdown.Item href="/region/South-america/">South America</Dropdown.Item>
-                <Dropdown.Item href="/region/Australia/">Australia</Dropdown.Item>
+                <Dropdown.Item href="/region/Asian-pacific/">ASIA</Dropdown.Item>
+                <Dropdown.Item href="/region/Africa/">AFRICA</Dropdown.Item>
+                <Dropdown.Item href="/region/Europe/">EUROPE</Dropdown.Item>
+                <Dropdown.Item href="/region/North-america/">NORTH AMERICS</Dropdown.Item>
+                <Dropdown.Item href="/region/South-america/">SOUTH AMERICA</Dropdown.Item>
+                <Dropdown.Item href="/region/Australia/">AUSTRALIA</Dropdown.Item>
                 {/* <Dropdown.Item href="/region/Antarticar/">Antarticar</Dropdown.Item> */}
             </DropdownButton>
         </div>
