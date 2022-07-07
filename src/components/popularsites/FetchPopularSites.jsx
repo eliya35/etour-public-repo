@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PopularSitesCardUi from './PopularSiteCardUi';
+import TourCard from '../homepage/DisplaySites';
 import axios from 'axios';
 import Pagination from '../homepage/Pagination';
 import '../Styles/cardstyle.css';
@@ -55,7 +55,7 @@ const PopularSites = () => {
                     currentPopularSites.map(item => {
                         return (
                             <div className="col-md-3">
-                                <PopularSitesCardUi
+                                <TourCard
                                     key={item.id}
                                     id={item.id}
                                     title={item.name}
