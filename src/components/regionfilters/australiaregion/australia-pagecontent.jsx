@@ -5,6 +5,7 @@ import ErrorBoundary from '../../../ErrorBoundary';
 import AustraliaRegionPageTitle from './PageTitle';
 import AustraliaDestinations from './fetch-australia-destination';
 
+
 const AustraliaRegionPageContents = () => {
     return (
         <div>

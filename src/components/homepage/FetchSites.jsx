@@ -5,6 +5,7 @@ import Pagination from './Pagination';
 import loader from '../../clockwise.svg'
 import '../Styles/cardstyle.css';
 
+
 const AllSites = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -43,7 +44,6 @@ const AllSites = () => {
     if (error) {
         throw new Error('NetworkError: Please check your connnection or try again later😶.')
     }
-
 
     return (
         <div className="container-fluid d-flex justify-content-center">

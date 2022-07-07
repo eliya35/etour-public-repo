@@ -4,7 +4,6 @@ import '../Styles/filters.css'
 
 
 function Filter() {
-
     const navigate = useNavigate();
 
     return (

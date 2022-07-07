@@ -7,7 +7,6 @@ import '../Styles/viewpage.css'
 
 
 function ViewPageData() {
-
     const [tour, setTour] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     // const [error, setError] = useState(false);

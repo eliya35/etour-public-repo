@@ -5,7 +5,6 @@ import '../Styles/userprofile.css'
 
 
 const UserProfile = () => {
-
     const { user } = useContext(UserContext);
     const user_id = user.id;
     const initialState = { profile_avatar: "", mobile: "", location: "", bio: "" };
@@ -83,7 +82,6 @@ const UserProfile = () => {
 
 
     const handleNewProfileSave = async () => {
-
         let formData = new FormData();
         formData.append("user", user.id)
         formData.append("profile_avatar", upLoadImage)
@@ -109,7 +107,6 @@ const UserProfile = () => {
 
 
     const updateExistingProfile = async () => {
-
         let updatedData = new FormData();
 
         // Update the profile if is updated else live it to its previous value
@@ -286,7 +283,6 @@ const UserProfile = () => {
                     </div>
                 </div>
             }
-
             {!user && <div><h1>NOT AUTHORIZED!</h1></div>}
         </div>
     );

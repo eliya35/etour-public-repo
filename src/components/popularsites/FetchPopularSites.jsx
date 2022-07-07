@@ -7,7 +7,6 @@ import loader from '../../clockwise.svg'
 
 
 const PopularSites = () => {
-
     const [tourSites, setTourSite] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(24);
@@ -24,7 +23,6 @@ const PopularSites = () => {
     const indexOfFirstTour = indexOfLastTour - postPerPage;
     const currentPopularSites = popularDestination.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
 
     useEffect(() => {
         axios.get('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/')

@@ -7,7 +7,6 @@ import '../Styles/featuredsites.css'
 import ErrorBoundary from '../../ErrorBoundary';
 
 
-
 const PopularSitesUiPage = () => {
     return (
         <div className='featured-page'>
