@@ -2,23 +2,43 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import ViewPageUI from './ViewPageUi';
-function ViewPageData() {
+import loader from '../../clockwise.svg';
+import '../Styles/viewpage.css'
 
+
+function ViewPageData() {
     const [tour, setTour] = useState({});
-    const params = useParams()
-    const id = parseInt(params.id)
+    const [isLoading, setIsLoading] = useState(true);
+    // const [error, setError] = useState(false);
+
+    const params = useParams();
+    const id = parseInt(params.id);
 
     useEffect(
         () => {
             axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/${id}`)
                 .then(res => {
                     setTour(res.data);
+                    setIsLoading(false);
                 })
-                .catch(err => {
-                    console.log("An error occurred while getting destination");
+                .catch(() => {
+                    setIsLoading(false);
+                    // setError(true);
                 })
         }, [id]
     );
+
+    if (isLoading) {
+        return (
+            <div className="details-loading">
+                <img src={loader} className="loading-clockwise" alt="Loading..." />
+            </div>
+        );
+    }
+
+    // if (error) {
+    //     throw new Error('NetworkError: Please check your connnection or try again later😶.')
+    // }
 
     return (
         <div>

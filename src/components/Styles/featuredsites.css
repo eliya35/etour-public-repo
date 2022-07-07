@@ -10,15 +10,6 @@
     color: dimgrey;
 }
 
-
-.card {
-    width: 260px;
-    height: 37em;
-    margin-left: 0px;
-    margin-top: -46em;
-    margin-bottom: 49em;
-}
-
 .selection {
     border-right: 2px solid #ddd;
     word-break: break-word;

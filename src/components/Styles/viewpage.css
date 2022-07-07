@@ -69,3 +69,6 @@
 .other-img ul li .side-img:hover{
     transform: scale(1.1);
 }
+.details-loading {
+    margin-top: 10em;
+}

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import TourCard from './DisplaySites';
 import axios from 'axios';
 import Pagination from './Pagination';
-import '../Styles/cardstyle.css';
 import loader from '../../clockwise.svg'
+import '../Styles/cardstyle.css';
+
 
 const AllSites = () => {
     const [tours, setTours] = useState([]);
@@ -20,9 +21,7 @@ const AllSites = () => {
 
     useEffect(
         () => {
-            axios.get(
-                'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/'
-            )
+            axios.get('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/')
                 .then(res => {
                     setTours(res.data);
                     setIsLoading(false);
@@ -39,14 +38,13 @@ const AllSites = () => {
             <div className="allsites-loading">
                 <img src={loader} className="loading-clockwise" alt="Loading..." />
             </div>
-        ); 
+        );
     }
 
     if (error) {
         throw new Error('NetworkError: Please check your connnection or try again later😶.')
     }
 
-    
     return (
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">

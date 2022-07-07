@@ -4,7 +4,6 @@ import '../Styles/suggestion.css'
 
 
 const Suggestion = () => {
-
     const countries = {
         egypt: 'EGYPT',
         morocco: 'MOROCCO',

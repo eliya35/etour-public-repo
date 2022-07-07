@@ -92,10 +92,10 @@ const NavBar = () => {
                     </li>
                     <li className="nav-item">
                         <Link
-                            to='/donate/'
+                            to='/contact/'
                             className='nav-links'
                             onClick={closeMobileMenu}
-                        >Donate
+                        >Contact Us
                         </Link>
                     </li>
                     <div className="search-app">

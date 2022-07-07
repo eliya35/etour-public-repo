@@ -6,7 +6,6 @@ import '../Styles/useraccount.css'
 
 
 const UserAccount = () => {
-
     const { user, setUser } = useContext(UserContext);
     const userId = user.id;
 
@@ -63,7 +62,6 @@ const UserAccount = () => {
     }
 
     const updateMyAccount = async () => {
-
         let myUserAccount = new FormData();
 
         if (formValues.firstName && formValues.firstName !== user.first_name) {
@@ -76,9 +74,6 @@ const UserAccount = () => {
         if (formValues.email !== user.email && formValues.email !== "") {
             myUserAccount.append("email", formValues.email)
         }
-
-
-
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
@@ -114,7 +109,6 @@ const UserAccount = () => {
 
     return (
         <div className="user-account-container">
-
             <div className="user-profile-container">
                 {
                     user &&
@@ -241,7 +235,6 @@ const UserAccount = () => {
                         </div>
                     </div>
                 }
-
                 {!user && <div><h1>NOT AUTHORIZED!</h1></div>}
             </div>
         </div>

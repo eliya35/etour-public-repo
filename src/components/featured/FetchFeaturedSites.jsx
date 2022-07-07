@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'
-import FeaturedTourCard from './FeaturedSiteCard';
+import axios from 'axios';
 import Pagination from '../homepage/Pagination';
-import loader from '../../clockwise.svg'
+import TourCard from '../homepage/DisplaySites';
+import loader from '../../clockwise.svg';
+
 
 const FeaturedSites = () => {
     const [featuredSites, setFeaturedSites] = useState([]);
@@ -52,7 +53,7 @@ const FeaturedSites = () => {
                 {currentFeaturedSites.map(item => {
                     return (
                         <div className="col-md-3">
-                            <FeaturedTourCard
+                            <TourCard
                                 key={item.id}
                                 id={item.id}
                                 title={item.name}
@@ -70,6 +71,7 @@ const FeaturedSites = () => {
                     totalTours={featuredSites.length}
                     paginate={paginate}
                 />
+                
             </div>
         </div>
     );
