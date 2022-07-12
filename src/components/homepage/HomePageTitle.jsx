@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/homepagetitle.css'
+import '../Styles/homepagetitle.css';
 
 
 function HomePageTitle() {

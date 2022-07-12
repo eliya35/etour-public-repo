@@ -1,5 +1,5 @@
 import React from 'react';
-import './asia-pacific-region.css'
+import './asia-pacific-region.css';
 
 const AsianPacificRegionPageTitle = () => {
     return (

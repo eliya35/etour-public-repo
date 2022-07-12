@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../Styles/searchbar.css'
+import '../Styles/searchbar.css';
 
 
 const SearchBar = ({ placeholder }) => {
-    const [data, setData] = useState([])
-    const [filteredData, setFilteredData] = useState([])
-    const [destination, setDestination] = useState("")
+    const [data, setData] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
+    const [destination, setDestination] = useState("");
     const navigate = useNavigate();
 
     const handleFilter = (e) => {
@@ -77,6 +77,8 @@ const SearchBar = ({ placeholder }) => {
                                             setFilteredData([]);
                                             setDestination("");
                                         }}
+                                        // onKeyUp={ }
+                                        // onKeyDown={ }
                                     >{filteredSite.name}
                                     </div>
                                 );

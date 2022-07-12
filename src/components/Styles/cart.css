@@ -1,8 +1,9 @@
-.py-4{
+.py-4 {
     margin-top: 5em;
     padding-left: 50px;
 }
-.col-12 h5{
+
+.col-12 h5 {
     font-family: sans-serif;
     font-weight: 500;
     color: darkgray;
@@ -13,7 +14,8 @@
     font-size: medium;
     font-family: system-ui;
 }
-.text-centre{
+
+.text-centre {
     padding-top: 100px;
     padding-bottom: 5em;
     text-align: center;

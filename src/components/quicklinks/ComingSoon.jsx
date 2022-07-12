@@ -2,7 +2,7 @@ import React from 'react';
 import "../Styles/commingsoon.css"
 
 
-const CommingSoon = () => {
+const ComingSoon = () => {
     return (
         <div className="coming-soon">
             <h1>
@@ -15,4 +15,4 @@ const CommingSoon = () => {
     );
 }
 
-export default CommingSoon;
+export default ComingSoon;

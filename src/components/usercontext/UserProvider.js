@@ -18,7 +18,7 @@ export function UserProvider({ children }) {
             })
             .catch(err => {
                 setLoading(false);
-                // console.log("An unkown error occurred");
+                // console.log("An unknown error occurred");
             })
     }, []);
 

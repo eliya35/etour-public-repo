@@ -1,13 +1,14 @@
 import React from 'react';
 import './antartic-region.css'
 
-const AntarticRegionPageTitle = () => {
+
+const AntarcticRegionPageTitle = () => {
     return (
         <div className="antartic-page-title">
-            <h1><strong>Antartic Region Destinations</strong></h1>
+            <h1><strong>Antarctic Region Destinations</strong></h1>
         </div>
     );
 
 }
 
-export default AntarticRegionPageTitle;
+export default AntarcticRegionPageTitle;

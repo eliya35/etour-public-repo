@@ -1,22 +1,23 @@
 import React from 'react';
+import AntarcticRegionPageTitle from './PageTitle';
 import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
-import AntarticRegionPageTitle from './PageTitle';
-import AntarticRegionDestinations from './fetch-antartic-destinations';
 import ErrorBoundary from '../../../ErrorBoundary';
+import AntarcticRegionDestinations from './fetch-antartic-destinations';
 
 
-const AntarticRegionPageContents = () => {
+const AntarcticRegionPageContents = () => {
     return (
         <div>
-            <AntarticRegionPageTitle />
+            <AntarcticRegionPageTitle />
             <Filter />
             <MobileFilter />
             
             <ErrorBoundary>
-                <AntarticRegionDestinations />
+                <AntarcticRegionDestinations />
             </ErrorBoundary>
         </div>
     );
 }
-export default AntarticRegionPageContents;
+
+export default AntarcticRegionPageContents;

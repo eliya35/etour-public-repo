@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import ViewPageUI from './ViewPageUi';
 import loader from '../../clockwise.svg';
-import '../Styles/viewpage.css'
+import ViewPageUI from './ViewPageUi';
+import '../Styles/viewpage.css';
 
 
 function ViewPageData() {
@@ -37,7 +37,7 @@ function ViewPageData() {
     }
 
     // if (error) {
-    //     throw new Error('NetworkError: Please check your connnection or try again later😶.')
+    //     throw new Error('NetworkError: Please check your connection or try again later😶.')
     // }
 
     return (

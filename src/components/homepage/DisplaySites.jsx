@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useCart } from 'react-use-cart'
-import '../Styles/cardstyle.css'
+import { useCart } from 'react-use-cart';
+import '../Styles/cardstyle.css';
 
 
-const TourCard = props => {
+const TourCard = React.memo(function TourCard(props) {
     const { addItem } = useCart();
     const [isFeatured] = useState(props.status);
 
@@ -32,6 +32,7 @@ const TourCard = props => {
             </div>
         </div >
     )
-}
+
+})
 
 export default TourCard;

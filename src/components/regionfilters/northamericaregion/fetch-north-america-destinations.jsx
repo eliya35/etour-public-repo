@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import loader from '../../../clockwise.svg';
 import TourCard from '../../homepage/DisplaySites';
 import Pagination from '../../homepage/Pagination';
-import loader from '../../../clockwise.svg'
 
 
 const NorthAmericaRegionDestinations = () => {
@@ -13,14 +13,13 @@ const NorthAmericaRegionDestinations = () => {
     const [postPerPage] = useState(24);
 
     // Filter North America Sites
-    const northAmericaRegionTours = tours.filter(tour => tour.region === 'NORTH AMERICA')
+    const northAmericaRegionTours = tours.filter(tour => tour.region === 'NORTH AMERICA');
 
-    // Pagiantion Logic
+    // Pagination Logic
     const indexOfLastTour = currentPage * postPerPage;
     const indexOfFirstTour = indexOfLastTour - postPerPage;
     const currentTours = northAmericaRegionTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
 
     useEffect(
         () => {
@@ -47,7 +46,7 @@ const NorthAmericaRegionDestinations = () => {
     }
 
     if (error) {
-        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+        throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
 
     return (

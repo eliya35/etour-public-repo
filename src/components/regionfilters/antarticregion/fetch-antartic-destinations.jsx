@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import loader from '../../../clockwise.svg'
 import TourCard from '../../homepage/DisplaySites';
 import Pagination from '../../homepage/Pagination';
-import loader from '../../../clockwise.svg'
 
 
-const AntarticRegionDestinations = () => {
+const AntarcticRegionDestinations = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(24);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    // Filter out Antartica Tours
-    const antarticRegionTours = tours.filter(tour => tour.region === 'ANTARCTICA')
+    // Filter out Antarctica Tours
+    const antarcticRegionTours = tours.filter(tour => tour.region === 'ANTARCTICA')
 
     // Pagination Logic
     const indexOfLastTour = currentPage * postPerPage;
     const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentTours = antarticRegionTours.slice(indexOfFirstTour, indexOfLastTour);
+    const currentTours = antarcticRegionTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     useEffect(
@@ -46,7 +46,7 @@ const AntarticRegionDestinations = () => {
     }
 
     if (error) {
-        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+        throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
 
     return (
@@ -79,4 +79,4 @@ const AntarticRegionDestinations = () => {
     );
 }
 
-export default AntarticRegionDestinations;
+export default AntarcticRegionDestinations;

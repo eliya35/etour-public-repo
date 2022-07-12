@@ -1,6 +1,7 @@
 import React from 'react';
 import './europe-region.css'
 
+
 const EuropeRegionPageTitle = () => {
     return (
         <div className="europe-page-title">

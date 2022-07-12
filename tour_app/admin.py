@@ -9,7 +9,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class TourAdmin(admin.ModelAdmin):
     list_display = ('name', 'region', 'country',
-                    'tourist_traffic_annually','numb_stars', 'created_at', 'updated_at')
+                    'tourist_traffic_annually', 'numb_stars', 'created_at', 'updated_at')
     prepopulated_fields = {'slug': ('name',)}
 
 

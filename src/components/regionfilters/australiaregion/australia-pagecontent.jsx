@@ -1,9 +1,9 @@
 import React from 'react';
+import AustraliaRegionPageTitle from './PageTitle';
 import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
-import ErrorBoundary from '../../../ErrorBoundary';
-import AustraliaRegionPageTitle from './PageTitle';
 import AustraliaDestinations from './fetch-australia-destination';
+import ErrorBoundary from '../../../ErrorBoundary';
 
 
 const AustraliaRegionPageContents = () => {
@@ -19,4 +19,5 @@ const AustraliaRegionPageContents = () => {
         </div>
     );
 }
+
 export default AustraliaRegionPageContents;

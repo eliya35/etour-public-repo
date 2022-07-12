@@ -1,85 +1,103 @@
 /* Filter Styles */
 
 .filters {
-    display: flex;
-    position: relative;
-    padding-left: 1em;
-    width: 200px;
+	display: flex;
+	position: relative;
+	padding-left: 1em;
+	width: 200px;
 }
+
 .a-container {
 	min-width: 998px;
 	padding: 14px 18px 18px;
 	margin: 0 auto;
 	padding-left: 10px;
 }
+
 .selection {
-    border-right: 2px solid #ddd;
-    word-break: break-word;
-    width: 200px!important;
-    margin-top: -5em;
+	border-right: 2px solid #ddd;
+	word-break: break-word;
+	width: 200px !important;
+	margin-top: -5em;
 }
+
 .selection-name-weight {
 	color: firebrick;
 }
+
 .filter-box-title {
 	color: firebrick;
 }
+
 .region-section {
 	color: firebrick;
 }
-.unoderd-list-categories li a:hover{
+
+.unoderd-list-categories li a:hover {
 	color: rgb(194, 36, 36);
 }
 
 .unoderd-list-categories {
 	list-style: none;
 }
+
 .unoderd-list-categories li {
 	font-size: medium;
 	font-family: sans-serif;
 }
+
 .unoderd-list-categories li a {
 	text-decoration: none;
 	color: #212529;
 }
+
 .unoderd-list-verticla-chekboxes {
 	list-style: none;
 }
+
 .filter-box-title {
 	margin-left: -2em;
 }
+
 .selection-name-weight {
 	font-weight: 700;
 }
+
 .filter-box-title {
 	font-weight: 700;
 }
+
 .region-options ul {
 	list-style: none;
 }
+
 .region-options ul li a {
 	text-decoration: none;
 	color: #212529;
 }
+
 .region-options ul li a:hover {
 	color: rgb(194, 36, 36);
 }
 
 /* Mobile filter */
 .mobile-category-filters {
-    display: none;
-    margin: 1em;
-    width: fit-content;
+	display: none;
+	margin: 1em;
+	width: fit-content;
 }
+
 .mobile-filter-options {
 	padding-left: 30px;
-    color: brown;
+	color: brown;
 }
+
 .mobile-categories {
 	padding-left: 30px;
-    color: brown;
+	color: brown;
 }
+
 .mobile-region {
 	padding-left: 30px;
-    color: brown;
+	color: brown;
 }

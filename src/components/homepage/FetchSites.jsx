@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import TourCard from './DisplaySites';
 import axios from 'axios';
+import loader from '../../clockwise.svg';
+import TourCard from './DisplaySites';
 import Pagination from './Pagination';
-import loader from '../../clockwise.svg'
 import '../Styles/cardstyle.css';
 
 
@@ -42,7 +42,7 @@ const AllSites = () => {
     }
 
     if (error) {
-        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+        throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
 
     return (

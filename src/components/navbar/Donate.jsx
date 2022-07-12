@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/donate.css'
+import '../Styles/donate.css';
 
 
 // Handle Site Donations

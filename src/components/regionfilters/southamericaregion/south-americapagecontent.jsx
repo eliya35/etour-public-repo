@@ -1,9 +1,9 @@
 import React from 'react';
+import SouthAmericaRegionPageTitle from './PageTitle';
 import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
-import SouthAmericaRegionDestinations from './fetch-south-americadestinations';
-import SouthAmericaRegionPageTitle from './PageTitle';
 import ErrorBoundary from '../../../ErrorBoundary';
+import SouthAmericaRegionDestinations from './fetch-south-americadestinations';
 
 
 const SouthAmericaRegionPageContents = () => {
@@ -19,4 +19,5 @@ const SouthAmericaRegionPageContents = () => {
         </div>
     );
 }
+
 export default SouthAmericaRegionPageContents;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import loader from '../../../clockwise.svg'
 import TourCard from '../../homepage/DisplaySites';
 import Pagination from '../../homepage/Pagination';
-import loader from '../../../clockwise.svg'
 
 
 const SouthAmericaRegionDestinations = () => {
@@ -20,7 +20,6 @@ const SouthAmericaRegionDestinations = () => {
     const indexOfFirstTour = indexOfLastTour - postPerPage;
     const currentTours = southAmericaRegionTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
 
     useEffect(
         () => {
@@ -47,9 +46,8 @@ const SouthAmericaRegionDestinations = () => {
     }
 
     if (error) {
-        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+        throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
-
 
     return (
         <div className="container-fluid d-flex justify-content-center">

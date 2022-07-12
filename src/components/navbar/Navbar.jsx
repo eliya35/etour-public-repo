@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom';
 import { NotificationContext } from '../mydestinations/Cart';
 import { UserContext } from '../usercontext/UserProvider';
-import SearchBar from './SearcBar'
+import SearchBar from './SearcBar';
 import axios from 'axios';
-import '../Styles/navbar.css'
+import '../Styles/navbar.css';
 
 
 const NavBar = () => {
@@ -17,8 +17,7 @@ const NavBar = () => {
     let navigate = useNavigate();
 
     const { user, setUser } = useContext(UserContext);
-    const notification = useContext(NotificationContext)
-
+    const notification = useContext(NotificationContext);
 
     const handleSignOut = () => {
         axios.get(
@@ -28,51 +27,66 @@ const NavBar = () => {
         navigate('/');
     };
 
-
     return (
         <>
             <nav className="navbar" >
-                <Link to='/' className='navbar-logo'><img src="https://etour-first-backet.s3.amazonaws.com/etour-logo/etour-logo-no-bg.png" alt="Etour" /></Link>
+                <Link to='/' className='navbar-logo'>
+                    <img src="https://etour-first-backet.s3.amazonaws.com/etour-logo/etour-logo-no-bg.png" alt="Etour" />
+                </Link>
+
+                {/* USER LOGIC */}
+
                 {
                     user &&
+
                     <div className="current-user-mobile">
-                        {/* <span className='adventurer'>Hi there: </span> */}
                         <span
                             className='adventurer-name'
                             onClick={() => navigate('/profile/')}
-                        > My Profile
+                        >
+                            My Profile
                         </span>
+
                         <div className="sign-out-btn">
                             <button
                                 type='button'
                                 className='btn btn-outline-primary btn-sm'
                                 onClick={handleSignOut}
-                            ><i class="bi bi-person-circle"></i> Sign Out
+                            >
+                                <i class="bi bi-person-circle"></i> Sign Out
                             </button>
                         </div>
                     </div>
                 }
+
                 {
                     !user &&
+
                     <div className="no-user-mobile">
                         <div className="login-nav-btn">
                             <span>Hello: Adventurer</span>
+
                             <button
                                 type='button'
                                 className='btn btn-outline-success btn-sm'
-                            ><a href="/logout/"><i class="bi bi-person-circle"></i> Sign in</a>
+                            >
+                                <a href="/logout/"><i class="bi bi-person-circle"></i> Sign in</a>
                             </button>
                         </div>
                     </div>
                 }
+
+                {/* NAVBAR CONTENT */}
+
                 <div className="mobile-search-app">
                     <SearchBar placeholder="Search Destination..." />
                 </div>
+
                 <div className="menu-icon" onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                 </div>
-                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
+                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className="nav-item">
                         <Link
                             to='/featured/'
@@ -81,15 +95,21 @@ const NavBar = () => {
                         >Featured
                         </Link>
                     </li>
+
                     <li className="nav-item">
                         <Link
                             to='/mylist/'
                             className='nav-links'
                             onClick={closeMobileMenu}
-                        >My Destination: <span className='badge badge-light' id='notification-numb'>{notification}</span>
-                            <span className='sr-only'>destinations</span>
+                        >My Destination: <span
+                            className='badge badge-light'
+                            id='notification-numb'
+                        >
+                                {notification}
+                            </span>
                         </Link>
                     </li>
+
                     <li className="nav-item">
                         <Link
                             to='/contact/'
@@ -98,6 +118,7 @@ const NavBar = () => {
                         >Contact Us
                         </Link>
                     </li>
+
                     <div className="search-app">
                         <SearchBar placeholder="Search Destination..." />
                     </div>
@@ -107,25 +128,27 @@ const NavBar = () => {
                     {
                         user &&
                         <div className='current-user'>
-                            {/* <span className='adventurer'>Hi there: </span> */}
                             <span
                                 className='adventurer-name'
                                 onClick={() => navigate('/profile/')}
-                            > My Profile/ Account
+                            >
+                                My Profile/ Account
                             </span>
+
                             <div className="sign-out-btn">
                                 <button
                                     type='button'
                                     className='btn btn-outline-primary btn-sm'
                                     onClick={handleSignOut}
-                                ><i class="bi bi-person-circle"></i> Sign Out
+                                >
+                                    <i class="bi bi-person-circle"></i> Sign Out
                                 </button>
                             </div>
                         </div>
                     }
 
 
-                    {/* else do this... */}
+                    {/* else... */}
 
                     {
                         !user &&
@@ -135,7 +158,8 @@ const NavBar = () => {
                                 <button
                                     type='button'
                                     className='btn btn-outline-success btn-sm'
-                                ><a href="/logout/">Log in</a>
+                                >
+                                    <a href="/logout/">Log in</a>
                                 </button>
                             </div>
                         </div>

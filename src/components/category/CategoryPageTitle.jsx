@@ -1,10 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import '../Styles/categorypagetitle.css'
+import '../Styles/categorypagetitle.css';
 
 
 const CategoryPageTitle = () => {
-
     const category = useParams().category
 
     return (
@@ -14,4 +13,4 @@ const CategoryPageTitle = () => {
     );
 }
 
-export default CategoryPageTitle
+export default CategoryPageTitle;

@@ -20,7 +20,7 @@ from django.views.generic import TemplateView
 from django.urls import path
 from dotenv import load_dotenv
 
-load_dotenv ()
+load_dotenv()
 
 admin_site_url = str(os.getenv('ADMIN_SITE_URL'))
 api_url = str(os.getenv('API_URL'))
@@ -34,13 +34,13 @@ urlpatterns = [
     path('featured/', TemplateView.as_view(template_name='index.html')),
     path('popular/', TemplateView.as_view(template_name='index.html')),
     path('category/<category>/', TemplateView.as_view(template_name='index.html')),
-    path('region/Africa/', TemplateView.as_view(template_name='index.html'), name = "africa_region"),
-    path('region/Europe/', TemplateView.as_view(template_name='index.html'), name = "europe_region"),
-    path('region/North-america/', TemplateView.as_view(template_name='index.html'), name = "north-america_region"),
-    path('region/South-america/', TemplateView.as_view(template_name='index.html'), name = "south-america_region"),
-    path('region/Asian-pacific/', TemplateView.as_view(template_name='index.html'),name = "asian-pacific_region"),
-    path('region/Antarticar/', TemplateView.as_view(template_name='index.html'), name = "antartica_region"),
-    path('region/Australia/', TemplateView.as_view(template_name='index.html'), name = "antartica_region"),
+    path('region/Africa/', TemplateView.as_view(template_name='index.html'), name="africa_region"),
+    path('region/Europe/', TemplateView.as_view(template_name='index.html'), name="europe_region"),
+    path('region/North-america/', TemplateView.as_view(template_name='index.html'), name="north-america_region"),
+    path('region/South-america/', TemplateView.as_view(template_name='index.html'), name="south-america_region"),
+    path('region/Asian-pacific/', TemplateView.as_view(template_name='index.html'), name="asian-pacific_region"),
+    path('region/Australia/', TemplateView.as_view(template_name='index.html'), name="australia_region"),
+    # path('region/Antarctica/', TemplateView.as_view(template_name='index.html'), name="antarctic_region"),
     path('support/', TemplateView.as_view(template_name='index.html')),
     path('donate/', TemplateView.as_view(template_name='index.html')),
     path('contact/', TemplateView.as_view(template_name='index.html')),

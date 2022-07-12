@@ -10,20 +10,20 @@ const MobileFilter = () => {
             <DropdownButton id="dropdown-basic-button" title="Category Dropdown">
                 {/* <br /> */}
                 <div className="mobile-filter-options">
-                    <samp><strong>FILTERS</strong></samp>
+                    <span><strong>FILTERS</strong></span>
                 </div>
                 <Dropdown.Item href="/featured/">Featured</Dropdown.Item>
                 <Dropdown.Item href="/popular/">Most Popular</Dropdown.Item>
 
                 <br />
                 <div className="mobile-categories">
-                    <samp><strong>CATEGORIES</strong></samp>
+                    <span><strong>CATEGORIES</strong></span>
                 </div>
-                <Dropdown.Item href="/category/Ancient Buildings/">Ancient Buldings</Dropdown.Item>
+                <Dropdown.Item href="/category/Ancient Buildings/">Ancient Buildings</Dropdown.Item>
                 <Dropdown.Item href="/category/Beach Restaurant/">Beach Restaurant</Dropdown.Item>
                 <Dropdown.Item href="/category/Bike Hikes/">Bike Hikes</Dropdown.Item>
                 <Dropdown.Item href="/category/Caves/">Caves</Dropdown.Item>
-                <Dropdown.Item href="/category/Cassinos/">Cold Regions</Dropdown.Item>
+                <Dropdown.Item href="/category/Cold Regions/">Cold Regions</Dropdown.Item>
                 <Dropdown.Item href="/category/Cultural Regions/">Cultural Regions</Dropdown.Item>
                 <Dropdown.Item href="/category/Desert/">Deserts</Dropdown.Item>
                 <Dropdown.Item href="/category/Hotel Casino/">Family Time Spots</Dropdown.Item>
@@ -42,15 +42,15 @@ const MobileFilter = () => {
 
                 <br />
                 <div className="mobile-region">
-                    <samp><strong>REGIONS</strong></samp>
+                    <span><strong>REGIONS</strong></span>
                 </div>
                 <Dropdown.Item href="/region/Asian-pacific/">ASIA</Dropdown.Item>
                 <Dropdown.Item href="/region/Africa/">AFRICA</Dropdown.Item>
                 <Dropdown.Item href="/region/Europe/">EUROPE</Dropdown.Item>
-                <Dropdown.Item href="/region/North-america/">NORTH AMERICS</Dropdown.Item>
+                <Dropdown.Item href="/region/North-america/">NORTH AMERICA</Dropdown.Item>
                 <Dropdown.Item href="/region/South-america/">SOUTH AMERICA</Dropdown.Item>
                 <Dropdown.Item href="/region/Australia/">AUSTRALIA</Dropdown.Item>
-                {/* <Dropdown.Item href="/region/Antarticar/">Antarticar</Dropdown.Item> */}
+                {/* <Dropdown.Item href="/region/Antarctica/">Antarctica</Dropdown.Item> */}
             </DropdownButton>
         </div>
     );

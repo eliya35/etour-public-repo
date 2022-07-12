@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import CommentApp from '../comments/ReturnComments'
-import '../Styles/viewpage.css'
+import CommentApp from '../comments/ReturnComments';
+import '../Styles/viewpage.css';
 
 
 const ViewPageUI = (props) => {
-
     const [displayImage, setDisplayImage] = useState(props.img)
 
     return (
@@ -106,7 +105,7 @@ const ViewPageUI = (props) => {
                         </li>
                     </ul>
                 </div>
-                {/* Didabled commenting indefinitely */}
+                {/* Disabled commenting indefinitely */}
                 {/* <div className="rendered-comments">
                     <CommentApp tour_site_id={props.tour_site_id} />
                 </div> */}

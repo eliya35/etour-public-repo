@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Pagination from '../homepage/Pagination';
 import loader from '../../clockwise.svg';
 import TourCard from '../homepage/DisplaySites';
+import Pagination from '../homepage/Pagination';
 
 
 const FetchCategoryData = () => {
@@ -12,7 +12,7 @@ const FetchCategoryData = () => {
     const [postPerPage] = useState(24);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
-    const category = useParams().category
+    const category = useParams().category;
 
     // Pagination Logic
     const indexOfLastTour = currentPage * postPerPage;
@@ -20,14 +20,13 @@ const FetchCategoryData = () => {
     const currentCategorySite = categoryData.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
     
-
     useEffect(() => {
         if (category) {
             axios.get(
                 `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/category/${category}/`
             )
                 .then(res => {
-                    setCategoryData(res.data)
+                    setCategoryData(res.data);
                     setIsLoading(false);
                 })
                 .catch(() => {
@@ -36,7 +35,6 @@ const FetchCategoryData = () => {
                 })
         }
     }, [category]);
-
 
     if (isLoading) {
         return (
@@ -47,9 +45,8 @@ const FetchCategoryData = () => {
     }
 
     if (error) {
-        throw new Error('NetworkError: Please check your connnection or try again later😶.')
+        throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
-
 
     return (
         <div>

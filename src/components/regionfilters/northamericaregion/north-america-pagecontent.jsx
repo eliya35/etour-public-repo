@@ -1,9 +1,9 @@
 import React from 'react';
+import NorthAmericaRegionPageTitle from './PageTitle';
 import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
-import NorthAmericaRegionPageTitle from './PageTitle';
-import NorthAmericaRegionDestinations from './fetch-north-america-destinations';
 import ErrorBoundary from '../../../ErrorBoundary';
+import NorthAmericaRegionDestinations from './fetch-north-america-destinations';
 
 
 const NorthAmericaRegionPageContents = () => {

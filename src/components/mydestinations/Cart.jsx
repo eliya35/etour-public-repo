@@ -1,15 +1,13 @@
 import React, { useContext, useEffect, useState, createContext } from 'react';
-import { useNavigate } from 'react-router-dom'
-import { useCart } from 'react-use-cart'
-import { UserContext } from '../usercontext/UserProvider';
-import '../Styles/cart.css'
+import { useNavigate } from 'react-router-dom';
+import { useCart } from 'react-use-cart';
+import '../Styles/cart.css';
 
 
 export const NotificationContext = createContext(0);
 
 // Add tours to a cart like feature responsible for handling My Destinations
 const Cart = () => {
-
     const {
         isEmpty,
         totalUniqueItems,
@@ -18,11 +16,10 @@ const Cart = () => {
         emptyCart,
     } = useCart();
 
-    const { user } = useContext(UserContext);
     const navigate = useNavigate()
 
-
     if (isEmpty) return <h1 className="text-centre">You Have Zero Destinations Added</h1>
+
     return (
         <section className='py-4 container'>
             <div className='row justify-content-center'>
@@ -69,7 +66,6 @@ const Cart = () => {
         </section >
     );
 }
-
 export default Cart;
 
 

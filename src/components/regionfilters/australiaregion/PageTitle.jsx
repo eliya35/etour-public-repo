@@ -1,5 +1,6 @@
 import React from 'react';
-import './australia-region.css'
+import './australia-region.css';
+
 
 const AustraliaRegionPageTitle = () => {
     return (

@@ -1,12 +1,12 @@
 import React from 'react';
+import AsianPacificRegionPageTitle from './PageTitle';
 import Filter from '../../homepage/FilterUi';
 import MobileFilter from '../../homepage/MobileFilter';
-import AsianPacificRegionPageTitle from './PageTitle';
-import AsianPacificRegionDestinations from './fetch-asia-pacific-destinations';
 import ErrorBoundary from '../../../ErrorBoundary';
+import AsianPacificRegionDestinations from './fetch-asia-pacific-destinations';
 
 
-const AsianPacifcRegionPageContents = () => {
+const AsianPacificRegionPageContents = () => {
     return (
         <div>
             <AsianPacificRegionPageTitle />
@@ -19,4 +19,5 @@ const AsianPacifcRegionPageContents = () => {
         </div>
     );
 }
-export default AsianPacifcRegionPageContents;
+
+export default AsianPacificRegionPageContents;

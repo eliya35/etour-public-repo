@@ -1,4 +1,4 @@
-.featured-page{
+.featured-page {
     padding-top: 75px;
 }
 
@@ -13,6 +13,6 @@
 .selection {
     border-right: 2px solid #ddd;
     word-break: break-word;
-    width: 200px!important;
+    width: 200px !important;
     /* margin-top: 0em !important; */
 }

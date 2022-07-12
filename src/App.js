@@ -16,13 +16,13 @@ import TermsAndCondition from "./components/quicklinks/TermsAndCondition";
 import UserAccount from "./components/UserRelated/UserAccount";
 import UserProfile from "./components/UserRelated/UserProfile";
 import LoginRequired from "./components/login/LoginRequired";
-import CommingSoon from "./components/quicklinks/CommingSoon";
+import ComingSoon from "./components/quicklinks/ComingSoon";
 
 import "./App.css";
 import loader from './clockwise.svg'
 import ErrorBoundary from "./ErrorBoundary";
 
-// CODE SPLITING
+// CODE SPLITTING
 const Home = React.lazy(() => import("./components/homepage/Home"));
 const PopularSitesUiPage = React.lazy(() => import("./components/popularsites/PopularSiteUiPage"));
 const CategoryPageContents = React.lazy(() => import("./components/category/CategoryPageContents"));
@@ -30,8 +30,8 @@ const FeaturedPage = React.lazy(() => import("./components/featured/FeaturedPage
 const ViewPageData = React.lazy(() => import("./components/viewpage/FetchViewData"));
 
 const AfricaRegionPageContents = React.lazy(() => import("./components/regionfilters/africaregion/africa-pagecontent"));
-const AntarticRegionPageContents = React.lazy(() => import("./components/regionfilters/antarticregion/antartic-pagecontent"));
-const AsianPacifcRegionPageContents = React.lazy(() => import("./components/regionfilters/asian-pacificregion/asia-pacific-pagecontent"));
+const AntarcticRegionPageContents = React.lazy(() => import("./components/regionfilters/antarticregion/antartic-pagecontent"));
+const AsianPacificRegionPageContents = React.lazy(() => import("./components/regionfilters/asian-pacificregion/asia-pacific-pagecontent"));
 const EuropeRegionPageContents = React.lazy(() => import("./components/regionfilters/europeregion/europe-pagecontent"));
 const NorthAmericaRegionPageContents = React.lazy(() => import("./components/regionfilters/northamericaregion/north-america-pagecontent"));
 const SouthAmericaRegionPageContents = React.lazy(() => import("./components/regionfilters/southamericaregion/south-americapagecontent"));
@@ -94,14 +94,14 @@ const App = () => {
 
 							<Route
 								exact
-								path="/region/Antarticar/"
-								element={<AntarticRegionPageContents />}
+								path="/region/Antarctica/"
+								element={<AntarcticRegionPageContents />}
 							/>
 
 							<Route
 								exact
 								path="/region/Asian-pacific/"
-								element={<AsianPacifcRegionPageContents />}
+								element={<AsianPacificRegionPageContents />}
 							/>
 
 							<Route
@@ -172,7 +172,7 @@ const App = () => {
 
 							<Route exact path='/login-required/' element={<LoginRequired />} />
 
-							<Route exact path='/coming-soon/' element={<CommingSoon />} />
+							<Route exact path='/coming-soon/' element={<ComingSoon />} />
 						</Routes>
 					</Suspense>
 				</UserProvider>

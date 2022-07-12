@@ -1,13 +1,14 @@
 from django.db import models
 from django.urls import reverse
 
+
 REGION = [
     ('AFRICA', 'AFRICA'),
     ('EUROPE', 'EUROPE'),
     ('NORTH AMERICA', 'NORTH AMERICA'),
     ('SOUTH AMERICA', 'SOUTH AMERICA'),
     ('ANTARCTICA', 'ANTARCTICA'),
-    ('AUSTRAILA', 'AUSTRAILA'),
+    ('AUSTRALIA', 'AUSTRALIA'),
     ('ASIAN-PACIFIC', 'ASIAN-PACIFIC')
 ]
 TOURIST_TRAFFIC_RATE = [
@@ -18,7 +19,7 @@ TOURIST_TRAFFIC_RATE = [
 ]
 COUNTRIES_CHOICES = [
     ('EGYPT', 'EGYPT'),
-    ('BOLIVIA', 'BILIVIA'),
+    ('BOLIVIA', 'BOLIVIA'),
     ('MOROCCO', 'MOROCCO'),
     ('SOUTH AFRICA', 'SOUTH AFRICA'),
     ('TUNISIA', 'TUNISIA'),

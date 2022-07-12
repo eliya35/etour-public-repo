@@ -1,10 +1,10 @@
 import React from 'react';
-import Filter from '../homepage/FilterUi'
-import FeaturedSites from './FetchFeaturedSites';
 import FeaturedPageTitle from './FeaturedPageTitle';
+import Filter from '../homepage/FilterUi'
 import MobileFilter from '../homepage/MobileFilter';
 import ErrorBoundary from '../../ErrorBoundary';
-import '../Styles/featuredsites.css'
+import FeaturedSites from './FetchFeaturedSites';
+import '../Styles/featuredsites.css';
 
 
 const FeaturedPage = () => {

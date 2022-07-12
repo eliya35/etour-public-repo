@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../usercontext/UserProvider';
-import { useNavigate } from 'react-router-dom'
-import '../Styles/useraccount.css'
+import axios from 'axios';
+import '../Styles/useraccount.css';
 
 
 const UserAccount = () => {
@@ -21,7 +21,6 @@ const UserAccount = () => {
     const [isDisabled, setIsDisabled] = useState(true);
     const [isSubmit, setIsSubmit] = useState(true);
     const [isPosted, setIsPosted] = useState(false);
-
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {

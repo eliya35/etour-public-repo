@@ -1,5 +1,6 @@
 import React from 'react';
-import './north-america-region.css'
+import './north-america-region.css';
+
 
 const NorthAmericaRegionPageTitle = () => {
     return (

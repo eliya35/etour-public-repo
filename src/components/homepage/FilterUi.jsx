@@ -70,7 +70,7 @@ function Filter() {
                             <li><a href="/region/Australia/">AUSTRALIA</a></li>
                             
                             {/* NO DESTINATIONS HERE
-                            <li><a href="/region/Antarticar/">Antarctica</a></li> */}
+                            <li><a href="/region/Antarctica/">Antarctica</a></li> */}
                         </ul>
                     </div>
                 </div>

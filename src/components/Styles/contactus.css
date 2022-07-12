@@ -1,11 +1,12 @@
-.contact-us{
-    width: 50em; 
-    margin-bottom: 35em;
+.contact-us {
+    width: 50em;
+    margin-bottom: 2em;
     padding-left: 1em;
     padding-top: 6em;
     margin-left: 3em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.fields p{
+
+.fields p {
     color: red;
 }

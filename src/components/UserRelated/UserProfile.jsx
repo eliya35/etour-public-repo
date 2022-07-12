@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../usercontext/UserProvider';
 import axios from 'axios';
-import '../Styles/userprofile.css'
+import '../Styles/userprofile.css';
 
 
 const UserProfile = () => {
@@ -49,7 +49,7 @@ const UserProfile = () => {
                 setPreviousValue(res.data)
             })
             .catch(err => {
-                // console.log('An unkown error occurred')
+                // console.log('An unknown error occurred')
             })
     }, [user_id, formErrors, isSubmit])
 

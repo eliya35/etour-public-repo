@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import { UserContext } from '../usercontext/UserProvider';
 import { Navigate } from 'react-router-dom';
-import '../Styles/loginrequired.css'
+import { UserContext } from '../usercontext/UserProvider';
+import '../Styles/loginrequired.css';
 
 
 function LoginRequired() {
-    
     const { user } = useContext(UserContext);
 
     return (
