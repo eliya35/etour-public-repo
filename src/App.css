@@ -3353,3 +3353,17 @@ footer p {
 		width: 382px;
 	}
 }
+
+@media (min-width:1500px) and (max-width:7000px) {
+	.mobile-search-app {
+		display: none !important;
+	}
+
+	.search-results {
+		width: 382px;
+	}
+	.card {
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
