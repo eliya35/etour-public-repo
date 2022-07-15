@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/helppage.css'
+import FeedBack from './FeedBack';
 
 
 const HelpPage = () => {
@@ -7,16 +8,16 @@ const HelpPage = () => {
         <div className="help">
             <h1>What you'll find in this page</h1>
             <div className="help-stuff">
-                <li>Navbar usages</li>
-                <li>Category usage</li>
-                <li>Filter usage</li>
-                <li>Tour Cards Content and usage</li>
-                <li>User Profile and account management</li>
-                <li>Quicklinks navigation</li>
+                <li><a href='#navbarusage'>Navbar usages</a></li>
+                <li><a href='#categoryusage'>Category usage</a></li>
+                <li><a href='#filterusage'>Filter usage</a></li>
+                <li><a href='#tourcarduse'>Tour Cards Content and usage</a></li>
+                <li><a href='#userprofile'>User Profile and account management</a></li>
+                <li><a href='#quiclinks'>Quicklinks navigation</a></li>
             </div>
             <br />
 
-            <h2>Navbar</h2>
+            <h2 id='navbarusage'><a href='#navbarusage'>Navbar usages</a></h2>
             <div className="nav-help">
                 <p>
                     Navbar presents to you the following links and functionality:
@@ -66,14 +67,14 @@ const HelpPage = () => {
                 </p>
             </div>
 
-            <h2>Categories</h2>
+            <h2 id='categoryusage'><a href='#categoryusage'>Category usage</a></h2>
             <p>
                 Well the name pretty much says it all. Categories give you the power to choose the kind of adventure
                 you want to partake whether its Ancient buildings or Popular once's Caves or Mountains, Forests or Marine Life,
                 Hotels and Casinos, and a bunch more we have it all here to make your life more easier.
             </p>
 
-            <h2>Filters</h2>
+            <h2 id='filterusage'><a href='#filterusage'>Filter usage</a></h2>
             <p>
                 The available filters <a href="/popular">Most Popular</a> and <a href="/featured">Featured</a> do
                 basically what their name say. Most popular sites return only sites that are popular meaning they have a
@@ -83,7 +84,7 @@ const HelpPage = () => {
                 to identify them from any location displaying tour cards.
             </p>
 
-            <h2>Tour Cards Content and usage</h2>
+            <h2 id='tourcarduse'><a href='#tourcarduse'>Tour Cards Content and usage</a></h2>
             <span>A tour card is const of:</span>
             <ul>
                 <li><strong>Card Image</strong></li>
@@ -159,7 +160,7 @@ const HelpPage = () => {
             </ul>
 
 
-            <h2>User profile and account management</h2>
+            <h2 id='userprofile'><a href='#userprofile'>User Profile and account management</a></h2>
             <p>
                 When you are logged in using your credentials at the right conner or when using your mobile,
                 at the dropdown menu you see my profile/account. When clicked on it navigates you to your profile account.
@@ -195,7 +196,7 @@ const HelpPage = () => {
                     Once you delete your account all your info is wiped clean and there can be reversing of this process.
                 </strong>
             </p>
-            <h2>Quick links</h2>
+            <h2 id='quiclinks'><a href='#quiclinks'>Quicklinks navigation</a></h2>
             <p>
                 Quick links quick link you to pages, Yes that's what they do.
                 <ul>
@@ -244,6 +245,9 @@ const HelpPage = () => {
                     </li>
                 </ul>
             </p>
+            <div className="container">
+                <FeedBack />
+            </div>
         </div>
     );
 }

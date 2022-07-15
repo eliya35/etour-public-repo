@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/faq.css'
+import FeedBack from './FeedBack';
 
 
 const FAQ = () => {
@@ -52,9 +53,7 @@ const FAQ = () => {
             </section>
             <div className="container">
                 <div className="feedback">
-                    <h6>Was this information usefully?</h6>
-                    <button className='btn btn-success m-2'>Yes</button>
-                    <button className='btn btn-danger m-2'>No</button>
+                    <FeedBack />
                 </div>
             </div>
         </div>

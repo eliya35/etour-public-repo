@@ -18,7 +18,7 @@ const ViewPageUI = (props) => {
                             <div className="col">
                                 <ul>
                                     <li
-                                        onClick={() => setDisplayImage(props.image_01)}
+                                        onClick={() => setDisplayImage(previousImg => props.image_01)}
                                     >
                                         <img src={props.image_01} className="side-img" alt={props.name} />
                                     </li>
@@ -29,7 +29,7 @@ const ViewPageUI = (props) => {
                             <div className="col">
                                 <ul>
                                     <li
-                                        onClick={() => setDisplayImage(props.image_02)}
+                                        onClick={() => setDisplayImage(previousImg => props.image_02)}
                                     >
                                         <img src={props.image_02} className="side-img" alt={props.name} />
                                     </li>
@@ -40,7 +40,7 @@ const ViewPageUI = (props) => {
                             <div className="col">
                                 <ul>
                                     <li
-                                        onClick={() => setDisplayImage(props.image_03)}
+                                        onClick={() => setDisplayImage(previousImg => props.image_03)}
                                     >
                                         <img src={props.image_03} className="side-img" alt={props.name} />
                                     </li>
@@ -51,7 +51,7 @@ const ViewPageUI = (props) => {
                             <div className="col">
                                 <ul>
                                     <li
-                                        onClick={() => setDisplayImage(props.image_04)}
+                                        onClick={() => setDisplayImage(previousImg => props.image_04)}
                                     >
                                         <img src={props.image_04} className="side-img" alt={props.name} />
                                     </li>

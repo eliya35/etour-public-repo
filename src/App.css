@@ -635,6 +635,10 @@ footer p {
 		margin-left: 1px;
 	}
 
+	.feedback {
+		margin-bottom: 1em;
+	}
+
 	/* Suggestion Page elements to... */
 	.suggestion-form {
 		width: 292px !important;
@@ -666,6 +670,7 @@ footer p {
 	/* Help Page */
 	.help {
 		width: 292px;
+		margin-left: 1em;
 	}
 
 	/* Coming Soon */
@@ -1326,6 +1331,10 @@ footer p {
 		width: 23em;
 		margin-bottom: 0;
 		margin-left: 1px;
+	}
+
+	.feedback {
+		margin-bottom: 1em;
 	}
 
 	/* Suggestion Page elements to... */

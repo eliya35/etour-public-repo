@@ -19,8 +19,8 @@ import LoginRequired from "./components/login/LoginRequired";
 import ComingSoon from "./components/quicklinks/ComingSoon";
 
 import "./App.css";
-import loader from './clockwise.svg'
 import ErrorBoundary from "./ErrorBoundary";
+import Spinner from "./Spinner";
 
 // CODE SPLITTING
 const Home = React.lazy(() => import("./components/homepage/Home"));
@@ -46,13 +46,7 @@ const App = () => {
 						<NavBar />
 					</NotificationProvider>
 
-					<Suspense fallback=
-						{
-							<div className="allsites-loading">
-								<img src={loader} className="loading-clockwise" alt="Loading..." />
-							</div>
-						}
-					>
+					<Suspense fallback={<Spinner />}>
 						<Routes>
 							<Route
 								exact

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/privacypolicy.css'
+import FeedBack from './FeedBack';
 
 
 const PrivacyPolicy = () => {
@@ -23,19 +24,19 @@ const PrivacyPolicy = () => {
             </div>
             <div className="body">
                 <ul>
-                    <li>What Personal information about Adventures Dose Etour Collect?</li>
-                    <li>For What Purpose Dose Etour Use Your Personal Information?</li>
-                    <li>Dose Etour Share Your Personal Information?</li>
-                    <li>How Secure Is information About Me?</li>
-                    <li>What Information Can I access?</li>
-                    <li>Are Children Allowed to Use Etour?</li>
-                    <li>Examples of information Collected?</li>
+                    <li><a href='#personaldetails'>What Personal information about Adventures Dose Etour Collect?</a></li>
+                    <li><a href='#useofpersonalinfo'>For What Purpose Dose Etour Use Your Personal Information?</a></li>
+                    <li><a href='#sharepersonalInfo'>Dose Etour Share Your Personal Information?</a></li>
+                    <li><a href='#personalinfosecure'>How Secure Is information About Me?</a></li>
+                    <li><a href='#canaccess'>What Information Can I access?</a></li>
+                    <li><a href='#childrenallowed'>Are Children Allowed to Use Etour?</a></li>
+                    <li><a href='#infocollected'>Examples of information Collected?</a></li>
                 </ul>
             </div>
             <span>
                 {/* Personal Information */}
 
-                <h2>What Personal information about Adventures Dose Etour Collect?</h2>
+                <h2 id='personaldetails'><a href='#personaldetails'>What Personal information about Adventures Dose Etour Collect?</a></h2>
                 <p>
                     We collect your personal information in order to provide quality and
                     first class services.
@@ -66,7 +67,7 @@ const PrivacyPolicy = () => {
                 </li>
                 {/* Purpose for the information */}
 
-                <h2>For What Purpose Dose Etour Use Your Personal information?</h2>
+                <h2 id='useofpersonalinfo'><a href='#useofpersonalinfo'>For What Purpose Dose Etour Use Your Personal information?</a></h2>
                 <p>
                     We use personal information to operate,provide, develop, and improve
                     the services we offer to our Adventures. These purpose include:
@@ -105,7 +106,7 @@ const PrivacyPolicy = () => {
                 </p>
                 {/* Dose Etour Share Your Information */}
 
-                <h2>Dose Etour Share Your Personal Information?</h2>
+                <h2 id='sharepersonalInfo'><a href='#sharepersonalInfo'>Dose Etour Share Your Personal Information?</a></h2>
                 <p>
                     Information about our Adventures is an important part of our business,
                     and we are not in the business of selling our customers' personal information
@@ -125,7 +126,7 @@ const PrivacyPolicy = () => {
                 </li>
                 {/* How Secure is my information */}
 
-                <h2>How Secure Is Information About Me?</h2>
+                <h2 id='personalinfosecure'><a href='#personalinfosecure'>How Secure Is information About Me?</a></h2>
                 <p>We design our systems with your security and privacy in mind.</p>
                 <li>
                     We work to protect the security of your personal information during transmission
@@ -149,14 +150,14 @@ const PrivacyPolicy = () => {
                 </li>
                 {/* What Information Can I access */}
 
-                <h2>What Information Can I Access?</h2>
+                <h2 id='canaccess'><a href='#canaccess'>What Information Can I access?</a></h2>
                 <p>
                     You can access your information, including your name, payment options, profile
                     information, household settings, and in the "My Profile" section of the website.
                 </p>
                 {/* Are Children allowed to use Tour */}
 
-                <h2>Are Children Allowed to Use Etour Services?</h2>
+                <h2 id='childrenallowed'><a href='#childrenallowed'>Are Children Allowed to Use Etour?</a></h2>
                 <p>
                     If you are under 18, you may use Etour Services only with the involvement of a parent or
                     guardian. We do not knowingly collect personal information from children under
@@ -164,7 +165,7 @@ const PrivacyPolicy = () => {
                 </p>
                 {/* Examples of information collected */}
 
-                <h2>Examples of information Collected?</h2>
+                <h2 id='infocollected'><a href='#infocollected'>Examples of information Collected?</a></h2>
                 <p><strong>Information You Give Us When You Use Etour Services</strong></p>
                 <li>identifying information such as your name, address, and phone numbers;</li>
                 <li>your age</li>
@@ -184,11 +185,7 @@ const PrivacyPolicy = () => {
             </span>
             <br />
             <div className="container">
-                <div className="feedback">
-                    <h6>Was this information usefully?</h6>
-                    <button className='btn btn-success m-2'>Yes</button>
-                    <button className='btn btn-danger m-2'>No</button>
-                </div>
+                <FeedBack />
             </div>
         </div>
     );
