@@ -61,6 +61,7 @@ const FeaturedSites = () => {
                                 shortDescription={item.short_description}
                                 price={item.price}
                                 item={item}
+                                status={item.is_featured}
                             />
                         </div>
                     );
