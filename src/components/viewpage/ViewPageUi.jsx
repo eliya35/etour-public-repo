@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import CommentApp from '../comments/ReturnComments';
-import '../Styles/viewpage.css';
+import Booking from './Booking';
 import DestinationProducts from './DestinationProducts';
 import DisplayImage from './DispalyImage';
 import LocationInfo from './LocationInfo';
+import '../Styles/viewpage.css';
 
 
 const ViewPageUI = (props) => {
+
+    // Page Title
+    const pageTitle = props.name === undefined ? 'etour international' : props.name;
+    useEffect(() => { document.title = `${pageTitle}`; }, []);
 
     return (
         <div className="viewpage">
@@ -15,7 +20,7 @@ const ViewPageUI = (props) => {
                     {/* Dispaly Image */}
                     <DisplayImage
                         name={props.name}
-                        img={ props.image_01}
+                        img={props.image_01}
                         image_01={props.image_01}
                         image_02={props.image_02}
                         image_03={props.image_03}
@@ -39,20 +44,22 @@ const ViewPageUI = (props) => {
                 </div>
 
                 <div>
-                    {/* Booking Component */}
+                    {/* Destination Products */}
+                    <DestinationProducts
+                        name={props.name}
+                        product_01={props.product_01}
+                        product_02={props.product_02}
+                        product_03={props.product_03}
+                        product_04={props.product_04}
+                        product_05={props.product_05}
+                        product_06={props.product_06}
+                        product_07={props.product_07}
+                    />
                 </div>
 
                 <div>
-                    {/* Destination Products */}
-                    <DestinationProducts
-                        products_01={props.product_01}
-                        products_02={props.product_02}
-                        products_03={props.product_03}
-                        products_04={props.product_04}
-                        products_05={props.product_05}
-                        products_06={props.product_06}
-                        products_07={props.product_07}
-                    />
+                    {/* Booking Component */}
+                    <Booking tour={props.tour} />
                 </div>
 
                 {/* Disabled commenting indefinitely */}

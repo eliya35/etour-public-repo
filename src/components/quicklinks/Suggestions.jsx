@@ -73,6 +73,9 @@ const Suggestion = () => {
         setIsSubmit(true)
     }
 
+    // set the page title.
+    useEffect(() => { document.title = 'Suggestions'; });
+
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }

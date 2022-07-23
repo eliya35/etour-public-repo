@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, createContext } from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
 import '../Styles/cart.css';
@@ -18,7 +18,11 @@ const Cart = () => {
 
     const navigate = useNavigate()
 
+    // set the page title.
+    useEffect(() => { document.title = 'My Destinations'; });
+
     if (isEmpty) return <h1 className="text-centre">You Have Zero Destinations Added</h1>
+
 
     return (
         <section className='py-4 container'>

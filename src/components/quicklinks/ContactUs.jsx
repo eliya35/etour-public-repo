@@ -74,6 +74,9 @@ const ContactUs = () => {
         setIsSubmit(true)
     }
 
+    // set the page title.
+    useEffect(() => { document.title = 'Contact us'; });
+
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }

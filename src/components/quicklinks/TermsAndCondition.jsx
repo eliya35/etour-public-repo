@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/termsandcondition.css'
 import FeedBack from './FeedBack';
 
 
 const TermsAndCondition = () => {
+
+    // set the page title.
+    useEffect(() => { document.title = 'Terms of use'; });
+
     return (
         <div className="terms">
             <Link to='/terms/'></Link>

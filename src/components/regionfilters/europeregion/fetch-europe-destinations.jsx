@@ -13,7 +13,7 @@ const EuropeRegionDestinations = () => {
     const [postPerPage] = useState(24);
 
     // Filter Europe sites
-    const EuropeRegionTours = tours.filter(tour => tour.region === 'EUROPE')
+    const EuropeRegionTours = tours.filter(tour => tour.region === 'EUROPE');
 
     // Pagination Logic
     const indexOfLastTour = currentPage * postPerPage;
@@ -21,6 +21,8 @@ const EuropeRegionDestinations = () => {
     const currentTours = EuropeRegionTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+    // set the page title.
+    useEffect(() => { document.title = 'Europe Sites'; });
 
     useEffect(
         () => {

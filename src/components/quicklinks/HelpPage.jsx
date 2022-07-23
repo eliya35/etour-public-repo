@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Styles/helppage.css'
 import FeedBack from './FeedBack';
 
 
 const HelpPage = () => {
+
+    // set the page title.
+    useEffect(() => { document.title = 'Help'; });
+
     return (
         <div className="help">
             <h1>What you'll find in this page</h1>

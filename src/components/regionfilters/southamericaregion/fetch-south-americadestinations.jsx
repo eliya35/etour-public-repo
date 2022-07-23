@@ -13,13 +13,16 @@ const SouthAmericaRegionDestinations = () => {
     const [postPerPage] = useState(24);
 
     // Filter South America sites
-    const southAmericaRegionTours = tours.filter(tour => tour.region === 'SOUTH AMERICA')
+    const southAmericaRegionTours = tours.filter(tour => tour.region === 'SOUTH AMERICA');
 
     // Pagination Logic
     const indexOfLastTour = currentPage * postPerPage;
     const indexOfFirstTour = indexOfLastTour - postPerPage;
     const currentTours = southAmericaRegionTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    // set the page title.
+    useEffect(() => { document.title = 'South America Sites'; });
 
     useEffect(
         () => {

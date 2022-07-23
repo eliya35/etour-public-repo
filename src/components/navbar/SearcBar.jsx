@@ -77,8 +77,6 @@ const SearchBar = ({ placeholder }) => {
                                             setFilteredData([]);
                                             setDestination("");
                                         }}
-                                        // onKeyUp={ }
-                                        // onKeyDown={ }
                                     >{filteredSite.name}
                                     </div>
                                 );
@@ -92,4 +90,3 @@ const SearchBar = ({ placeholder }) => {
 };
 
 export default SearchBar;
-

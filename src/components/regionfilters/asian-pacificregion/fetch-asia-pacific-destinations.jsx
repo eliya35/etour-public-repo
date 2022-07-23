@@ -13,13 +13,16 @@ const AsianPacificRegionDestinations = () => {
     const [error, setError] = useState(false);
 
     // Filter out Asian-Pacific Tours
-    const asianPacificRegionTours = tours.filter(tour => tour.region === 'ASIAN-PACIFIC')
+    const asianPacificRegionTours = tours.filter(tour => tour.region === 'ASIAN-PACIFIC');
 
     // Pagination Logic
     const indexOfLastTour = currentPage * postPerPage;
     const indexOfFirstTour = indexOfLastTour - postPerPage;
     const currentTours = asianPacificRegionTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    // set the page title.
+    useEffect(() => { document.title = 'Asian Sites'; });
 
     useEffect(
         () => {

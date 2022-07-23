@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/faq.css'
 import FeedBack from './FeedBack';
 
 
 const FAQ = () => {
+    // set the page title.
+    useEffect(() => { document.title = 'FAQ'; });
+
     return (
         <div className="faq">
             <Link to='/faq/'></Link>

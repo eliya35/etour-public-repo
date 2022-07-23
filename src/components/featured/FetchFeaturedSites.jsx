@@ -18,6 +18,9 @@ const FeaturedSites = () => {
     const currentFeaturedSites = featuredSites.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+    // set the page title.
+    useEffect(() => { document.title = 'Featured Sites'; });
+
     useEffect(
         () => {
             axios.get(

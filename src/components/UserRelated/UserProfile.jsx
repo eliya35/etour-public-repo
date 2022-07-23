@@ -40,6 +40,7 @@ const UserProfile = () => {
         setIsDisabled(false)
     }
 
+    useEffect(() => { document.title = 'My Profile'; });
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {

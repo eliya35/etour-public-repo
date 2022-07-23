@@ -22,6 +22,8 @@ const UserAccount = () => {
     const [isSubmit, setIsSubmit] = useState(true);
     const [isPosted, setIsPosted] = useState(false);
 
+    useEffect(() => { document.title = 'My Account'; });
+
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }

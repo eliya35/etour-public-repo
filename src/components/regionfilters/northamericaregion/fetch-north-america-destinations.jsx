@@ -21,6 +21,9 @@ const NorthAmericaRegionDestinations = () => {
     const currentTours = northAmericaRegionTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+    // set the page title.
+    useEffect(() => { document.title = 'North America Sites'; });
+
     useEffect(
         () => {
             axios.get(

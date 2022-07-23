@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../Styles/about.css'
 import FeedBack from './FeedBack';
 
 
 const About = () => {
+
+    // set the page title.
+    useEffect(() => { document.title = 'About us'; });
+
     return (
         <div className="about">
             {/* About etour introductory info */}

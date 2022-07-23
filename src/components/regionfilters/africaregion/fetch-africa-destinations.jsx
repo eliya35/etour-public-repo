@@ -14,13 +14,16 @@ const AfricaRegionSites = () => {
     const [error, setError] = useState(false);
 
     // Filter out Africa sites
-    const africaTours = tours.filter(tour => tour.region === 'AFRICA')
+    const africaTours = tours.filter(tour => tour.region === 'AFRICA');
 
     // Pagination Logic
     const indexOfLastTour = currentPage * postPerPage;
     const indexOfFirstTour = indexOfLastTour - postPerPage;
     const currentTours = africaTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    // set the page title.
+    useEffect(() => { document.title = 'African Sites'; });
 
     useEffect(
         () => {

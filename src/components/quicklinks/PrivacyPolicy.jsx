@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/privacypolicy.css'
 import FeedBack from './FeedBack';
 
 
 const PrivacyPolicy = () => {
+
+    // set the page title.
+    useEffect(() => { document.title = 'Privacy policy'; });
+
     return (
         <div className="privacy-policy">
             <Link to='/privacy-policy'></Link>

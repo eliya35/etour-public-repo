@@ -44,6 +44,7 @@ function ViewPageData() {
         <div>
             <ViewPageUI
                 key={tour.id}
+                tour={tour}
                 tour_site_id={id}
                 img={tour.image_01}
                 image_01={tour.image_01}

@@ -19,6 +19,9 @@ const FetchCategoryData = () => {
     const indexOfFirstTour = indexOfLastTour - postPerPage;
     const currentCategorySite = categoryData.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    // set the page title.
+    useEffect(() => { document.title = 'Category Sites'; });
     
     useEffect(() => {
         if (category) {

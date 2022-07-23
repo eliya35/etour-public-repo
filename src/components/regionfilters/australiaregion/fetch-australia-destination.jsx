@@ -14,13 +14,16 @@ const AustraliaDestinations = () => {
     const [error, setError] = useState(false);
 
     // Filter out Africa sites
-    const australiaTours = tours.filter(tour => tour.region === 'AUSTRALIA')
+    const australiaTours = tours.filter(tour => tour.region === 'AUSTRALIA');
 
     // Pagination Logic
     const indexOfLastTour = currentPage * postPerPage;
     const indexOfFirstTour = indexOfLastTour - postPerPage;
     const currentTours = australiaTours.slice(indexOfFirstTour, indexOfLastTour);
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    // set the page title.
+    useEffect(() => { document.title = 'Australian Sites'; });
 
     useEffect(
         () => {
