@@ -22,7 +22,7 @@ const AllSites = () => {
             .catch(() => {
                 setIsLoading(false);
                 setError(true);
-            })
+            });
     }
 
     // set the page title.
@@ -40,7 +40,7 @@ const AllSites = () => {
     }
 
     if (error) {
-        throw new Error('NetworkError: Please check your connection or try again later😶.')
+        throw new Error('NetworkError: Please check your connection or try again later😶.');
     }
 
     // Pagination Logic

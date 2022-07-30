@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { UserContext } from '../usercontext/UserProvider';
 import CommentApp from '../comments/ReturnComments';
 import Booking from './Booking';
 import DestinationProducts from './DestinationProducts';
@@ -8,6 +9,7 @@ import '../Styles/viewpage.css';
 
 
 const ViewPageUI = (props) => {
+    const { user } = useContext(UserContext);
 
     // Page Title
     const pageTitle = props.name === undefined ? 'etour international' : props.name;
@@ -62,11 +64,14 @@ const ViewPageUI = (props) => {
                     <Booking tour={props.tour} />
                 </div>
 
-                {/* Disabled commenting indefinitely */}
-                {/* <div className="rendered-comments">
-                    <CommentApp tour_site_id={props.tour_site_id} />
-                </div> */}
-
+                {
+                    /* Disable comments indefinite
+                    {user &&
+                        <div className="rendered-comments">
+                            <CommentApp tour_site_id={props.tour_site_id} />
+                        </div>
+                    } */
+                }
             </div>
         </div>
     );
