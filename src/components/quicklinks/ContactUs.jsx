@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../Styles/contactus.css'
+import '../Styles/contactus.css';
 
 
 const ContactUs = () => {
@@ -54,14 +54,19 @@ const ContactUs = () => {
         bahrain: 'BAHRAIN',
         iraq: 'IRAQ',
     }
-    const initialState = { firstName: null, lastName: null, email: null, content: null };
+    const initialState = { firstName: "", lastName: "", email: "", content: "" };
     const [formValues, setFormValues] = useState(initialState);
-    const [country] = useState(countries)
-    const [region, setRegion] = useState(null)
-    const [formErrors, setFormErrors] = useState({});
+    const [country] = useState(countries);
+    const [region, setRegion] = useState(null);
+    const [formErrors, setFormErrors] = useState(initialState);
     const [isSubmit, setIsSubmit] = useState(false);
-    const isFormSubmitted = Object.keys(formErrors).length === 0 && isSubmit;
+    const [isSentSuccessfully, setIsSentSuccessfully] = useState(false);
+    const isFormSubmitted = Object.keys(formErrors).length === 0 && isSubmit; //true && false => true;
 
+    const blankFirstName = formValues.firstName === "";
+    const blankLastName = formValues.lastName === "";
+    const blankEmail = formValues.email === "";
+    const blankMessage = formValues.content === "";
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -70,8 +75,8 @@ const ContactUs = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormErrors(validate(formValues))
-        setIsSubmit(true)
+        setFormErrors(validate(formValues));
+        setIsSubmit(true);
     }
 
     // set the page title.
@@ -80,7 +85,7 @@ const ContactUs = () => {
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-    }, [formErrors, isSubmit])
+    }, [formErrors, isSubmit]);
 
 
     const validate = (values) => {
@@ -88,20 +93,20 @@ const ContactUs = () => {
         const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
         if (!values.firstName) {
-            errors.firstName = 'First name is required!'
+            errors.firstName = 'First name is required!';
         }
         if (!values.lastName) {
-            errors.lastName = 'Last name is required!'
+            errors.lastName = 'Last name is required!';
         }
         if (!values.email) {
-            errors.email = 'Email is required!'
+            errors.email = 'Email is required!';
         } else if (!regex.test(values.email)) {
-            errors.email = 'Pleas input a valid email!'
+            errors.email = 'Pleas input a valid email!';
         }
         if (!values.content) {
-            errors.content = 'Please type some message!'
+            errors.content = 'Please type some message!';
         } else if (values.content.length < 3) {
-            errors.content = "Please input a valid message!"
+            errors.content = "Please input a valid message!";
 
         }
         return errors;
@@ -116,7 +121,7 @@ const ContactUs = () => {
         }
     }
 
-    const sendMessage = () => {
+    const sendMessage = async () => {
         let data = {
             country: region,
             first_name: formValues.firstName,
@@ -128,26 +133,28 @@ const ContactUs = () => {
 
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/contactUs/', data)
-            .then(alert("Your message has been sent successfully"))
-            .catch(err => {
+        await axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/contactUs/', data)
+            .then(res => setIsSentSuccessfully(true))
+            .catch(() => {
                 alert('Oops! something went wrong while sending your message. Make sure you have logged in and the form is field correctly or try again after a few minutes.')
-            })
+            });
+    }
+
+    if (isSentSuccessfully) {
+        alert("Your message has been sent successfully. Thank you for contacting Etour we will get back to you shortly.");
     }
 
     return (
         <div className="contact-us">
             <form onSubmit={handleSubmit}>
-                <h1>Contact Us</h1>
-                <p>
-                    Hello there, You are at Etour contact page. Here you can reach us under the address bellow
-                    or alternatively send as a messages on the form bellow. Please remember to leave accurate information
-                    to enable  us to reach back and server you in time.
+                <h1 title='contactUs'>Contact Us</h1>
+                <p data-testid='introduction'>
+                    Hello there, You are at Etour contact page. Here you can reach us under the address bellow or alternatively send as a messages on the form bellow. Please remember to leave accurate information to enable  us to reach back and server you in time.
                 </p>
                 {/* Our Address */}
 
                 <h3>OUR ADDRESS</h3>
-                <p>
+                <p role='dispalyAddress'>
                     Etour.Herokuapp.com;
                     <br />
                     Whatsapp @ 0113382969
@@ -162,15 +169,14 @@ const ContactUs = () => {
                     <div className="form-contents">
                         {/* REGION INFO */}
                         <div className="region">
-                            <span>Country:</span>
+                            <span label='country'>Country:</span>
                             <select
                                 className="form-select"
                                 aria-label="Default select example"
                                 onChange={countyChanged}
-
                             >
                                 <option>Open this select menu</option>
-                                <option value={country.egypt}>EGYPT</option>
+                                <option data-testid='option' value={country.egypt}>EGYPT</option>
                                 <option value={country.morocco}>MOROCCO</option>
                                 <option value={country.southAfrica}>SOUTH AFRICA</option>
                                 <option value={country.tunisia}>TUNISIA</option>
@@ -222,8 +228,9 @@ const ContactUs = () => {
 
                         <div className="names">
                             <div className="col-md-4">
-                                <label for="validationDefault01" className="form-label">First name:</label>
+                                <label role='firstNameLabel' className="form-label">First name:</label>
                                 <input
+                                    placeholder='your first name here...'
                                     type="text"
                                     name='firstName'
                                     className='form-control'
@@ -231,27 +238,24 @@ const ContactUs = () => {
                                     onChange={handleChange}
                                 />
                             </div>
-                            <p>{formErrors.firstName}</p>
+                            <p role='errorFirstName'>{formErrors.firstName}</p>
+
                             <div className="col-md-4">
-                                <label
-                                    for="validationDefault02"
-                                    className="form-label"
-                                >Last name:
-                                </label>
+                                <label className="form-label">Last name:</label>
                                 <input
                                     type="text"
                                     name='lastName'
+                                    placeholder='last name here...'
                                     className='form-control'
                                     value={formValues.lastName}
                                     onChange={handleChange}
                                 />
                             </div>
-                            <p>{formErrors.lastName}</p>
                         </div>
-                        {/* EMAIL ADDRESS */}
+                        <p role='errorLastName'>{formErrors.lastName}</p>
 
                         <div className="mb-3">
-                            <label for="exampleFormControlInput1" className="form-label">Email address:</label>
+                            <label className="form-label">Email address:</label>
                             <input
                                 className="form-control"
                                 type="email"
@@ -261,13 +265,12 @@ const ContactUs = () => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <p>{formErrors.email}</p>
-
-                        {/* MESSAGE US */}
+                        <p role='errorEmail'>{formErrors.email}</p>
 
                         <div className="mb-3">
-                            <label for="exampleFormControlTextarea1" className="form-label">Send a Message bellow:</label>
+                            <label role='txtlabel' className="form-label">Send a Message bellow:</label>
                             <textarea
+                                role='textmessage'
                                 className="form-control"
                                 name='content'
                                 id="exampleFormControlTextarea1"
@@ -277,18 +280,18 @@ const ContactUs = () => {
                             >
                             </textarea>
                         </div>
-                        <p>{formErrors.content}</p>
-                        {/* SUBMIT BUTTON */}
+                        <p role='textError'>{formErrors.content}</p>
 
-                        <div class="col-12">
+                        <div className="col-12">
                             <button
-                                class="btn btn-primary"
+                                className="btn btn-primary"
                                 type="submit"
                                 onClick={sendMessage}
-                                disabled={isFormSubmitted}
+                                disabled={isFormSubmitted || blankFirstName || blankLastName || blankEmail || blankMessage}
                             >Submit form
                             </button>
                         </div>
+
                     </div>
                 </div>
             </form>

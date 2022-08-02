@@ -12,7 +12,7 @@ const ComingSoon = () => {
             <h1>
                 Coming Soon!!
             </h1>
-            <p>
+            <p data-testid='aplogies'>
                 We apologise for any inconvenience we are working on it.
             </p>
         </div>

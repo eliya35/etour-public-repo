@@ -1,0 +1,94 @@
+import React from 'react';
+import { screen, render, fireEvent } from '@testing-library/react';
+import ContactUs from '../ContactUs';
+
+test('renders contact us page title', () => {
+    render(<ContactUs />);
+    const pageTitle = screen.getByTitle('contactUs');
+    expect(pageTitle.textContent).toBe("Contact Us");
+});
+
+test('renders contact us introduction correctly', () => {
+    render(<ContactUs />);
+    const introductionInfo = screen.getByTestId('introduction');
+    expect(introductionInfo.textContent).toBe("Hello there, You are at Etour contact page. Here you can reach us under the address bellow or alternatively send as a messages on the form bellow. Please remember to leave accurate information to enable  us to reach back and server you in time.")
+});
+
+test('renders our address', () => {
+    render(<ContactUs />);
+    const ourAdress = screen.getByText(/OUR ADDRESS/i);
+    expect(ourAdress).toBeInTheDocument()
+});
+
+test('renders our address correctly', () => {
+    render(<ContactUs />);
+    const ourAdressInfo = screen.getByRole('dispalyAddress');
+    expect(ourAdressInfo.textContent).toBe("Etour.Herokuapp.com;Whatsapp @ 0113382969NAIROBI;Etour international");
+});
+
+test('renders a send us a message header', () => {
+    render(<ContactUs />);
+    const sendUsMessageHedder = screen.getByText(/SEND US A MESSAGE/i);
+    expect(sendUsMessageHedder).toBeInTheDocument()
+});
+
+test('renders country span on document', () => {
+    render(<ContactUs />);
+    const countrySpan = screen.getByText(/Country:/i);
+    expect(countrySpan).toBeInTheDocument()
+});
+
+test('renders select input element', () => {
+    render(<ContactUs />);
+    const selectInput = screen.getByRole('combobox');
+    expect(selectInput).toBeInTheDocument();
+});
+
+test('select input elment should render with the correct text', () => {
+    render(<ContactUs />);
+    const selectInput = screen.getByRole('combobox');
+    expect(selectInput.value).toBe("Open this select menu");
+});
+
+test('renders all countries option for select element', () => {
+    render(<ContactUs />);
+    const selectOptions = screen.getAllByRole('option');
+    expect(selectOptions.length).toEqual(47);
+});
+
+test('renderd options change as per users choosing', () => {
+    render(<ContactUs />);
+    const countryOption = screen.getByTestId('option');
+
+    const fakeCountry = 'BRAZI';
+    fireEvent.change(countryOption, { target: { value: fakeCountry } })
+
+    expect(countryOption.value).toBe(fakeCountry);
+});
+
+test('renders first name label correctly', () => {
+    render(<ContactUs />);
+    const firstNameLabel = screen.getByRole('firstNameLabel');
+    expect(firstNameLabel.textContent).toBe("First name:")
+});
+
+test('renders first name input element', () => {
+    render(<ContactUs />);
+    const firstNameInput = screen.getByPlaceholderText('Your first name');
+    expect(firstNameInput).toBeInTheDocument();
+});
+
+test('renderd first name input element should be empty', () => {
+    render(<ContactUs />);
+    const firstNameInput = screen.getByPlaceholderText('Your first name');
+    expect(firstNameInput.value).toBe("");
+});
+
+test('first name input should not be empty when we type a name', () => {
+    render(<ContactUs />);
+    const firstNameInput = screen.getByPlaceholderText('Your first name');
+    const fakeUserName = 'Jhon';
+
+    fireEvent.change(firstNameInput, { target: { value: fakeUserName } });
+    expect(firstNameInput.value).toBe(fakeUserName);
+});
