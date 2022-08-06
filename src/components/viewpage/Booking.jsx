@@ -5,7 +5,7 @@ import '../Styles/booking.css'
 
 const Booking = (props) => {
     const { addItem } = useCart();
-    const [IsDisabled, setIsDisabled] = useState(true);
+    const [IsDisabled] = useState(true);
 
     return (
         <div className='booking'>

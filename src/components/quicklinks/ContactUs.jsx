@@ -154,7 +154,7 @@ const ContactUs = () => {
                 {/* Our Address */}
 
                 <h3>OUR ADDRESS</h3>
-                <p role='dispalyAddress'>
+                <p data-testid='dispaly-address'>
                     Etour.Herokuapp.com;
                     <br />
                     Whatsapp @ 0113382969
@@ -228,7 +228,7 @@ const ContactUs = () => {
 
                         <div className="names">
                             <div className="col-md-4">
-                                <label role='firstNameLabel' className="form-label">First name:</label>
+                                <label aria-label='Firstname' className="form-label">First name:</label>
                                 <input
                                     placeholder='your first name here...'
                                     type="text"
@@ -238,10 +238,10 @@ const ContactUs = () => {
                                     onChange={handleChange}
                                 />
                             </div>
-                            <p role='errorFirstName'>{formErrors.firstName}</p>
+                            <p data-testid='error-first-name'>{formErrors.firstName}</p>
 
                             <div className="col-md-4">
-                                <label className="form-label">Last name:</label>
+                                <label aria-label='Last name' className="form-label">Last name:</label>
                                 <input
                                     type="text"
                                     name='lastName'
@@ -252,10 +252,10 @@ const ContactUs = () => {
                                 />
                             </div>
                         </div>
-                        <p role='errorLastName'>{formErrors.lastName}</p>
+                        <p data-testid='error-last-name'>{formErrors.lastName}</p>
 
                         <div className="mb-3">
-                            <label className="form-label">Email address:</label>
+                            <label aria-label='Email address' className="form-label">Email address:</label>
                             <input
                                 className="form-control"
                                 type="email"
@@ -265,22 +265,21 @@ const ContactUs = () => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <p role='errorEmail'>{formErrors.email}</p>
+                        <p data-testid='error-email'>{formErrors.email}</p>
 
                         <div className="mb-3">
-                            <label role='txtlabel' className="form-label">Send a Message bellow:</label>
+                            <label aria-label='Send a message' className="form-label">Send a Message bellow:</label>
                             <textarea
-                                role='textmessage'
                                 className="form-control"
+                                placeholder='type something here...'
                                 name='content'
-                                id="exampleFormControlTextarea1"
                                 rows="3"
                                 value={formValues.content}
                                 onChange={handleChange}
                             >
                             </textarea>
                         </div>
-                        <p role='textError'>{formErrors.content}</p>
+                        <p data-testid='text-error'>{formErrors.content}</p>
 
                         <div className="col-12">
                             <button

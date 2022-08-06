@@ -15,8 +15,8 @@ const UserProfile = () => {
     const [upLoadImage, setUploadImage] = useState(null);
     const [isSubmit, setIsSubmit] = useState(false);
     const [isDisabled, setIsDisabled] = useState(true);
-    const [isPosted, setIsPosted] = useState(false);
 
+    
     const handleProfileChange = (e) => {
         const image = e.target.files[0];
         setUploadImage(image);
@@ -96,7 +96,6 @@ const UserProfile = () => {
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         await axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/', formData)
             .then(res => {
-                setIsPosted(true);
                 setIsDisabled(true);
                 alert("profile saved successfully")
             })
@@ -128,7 +127,6 @@ const UserProfile = () => {
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${user_id}/`, updatedData)
             .then(res => {
-                setIsPosted(true);
                 alert("Profile updated successfully")
             })
             .catch(err => {

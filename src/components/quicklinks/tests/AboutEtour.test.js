@@ -34,7 +34,7 @@ test('renders a list of features', () => {
 
 test('renders category sorting title in document', () => {
     render(<AboutEtour />);
-    const categorySortTitle = screen.getByRole('categorySortTitle');
+    const categorySortTitle = screen.getByTitle('category-sort-title');
     expect(categorySortTitle).toBeInTheDocument();
 });
 
@@ -46,7 +46,7 @@ test('renders category sorting paragraph contents correctly', () => {
 
 test('renders search functionality title in document', () => {
     render(<AboutEtour />);
-    const searchFuncTitle = screen.getByRole('searchFuncTitle');
+    const searchFuncTitle = screen.getByTitle('search-func-title');
     expect(searchFuncTitle).toBeInTheDocument();
 });
 
@@ -58,7 +58,7 @@ test('renders search functionality paragraph contents correctly', () => {
 
 test('renders reviews comments title in document', () => {
     render(<AboutEtour />);
-    const reviewsTitle = screen.getByRole('reviewsTitle');
+    const reviewsTitle = screen.getByTitle('reviews-title');
     expect(reviewsTitle).toBeInTheDocument();
 });
 
@@ -70,7 +70,7 @@ test('renders reviews contents correctly', () => {
 
 test('renders add to list feature title in document', () => {
     render(<AboutEtour />);
-    const favoriteTitle = screen.getByRole('favoriteTitle');
+    const favoriteTitle = screen.getByTitle('favorite-title');
     expect(favoriteTitle).toBeInTheDocument();
 });
 
@@ -88,7 +88,7 @@ test('renders mylist link element', () => {
 
 test('renders detail page title in document', () => {
     render(<AboutEtour />);
-    const detailPageTitle = screen.getByRole('detailPageTitle');
+    const detailPageTitle = screen.getByTitle('detail-page-title');
     expect(detailPageTitle).toBeInTheDocument();
 });
 
@@ -106,13 +106,13 @@ test('renders a haw do i get started header', () => {
 
 test('renders get started introduction correctly', () => {
     render(<AboutEtour />);
-    const getStartedIntro = screen.getByTestId('getStarted');
+    const getStartedIntro = screen.getByTestId('get-started');
     expect(getStartedIntro.textContent).toBe("Getting started is as easy as 1,2,3 all you need is a working email address a device that can access the internet and good internet connection. Sing up for a free account and your ready to start your adventures.")
 });
 
 test('renders a registration page link', () => {
     render(<AboutEtour />);
-    const registrationLink = screen.getByRole('regLink');
+    const registrationLink = screen.getByRole('link', { name: 'Registration Link' });
     expect(registrationLink).toBeInTheDocument()
 });
 
@@ -124,18 +124,18 @@ test('renders a haw to help etour improve header', () => {
 
 test('renders the help improve etour paragraph contents correctly', () => {
     render(<AboutEtour />);
-    const helpImprove = screen.getByTestId('helpImproveEtour');
+    const helpImprove = screen.getByTestId('help-improve-Etour');
     expect(helpImprove.textContent).toBe("By suggesting new features or upgrades (suggestion box Click here). Etour also accepts donations graciously More on donation Click here giving Etour the ability to grow and serve you much better.")
 });
 
 test('renders a registration page link', () => {
     render(<AboutEtour />);
-    const suggestionLink = screen.getByRole('suggestionLink');
+    const suggestionLink = screen.getByRole('link', { name: 'Suggestion Link' });
     expect(suggestionLink).toBeInTheDocument()
 });
 
 test('renders a registration page link', () => {
     render(<AboutEtour />);
-    const donateLink = screen.getByRole('donateLink');
+    const donateLink = screen.getByRole('link', {name:'Donate Link'});
     expect(donateLink).toBeInTheDocument()
 });

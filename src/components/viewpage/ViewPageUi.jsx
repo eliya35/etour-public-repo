@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+// import CommentApp from '../comments/ReturnComments';
+import React, { useEffect } from 'react';
 import { UserContext } from '../usercontext/UserProvider';
-import CommentApp from '../comments/ReturnComments';
 import Booking from './Booking';
 import DestinationProducts from './DestinationProducts';
 import DisplayImage from './DispalyImage';
@@ -9,7 +9,7 @@ import '../Styles/viewpage.css';
 
 
 const ViewPageUI = (props) => {
-    const { user } = useContext(UserContext);
+    // const { user } = useContext(UserContext);
 
     // Page Title
     const pageTitle = props.name === undefined ? 'etour international' : props.name;

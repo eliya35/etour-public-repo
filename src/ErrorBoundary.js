@@ -22,7 +22,7 @@ class ErrorBoundary extends React.Component {
         if (this.state.errorInfo) {
             return (
                 <div className='network-error-boundary'>
-                    <h2>Something Went Wrong😱:</h2>
+                    <h2>Something Went Wrong 😱:</h2>
                     <details style={{ whiteSpace: "pre-wrap" }}>
                         {this.state.error && this.state.error.toString()}
                         <br />

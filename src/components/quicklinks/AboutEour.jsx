@@ -23,31 +23,31 @@ const About = () => {
                 </p>
                 <br />
                 <li>
-                    <strong role='categorySortTitle'>Category Sorting: </strong>
+                    <strong title='category-sort-title'>Category Sorting: </strong>
                     <p data-testid='categoryInfo'>
                         Category Sorting allows you to navigate to different tourist sites categories and find a tour or an adventure that meets your fancy, whether its Popular Cites, Caves, Mountains, Ancient Ruins, Casinos, Forests you name it.
                     </p>
                 </li>
                 <li>
-                    <strong role='searchFuncTitle'>Search Functionality: </strong>
+                    <strong title='search-func-title'>Search Functionality: </strong>
                     <p data-testid='searchFunc'>
                         Search Functionality allows you as an adventure to search for tourist sites all over the world and quickly gain all the information you will need about the site of you choosing on the spot!
                     </p>
                 </li>
                 <li>
-                    <strong role='reviewsTitle'>Reviews Comments: </strong>
+                    <strong title='reviews-title'>Reviews Comments: </strong>
                     <p data-testid='reviews'>
                         Reviews allow Etour adventure to write reviews on sites he/she has visited and some of the cool things they did there, sharing his experience with the world allowing other adventures to know what to expect should they choose to visit the site.
                     </p>
                 </li>
                 <li>
-                    <strong role='favoriteTitle'>Add to List Feature: </strong>
+                    <strong title='favorite-title'>Add to List Feature: </strong>
                     <p data-testid='favorite'>
                         Add to list feature allows Adventures to add as many sites as they want to his/her <a data-testid='mylist' href="/mylist/">My Destinations</a> page. At this page they can, remove or view each destination and use it plan his/her adventure.
                     </p>
                 </li>
                 <li>
-                    <strong role='detailPageTitle'>Detail Page: </strong>
+                    <strong title='detail-page-title'>Detail Page: </strong>
                     <p data-testid='details'>
                         When you view a tour site you are directed to a detail page where you get more detail concerning the site of interest. Information such as Description, Location and reviews and other information can be found there.
                     </p>
@@ -56,14 +56,14 @@ const About = () => {
             {/* How do i get started */}
 
             <h2>How do i get started?</h2>
-            <p data-testid ='getStarted'>
-                Getting started is as easy as 1,2,3 all you need is a working email address a device that can access the internet and good internet connection. <a role='regLink' href="/register/">Sing up for a free account</a> and your ready to start your adventures.
+            <p data-testid ='get-started'>
+                Getting started is as easy as 1,2,3 all you need is a working email address a device that can access the internet and good internet connection. <a href="/register/" aria-label='Registration Link'>Sing up for a free account</a> and your ready to start your adventures.
             </p>
             {/* CAN I DONATE TO ETOUR */}
 
             <h2>HOW CAN I HELP IMPROVE ETOUR AND ITS SERVICES?</h2>
-            <p data-testid='helpImproveEtour'>
-                By suggesting new features or upgrades (suggestion box <a role='suggestionLink' href='/suggestion/'>Click here</a>). Etour also accepts donations graciously More on donation <a role='donateLink' href='/donate/'>Click here</a> giving Etour the ability to grow and serve you much better.
+            <p data-testid='help-improve-Etour'>
+                By suggesting new features or upgrades (suggestion box <a href='/suggestion/' aria-label='Suggestion Link'>Click here</a>). Etour also accepts donations graciously More on donation <a href='/donate/' aria-label='Donate Link'>Click here</a> giving Etour the ability to grow and serve you much better.
             </p>
             <br />
             <div className="container">

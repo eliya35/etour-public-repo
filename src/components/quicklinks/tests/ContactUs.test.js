@@ -23,7 +23,7 @@ test('renders our address', () => {
 
 test('renders our address correctly', () => {
     render(<ContactUs />);
-    const ourAdressInfo = screen.getByRole('dispalyAddress');
+    const ourAdressInfo = screen.getByTestId('dispaly-address');
     expect(ourAdressInfo.textContent).toBe("Etour.Herokuapp.com;Whatsapp @ 0113382969NAIROBI;Etour international");
 });
 
@@ -69,7 +69,7 @@ test('renderd options change as per users choosing', () => {
 
 test('renders first name label correctly', () => {
     render(<ContactUs />);
-    const firstNameLabel = screen.getByRole('firstNameLabel');
+    const firstNameLabel = screen.getByLabelText('Firstname');
     expect(firstNameLabel.textContent).toBe("First name:")
 });
 
@@ -96,14 +96,14 @@ test('first name input should not be empty when we type a name', () => {
 
 test('first name error message is not visible without error', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('errorFirstName');
+    const error = screen.getByTestId('error-first-name');
 
     expect(error.textContent).toBe("");
 });
 
 test('first name error message is visible if error occurs', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('errorFirstName');
+    const error = screen.getByTestId('error-first-name');
     const submitBtn = screen.getByRole('button');
 
     const firstNameInput = screen.getByPlaceholderText('your first name here...');
@@ -113,6 +113,12 @@ test('first name error message is visible if error occurs', () => {
     fireEvent.submit(submitBtn);
 
     expect(error.textContent).toBe("First name is required!");
+});
+
+test('renders last name label correctly', () => {
+    render(<ContactUs />);
+    const lastNameLabel = screen.getByLabelText('Last name');
+    expect(lastNameLabel.textContent).toBe("Last name:")
 });
 
 test('renders last name input element', () => {
@@ -138,14 +144,14 @@ test('last name input should not be empty when we type a name', () => {
 
 test('last name error message is not visible without error', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('errorLastName');
+    const error = screen.getByTestId('error-last-name');
 
     expect(error.textContent).toBe("");
 });
 
 test('last name error message is visible if error occurs', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('errorLastName');
+    const error = screen.getByTestId('error-last-name');
     const submitBtn = screen.getByRole('button');
 
     const lastNameInput = screen.getByPlaceholderText('last name here...');
@@ -155,6 +161,12 @@ test('last name error message is visible if error occurs', () => {
     fireEvent.submit(submitBtn);
 
     expect(error.textContent).toBe("Last name is required!");
+});
+
+test('renders email address label correctly', () => {
+    render(<ContactUs />);
+    const emailAdressLabel = screen.getByLabelText('Email address');
+    expect(emailAdressLabel.textContent).toBe("Email address:")
 });
 
 test('renders email address input element', () => {
@@ -180,14 +192,14 @@ test('email address input should not be empty when we add email address', () => 
 
 test('email address error message is not visible without error', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('errorEmail');
+    const error = screen.getByTestId('error-email');
 
     expect(error.textContent).toBe("");
 });
 
 test('an error is thrown if email address is not provided in submision', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('errorEmail');
+    const error = screen.getByTestId('error-email');
     const submitBtn = screen.getByRole('button');
 
     const emailAdressInput = screen.getByPlaceholderText('name@example.com');
@@ -201,7 +213,7 @@ test('an error is thrown if email address is not provided in submision', () => {
 
 test('email address input element dose not accept invalid emails', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('errorEmail');
+    const error = screen.getByTestId('error-email');
     const submitBtn = screen.getByRole('button');
 
     const emailAdressInput = screen.getByPlaceholderText('name@example.com');
@@ -215,25 +227,25 @@ test('email address input element dose not accept invalid emails', () => {
 
 test('textarea label is renderd', () => {
     render(<ContactUs />);
-    const texareaLabel = screen.getByRole('txtlabel');
+    const texareaLabel = screen.getByLabelText('Send a message');
     expect(texareaLabel).toBeInTheDocument();
 });
 
 test('renders the textarea for typing a message', () => {
     render(<ContactUs />);
-    const textMessageInput = screen.getByRole('textmessage');
+    const textMessageInput = screen.getByPlaceholderText('type something here...');
     expect(textMessageInput).toBeInTheDocument();
 });
 
 test('the textarea input element should be empty', () => {
     render(<ContactUs />);
-    const textMessageInput = screen.getByRole('textmessage');
+    const textMessageInput = screen.getByPlaceholderText('type something here...');
     expect(textMessageInput.value).toBe("");
 });
 
 test('textarea input should not be empty when we add text', () => {
     render(<ContactUs />);
-    const textMessageInput = screen.getByRole('textmessage');
+    const textMessageInput = screen.getByPlaceholderText('type something here...');
     const someFakeText = 'I love code';
 
     fireEvent.change(textMessageInput, { target: { value: someFakeText } });
@@ -242,17 +254,17 @@ test('textarea input should not be empty when we add text', () => {
 
 test('textarea input error message is not visible without error', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('textError');
+    const error = screen.getByTestId('text-error');
 
     expect(error.textContent).toBe("");
 });
 
 test('an error is thrown if a message is not provided in submision', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('textError');
+    const error = screen.getByTestId('text-error');
     const submitBtn = screen.getByRole('button');
 
-    const textMessageInput = screen.getByRole('textmessage');
+    const textMessageInput = screen.getByPlaceholderText('type something here...');
     const blankMessage = '';
 
     fireEvent.change(textMessageInput, { target: { value: blankMessage } });
@@ -263,10 +275,10 @@ test('an error is thrown if a message is not provided in submision', () => {
 
 test('textarea input element dose not accept less than 3 character message', () => {
     render(<ContactUs />);
-    const error = screen.getByRole('textError');
+    const error = screen.getByTestId('text-error');
     const submitBtn = screen.getByRole('button');
 
-    const textMessageInput = screen.getByRole('textmessage');
+    const textMessageInput = screen.getByPlaceholderText('type something here...');
     const invalidMessage = 'ba';
 
     fireEvent.change(textMessageInput, { target: { value: invalidMessage } });
@@ -302,7 +314,8 @@ test('submit button should be enabled if all inputs are filled', () => {
     const emailAdressInput = screen.getByPlaceholderText('name@example.com');
     const fakeEmailAddress = 'foo@google.com';
 
-    const textMessageInput = screen.getByRole('textmessage');
+    const textMessageInput = screen.getByPlaceholderText('type something here...');
+
     const someFakeText = 'I love code';
 
     fireEvent.change(firstNameInput, { target: { value: fakeFirstName } });
