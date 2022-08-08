@@ -80,7 +80,7 @@ const Suggestion = () => {
     }
 
     // set the page title.
-    useEffect(() => { document.title = 'Contact us'; });
+    useEffect(() => { document.title = 'Suggest a feature'; });
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
