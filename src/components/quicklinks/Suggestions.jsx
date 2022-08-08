@@ -77,6 +77,7 @@ const Suggestion = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
+        setIsSentSuccessfully(false);
     }
 
     // set the page title.
