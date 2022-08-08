@@ -77,7 +77,6 @@ const ContactUs = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-        setIsSentSuccessfully(false);
     }
 
     // set the page title.
@@ -135,10 +134,12 @@ const ContactUs = () => {
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
         await axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/contactUs/', data)
-            .then(res => setIsSentSuccessfully(true))
+            .then(() => setIsSentSuccessfully(true))
             .catch(() => {
                 alert('Oops! something went wrong while sending your message. Make sure you have logged in and the form is field correctly or try again after a few minutes.')
             });
+
+        setIsSentSuccessfully(false);
     }
 
     if (isSentSuccessfully) {

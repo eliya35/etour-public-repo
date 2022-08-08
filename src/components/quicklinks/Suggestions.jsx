@@ -77,7 +77,6 @@ const Suggestion = () => {
         e.preventDefault();
         setFormErrors(validate(formValues));
         setIsSubmit(true);
-        setIsSentSuccessfully(false);
     }
 
     // set the page title.
@@ -140,6 +139,7 @@ const Suggestion = () => {
             .catch(() => {
                 alert('Oops! something went wrong while sending your message. Make sure you have logged in and the form is field correctly or try again after a few minutes.')
             });
+        setIsSentSuccessfully(false);
     }
 
     if (isSentSuccessfully) {
