@@ -1,17 +1,16 @@
-// import CommentApp from '../comments/ReturnComments';
 import React, { useEffect } from 'react';
-import { UserContext } from '../usercontext/UserProvider';
 import Booking from './Booking';
 import DestinationProducts from './DestinationProducts';
 import DisplayImage from './DispalyImage';
 import LocationInfo from './LocationInfo';
 import '../Styles/viewpage.css';
 
+// import { UserContext } from '../usercontext/UserProvider';
+// import CommentApp from '../comments/ReturnComments';
+// const { user } = useContext(UserContext);
 
 const ViewPageUI = (props) => {
-    // const { user } = useContext(UserContext);
 
-    // Page Title
     const pageTitle = props.name === undefined ? 'etour international' : props.name;
     useEffect(() => { document.title = `${pageTitle}`; }, []);
 
@@ -19,7 +18,6 @@ const ViewPageUI = (props) => {
         <div className="viewpage">
             <div className="container">
                 <div>
-                    {/* Dispaly Image */}
                     <DisplayImage
                         name={props.name}
                         img={props.image_01}
@@ -36,7 +34,6 @@ const ViewPageUI = (props) => {
                 </div>
 
                 <div>
-                    {/* Location Component */}
                     <LocationInfo
                         region={props.region}
                         country={props.country}
@@ -46,7 +43,6 @@ const ViewPageUI = (props) => {
                 </div>
 
                 <div>
-                    {/* Destination Products */}
                     <DestinationProducts
                         name={props.name}
                         product_01={props.product_01}
@@ -60,7 +56,6 @@ const ViewPageUI = (props) => {
                 </div>
 
                 <div>
-                    {/* Booking Component */}
                     <Booking tour={props.tour} />
                 </div>
 
