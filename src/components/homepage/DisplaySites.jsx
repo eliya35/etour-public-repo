@@ -15,8 +15,8 @@ const TourCard = React.memo(function TourCard(props) {
                         <img src={props.imgsrc} className='card-img-top' alt={props.name} />
                         <div className="card-body">
                             <h5 className="card-title">{props.title}</h5>
-                            {isFeatured ? <div className="status">< h6 className='badge badge-primary'>featured</h6></div> : <></>}
-                            <p className="card-text">
+                            <h6 style={{ visibility: isFeatured ? "visible" : "hidden" }} className='badge badge-primary' aria-label='Featured'>featured</h6>
+                            <p className="card-text" data-testid='short-paragraph'>
                                 {props.shortDescription}
                             </p>
                             <a href={'/view/' + props.id} className='btn btn-primary' id='view-btn'>View</a>
