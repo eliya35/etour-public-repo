@@ -7,6 +7,7 @@ import '../Styles/searchbar.css';
 const SearchBar = ({ placeholder }) => {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
+    const [isTextInput, setIsTextInput] = useState(false);
     const [destination, setDestination] = useState("");
     const navigate = useNavigate();
 
@@ -14,18 +15,21 @@ const SearchBar = ({ placeholder }) => {
         const searchTerm = e.target.value;
         setDestination(searchTerm);
         const newFilter = data.filter(value => {
-            return value.name.toLowerCase().includes(searchTerm.toLowerCase())
+            return value.name.toLowerCase().includes(searchTerm.toLowerCase());
         })
         if (searchTerm === "") {
-            setFilteredData([])
+            setFilteredData([]);
+            setIsTextInput(false);
         } else {
-            setFilteredData(newFilter)
+            setFilteredData(newFilter);
+            setIsTextInput(true);
         }
     }
 
     const removeEverything = () => {
         setFilteredData([]);
         setDestination("");
+        setIsTextInput(false);
     }
 
     useEffect(() => {
@@ -37,12 +41,13 @@ const SearchBar = ({ placeholder }) => {
             })
             .catch(err => {
                 // console.log("An unkown error occurred")
-            })
+            });
     })
 
     return (
         <div className='search'>
             <div className="search-inputs">
+
                 <input
                     type="text"
                     placeholder={placeholder}
@@ -51,40 +56,40 @@ const SearchBar = ({ placeholder }) => {
                 />
 
                 <div className="search-icon">
-                    {filteredData.length === 0 ?
-                        <i
-                            className="bi bi-search"
-                        />
-                        :
-                        <i
-                            className="bi bi-x"
-                            onClick={removeEverything}
-                        />}
-                </div>
+                    <i
+                        style={{ visibility: isTextInput ? "hidden" : "visible" }}
+                        className="bi bi-search"
+                        data-testid="search-icon"
+                    />
 
+                    <i
+                        style={{ visibility: isTextInput ? "visible" : "hidden" }}
+                        className="bi bi-x"
+                        data-testid="cancel-icon"
+                        onClick={removeEverything}
+                    />
+                </div>
             </div>
-            {
-                filteredData.length !== 0 && (
-                    <div className="search-results">
-                        {
-                            filteredData.slice(0, 11).map(filteredSite => {
-                                return (
-                                    <div
-                                        className='results'
-                                        key={filteredSite.id}
-                                        onClick={() => {
-                                            (navigate(`/view/${filteredSite.id}/`))
-                                            setFilteredData([]);
-                                            setDestination("");
-                                        }}
-                                    >{filteredSite.name}
-                                    </div>
-                                );
-                            })
-                        }
-                    </div>
-                )
-            }
+            
+            <div className="search-results" data-testid="search-results" style={{ visibility: isTextInput ? "visible" : "hidden" }}>
+                {
+                    filteredData.slice(0, 11).map(filteredSite => {
+                        return (
+                            <div
+                                key={filteredSite.id}
+                                className='results'
+                                onClick={() => {
+                                    (navigate(`/view/${filteredSite.id}/`))
+                                    setFilteredData([]);
+                                    setDestination("");
+                                    setIsTextInput(false);
+                                }}
+                            >{filteredSite.name}
+                            </div>
+                        );
+                    })
+                }
+            </div>
         </div >
     );
 };
