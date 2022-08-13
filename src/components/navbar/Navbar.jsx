@@ -34,60 +34,61 @@ const NavBar = () => {
                     <img src="https://etour-first-backet.s3.amazonaws.com/etour-logo/etour-logo-no-bg.png" alt="Etour" />
                 </Link>
 
-                {/* USER LOGIC */}
+                {/* users on mobile */}
+                <div style={{ visibility: user ? "visible" : "hidden" }} className="current-user-mobile">
+                    <span
+                        className='adventurer-name'
+                        data-testid='my-profile'
+                        onClick={() => navigate('/profile/')}
+                    >
+                        My Profile
+                    </span>
 
-                {
-                    user &&
-
-                    <div className="current-user-mobile">
-                        <span
-                            className='adventurer-name'
-                            onClick={() => navigate('/profile/')}
+                    <div className="sign-out-btn">
+                        <button
+                            type='button'
+                            aria-label='sign out button'
+                            className='btn btn-outline-primary btn-sm'
+                            onClick={handleSignOut}
                         >
-                            My Profile
-                        </span>
-
-                        <div className="sign-out-btn">
-                            <button
-                                type='button'
-                                className='btn btn-outline-primary btn-sm'
-                                onClick={handleSignOut}
-                            >
-                                <i class="bi bi-person-circle"></i> Sign Out
-                            </button>
-                        </div>
+                            <i data-testid="user-template-icon" className="bi bi-person-circle" /> Sign Out
+                        </button>
                     </div>
-                }
+                </div>
 
-                {
-                    !user &&
+                {/* non user on mobile */}
+                <div style={{ visibility: !user ? "visible" : "hidden" }} className="no-user-mobile">
+                    <div className="login-nav-btn">
+                        <span data-testid="no-user-greating">Hello: Adventurer</span>
 
-                    <div className="no-user-mobile">
-                        <div className="login-nav-btn">
-                            <span>Hello: Adventurer</span>
-
-                            <button
-                                type='button'
-                                className='btn btn-outline-success btn-sm'
+                        <button
+                            type='button'
+                            aria-label='sign in button'
+                            className='btn btn-outline-success btn-sm'
+                        >
+                            <a
+                                href="/logout/"
                             >
-                                <a href="/logout/"><i class="bi bi-person-circle"></i> Sign in</a>
-                            </button>
-                        </div>
+                                <i
+                                    data-testid="icon-template"
+                                    className="bi bi-person-circle"
+                                />Sign in
+                            </a>
+                        </button>
                     </div>
-                }
+                </div>
 
-                {/* NAVBAR CONTENT */}
-
-                <div className="mobile-search-app">
+                {/* navbar items */}
+                <div data-testid="mobile-searchbar" className="mobile-search-app">
                     <SearchBar placeholder="Search Destination..." />
                 </div>
 
-                <div className="menu-icon" onClick={handleClick}>
+                <div data-testid="menu-icon" className="menu-icon" onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                 </div>
 
-                <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className="nav-item">
+                <ul data-testid="nav-menu" className={click ? 'nav-menu active' : 'nav-menu'}>
+                    <li className="nav-item" aria-label='Featured'>
                         <Link
                             to='/featured/'
                             className='nav-links'
@@ -96,21 +97,24 @@ const NavBar = () => {
                         </Link>
                     </li>
 
-                    <li className="nav-item">
+                    <li className="nav-item" aria-label='My Destination'>
                         <Link
                             to='/mylist/'
                             className='nav-links'
                             onClick={closeMobileMenu}
-                        >My Destination: <span
-                            className='badge badge-light'
-                            id='notification-numb'
                         >
+                            My Destination:
+                            <span
+                                className='badge badge-light'
+                                id='notification-numb'
+                                data-testid="notification-numb"
+                            >
                                 {notification}
                             </span>
                         </Link>
                     </li>
 
-                    <li className="nav-item">
+                    <li className="nav-item" aria-label='Contact Us'>
                         <Link
                             to='/contact/'
                             className='nav-links'
@@ -119,51 +123,45 @@ const NavBar = () => {
                         </Link>
                     </li>
 
-                    <div className="search-app">
+                    <div className="search-app" data-testid="searchbar-for-computer">
                         <SearchBar placeholder="Search Destination..." />
                     </div>
 
-                    {/* If Logged in... */}
+                    {/* users on computers */}
+                    <div style={{ visibility: user ? "visible" : "hidden" }} className='current-user'>
+                        <span
+                            className='adventurer-name'
+                            onClick={() => navigate('/profile/')}
+                            data-testid="profile-account"
+                        >
+                            My Profile/ Account
+                        </span>
 
-                    {
-                        user &&
-                        <div className='current-user'>
-                            <span
-                                className='adventurer-name'
-                                onClick={() => navigate('/profile/')}
+                        <div className="sign-out-btn">
+                            <button
+                                type='button'
+                                aria-label='computer sign out button'
+                                className='btn btn-outline-primary btn-sm'
+                                onClick={handleSignOut}
                             >
-                                My Profile/ Account
-                            </span>
-
-                            <div className="sign-out-btn">
-                                <button
-                                    type='button'
-                                    className='btn btn-outline-primary btn-sm'
-                                    onClick={handleSignOut}
-                                >
-                                    <i class="bi bi-person-circle"></i> Sign Out
-                                </button>
-                            </div>
+                                <i data-testid="person-icon-computer" className="bi bi-person-circle" /> Sign Out
+                            </button>
                         </div>
-                    }
+                    </div>
 
-
-                    {/* else... */}
-
-                    {
-                        !user &&
-                        < div className='user-null'>
-                            <span>Hello: Adventurer</span>
-                            <div className="login-nav-btn">
-                                <button
-                                    type='button'
-                                    className='btn btn-outline-success btn-sm'
-                                >
-                                    <a href="/logout/">Log in</a>
-                                </button>
-                            </div>
+                    {/* non users on computers */}
+                    < div style={{ visibility: !user ? "visible" : "hidden" }} className='user-null'>
+                        <span data-testid="greating-non-user">Hello: Adventurer</span>
+                        <div className="login-nav-btn">
+                            <button
+                                type='button'
+                                className='btn btn-outline-success btn-sm'
+                                aria-label='computer sign in button'
+                            >
+                                <a href="/logout/">Log in</a>
+                            </button>
                         </div>
-                    }
+                    </div>
                 </ul>
             </nav>
         </>
