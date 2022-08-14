@@ -139,149 +139,148 @@ const UserProfile = () => {
 
 
     return (
-        <div class="user-profile-container">
-            {
-                user &&
+        <div className="user-profile-container">
+            <div style={{ visibility: user ? "visible" : "hidden" }} className="only-authenticated">
 
-                <div className="only-authenticated">
-                    <div className='profile-page'><h1>Welcome {user.username}</h1></div>
-                    <div
-                        className="welcome-p"
-                    ><p>
-                            You can edit more account information by
-                            <a href='/profile/my-account/'> Clicking Here</a>. Put all your required info at
-                            the form below:
-                        </p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3">
+                <div className='profile-page'><h1>Welcome {user.username}</h1></div>
 
-                            <div class="text-center">
-                                {
-                                    previousValue.profile_avatar !== undefined ?
-                                        <img
-                                            src={previousValue.profile_avatar}
-                                            class="avatar img-circle img-thumbnail"
-                                            alt="avatar"
-                                        /> : <img
-                                            src={profileImg}
-                                            class="avatar img-circle img-thumbnail"
-                                            alt="avatar"
-                                        />
-                                }
-                                <h6>Upload a different photo...</h6>
-                                <input
-                                    type="file"
-                                    class="text-center center-block file-upload"
-                                    accept='/image/*'
-                                    name='avatar'
-                                    onChange={handleProfileChange}
-                                />
-                                <p>{formErrors.profile_avatar}</p>
-                            </div>
+                <div className="welcome-p">
+                    <p data-testid="introductory-paragraph">
+                        You can edit more account information by
+                        <a href='/profile/my-account/'> Clicking Here</a>. Put all your required info at
+                        the form below:
+                    </p>
+                </div>
 
+                <div className="row">
+                    <div className="col-sm-3">
+
+                        <div className="text-center">
+                            {
+                                previousValue.profile_avatar !== undefined ?
+                                    <img
+                                        src={previousValue.profile_avatar}
+                                        className="avatar img-circle img-thumbnail"
+                                        alt="avatar"
+                                    /> : <img
+                                        src={profileImg}
+                                        className="avatar img-circle img-thumbnail"
+                                        alt="avatar"
+                                    />
+                            }
+                            <h6>Upload a different photo...</h6>
+                            <input
+                                type="file"
+                                className="text-center center-block file-upload"
+                                accept='/image/*'
+                                name='avatar'
+                                onChange={handleProfileChange}
+                            />
+                            <p>{formErrors.profile_avatar}</p>
                         </div>
-                        <div class="col-sm-9">
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="home">
 
-                                    <form class="form" action="##" method="post" id="registrationForm" onSubmit={handleSubmit}>
+                    </div>
+                    <div className="col-sm-9">
+                        <div className="tab-content">
+                            <div className="tab-pane active" id="home">
 
-                                        <div class="form-group">
-                                            <div class="col-xs-6">
-                                                <label for="mobile"><h5>Mobile</h5></label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    name="mobile"
-                                                    id="mobile"
-                                                    placeholder={previousValue.mobile}
-                                                    title="enter your mobile number if any."
-                                                    value={formValues.mobile}
-                                                    onChange={handleChange}
-                                                />
-                                            </div>
-                                            <p>{formErrors.mobile}</p>
+                                <form className="form" action="##" method="post" id="registrationForm" onSubmit={handleSubmit}>
+
+                                    <div className="form-group">
+                                        <div className="col-xs-6">
+                                            <label htmlFor="mobile"><h5>Mobile</h5></label>
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                name="mobile"
+                                                id="mobile"
+                                                placeholder={previousValue.mobile}
+                                                title="enter your mobile number if any."
+                                                value={formValues.mobile}
+                                                onChange={handleChange}
+                                            />
                                         </div>
+                                        <p>{formErrors.mobile}</p>
+                                    </div>
 
-                                        <div class="form-group">
+                                    <div className="form-group">
 
-                                            <div class="col-xs-6">
-                                                <label for="location"><h5>Location</h5></label>
-                                                <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    name='location'
-                                                    id="location"
-                                                    placeholder={previousValue.location}
-                                                    title="enter a location"
-                                                    value={formValues.location}
-                                                    onChange={handleChange}
-                                                />
-                                            </div>
-                                            <p>{formErrors.location}</p>
+                                        <div className="col-xs-6">
+                                            <label htmlFor="location"><h5>Location</h5></label>
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                name='location'
+                                                id="location"
+                                                placeholder={previousValue.location}
+                                                title="enter a location"
+                                                value={formValues.location}
+                                                onChange={handleChange}
+                                            />
                                         </div>
+                                        <p>{formErrors.location}</p>
+                                    </div>
 
-                                        <div class="form-group">
+                                    <div className="form-group">
 
-                                            <div class="col-xs-6">
-                                                <label for="exampleFormControlTextarea1" className="form-label">Bio</label>
-                                                <textarea
-                                                    className="form-control"
-                                                    name='bio'
-                                                    id="exampleFormControlTextarea1"
-                                                    rows="3"
-                                                    title='Enter a bio if any, should be less than 200 words'
-                                                    placeholder={previousValue.bio}
-                                                    value={formValues.bio}
-                                                    onChange={handleChange}
-                                                >
-                                                </textarea>
-                                            </div>
-                                            <p>{formErrors.bio}</p>
+                                        <div className="col-xs-6">
+                                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Bio</label>
+                                            <textarea
+                                                className="form-control"
+                                                name='bio'
+                                                id="exampleFormControlTextarea1"
+                                                rows="3"
+                                                title='Enter a bio if any, should be less than 200 words'
+                                                placeholder={previousValue.bio}
+                                                value={formValues.bio}
+                                                onChange={handleChange}
+                                            >
+                                            </textarea>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="col-xs-12">
-                                                <br />
-                                                {previousValue.user === undefined ?
-                                                    <button
-                                                        class="btn btn-lg btn-success"
-                                                        type="submit"
-                                                        disabled={isDisabled}
-                                                        onClick={handleNewProfileSave}
-                                                    ><i
-                                                        class="glyphicon glyphicon-ok-sign"
-                                                    >
-                                                        </i>
-                                                        Save
-                                                    </button>
-                                                    : <div className='update button'>
-                                                        <button
-                                                            className='btn btn-primary btn-lg'
-                                                            onClick={updateExistingProfile}
-                                                            disabled={isDisabled}
-                                                        >Update Profile
-                                                        </button>
-                                                    </div>
-                                                }
+                                        <p>{formErrors.bio}</p>
+                                    </div>
+                                    <div className="form-group">
+                                        <div className="col-xs-12">
+                                            <br />
+                                            {previousValue.user === undefined ?
                                                 <button
-                                                    class="btn btn-warning btn-lg m-2"
-                                                    type="reset"
-                                                    onClick={() => setFormValues(initialState)}
+                                                    className="btn btn-lg btn-success"
+                                                    type="submit"
+                                                    disabled={isDisabled}
+                                                    onClick={handleNewProfileSave}
                                                 ><i
-                                                    class="glyphicon glyphicon-repeat"
-                                                ></i>
-                                                    Reset
+                                                    className="glyphicon glyphicon-ok-sign"
+                                                >
+                                                    </i>
+                                                    Save
                                                 </button>
-                                            </div>
+                                                : <div className='update button'>
+                                                    <button
+                                                        className='btn btn-primary btn-lg'
+                                                        onClick={updateExistingProfile}
+                                                        disabled={isDisabled}
+                                                    >Update Profile
+                                                    </button>
+                                                </div>
+                                            }
+                                            <button
+                                                className="btn btn-warning btn-lg m-2"
+                                                type="reset"
+                                                onClick={() => setFormValues(initialState)}
+                                            ><i
+                                                className="glyphicon glyphicon-repeat"
+                                            ></i>
+                                                Reset
+                                            </button>
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            }
+            </div>
+
             {!user && <div><h1>NOT AUTHORIZED!</h1></div>}
         </div>
     );

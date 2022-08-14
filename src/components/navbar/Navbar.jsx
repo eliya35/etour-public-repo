@@ -72,7 +72,7 @@ const NavBar = () => {
                                 <i
                                     data-testid="icon-template"
                                     className="bi bi-person-circle"
-                                />Sign in
+                                /> Sign in
                             </a>
                         </button>
                     </div>

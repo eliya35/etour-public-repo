@@ -1,66 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useCountry } from './CustomHook';
 import axios from 'axios';
 import '../Styles/contactus.css';
 
 
 const ContactUs = () => {
-    const countries = {
-        egypt: 'EGYPT',
-        morocco: 'MOROCCO',
-        southAfrica: 'SOUTH AFRICA',
-        tunisia: 'TUNISIA',
-        algeria: 'ALGERIA',
-        zimbabwe: 'ZIMBABWE',
-        mozambique: 'MOZAMBIQUE',
-        ivoryCost: 'IVORY COST',
-        kenya: 'KENYA',
-        botswana: 'BOTSWANA',
-        usa: 'USA',
-        mexico: 'MEXICO',
-        canada: 'CANADA',
-        argentina: 'ARGENTINA',
-        dominicanRepublic: 'DOMINICAN REPUBLIC',
-        brazil: 'BRAZIL',
-        chile: 'CHILE',
-        peru: 'PERU',
-        cuba: 'CUBA',
-        colombia: 'COLOMBIA',
-        china: 'CHINA',
-        thailand: 'THAILAND',
-        japan: 'JAPAN',
-        malaysia: 'MALAYSIA',
-        hongKong: 'HONG KONG',
-        macau: 'MACAU',
-        vietnam: 'VIETNAM',
-        southKorea: 'SOUTH KOREA',
-        indonesia: 'INDONESIA',
-        france: 'FRANCE',
-        spain: 'SPAIN',
-        italy: 'ITALY',
-        turkey: 'TURKEY',
-        germany: 'GERMANY',
-        uk: 'UNITED KINGDOM',
-        australia: 'AUSTRALIA',
-        greece: 'GREECE',
-        portugol: 'PORTUGOL',
-        russia: 'RUSSIA',
-        unitedArabEmirates: 'UNITED ARAB EMIRATES',
-        saudiArabia: 'SAUDI ARABIA',
-        lebanon: 'LEBANON',
-        israel: 'ISRAEL',
-        jordan: 'JORDAN',
-        qatar: 'QATAR',
-        iran: 'IRAN',
-        bahrain: 'BAHRAIN',
-        iraq: 'IRAQ',
-    }
     const initialState = { firstName: "", lastName: "", email: "", content: "" };
     const [formValues, setFormValues] = useState(initialState);
-    const [country] = useState(countries);
-    const [region, setRegion] = useState(null);
+    const [country, setCountry] = useState(null);
     const [formErrors, setFormErrors] = useState(initialState);
     const [isSubmit, setIsSubmit] = useState(false);
     const [isSentSuccessfully, setIsSentSuccessfully] = useState(false);
+    const avilableCountries = useCountry();
     const isFormSubmitted = Object.keys(formErrors).length === 0 && isSubmit; //true && false => true;
 
     const blankFirstName = formValues.firstName === "";
@@ -112,18 +63,18 @@ const ContactUs = () => {
         return errors;
     }
 
-    const countyChanged = (e) => {
-        const place = e.target.value
-        if (place !== 'Open this select menu') {
-            setRegion(previousValue => place);
+    const handleCountryChange = (e) => {
+        const selectedCountry = e.target.value
+        if (selectedCountry !== '') {
+            setCountry(previousValue => selectedCountry);
         } else {
-            setRegion(previousValue => null);
+            setCountry(previousValue => null);
         }
     }
 
     const sendMessage = async () => {
         let data = {
-            country: region,
+            country: country,
             first_name: formValues.firstName,
             last_name: formValues.lastName,
             email: formValues.email,
@@ -169,65 +120,24 @@ const ContactUs = () => {
                 <h3>SEND US A MESSAGE</h3>
                 <div className="fields">
                     <div className="form-contents">
-                        {/* REGION INFO */}
+
+                        {/* Country infomation */}
                         <div className="region">
                             <span label='country'>Country:</span>
                             <select
                                 className="form-select"
                                 aria-label="Default select example"
-                                onChange={countyChanged}
+                                onChange={handleCountryChange}
                             >
-                                <option>Open this select menu</option>
-                                <option data-testid='option' value={country.egypt}>EGYPT</option>
-                                <option value={country.morocco}>MOROCCO</option>
-                                <option value={country.southAfrica}>SOUTH AFRICA</option>
-                                <option value={country.tunisia}>TUNISIA</option>
-                                <option value={country.algeria}>ALGERIA</option>
-                                <option value={country.zimbabwe}>ZIMBABWE</option>
-                                <option value={country.mozambique}>MOZAMBIQUE</option>
-                                <option value={country.ivoryCost}>IVORY COST</option>
-                                <option value={country.kenya}>KENYA</option>
-                                <option value={country.botswana}>BOTSWANA</option>
-                                <option value={country.usa}>USA</option>
-                                <option value={country.mexico}>MEXICO</option>
-                                <option value={country.canada}>CANADA</option>
-                                <option value={country.argentina}>ARGENTINA</option>
-                                <option value={country.dominicanRepublic}>DOMINICAN REPUBLIC</option>
-                                <option value={country.brazil}>BRAZIL</option>
-                                <option value={country.chile}>CHILE</option>
-                                <option value={country.peru}>PERU</option>
-                                <option value={country.cuba}>CUBA</option>
-                                <option value={country.colombia}>COLOMBIA</option>
-                                <option value={country.thailand}>THAILAND</option>
-                                <option value={country.malaysia}>MALAYSIA</option>
-                                <option value={country.hongKong}>HONG KONG</option>
-                                <option value={country.macau}>MACAU</option>
-                                <option value={country.vietnam}>VIETNAM</option>
-                                <option value={country.southKorea}>SOUTH KOREA</option>
-                                <option value={country.indonesia}>INDONESIA</option>
-                                <option value={country.france}>FRANCE</option>
-                                <option value={country.spain}>SPAIN</option>
-                                <option value={country.italy}>ITALY</option>
-                                <option value={country.turkey}>TURKEY</option>
-                                <option value={country.germany}>GERMANY</option>
-                                <option value={country.uk}>UNITED KINGDOM</option>
-                                <option value={country.australia}>AUSTRALIA</option>
-                                <option value={country.greece}>GREECE</option>
-                                <option value={country.portugol}>PORTUGOL</option>
-                                <option value={country.russia}>RUSSIA</option>
-                                <option value={country.unitedArabEmirates}>UNITED ARAB EMIRATES</option>
-                                <option value={country.saudiArabia}>SAUDI ARABIA</option>
-                                <option value={country.lebanon}>LEBANON</option>
-                                <option value={country.israel}>ISRAEL</option>
-                                <option value={country.jordan}>JORDAN</option>
-                                <option value={country.qatar}>QATAR</option>
-                                <option value={country.iran}>IRAN</option>
-                                <option value={country.bahrain}>BAHRAIN</option>
-                                <option value={country.iraq}>IRAQ</option>
+                                {avilableCountries.map((option, index) => (
+                                    <option key={index} value={option.value} data-testid="option">
+                                        {option.text}
+                                    </option>
+                                ))}
                             </select>
                         </div>
-                        {/* FIRST & LAST NAME */}
 
+                        {/* first & last name information */}
                         <div className="names">
                             <div className="col-md-4">
                                 <label aria-label='Firstname' className="form-label">First name:</label>
@@ -241,7 +151,7 @@ const ContactUs = () => {
                                 />
                             </div>
                             <p data-testid='error-first-name'>{formErrors.firstName}</p>
-
+                            
                             <div className="col-md-4">
                                 <label aria-label='Last name' className="form-label">Last name:</label>
                                 <input
@@ -253,9 +163,11 @@ const ContactUs = () => {
                                     onChange={handleChange}
                                 />
                             </div>
+
                         </div>
                         <p data-testid='error-last-name'>{formErrors.lastName}</p>
 
+                        {/* email address information */}
                         <div className="mb-3">
                             <label aria-label='Email address' className="form-label">Email address:</label>
                             <input
@@ -269,6 +181,7 @@ const ContactUs = () => {
                         </div>
                         <p data-testid='error-email'>{formErrors.email}</p>
 
+                        {/* text message input node */}
                         <div className="mb-3">
                             <label aria-label='Send a message' className="form-label">Send a Message bellow:</label>
                             <textarea

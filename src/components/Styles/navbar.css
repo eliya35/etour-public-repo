@@ -17,6 +17,7 @@
 	color: #fff;
 	justify-self: start;
 	margin-left: 0em;
+	margin-top: 0em;
 	cursor: pointer;
 	text-decoration: none;
 	font-size: 2rem;
@@ -35,7 +36,7 @@
 
 .nav-menu {
 	display: grid;
-	grid-template-columns: repeat(5, auto);
+	grid-template-columns: repeat(6, auto);
 	grid-gap: -26px;
 	list-style: none;
 	text-align: center;
@@ -160,8 +161,9 @@
 }
 
 .user-null {
+	/* padding-left: 10px; */
 	padding-top: 20px;
-	padding-left: 10px;
+	margin-left: -15em;
 	width: 10em;
 }
 

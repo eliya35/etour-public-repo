@@ -1,23 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { screen, render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { UserContext } from '../../usercontext/UserProvider';
 import NavBar from '../Navbar';
-
-
-const FakeUserProvider = ({ children }) => {
-    const [user, setUser] = useState({
-        username: "foo",
-        last_name: "baz",
-        email: "foobaz@gmail.com"
-    });
-
-    return (
-        <UserContext.Provider value={{ user, setUser }}>
-            {children}
-        </UserContext.Provider>
-    );
-}
+import FakeUserProvider from './FakeUserProvider'
 
 test("renders etour logo", () => {
     render(
@@ -166,7 +151,7 @@ test("sign in button should have the correct name", () => {
     );
 
     const signInBtn = screen.getByRole("button", { name: "sign in button" })
-    expect(signInBtn.textContent).toBe("Sign in");
+    expect(signInBtn.textContent).toBe(" Sign in");
 });
 
 test("sign in button should have a link elemet to login users", () => {

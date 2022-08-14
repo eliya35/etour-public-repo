@@ -3149,6 +3149,7 @@ footer p {
 
 	.user-null {
 		padding-left: 0px;
+		margin-left: -9em;
 	}
 
 	.current-user {

@@ -45,26 +45,28 @@ test('renders select input element', () => {
     expect(selectInput).toBeInTheDocument();
 });
 
-test('select input elment should render with the correct text', () => {
+test('select input elment should render with no initila input value', () => {
     render(<ContactUs />);
     const selectInput = screen.getByRole('combobox');
-    expect(selectInput.value).toBe("Open this select menu");
+    expect(selectInput.value).toBe("");
 });
 
-test('renders all countries option for select element', () => {
+test('renderd all the avilable country options', () => {
     render(<ContactUs />);
-    const selectOptions = screen.getAllByRole('option');
-    expect(selectOptions.length).toEqual(47);
+    const countryOptions = screen.getAllByTestId('option');
+
+    expect(countryOptions.length).toEqual(47);
 });
 
-test('renderd options change as per users choosing', () => {
+test('select input value should change as per users choice', () => {
     render(<ContactUs />);
-    const countryOption = screen.getByTestId('option');
+    const countryOption = screen.getByText('SOUTH KOREA');
+    const selectInput = screen.getByRole('combobox');
+    const country = 'SOUTH KOREA';
 
-    const fakeCountry = 'BRAZI';
-    fireEvent.change(countryOption, { target: { value: fakeCountry } });
+    fireEvent.change(selectInput, { target: { value: country } });
 
-    expect(countryOption.value).toBe(fakeCountry);
+    expect(countryOption.value).toBe(country);
 });
 
 test('renders first name label correctly', () => {
