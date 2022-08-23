@@ -16,7 +16,7 @@ const UserProfile = () => {
     const [isSubmit, setIsSubmit] = useState(false);
     const [isDisabled, setIsDisabled] = useState(true);
 
-    
+
     const handleProfileChange = (e) => {
         const image = e.target.files[0];
         setUploadImage(image);
@@ -35,24 +35,28 @@ const UserProfile = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+
+        //using the name attribute to accest the value of the formfield and passing it a value from e.target.value
         setFormValues({ ...formValues, [name]: value });
         setIsSubmit(true);
-        setIsDisabled(false)
+        setIsDisabled(false);
+    }
+
+    const fetchProfile = async (userId) => {
+        await axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${userId}/`)
+            .then(res => { setPreviousValue(res.data) })
+            .catch(() => { })
     }
 
     useEffect(() => { document.title = 'My Profile'; });
 
+    // call the fetchProfile
+    useEffect(() => { fetchProfile(user_id) }, [user_id]);
+
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
         }
-        axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${user_id}/`)
-            .then(res => {
-                setPreviousValue(res.data)
-            })
-            .catch(err => {
-                // console.log('An unknown error occurred')
-            })
-    }, [user_id, formErrors, isSubmit])
+    }, [formErrors, isSubmit])
 
 
     const validate = (values) => {
@@ -184,51 +188,51 @@ const UserProfile = () => {
                         <div className="tab-content">
                             <div className="tab-pane active" id="home">
 
-                                <form className="form" action="##" method="post" id="registrationForm" onSubmit={handleSubmit}>
+                                <form className="form" method="post" id="registrationForm" onSubmit={handleSubmit}>
 
                                     <div className="form-group">
                                         <div className="col-xs-6">
-                                            <label htmlFor="mobile"><h5>Mobile</h5></label>
+                                            <label htmlFor="mobileInput"><h5>Mobile</h5></label>
                                             <input
+                                                id="mobileInput"
                                                 type="text"
                                                 className="form-control"
                                                 name="mobile"
-                                                id="mobile"
                                                 placeholder={previousValue.mobile}
                                                 title="enter your mobile number if any."
                                                 value={formValues.mobile}
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <p>{formErrors.mobile}</p>
+                                        <p data-testid="mobile-input-error">{formErrors.mobile}</p>
                                     </div>
 
                                     <div className="form-group">
 
                                         <div className="col-xs-6">
-                                            <label htmlFor="location"><h5>Location</h5></label>
+                                            <label htmlFor="locationInput"><h5>Location</h5></label>
                                             <input
+                                                id="locationInput"
                                                 type="text"
                                                 className="form-control"
                                                 name='location'
-                                                id="location"
                                                 placeholder={previousValue.location}
                                                 title="enter a location"
                                                 value={formValues.location}
                                                 onChange={handleChange}
                                             />
                                         </div>
-                                        <p>{formErrors.location}</p>
+                                        <p data-testid="location-input-error">{formErrors.location}</p>
                                     </div>
 
                                     <div className="form-group">
 
                                         <div className="col-xs-6">
-                                            <label htmlFor="exampleFormControlTextarea1" className="form-label">Bio</label>
+                                            <label htmlFor="bioInput" className="form-label"><h5>Bio</h5></label>
                                             <textarea
+                                                id="bioInput"
                                                 className="form-control"
                                                 name='bio'
-                                                id="exampleFormControlTextarea1"
                                                 rows="3"
                                                 title='Enter a bio if any, should be less than 200 words'
                                                 placeholder={previousValue.bio}
@@ -237,21 +241,20 @@ const UserProfile = () => {
                                             >
                                             </textarea>
                                         </div>
-                                        <p>{formErrors.bio}</p>
+                                        <p data-testid="bio-input-error">{formErrors.bio}</p>
                                     </div>
+
                                     <div className="form-group">
                                         <div className="col-xs-12">
                                             <br />
                                             {previousValue.user === undefined ?
                                                 <button
                                                     className="btn btn-lg btn-success"
+                                                    aria-label='save button'
                                                     type="submit"
                                                     disabled={isDisabled}
                                                     onClick={handleNewProfileSave}
-                                                ><i
-                                                    className="glyphicon glyphicon-ok-sign"
                                                 >
-                                                    </i>
                                                     Save
                                                 </button>
                                                 : <div className='update button'>
@@ -259,13 +262,15 @@ const UserProfile = () => {
                                                         className='btn btn-primary btn-lg'
                                                         onClick={updateExistingProfile}
                                                         disabled={isDisabled}
-                                                    >Update Profile
+                                                    >
+                                                        Update Profile
                                                     </button>
                                                 </div>
                                             }
                                             <button
                                                 className="btn btn-warning btn-lg m-2"
                                                 type="reset"
+                                                aria-label='reset button'
                                                 onClick={() => setFormValues(initialState)}
                                             ><i
                                                 className="glyphicon glyphicon-repeat"
