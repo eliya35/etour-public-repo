@@ -3,8 +3,8 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import { Dropdown } from 'react-bootstrap';
 import '../Styles/filters.css';
 
-const MobileFilter = () => {
 
+const MobileFilter = () => {
     return (
         <div className='mobile-category-filters'>
             <DropdownButton id="dropdown-basic-button" title="Category Dropdown">

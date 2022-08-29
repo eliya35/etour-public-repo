@@ -26,7 +26,7 @@ const SearchBar = ({ placeholder }) => {
         }
     }
 
-    const removeEverything = () => {
+    const clearInputNode = () => {
         setFilteredData([]);
         setDestination("");
         setIsTextInput(false);
@@ -66,7 +66,7 @@ const SearchBar = ({ placeholder }) => {
                         style={{ visibility: isTextInput ? "visible" : "hidden" }}
                         className="bi bi-x"
                         data-testid="cancel-icon"
-                        onClick={removeEverything}
+                        onClick={clearInputNode}
                     />
                 </div>
             </div>

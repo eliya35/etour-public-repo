@@ -10,7 +10,6 @@ function Filter() {
         <div className="filters">
             <div className="selection">
                 <div>
-
                     <div className="selection-name ">
                         <span className="selection-name-weight">Category</span>
                     </div>
@@ -41,19 +40,15 @@ function Filter() {
                 <div className="selection-checkboxes">
                     <ul className="unoderd-list-verticla-chekboxes">
                         <li className="filter-box-title" title='Filters'>Filters</li>
-
-                        {/* Most Visited */}
                         <li className="most-visited">
                             <input
                                 role='checkbox'
                                 type="checkbox"
                                 aria-label='most popular'
                                 onClick={() => (navigate('/popular/'))}
-
                             /> Most Popular
                         </li>
 
-                        {/* Featured */}
                         <li className="featured">
                             <input
                                 role='checkbox'
@@ -77,12 +72,12 @@ function Filter() {
                             <li><a href="/region/North-america/">NORTH AMERICA</a></li>
                             <li><a href="/region/South-america/">SOUTH AMERICA</a></li>
                             <li><a href="/region/Australia/">AUSTRALIA</a></li>
-
                             {/* NO DESTINATIONS HERE
                             <li><a href="/region/Antarctica/">Antarctica</a></li> */}
                         </ul>
                     </div>
                 </div>
+                
             </div>
         </div>
     )

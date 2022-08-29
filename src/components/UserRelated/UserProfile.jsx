@@ -5,17 +5,102 @@ import '../Styles/userprofile.css';
 
 
 const UserProfile = () => {
-    const { user } = useContext(UserContext);
-    const user_id = user.id;
     const initialState = { profile_avatar: "", mobile: "", location: "", bio: "" };
-    const [previousValue, setPreviousValue] = useState({});
     const [formValues, setFormValues] = useState(initialState);
     const [formErrors, setFormErrors] = useState({});
+    const [previousValue, setPreviousValue] = useState({});
     const [profileImg, setProfileImg] = useState("https://etour-first-backet.s3.amazonaws.com/avatars/avatar_2x.png");
     const [upLoadImage, setUploadImage] = useState(null);
     const [isSubmit, setIsSubmit] = useState(false);
     const [isDisabled, setIsDisabled] = useState(true);
+    const { user } = useContext(UserContext);
+    const user_id = user.id;
 
+
+    // set the document title
+    useEffect(() => { document.title = 'My Profile'; });
+
+    // fetch the current  users profile
+    const fetchUsersProfile = async (userId) => {
+        await axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${userId}/`)
+            .then(res => { setPreviousValue(res.data) })
+            .catch(() => { });
+    }
+
+    // call fetchUserProfile only when a users id changes
+    useEffect(() => { fetchUsersProfile(user_id) }, [user_id]);
+
+
+    // if a users profile was not found
+    const handleNewProfileSave = async () => {
+        let formData = new FormData();
+        formData.append("user", user.id);
+        formData.append("profile_avatar", upLoadImage);
+        formData.append("location", formValues.location);
+        formData.append("mobile", formValues.mobile);
+        formData.append("bio", formValues.bio);
+
+        axios.defaults.xsrfCookieName = 'csrftoken';
+        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        await axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/', formData)
+            .then(() => {
+                setIsDisabled(true);
+                alert("profile saved successfully")
+            })
+            .catch(() => {
+                alert('An Error Occurred!! Please make sure you have provided all the fields including a profile picture.')
+            })
+    }
+
+    const validateFormValues = values => {
+        const errors = {}
+
+        if (values.mobile.length > 15) {
+            errors.mobile = 'Your mobile number is too long!'
+        }
+
+        if (values.location.length > 50) {
+            errors.location = 'Please input a valid location!'
+        }
+        if (values.location && values.length < 3) {
+            errors.location = 'Please input a valid location!'
+        }
+
+        if (values.bio.length > 200) {
+            errors.bio = 'Your bio is to long try making it less than 200 characters!'
+        }
+        return errors;
+    }
+
+    // if a user profile was found
+    const updateExistingProfile = async () => {
+        let updatedData = new FormData();
+
+        // Update the profile if is updated else live it to its previous value
+        if (upLoadImage !== null) {
+            updatedData.append("profile_avatar", upLoadImage)
+        }
+        if (formValues.mobile !== "") {
+            updatedData.append("mobile", formValues.mobile)
+        }
+        if (formValues.location !== "") {
+            updatedData.append("location", formValues.location)
+        }
+        if (formValues.bio !== "") {
+            updatedData.append("bio", formValues.bio)
+        }
+
+        axios.defaults.xsrfCookieName = 'csrftoken';
+        axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+        await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${user_id}/`, updatedData)
+            .then(() => {
+                alert("Profile updated successfully")
+            })
+            .catch(() => {
+                alert('An error has occurred while trying to update your profile. Please try aging later.')
+            })
+        setIsDisabled(true);
+    }
 
     const handleProfileChange = (e) => {
         const image = e.target.files[0];
@@ -42,105 +127,10 @@ const UserProfile = () => {
         setIsDisabled(false);
     }
 
-    const fetchProfile = async (userId) => {
-        await axios.get(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${userId}/`)
-            .then(res => { setPreviousValue(res.data) })
-            .catch(() => { })
-    }
-
-    useEffect(() => { document.title = 'My Profile'; });
-
-    // call the fetchProfile
-    useEffect(() => { fetchProfile(user_id) }, [user_id]);
-
-    useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-        }
-    }, [formErrors, isSubmit])
-
-
-    const validate = (values) => {
-        const errors = {}
-
-        if (values.mobile.length > 15) {
-            errors.mobile = 'Your mobile number is too long!'
-        }
-
-        if (values.location.length > 50) {
-            errors.location = 'Please input a valid location!'
-        }
-        if (values.location && values.length < 3) {
-            errors.location = 'Please input a valid location!'
-        }
-
-        if (values.bio.length > 200) {
-            errors.bio = 'Your bio is to long try making it less than 200 characters!'
-        }
-
-        return errors;
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormErrors(validate(formValues));
+        setFormErrors(validateFormValues(formValues));
     }
-
-
-    const handleNewProfileSave = async () => {
-        let formData = new FormData();
-        formData.append("user", user.id)
-        formData.append("profile_avatar", upLoadImage)
-        // formData.append("avatar", upLoadImage)
-        formData.append("location", formValues.location)
-        formData.append("mobile", formValues.mobile)
-        formData.append("bio", formValues.bio)
-
-
-        axios.defaults.xsrfCookieName = 'csrftoken'
-        axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        await axios.post('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/', formData)
-            .then(res => {
-                setIsDisabled(true);
-                alert("profile saved successfully")
-            })
-            .catch(err => {
-                console.log(err);
-                alert('An Error Occurred!! Please make sure you have provided all the fields including a profile picture.')
-            })
-    }
-
-
-    const updateExistingProfile = async () => {
-        let updatedData = new FormData();
-
-        // Update the profile if is updated else live it to its previous value
-        if (upLoadImage !== null) {
-            updatedData.append("profile_avatar", upLoadImage)
-        }
-        if (formValues.mobile !== "") {
-            updatedData.append("mobile", formValues.mobile)
-        }
-        if (formValues.location !== "") {
-            updatedData.append("location", formValues.location)
-        }
-        if (formValues.bio !== "") {
-            updatedData.append("bio", formValues.bio)
-        }
-
-        axios.defaults.xsrfCookieName = 'csrftoken'
-        axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-        await axios.patch(`https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/user/profile/${user_id}/`, updatedData)
-            .then(res => {
-                alert("Profile updated successfully")
-            })
-            .catch(err => {
-                alert('An error has occurred while trying to update your profile. Please try aging later.')
-            })
-
-
-        setIsDisabled(true);
-    }
-
 
     return (
         <div className="user-profile-container">
@@ -175,6 +165,7 @@ const UserProfile = () => {
                             <h6>Upload a different photo...</h6>
                             <input
                                 type="file"
+                                data-testid='profile upload'
                                 className="text-center center-block file-upload"
                                 accept='/image/*'
                                 name='avatar'

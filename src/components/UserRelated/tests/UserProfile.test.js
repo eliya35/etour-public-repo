@@ -34,7 +34,26 @@ test("a link to my account is renderd in the above paragraph", () => {
     expect(myAccountLink).toBeInTheDocument();
 });
 
-// profile image
+test("profile image node is renderd", () => {
+    render(UserProfileComponet);
+
+    const imgNode = screen.getByRole("img");
+    expect(imgNode).toBeInTheDocument();
+});
+
+test("upload profile image heading is renderd", () => {
+    render(UserProfileComponet);
+
+    const imgHeading = screen.getByRole("heading", { level: 6 });
+    expect(imgHeading.textContent).toBe("Upload a different photo...");
+});
+
+test("upload profile image input node is renderd", () => {
+    render(UserProfileComponet);
+
+    const imgInput = screen.getByTestId("profile upload");
+    expect(imgInput).toBeInTheDocument();
+});
 
 test("mobile label is renderd for mobile input node", () => {
     render(UserProfileComponet);
