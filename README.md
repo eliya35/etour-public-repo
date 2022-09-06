@@ -32,7 +32,7 @@ For the app to work effectively it requires:
 # Mockups
 
 **Etour International Home Page**
-![Etour Home Page]https://github.com/eliya35/EtourScreenShots/blob/866d9a2e9fd6e37709c560c6f0d914dc920b7174/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_43_10.png?raw=true)
+![Etour Home Page](https://github.com/eliya35/EtourScreenShots/blob/866d9a2e9fd6e37709c560c6f0d914dc920b7174/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_43_10.png?raw=true)
 
 **Search Functionality**
 ![Search Functionality](https://github.com/eliya35/EtourScreenShots/blob/main/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_43_26.png?raw=true)
