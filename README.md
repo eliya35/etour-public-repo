@@ -23,44 +23,47 @@ and many other interactive features.
 # Dependence 
 For the app to work effectively it requires:
 
-Postgres SQL db
-Django framework @latest
-Node application 
-Bootstrap
-Axios
-React-use-cart
-asgiref==3.5.0
-black==22.3.0
-boto3==1.21.34
-botocore==1.24.34
-click==8.1.0
-colorama==0.4.4
-dj-database-url==0.5.0
-Django==4.0.2
-django-cors-headers==3.11.0
-django-db-connection-pool==1.0.7
-django-heroku==0.3.1
-django-storages==1.12.3
-djangorestframework==3.13.1
-greenlet==1.1.2
-gunicorn==20.1.0
-jmespath==1.0.0
-mypy-extensions==0.4.3
-pathspec==0.9.0
-Pillow==9.0.0
-platformdirs==2.5.1
-psycopg2==2.9.3
-python-dateutil==2.8.2
-python-dotenv==0.19.2
-pytz==2021.3
-s3transfer==0.5.2
-six==1.16.0
-SQLAlchemy==1.4.31
-sqlparse==0.4.2
-tomli==2.0.1
-tzdata==2021.5
-urllib3==1.26.9
-whitenoise==6.0.0
+1. Postgres SQL db
+2. Django framework @latest
+3. Django framework @latest
+4. Django framework @latest
+5. Node application
+6. Bootstrap
+7. Axios
+8. React-use-cart
+9. asgiref==3.5.0
+10. black==22.3.0
+11. boto3==1.21.34
+12. botocore==1.24.34
+13. click==8.1.0
+14. colorama==0.4.4
+15. dj-database-url==0.5.0
+16. Django==4.0.2
+17. django-cors-headers==3.11.0
+18. django-db-connection-pool==1.0.7
+19. django-heroku==0.3.1
+20. django-storages==1.12.3
+21. djangorestframework==3.13.1
+22. greenlet==1.1.2
+23. gunicorn==20.1.0
+24. jmespath==1.0.0
+25. mypy-extensions==0.4.3
+26. pathspec==0.9.0
+27. Pillow==9.0.0
+28. platformdirs==2.5.1
+29. psycopg2==2.9.3
+30. python-dateutil==2.8.2
+31. python-dotenv==0.19.2
+32. pytz==2021.3
+33. s3transfer==0.5.2
+34. six==1.16.0
+35. SQLAlchemy==1.4.31
+36. sqlparse==0.4.2
+37. tomli==2.0.1
+38. tzdata==2021.5
+39. urllib3==1.26.9
+40. whitenoise==6.0.0
+
 
 # Mockups
 
