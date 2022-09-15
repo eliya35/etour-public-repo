@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import App from './App'
 import reportWebVitals from "./reportWebVitals";
-// import CommentsApp from "./components/comments/ReturnComments";
+import { BrowserRouter } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "./index.css";
+import App from './App'
 
 ReactDOM.render(
 	<BrowserRouter>
