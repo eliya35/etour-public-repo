@@ -18,27 +18,24 @@ A category filtering allowing users to choose
 there adventure based on their needs. 
 A register user account for anyone around the glob
 and many other interactive features.
- 
 
-# Dependence 
-For the app to work effectively it requires:
-1. Postgres SQL db
-2. Django framework @latest
-3. Node application 
-4. Bootstrap
-5. Axios
-6. React-use-cart
 
 # Mockups
 
 **Etour International Home Page**
-![Etour Home Page](https://raw.githubusercontent.com/eliya35/EtourScreenShots/15412989602a35d2ebb66cf02e49e83fa3f918ef/etour%20international%20-%20Google%20Chrome%2009_02_2022%2017_30_11.png)
+![Etour Home Page](https://github.com/eliya35/EtourScreenShots/blob/866d9a2e9fd6e37709c560c6f0d914dc920b7174/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_43_10.png?raw=true)
 
 **Search Functionality**
-![Search Functionality](https://raw.githubusercontent.com/eliya35/EtourScreenShots/0d22153af105d3b8f63d6fb8fed29994734a501c/etour%20international%20-%20Google%20Chrome%2009_02_2022%2017_31_04.png)
+![Search Functionality](https://github.com/eliya35/EtourScreenShots/blob/main/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_43_26.png?raw=true)
 
 **Category Results**
-![Category Filters results](https://raw.githubusercontent.com/eliya35/EtourScreenShots/4fc68af5a528c367cb37451c9a0379509b1375ed/etour%20international%20-%20Google%20Chrome%2009_02_2022%2017_30_23.png)
+![Category Filters results](https://raw.githubusercontent.com/eliya35/EtourScreenShots/adb4eed2e24e8483dcd5896997e929f5e1fef0a9/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_43_46.png)
 
 **View Page Content**
-![ViewPage Content](https://raw.githubusercontent.com/eliya35/EtourScreenShots/2304c0cc0e49be08a0a5410bbb1685d44a76be0c/etour%20international%20-%20Google%20Chrome%2009_02_2022%2017_32_52.png)
+![ViewPage Content](https://raw.githubusercontent.com/eliya35/EtourScreenShots/acf3c4dfcc48b4ca623a68aab01913cb59a06b12/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_44_41.png)
+
+**Notification Page Content**
+![ViewPage Content](https://raw.githubusercontent.com/eliya35/EtourScreenShots/b762fde0af4703954838e51916d3e91b7b5eff83/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_46_14.png)
+
+**Contact Us Page**
+![ViewPage Content](https://raw.githubusercontent.com/eliya35/EtourScreenShots/866d9a2e9fd6e37709c560c6f0d914dc920b7174/Home%20Page%20-%20Google%20Chrome%2006_09_2022%2022_46_50.png)
