@@ -5,7 +5,6 @@ import MobileFilter from '../../homepage/MobileFilter';
 import ErrorBoundary from '../../../ErrorBoundary';
 import NorthAmericaRegionDestinations from './fetch-north-america-destinations';
 
-
 const NorthAmericaRegionPageContents = () => {
     return (
         <div>

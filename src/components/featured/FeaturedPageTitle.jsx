@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styles/featuredsites.css';
 
-
 function FeaturedPageTitle() {
     return (
         <div className="page-title">

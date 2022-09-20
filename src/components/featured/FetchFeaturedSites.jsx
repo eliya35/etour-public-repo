@@ -4,7 +4,6 @@ import loader from '../../clockwise.svg';
 import TourCard from '../homepage/DisplaySites';
 import Pagination from '../homepage/Pagination';
 
-
 const FeaturedSites = () => {
     const [featuredSites, setFeaturedSites] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -12,30 +11,23 @@ const FeaturedSites = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    // Pagination Logic
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentFeaturedSites = featuredSites.slice(indexOfFirstTour, indexOfLastTour);
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-    // set the page title.
     useEffect(() => { document.title = 'Featured Sites'; });
+    
+    useEffect(() => { fetchFeaturedSites() }, []);
 
-    useEffect(
-        () => {
-            axios.get(
-                'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/featured/'
-            )
-                .then(res => {
-                    setFeaturedSites(res.data);
-                    setIsLoading(false);
-                })
-                .catch(() => {
-                    setIsLoading(false);
-                    setError(true);
-                })
-        }, []
-    );
+    const fetchFeaturedSites = async () => {
+        await axios.get(
+            'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/featured/'
+        )
+            .then(res => {
+                setFeaturedSites(res.data);
+                setIsLoading(false);
+            })
+            .catch(() => {
+                setIsLoading(false);
+                setError(true);
+            })
+    }
 
     if (isLoading) {
         return (
@@ -48,6 +40,12 @@ const FeaturedSites = () => {
     if (error) {
         throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
+
+    // Pagination Logic
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentFeaturedSites = featuredSites.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <div className="container-fluid d-flex justify-content-center">
@@ -69,12 +67,12 @@ const FeaturedSites = () => {
                         </div>
                     );
                 })}
+
                 <Pagination
                     postPerPage={postPerPage}
                     totalTours={featuredSites.length}
                     paginate={paginate}
                 />
-                
             </div>
         </div>
     );

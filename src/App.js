@@ -17,10 +17,9 @@ import UserAccount from "./components/UserRelated/UserAccount";
 import UserProfile from "./components/UserRelated/UserProfile";
 import LoginRequired from "./components/login/LoginRequired";
 import ComingSoon from "./components/quicklinks/ComingSoon";
-
-import "./App.css";
 import ErrorBoundary from "./ErrorBoundary";
 import Spinner from "./Spinner";
+import "./App.css";
 
 // CODE SPLITTING
 const Home = React.lazy(() => import("./components/homepage/Home"));
@@ -28,7 +27,6 @@ const PopularSitesUiPage = React.lazy(() => import("./components/popularsites/Po
 const CategoryPageContents = React.lazy(() => import("./components/category/CategoryPageContents"));
 const FeaturedPage = React.lazy(() => import("./components/featured/FeaturedPage"));
 const ViewPageData = React.lazy(() => import("./components/viewpage/FetchViewData"));
-
 const AfricaRegionPageContents = React.lazy(() => import("./components/regionfilters/africaregion/africa-pagecontent"));
 const AntarcticRegionPageContents = React.lazy(() => import("./components/regionfilters/antarticregion/antartic-pagecontent"));
 const AsianPacificRegionPageContents = React.lazy(() => import("./components/regionfilters/asian-pacificregion/asia-pacific-pagecontent"));
@@ -53,25 +51,21 @@ const App = () => {
 								path="/"
 								element={<Home />}
 							/>
-
 							<Route
 								exact
 								path="/popular/"
 								element={<PopularSitesUiPage />}
 							/>
-
 							<Route
 								exact
 								path="/category/:category/"
 								element={<CategoryPageContents />}
 							/>
-
 							<Route
 								exact
 								path="/featured/"
 								element={<FeaturedPage />}
 							/>
-
 							<Route exact path="/view/:id/" element=
 								{
 									<ErrorBoundary>
@@ -79,61 +73,51 @@ const App = () => {
 									</ErrorBoundary>
 								}
 							/>
-
 							<Route
 								exact
 								path="/region/Africa/"
 								element={<AfricaRegionPageContents />}
 							/>
-
 							<Route
 								exact
 								path="/region/Antarctica/"
 								element={<AntarcticRegionPageContents />}
 							/>
-
 							<Route
 								exact
 								path="/region/Asian-pacific/"
 								element={<AsianPacificRegionPageContents />}
 							/>
-
 							<Route
 								exact
 								path="/region/Europe/"
 								element={<EuropeRegionPageContents />}
 							/>
-
 							<Route
 								exact
 								path="/region/North-america/"
 								element={<NorthAmericaRegionPageContents />}
 							/>
-
 							<Route
 								exact
 								path="/region/South-america/"
 								element={<SouthAmericaRegionPageContents />}
 							/>
-
 							<Route
 								exact
 								path="/region/Australia/"
 								element={<AustraliaRegionPageContents />}
 							/>
-
 							<Route
 								exact
 								path="/privacy-policy/"
 								element={<PrivacyPolicy />}
 							/>
-
 							<Route
 								exact
 								path="/terms-and-condition/"
 								element={<TermsAndCondition />}
 							/>
-
 							<Route exact path="/profile/" element=
 								{
 									<RequireAuth>
@@ -141,7 +125,6 @@ const App = () => {
 									</RequireAuth>
 								}
 							/>
-
 							<Route exact path="/profile/my-account/" element=
 								{
 									<RequireAuth>
@@ -149,23 +132,14 @@ const App = () => {
 									</RequireAuth>
 								}
 							/>
-
 							<Route exact path="/mylist/" element={<Cart />} />
-
 							<Route exact path="/donate/" element={<Donate />} />
-
 							<Route exact path="/contact/" element={<ContactUs />} />
-
 							<Route exact path="/help/" element={<HelpPage />} />
-
 							<Route exact path="/about/" element={<About />} />
-
 							<Route exact path="/faq/" element={<FAQ />} />
-
 							<Route exact path="/suggestion/" element={<Suggestion />} />
-
 							<Route exact path='/login-required/' element={<LoginRequired />} />
-
 							<Route exact path='/coming-soon/' element={<ComingSoon />} />
 						</Routes>
 					</Suspense>

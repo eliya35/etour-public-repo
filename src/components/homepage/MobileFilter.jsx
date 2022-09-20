@@ -8,17 +8,20 @@ const MobileFilter = () => {
     return (
         <div className='mobile-category-filters'>
             <DropdownButton id="dropdown-basic-button" title="Category Dropdown">
-                {/* <br /> */}
+                
                 <div className="mobile-filter-options">
                     <span><strong>FILTERS</strong></span>
                 </div>
+
                 <Dropdown.Item href="/featured/">Featured</Dropdown.Item>
+
                 <Dropdown.Item href="/popular/">Most Popular</Dropdown.Item>
 
                 <br />
                 <div className="mobile-categories">
                     <span><strong>CATEGORIES</strong></span>
                 </div>
+
                 <Dropdown.Item href="/category/Ancient Buildings/">Ancient Buildings</Dropdown.Item>
                 <Dropdown.Item href="/category/Beach Restaurant/">Beach Restaurant</Dropdown.Item>
                 <Dropdown.Item href="/category/Bike Hikes/">Bike Hikes</Dropdown.Item>
@@ -44,6 +47,7 @@ const MobileFilter = () => {
                 <div className="mobile-region">
                     <span><strong>REGIONS</strong></span>
                 </div>
+                
                 <Dropdown.Item href="/region/Asian-pacific/">ASIA</Dropdown.Item>
                 <Dropdown.Item href="/region/Africa/">AFRICA</Dropdown.Item>
                 <Dropdown.Item href="/region/Europe/">EUROPE</Dropdown.Item>

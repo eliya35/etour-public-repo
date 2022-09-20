@@ -6,7 +6,6 @@ import ErrorBoundary from '../../ErrorBoundary';
 import FetchCategoryData from './FetchCategoryData';
 import '../Styles/categorypagefilters.css';
 
-
 const CategoryPageContents = () => {
     return (
         <div className='category-page-contents'>

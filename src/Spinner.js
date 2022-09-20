@@ -1,7 +1,6 @@
 import React from 'react';
 import loader from './clockwise.svg'
 
-
 const Spinner = () => {
     return (
         <div className="allsites-loading">

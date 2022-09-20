@@ -6,7 +6,6 @@ import ErrorBoundary from '../../ErrorBoundary';
 import PopularSites from './FetchPopularSites';
 import '../Styles/featuredsites.css'
 
-
 const PopularSitesUiPage = () => {
     return (
         <div className='featured-page'>

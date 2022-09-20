@@ -7,7 +7,6 @@ const AsianPacificRegionPageTitle = () => {
             <h1><strong>Asian Pacific Region Destinations</strong></h1>
         </div>
     );
-
 }
 
 export default AsianPacificRegionPageTitle;

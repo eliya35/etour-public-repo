@@ -63,7 +63,7 @@ const SearchBar = ({ placeholder }) => {
                     />
 
                     <i
-                        style={{ visibility: isTextInput ? "visible" : "hidden" }}
+                        style={{ marginTop: "-2em", visibility: isTextInput ? "visible" : "hidden" }}
                         className="bi bi-x"
                         data-testid="cancel-icon"
                         onClick={clearInputNode}

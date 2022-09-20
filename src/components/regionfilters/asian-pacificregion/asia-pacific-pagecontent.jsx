@@ -5,7 +5,6 @@ import MobileFilter from '../../homepage/MobileFilter';
 import ErrorBoundary from '../../../ErrorBoundary';
 import AsianPacificRegionDestinations from './fetch-asia-pacific-destinations';
 
-
 const AsianPacificRegionPageContents = () => {
     return (
         <div>

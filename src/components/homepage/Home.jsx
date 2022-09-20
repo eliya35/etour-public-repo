@@ -5,7 +5,6 @@ import MobileFilter from './MobileFilter';
 import ErrorBoundary from '../../ErrorBoundary';
 import AllSites from './FetchSites';
 
-
 const Home = () => {
     return (
         <div>

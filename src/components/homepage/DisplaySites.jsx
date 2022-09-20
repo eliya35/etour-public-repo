@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useCart } from 'react-use-cart';
 import '../Styles/cardstyle.css';
 
-
 const TourCard = React.memo(function TourCard(props) {
     const { addItem } = useCart();
     const [isFeatured] = useState(props.status);
