@@ -5,7 +5,6 @@ import TourCard from '../../homepage/DisplaySites';
 import Pagination from '../../homepage/Pagination';
 import './africa-region.css'
 
-
 const AfricaRegionSites = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -13,33 +12,24 @@ const AfricaRegionSites = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    // Filter out Africa sites
-    const africaTours = tours.filter(tour => tour.region === 'AFRICA');
-
-    // Pagination Logic
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentTours = africaTours.slice(indexOfFirstTour, indexOfLastTour);
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-    // set the page title.
     useEffect(() => { document.title = 'African Sites'; });
 
-    useEffect(
-        () => {
-            axios.get(
-                'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/'
-            )
-                .then(res => {
-                    setTours(res.data);
-                    setIsLoading(false);
-                })
-                .catch(() => {
-                    setIsLoading(false);
-                    setError(true);
-                })
-        }, []
-    );
+    useEffect(() => { fetchTourSites() }, []);
+
+    const fetchTourSites = () => {
+        axios.get('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/')
+            .then(res => {
+                setTours(res.data);
+                setIsLoading(false);
+            })
+            .catch(() => {
+                setIsLoading(false);
+                setError(true);
+            });
+    }
+
+    // Filter out Africa sites from all tour sites
+    const africaTours = tours.filter(tour => tour.region === 'AFRICA');
 
     if (isLoading) {
         return (
@@ -52,6 +42,11 @@ const AfricaRegionSites = () => {
     if (error) {
         throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
+
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentTours = africaTours.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <div className="container-fluid d-flex justify-content-center">
@@ -73,6 +68,7 @@ const AfricaRegionSites = () => {
                         </div>
                     );
                 })}
+                
                 <Pagination
                     postPerPage={postPerPage}
                     totalTours={tours.length}

@@ -5,7 +5,6 @@ import TourCard from '../homepage/DisplaySites';
 import Pagination from '../homepage/Pagination';
 import '../Styles/cardstyle.css';
 
-
 const PopularSites = () => {
     const [tourSites, setTourSite] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -13,21 +12,11 @@ const PopularSites = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    // Filtering popular sites from all sites
-    const popularDestination =
-        tourSites.filter(tourSite => tourSite.tourist_traffic_annually === 'VERY HIGH');
-
-
-    // Pagination Logic
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentPopularSites = popularDestination.slice(indexOfFirstTour, indexOfLastTour);
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-    // set the page title.
     useEffect(() => { document.title = 'Popular Sites'; });
 
-    useEffect(() => {
+    useEffect(() => { fetchTourSites() }, []);
+
+    const fetchTourSites = () => {
         axios.get('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/')
             .then(res => {
                 setTourSite(res.data);
@@ -36,8 +25,11 @@ const PopularSites = () => {
             .catch(() => {
                 setIsLoading(false);
                 setError(true);
-            })
-    }, []);
+            });
+    }
+
+    // Filtering popular sites from all sites
+    const popularDestination = tourSites.filter(tourSite => tourSite.tourist_traffic_annually === 'VERY HIGH');
 
     if (isLoading) {
         return (
@@ -50,6 +42,11 @@ const PopularSites = () => {
     if (error) {
         throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
+
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentPopularSites = popularDestination.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <div className="container-fluid d-flex justify-content-center">
@@ -74,6 +71,7 @@ const PopularSites = () => {
                         );
                     })
                 }
+
                 <Pagination
                     postPerPage={postPerPage}
                     totalTours={popularDestination.length}

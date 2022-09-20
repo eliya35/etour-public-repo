@@ -1,7 +1,6 @@
 import React from 'react';
 import CommentForm from './CommentForm';
-import '../Styles/comments.css'
-
+import '../Styles/comments.css';
 
 const Comment = ({
     comment,
@@ -15,11 +14,10 @@ const Comment = ({
     parentId = null,
 }) => {
     
-    // COMMENT STATES 
     const fiveMinutes = 300000;
-    const commentTime = comment.created_at
+    const commentTime = comment.created_at;
     const timePassed = new Date() - new Date(commentTime) > fiveMinutes;
-    const canReply = Boolean(currentUserId)
+    const canReply = Boolean(currentUserId);
     const canEdit = currentUserId === comment.user_id && !timePassed;
     const canDelete = currentUserId === comment.user_id && !timePassed;
     const createdAt = new Date(commentTime).toLocaleDateString();

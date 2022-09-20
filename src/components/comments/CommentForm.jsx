@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const CommentForm = ({
     handleSubmit,
     submitLabel,
@@ -9,11 +8,9 @@ const CommentForm = ({
     handleCancel
 }) => {
 
-    // COMMENT FORM  STATES
     const [body, setBody] = useState(initialText);
     const isTextareaDisabled = body.length === 0;
 
-    // Handle Submit
     const onSubmit = event => {
         event.preventDefault();
         handleSubmit(body);

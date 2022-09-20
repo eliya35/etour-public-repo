@@ -5,7 +5,6 @@ import MobileFilter from '../../homepage/MobileFilter';
 import ErrorBoundary from '../../../ErrorBoundary';
 import AntarcticRegionDestinations from './fetch-antartic-destinations';
 
-
 const AntarcticRegionPageContents = () => {
     return (
         <div>

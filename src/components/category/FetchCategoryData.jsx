@@ -5,7 +5,6 @@ import loader from '../../clockwise.svg';
 import TourCard from '../homepage/DisplaySites';
 import Pagination from '../homepage/Pagination';
 
-
 const FetchCategoryData = () => {
     const [categoryData, setCategoryData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -14,30 +13,27 @@ const FetchCategoryData = () => {
     const [error, setError] = useState(false);
     const category = useParams().category;
 
-    // Pagination Logic
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentCategorySite = categoryData.slice(indexOfFirstTour, indexOfLastTour);
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-    // set the page title.
     useEffect(() => { document.title = 'Category Sites'; });
-    
+
     useEffect(() => {
         if (category) {
-            axios.get(
-                `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/category/${category}/`
-            )
-                .then(res => {
-                    setCategoryData(res.data);
-                    setIsLoading(false);
-                })
-                .catch(() => {
-                    setIsLoading(false);
-                    setError(true);
-                })
+            fetchCategorySites(category);
         }
     }, [category]);
+
+    const fetchCategorySites = async (category) => {
+        await axios.get(
+            `https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/category/${category}/`
+        )
+            .then(res => {
+                setCategoryData(res.data);
+                setIsLoading(false);
+            })
+            .catch(() => {
+                setIsLoading(false);
+                setError(true);
+            });
+    }
 
     if (isLoading) {
         return (
@@ -50,6 +46,12 @@ const FetchCategoryData = () => {
     if (error) {
         throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
+
+    // Pagination Logic
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentCategorySite = categoryData.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <div>
@@ -72,6 +74,7 @@ const FetchCategoryData = () => {
                             </div>
                         );
                     })}
+
                     <Pagination
                         postPerPage={postPerPage}
                         totalTours={categoryData.length}

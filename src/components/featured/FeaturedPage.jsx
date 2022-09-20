@@ -6,7 +6,6 @@ import ErrorBoundary from '../../ErrorBoundary';
 import FeaturedSites from './FetchFeaturedSites';
 import '../Styles/featuredsites.css';
 
-
 const FeaturedPage = () => {
     return (
         <div className='featured-page'>

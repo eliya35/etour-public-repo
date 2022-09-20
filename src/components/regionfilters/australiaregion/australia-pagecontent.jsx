@@ -5,7 +5,6 @@ import MobileFilter from '../../homepage/MobileFilter';
 import AustraliaDestinations from './fetch-australia-destination';
 import ErrorBoundary from '../../../ErrorBoundary';
 
-
 const AustraliaRegionPageContents = () => {
     return (
         <div>

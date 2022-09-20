@@ -5,7 +5,6 @@ import MobileFilter from '../../homepage/MobileFilter';
 import ErrorBoundary from '../../../ErrorBoundary';
 import AfricaRegionPageTitle from './PageTitle';
 
-
 const AfricaRegionPageContents = () => {
     return (
         <div>

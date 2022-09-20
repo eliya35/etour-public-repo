@@ -5,7 +5,6 @@ import TourCard from '../../homepage/DisplaySites';
 import Pagination from '../../homepage/Pagination';
 import './australia-region.css';
 
-
 const AustraliaDestinations = () => {
     const [tours, setTours] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -13,33 +12,23 @@ const AustraliaDestinations = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    // Filter out Africa sites
-    const australiaTours = tours.filter(tour => tour.region === 'AUSTRALIA');
-
-    // Pagination Logic
-    const indexOfLastTour = currentPage * postPerPage;
-    const indexOfFirstTour = indexOfLastTour - postPerPage;
-    const currentTours = australiaTours.slice(indexOfFirstTour, indexOfLastTour);
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-    // set the page title.
     useEffect(() => { document.title = 'Australian Sites'; });
+    
+    useEffect(() => { fetchTourSites() }, []);
+    
+    const fetchTourSites = () => {
+        axios.get('https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/')
+            .then(res => {
+                setTours(res.data);
+                setIsLoading(false);
+            })
+            .catch(() => {
+                setIsLoading(false);
+                setError(true);
+            });
+    }
 
-    useEffect(
-        () => {
-            axios.get(
-                'https://etour.herokuapp.com/HDp0mdCOWxaBRhELG5PUMWQnrXSkObDQBnvUhC5XsTROlI6Wz99ctDZtzRLqHuvgidz0mX3ws3K6ggPc8p21OT2jwEcbpNMDHcHrxb0EoN7al1aP8fKoSpZMyXvL9FxnkJuS2KG5r1d8YkjyYjgCj2V44GdYk6ehB7JJuqoE6wAZWe5VisNMKnFYfS40mhymtJNFb8Aq/'
-            )
-                .then(res => {
-                    setTours(res.data);
-                    setIsLoading(false);
-                })
-                .catch(() => {
-                    setIsLoading(false);
-                    setError(true);
-                })
-        }, []
-    );
+    const australiaTours = tours.filter(tour => tour.region === 'AUSTRALIA');
 
     if (isLoading) {
         return (
@@ -48,11 +37,16 @@ const AustraliaDestinations = () => {
             </div>
         );
     }
-
+    
     if (error) {
         throw new Error('NetworkError: Please check your connection or try again later😶.')
     }
 
+    const indexOfLastTour = currentPage * postPerPage;
+    const indexOfFirstTour = indexOfLastTour - postPerPage;
+    const currentTours = australiaTours.slice(indexOfFirstTour, indexOfLastTour);
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    
     return (
         <div className="container-fluid d-flex justify-content-center">
             <div className="row">
@@ -73,6 +67,7 @@ const AustraliaDestinations = () => {
                         </div>
                     );
                 })}
+                
                 <Pagination
                     postPerPage={postPerPage}
                     totalTours={tours.length}

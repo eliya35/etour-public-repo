@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Pagination = ({ postPerPage, totalTours, paginate }) => {
     const pageNumbers = [];
 
