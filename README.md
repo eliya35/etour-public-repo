@@ -1,22 +1,21 @@
 # Etour International
-Etour Web App is an international application 
-for travelers all over the world to make use of.
+[Etour International Web Application](https://etour.herokuapp.com/) is world class app
+for travelers all over the world to make use of :smiley: .
 It contains tourists attractions sites for all
-manner of people in the world. Restaurants, Casino 
-countries are also allowed for features on the 
-program. 
+manner of people in the world. Restaurants, Casino,  
+Ancient Ruins to explore and so much more. It also supports featuring among others. 
 
-The program has multiple features that allow users 
+Etour has multiple features that allow users 
 to interact with it comfortably. Some include:
-A search feature for performing site searches. 
+A search feature :mag: for performing site searches. 
 A List feature that allow users to add sites they 
 intend on visit. 
-A commenting and rating feature that allows our
+A commenting :speech_balloon: and rating :star: feature that allows our
 users to share there experiences with others around 
-the world. 
+the world :earth_africa:. 
 A category filtering allowing users to choose 
 there adventure based on their needs. 
-A register user account for anyone around the glob
+A register user account :bust_in_silhouette: for anyone around the glob
 and many other interactive features.
 
 
