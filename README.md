@@ -6,15 +6,15 @@ manner of people in the world. Restaurants, Casino, Ancient Ruins to explore and
 
 Etour has multiple features that allow users 
 to interact with it comfortably. Some include:
-A search feature :mag: for performing site searches. 
-A List feature that allow users to add sites they 
-intend on visit. 
-A commenting :speech_balloon: and rating :star: feature that allows our
+- A search feature :mag: for performing site searches. 
+- A List feature that allow users to add sites they 
+intend to visit. 
+- A commenting :speech_balloon: and rating :star: feature that allows our
 users to share there experiences with others around 
 the world :earth_africa:. 
-A category filtering allowing users to choose 
+- A category filtering allowing users to choose 
 there adventure based on their needs. 
-A register user account :bust_in_silhouette: for anyone around the glob
+- A register user account :bust_in_silhouette: for anyone around the glob
 and many other interactive features.
 
 
